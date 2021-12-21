@@ -1,749 +1,485 @@
-gloss,definition,n
-1,first person,60
-2,second person,52
-3,third person,68
-&,coordination marker,1
-√,lexical root,1
-1DU,first dual,1
-1O,first person object,1
-1OBJ,first person object,1
-1PLO,first person plural object,1
-1PLOBJ,first person plural object,1
-1PLS,first person plural subject,1
-1PLSUBJ,first person plural subject,1
-1PROX,first person proximate (close to speaker),1
-1S,first person subject,1
-1SG,first person singular,2
-1SGO,first person singular object,1
-1SGOBJ,first person singular object,1
-1SGS,first person singular subject,1
-1SGSUBJ,first person singular subject,1
-1SUBJ,first person subject,1
-2DU,second dual,1
-2PROX,second person proximate (close to hearer),1
-2SG,second person singular,1
-2SGO,second person singular subject,1
-2SGOBJ,second person singular subject,1
-2SGS,second person singular object,1
-2SGSUBJ,second person singular object,1
-3DU,third dual,1
-3F,third person feminine,1
-3M,third person masculine,1
-3N,third person neutral,1
-3O,third person subject agreement,1
-3OBJ,third person object agreement,1
-3PL,third person plural,4
-3S,third person subject agreement,1
-3SG,third person singular,1
-3SG,third person singular,7
-3SUBJ,third person subject agreement,1
-A,agent-like argument,3
-ABL,ablative,14
-ABS,absolutive,26
-ABSEN,absentive,1
-ABSL,absolute case,1
-ABST,abstractivizing,1
-ACC,accusative,151
-ACD,antecedent contained deletion,2
-ACT,active,3
-AD,addressee,1
-AD,adessive,1
-ADD,additive,3
-ADD.FOC,additive focus,1
-ADDR,addressee,1
-ADE,adessive,1
-ADJ,adjective,10
-ADJ,adjunct,1
-ADJ,adjectiviser,1
-ADN,adnominal,3
-ADV,adverb,5
-ADV,adverbial,4
-ADV,adverbializer,1
-ADVER,adversative,1
-AdvP,adverb phrase,1
-ADVR,adverbializer,1
-AE,argument ellipsis,1
-AF,agent focus,3
-AFF,affirmative,3
-AFF,affix,1
-AG,agentive,2
-AG,agent,1
-AGR,agreement,10
-AGT,agent,1
-AGT,agentive,1
-AI,adversity impersonal,1
-AI,intransitive animate,1
-AIA,abilitative/involuntary action prefix,1
-AIC,Akaike information criterion,3
-AL,alienable,2
-ALIEN,alienable,2
-ALL,allative,4
-ALL,allocative,1
-ALL,allomorph,1
-ALLOC,allocutive,1
-ALT,alternative,1
-AN,animate,2
-ANAPH,anaphor,2
-ANI,animate,1
-ANIM,animate,1
-ANOVA,analysis of variance,2
-ANT,anterior,1
-ANZ,adnominalizer,1
-AOR,aorist,1
-AP,antipassive,3
-AP,adjectival phrase,2
-AP,applicative,1
-APASS,antipassive,1
-APL,apudlative,1
-APPL,applicative,10
-APUD,location near,1
-ARG,argument,1
-ART,article,8
-ASP,aspect,13
-ASS,assertive,1
-ATR,attributive,1
-ATTR,attributive,4
-AUG,augment,3
-AUX,auxiliary,31
-AV,actor voice,1
-AV,agent voice,1
-AVS,adversative,1
-AVZ,adverbalizer,1
-BEN,benefactive,4
-BN,Bare Numeral,1
-COMP,complementizer,9
-CAUS,causative,23
-CCNJ,clausal conjunction,1
-CF,contrastive focus,3
-CINT,interrogative complementizer,1
-CIRC,circumstantial modal,1
-CIRCG,cirumgressive,1
-CISL,cislocative,1
-CJ,conjoint,1
-CL,clitic,36
-CL,classifier,20
-CLF,classifier,9
-CLS,classifier,1
-CLTC,clitic,1
-CM,class marker,1
-CMP,comparative,1
-CMPR,comparative,3
-CNJ,conjunction,2
-CNTR,contrastive,1
-COLL,collective,2
-COM,comitative,7
-COM,comparative,1
-COMIT,comitative,1
-COMP,complementizer,28
-COMP,comparative,6
-COMPL,completive,3
-CON,conditional,1
-COND,conditional,20
-CONJ,conjunction,9
-CONT,continuative,2
-CONT,contrastive focus element,2
-CONTR,contrastive,1
-CONV,converb,1
-COP,copula,35
-CP,completive,1
-CPL,complementizer,1
-CT,contrastive topic,4
-CTR,contrastive topic,1
-CV,converb,1
-CVB,converb,5
-D,determiner,3
-D,definiteness,1
-DAT,dative,117
-DEB,debitive,1
-DEC,declarative,2
-DECL,declarative,11
-DEF,definite,35
-DEL,delative,1
-DEM,demonstrative,31
-DEO,deontic,1
-DEONT,deontic,1
-DES,desiderative,1
-DEST,destinative,1
-DET,determiner,26
-DIM,diminutive,8
-DIMIN,diminutive,1
-DIR,direct,4
-DIR,directional,4
-DISC,discontinuative,1
-DIST,distal,3
-DISTR,distributive,2
-DL,dual,1
-DO,direct object,6
-DOM,differential object marking,12
-DPRO,demonstrative pronoun,1
-DSM,differential subject marking,1
-DST,distal,1
-DU,dual,7
-DUB,dubitative,1
-DUP,reduplication,1
-DUR,durative,4
-ECM,exceptional case marking,1
-ELA,elative,1
-EMP,emphatic,1
-EMPH,emphatic,5
-ENCL,enclitic,1
-EP,epenthetic,1
-EPI,epistemic,1
-EPIST,epistemic,1
-EPTH,epenthentic,1
-ERG,ergative,33
-EV,epenthetic vowel,1
-EVD,evidential,1
-EVI,evidential,1
-EVID,evidential,2
-EVID,indirect evidentiality,1
-EXC,exclamative,1
-EXCL,exclusive,9
-EXCL,exclamation,1
-EXH,exhaustifier,1
-EXHORT,Exhortative,1
-EXIS,existential,1
-EXIST,existential,1
-EXP,experiential,1
-EXPL,expletive,3
-EXS,existential,1
-F,feminine,76
-FACT,factive,1
-FEM,feminine,24
-FIN,finite,2
-FNP,finite non-past,1
-FOC,focus,15
-FUT,future,55
-GEN,genitive,102
-GER,gerund,8
-GNR,generic,1
-GOAL,goal,1
-GoN,Genitive of negation,1
-GRND,gerund,1
-HAB,habitual,11
-HML,humilitive,1
-HON,honorific,10
-HORT,hortative,1
-HORZ,horizontally,1
-IC,inflection class,1
-I,class I,1
-II,class II,1
-III,class III,1
-IV,class IV,1
-V,class V,1
-VI,class VI,1
-VII,class VII,1
-VIII,class VIII,1
-IX,class IX,1
-X,class X,1
-XI,class XI,1
-XII,class XII,1
-XIII,class XIII,1
-XIV,class XIV,1
-XV,class XV,1
-XVI,class XVI,1
-XVII,class XVII,1
-XVIII,class XVIII,1
-XIX,class XIX,1
-XX,class XX,1
-IDEO,ideophone,1
-ILL,illative,1
-ILLA,illative,1
-IMM,Immediate,1
-IMP,imperative,20
-IMP,imperfect,2
-IMP,imperfective,1
-IMP,impersonal,1
-IMPERF,imperfective,3
-IMPF,imperfective,9
-IMPF,imperfect,2
-IMPRF,imperfective,1
-IMPV,imperfective,1
-IN,inessive,1
-INAL,inalienable,2
-INAN,inanimate,1
-INANI,inanimate,1
-INANIM,inanimate,1
-INC,incompletive,1
-INCEPT,inceptive,1
-INCH,inchoative,5
-INCL,inclusive,10
-INCPL,incompletive,1
-IND,indicative,17
-INDEF,indefinite,5
-INDF,indefinite,11
-INE,inessive,3
-INESS,inessive,5
-INF,infinitive,63
-INF,infinite,1
-INS,instrumental,16
-INST,instrumental,5
-INSTR,instrumental,10
-INT,interrogative,2
-INTENS,intensifier,2
-INTERROG,interrogative,1
-INTJ,interjection,1
-INTR,intransitive,6
-INV,inverse,1
-IO,indirect object,5
-IPF,imperfective,2
-IPFV,imperfective,26
-IRLS,irrealis,1
-IRR,irrealis,8
-ITER,iterative,1
-ITR,intransitive,1
-LAT,lative,3
-LIM,limitative,1
-LINK,linker,1
-LK,linker,1
-LNK,linker,1
-LOAN,loanword,1
-LOC,locative,52
-LOG,logophor,1
-M,masculine,82
-MASC,masculine,18
-MED,medial,1
-MED,mediative,1
-MID,middle,1
-MIN,minimal,1
-MIR,mirative,1
-MIXED,mixed declension class,1
-MOD,modal,4
-MP,modal particle,3
-MSD,masdar,1
-N,neuter,33
-NACT,non-active,4
-NC,noun class,1
-NEG,negation,76
-NEU,neuter,2
-NEUT,neuter,7
-NF,non-finite,1
-NFIN,non-finite,1
-NFUT,non-future,1
-NHON,non-honorific,1
-NL,nominalizer,2
-NML,nominalizer,2
-NMLZ,nominalizer,18
-NMM,non-manual marker,1
-NOM,nominative,131
-NONAGR,nonagreeing,1
-NONP,non-past,1
-NONREFL,non-reflexive,1
-NONSUBJ,non-subject,1
-NONVOL,non-volitional,1
-NOT.VIS,not visible,1
-NPI,negative polarity item,6
-NPST,non-past,4
-NS,null subject,1
-NSBJ,non-subject,1
-NSG,non-singular,1
-NUM,numeral,1
-O,object,7
-OBJ,object,18
-OBL,oblique,17
-OBV,obviative,2
-OPT,optative,2
-P,patient-like argument of a canonical transitive verb,3
-PA,paucal,1
-PAR,partitive,2
-PAR,particle,1
-PART,partitive,10
-PART,participle,6
-PART,particle,5
-PASS,passive,24
-PAST,past tense,16
-PCPT,participle,1
-PERF,perfective,7
-PERF,perfect,3
-PERS,person,2
-PF,perfective,3
-PFV,perfective,29
-PFX,prefix,1
-PL,plural,194
-PLEX,plural exclusive,1
-PM,possessum,1
-PN,proper name,2
-POS,positive,4
-POSS,possessive,50
-POSS,possessor,4
-PPRT,past participle,1
-PQ,polar question,1
-PR,possessor,1
-PRE,prefix,2
-PRED,predicative,3
-PREP,preposition,11
-PRES,present,23
-PRET,preterite,2
-PREV,preverb,1
-PRF,perfect,13
-PRF,perfective,3
-PRFX,prefix,1
-PRG,progressive,1
-PRN,pronominalizer,1
-PRN,pronoun,1
-PROG,progressive,24
-PROGR,progressive,1
-PROH,prohibitive,1
-PROJ,projective,1
-PRON,pronoun,1
-PROS,prospective,1
-PROSP,prospective,2
-PROX,proximal,4
-PRS,present,50
-PRT,particle,17
-PRTC,particle,1
-PRTCP,participle,1
-PRV,perfective,2
-PST,past,73
-PSTPERF,past perfect,1
-PT,presentative,1
-PTC,particle,2
-PTCP,participle,25
-PURP,purposive,3
-PV,patient voice,1
-PVF,perfective,1
-Q,question,6
-QUAL,qualifier,1
-QUOT,quotative,2
-R,realis,1
-RC,relative clause,6
-RCP,reciprocal,1
-RDP,reduplication,1
-REAL,realis,1
-RECP,reciprocal,2
-RECIP,reciprocal,1
-RED,reduplication,2
-REDUP,reduplication,1
-REF,referential,1
-REFL,reflexive,45
-REG,regressive,1
-REL,relative,9
-REL,relativizer,6
-REM,remote,2
-REP,reportative,1
-RES,resultative,1
-RESP,responsive,1
-RESTR,restrictive,2
-RFL,reflexive,3
-RLS,realis,1
-ROOT,root,1
-RP,resumptive pronoun,1
-RSTR,restrictive,1
-RVZ,relativizer,1
-S,subject,9
-SBJ,subject,11
-SBJV,subjunctive,15
-SEL,selective,1
-SENS,sensive,1
-SFX,suffix,1
-SG,singular,175
-SOC,sociative,2
-,,
-SOF,Second Occurrence Focus,1
-SOFT,soft mutation,1
-son,sonorant,1
-son,sonorant except /ŋ/,1
-SON,sonorant,1
-SOT,sequence of tense,1
-SOV,subject object verb,1
-SP,speaker,2
-SP,Single Pair reading,1
-SP,Soft Palate,1
-SP,Spanish origin,1
-Span,Spanish,1
-SPART,subject partitive,1
-SPC,specific demonstrative,1
-SPC,specificational pseudocleft,1
-SPE,Sound Pattern of English.,1
-SPEC,specific article,1
-SPEC,specifier,1
-SPEC,speculative mood.,1
-SPKR,speaker,1
-SPL,superlative,1
-SPP,suppositive,1
-SPR,Self-Paced Reading,1
-SPR,spread glottis,1
-SPRL,superlative,3
-SPVT,Sentence-Picture Verification Task,1
-SR,switch-reference,1
-SRC,subject relative clause,4
-SRC,source,1
-SRV,Syllabic R-Vocalization,1
-SS,same subject,2
-SS,shuushi ‘conclusive’,1
-SS,Sonorant Syllabification,1
-SS,status sufix,1
-SS,STRONG START,1
-SSH,Shallow Structure Hypothesis,1
-SSL,Swedish Sign Language,2
-SSlav,South Slavonic,1
-SSO,Scope Shifting Operations.,1
-SSP,Sonority Sequencing Principle,1
-SSP,speech style particle,1
-SSTH,Semantic-Script Theory of Humor,1
-ST,semitone,1
-ST,strong ending,1
-STAT,stative,4
-STG,Superior Temporal Gyrus,1
-Sth,Something,1
-STR,strong (adjectival inflection),1
-STRID,strident,1
-STRONG,strong declension class,1
-SU,subject,2
-Su,subject,1
-SUB,subordinator,2
-SUBJ,subjunctive,17
-SUBJ,subject,6
-SUBJ,subjunctive.,2
-subj,subject,1
-Subj,Subject,1
-SUBJ,head of SUBJP,1
-SUBJ,subject quantifier phrase,1
-SUBJ,subject.,1
-SUBJ,subjunctive mood,1
-SUBJM,subjunctive marker. For the Kichaga examples,1
-SUBL,sublative,1
-SUF,nominal inflectional suffix,1
-SUF,suffix,1
-SUFF,suffix,1
-SUP,superlative,3
-SUP,supine,2
-SUP,superessive,1
-SUP,superlative.,1
-SUP,supersessive,1
-SUP,supine (aka ma-infinitive).,1
-SUPER,superlative degree,1
-SUPERL,superlative,1
-SUPERLP,superlative partitives,1
-SURF,Surface Scope,1
-SVAdv(N)/SNegVAdvO,subject-negation-verb-adverb-object order,1
-SVAdvO/SVAdv(Y),affirmative subject-verb-adverb-object order,1
-SVGA,Super Video Graphics Array,1
-SVO,subject-verb-object,3
-SVO,subject verb object,1
-SVO,subject-verb-object.,1
-Swiss-ALM,the variant of speakers of Alemannic living in Switzerland,1
-SWP,Stress-to-Weight Principle,1
-Syll,Syllabification,1
-SYLL,syllabic,1
-T,tense,3
-T,Tense,3
-t,semantic type of truth values.,1
-T,coronal consonant,1
-T,theme- or patient-like internal argument of a ditransitive verb.,1
-T,Theme-like argument,1
-T(P),Tense (Phrase),1
-TA,transitive animate,2
-TA,tense/aspect,1
-TA,transitive verb with animate object,1
-TAG,Tree-Adjoining Grammar,1
-TAK,Taaltoets Alle Kinderen,1
-TAM,tense,1
-TAM,Tense-Aspect-Mood,1
-TAM,tense/aspect/mood marker,1
-TAM,tense/aspect/mood.Subscript numbers,1
-TAM=tense/aspect/modal particle,NULL,1
-TC,Tongue Curl,1
-TCGB,Test di Comprensione Grammaticale per Bambini,1
-TD,Typical Development,1
-TD,typically developing,1
-te,event time,1
-TE,Echo Time,1
-TENSE,tense,1
-TERM,terminative,1
-TF,truncated form,1
-TG,Tongue Groove,1
-Th,theme,1
-TH,thematic wa (topic/ground-marker),1
-TH,theme marker,1
-TH,theme vowel,1
-th′,theme relation,1
-THC,Thematic Hierarchy Condition,1
-The abbreviations used in this article are as follows: ACC,accusative,1
-the following abbreviations are used for glossing: ACC,accusative,1
-The following abbreviations are used in this article:1,1st person,1
-The following abbreviations are used: CDS,child-directed speech,1
-The following abbreviations are used: NP,noun phrase,1
-TI,Inversion Time,1
-TI,transitive inanimate,1
-tİd,Turkish Sign Language.,1
-TİD,Turkish Sign Language (Türk İşaret Dili),1
-TM,tense–mood.,1
-TMA,Tense,1
-TMC,tough-movement construction,1
-TODPST,today past tense,1
-ToM,theory of mind,1
-TOP,topic,20
-TOP,topic marker,7
-TOP,topic.,7
-top,topic,1
-Top,topic,1
-Top,Topic,1
-TOP,Topic,1
-TOP,topic ko,1
-TOP,topic marker.,1
-TopP,topic phrase,1
-TopP,Topic Phrase,1
-TP,Tense Phrase,3
-TP,tense phrase,1
-TP,Tense phrase,1
-TP,Tense Phrase.,1
-TP,today past tense,1
-TR,transitive,7
-tr,transitive,1
-TR,Repetition Time,1
-TR,Tongue Root,1
-TR,transitive verbalizer,1
-TR,transitive.,1
-TrAlt,transitivity alternation.,1
-TRANS,transitive,3
-TRANS,transformative,1
-TRANS,transitivity marker,1
-TRANS,transitivizer,1
-TRANSL,translative,1
-TRL,translative case,1
-TROG,Test for Reception of Grammar,1
-TROG-2,Test for Reception of Grammar – Version 2,1
-TRZ,transitivizer,1
-ts,speech time,1
-TS,thematic suffix,1
-TS,topic shift,1
-TS,truncated stem,1
-TSA,Thematic Structure Agreement,1
-TSit,Time of Situation,1
-TT,Tongue Thrust,1
-TT,Topic Time,1
-TTR,Type Theory with Records,1
-TV,transitive,1
-TV,transitive verb suffix.,1
-TV,transitive verb. Ch’,1
-TVJT,Truth Value Judgment Task,1
-two consecutive identical vowels,long vowel,1
-ty,[ţ],1
-U,utterance,2
-U,The Mann-Whitney test statistic,1
-U,Universal,1
-U,unvalued,1
-U-AUGM,unit-augmented,1
-UCLA,University of California Los Angeles,1
-uD,uninterpretable structure building feature that introduces an argument,1
-UD,Universal Dependencies,1
-UE,upward entailing,1
-UEN,Urban East Norwegian,1
-UG,Universal Grammar,2
-UK,United Kingdom,1
-UNACC,unaccusative,1
-UNERG,unergative,1
-UNM,unmarked case,1
-UNW,unwitnessed,1
-UO,underlying-output,1
-UR,underlying representation,2
-URCs,Unexpected Reflexivization Contrasts,1
-UT,Time of Utterance,1
-UT,utterance time,1
-UTAH,Uniformity of Theta Assignment Hypothesis,1
-uφ,uninterpretable phi-features,1
-V,verb,11
-V,vowel,4
-V,Vowel,2
-v,little v,1
-v,vertical.,1
-V,little-v,1
-V,Verb,1
-V,vowel.,1
-v(P),Little verb (Phrase),1
-V(P),verb (phrase),1
-V(P),Verb (Phrase),1
-V= verbal predicate,NULL,1
-V1,verb-first word order,1
-V2,verb-second word order,1
-VA,typically developing vocabulary control,1
-VA,verbal agreement,1
-VA,Visperterminen Alemannic,1
-VA,Vorarlberg,1
-VA/INF,Finnish VA-infinitival (a propositional infinitival complement).,1
-VAL,valency.,1
-VAL,valued.,1
-VBZ,verbalizer,1
-VC,voiced,1
-VCDOBS,voiced obstruents,1
-VCLESS,voiceless,1
-vExtP,verbal extended projections.,1
-VF,verum focus,1
-VI,Vocabulary Item,1
-VIA,vialis,1
-VIR,virile,2
-VIR,verb identity requirement,1
-VIS,visible,2
-VM,verb modifier.,1
-VM,verbal modifier,1
-VN,verbal noun.,1
-VN,verbal noun. In the Chichewa and Kuria examples,1
-VO,verb-object,2
-VOC,vocative,3
-VOC,accusative,1
-VoiceP,voice phrase,1
-VOL,volitional,1
-VOT,Voice Onset Time,2
-VP,verb phrase,9
-VP,Verb Phrase,4
-VP,verbal phrase,3
-VP,verb phrase.,2
-vP,little v Phrase,1
-vP,little verbal phrase,1
-VP,light Verb Phrase,1
-VP,little-v phrase,1
-VP,Verb phrase,1
-VP,Verb phrase.,1
-VP,verbal phrase.,1
-VP-ellipsis,verb phrase ellipsis,1
-VP/vP,verb phrase,1
-VP= Verb Phrase,NULL,1
-VPE,verb phrase ellipsis,2
-VPE,Verb Phrase Ellipsis,1
-VPE,Verb-Phrase Ellipsis,1
-VPE,VP Ellipsis.,1
-VS,varying subject.,1
-VSO,verb-subject-object,1
-VSO,verb-subject-object (word order). Moreover,1
-VSVPE,verb-stranding verb phrase ellipsis,1
-w,phonological word.,1
-w,Weber fraction.,1
-WALS,The World Atlas of Language Structures.,1
-WCO,weak cross-over,1
-WEAK,weak declension class,1
-WGmc,West Germanic,1
-WGmc,West Germanic.,1
-Wh,interrogative pronoun,1
-WH,question particle,1
-WH,the kind of interrogative features contained in question-words,1
-WH,wh agreement,1
-WH,WH word,1
-WH,wh-feature,1
-WhQP,Wh-Quantifier Phrase,1
-WK,weak ending,1
-WK,weak.,1
-WM,working memory,1
-WM,Working memory,1
-WSlav,West Slavonic,1
-WWI,the with or without (connective) issue.,1
-x,[∫],1
-X,open slot,1
-X,segmental timing slot,1
-X-Y= signs which require two or more words in the English glosses,NULL,1
-xnP,extended nominal projection.,1
-XP,maximal projection,1
-y,[j],1
-Y,affirmative clause.,1
-y.o.,years old.,1
-Yid.,Yiddish,1
-YNQ,yes-no question.,1
-YNQ,Yes-no question.,1
-YNQ,yes/no question particle,1
-YSL,Yolgnu Sign Language,1
-z,z-value. Moreover,1
-γ,gender,1
-μ,mora,1
-σ,syllable,2
-φ,phi feature(s),1
-ω,prosodic word,2
+gloss,definition,source,weight,n
+1,first person,Leipzig Glossing Rules,1,60
+2,second person,Leipzig Glossing Rules,1,52
+3,third person,Leipzig Glossing Rules,1,68
+&,coordination marker,lingglosses,1,1
+√,lexical root,lingglosses,1,1
+1DU,first dual,lingglosses,1,1
+1O,first person object,lingglosses,1,1
+1OBJ,first person object,lingglosses,1,1
+1PLO,first person plural object,lingglosses,1,1
+1PLOBJ,first person plural object,lingglosses,1,1
+1PLS,first person plural subject,lingglosses,1,1
+1PLSUBJ,first person plural subject,lingglosses,1,1
+1PROX,first person proximate (close to speaker),lingglosses,1,1
+1S,first person subject,lingglosses,1,1
+1SG,first person singular,lingglosses,1,2
+1SGO,first person singular object,lingglosses,1,1
+1SGOBJ,first person singular object,lingglosses,1,1
+1SGS,first person singular subject,lingglosses,1,1
+1SGSUBJ,first person singular subject,lingglosses,1,1
+1SUBJ,first person subject,lingglosses,1,1
+2DU,second dual,lingglosses,1,1
+2PROX,second person proximate (close to hearer),lingglosses,1,1
+2SG,second person singular,lingglosses,1,1
+2SGO,second person singular subject,lingglosses,1,1
+2SGOBJ,second person singular subject,lingglosses,1,1
+2SGS,second person singular object,lingglosses,1,1
+2SGSUBJ,second person singular object,lingglosses,1,1
+3DU,third dual,lingglosses,1,1
+3F,third person feminine,lingglosses,1,1
+3M,third person masculine,lingglosses,1,1
+3N,third person neutral,lingglosses,1,1
+3O,third person subject agreement,lingglosses,1,1
+3OBJ,third person object agreement,lingglosses,1,1
+3PL,third person plural,lingglosses,1,4
+3S,third person subject agreement,lingglosses,1,1
+3SG,third person singular,lingglosses,1,1
+3SG,third person singular,lingglosses,1,7
+3SUBJ,third person subject agreement,lingglosses,1,1
+A,agent-like argument of canonical transitive verb,Leipzig Glossing Rules,1,3
+ABL,ablative,Leipzig Glossing Rules,1,14
+ABS,absolutive,Leipzig Glossing Rules,1,26
+ABSEN,absentive,lingglosses,1,1
+ABSL,absolute case,lingglosses,1,1
+ABST,abstractivizing,lingglosses,1,1
+ACC,accusative,Leipzig Glossing Rules,1,151
+ACD,antecedent contained deletion,lingglosses,1,2
+ACT,active,lingglosses,1,3
+AD,addressee,lingglosses,1,1
+AD,adessive,lingglosses,0,1
+ADD,additive,lingglosses,1,3
+ADDR,addressee,lingglosses,1,1
+ADE,adessive,lingglosses,1,1
+ADJ,adjective,Leipzig Glossing Rules,1,10
+ADJ,adjunct,lingglosses,0,1
+ADJ,adjectiviser,lingglosses,0,1
+ADN,adnominal,lingglosses,1,3
+ADV,adverb,Leipzig Glossing Rules,1,5
+ADV,adverbial,Leipzig Glossing Rules,0,4
+ADV,adverbializer,lingglosses,0,1
+ADVER,adversative,lingglosses,1,1
+AE,argument ellipsis,lingglosses,1,1
+AF,agent focus,lingglosses,1,3
+AFF,affirmative,lingglosses,0,3
+AFF,affix,lingglosses,1,1
+AG,agentive,lingglosses,1,2
+AG,agent,lingglosses,0,1
+AGR,agreement,Leipzig Glossing Rules,1,10
+AGT,agent,lingglosses,0,1
+AGT,agentive,lingglosses,1,1
+AI,adversity impersonal,lingglosses,0,1
+AI,intransitive animate,lingglosses,1,1
+AL,alienable,lingglosses,1,2
+ALIEN,alienable,lingglosses,1,2
+ALL,allative,Leipzig Glossing Rules,1,4
+ALL,allocative,lingglosses,0,1
+ALL,allomorph,lingglosses,0,1
+ALLOC,allocutive,lingglosses,1,1
+ALT,alternative,lingglosses,1,1
+AN,animate,lingglosses,1,2
+ANAPH,anaphor,lingglosses,1,2
+ANI,animate,lingglosses,1,1
+ANIM,animate,lingglosses,1,1
+ANOVA,analysis of variance,lingglosses,1,2
+ANT,anterior,lingglosses,1,1
+ANTIP,antipassive,Leipzig Glossing Rules,1,0
+ANZ,adnominalizer,lingglosses,1,1
+AOR,aorist,lingglosses,1,1
+AP,antipassive,lingglosses,1,3
+AP,applicative,lingglosses,0,1
+APASS,antipassive,lingglosses,1,1
+APL,apudlative,lingglosses,1,1
+APPL,applicative,Leipzig Glossing Rules,1,10
+APUD,location near,lingglosses,1,1
+ARG,argument,lingglosses,1,1
+ART,article,Leipzig Glossing Rules,1,8
+ASP,aspect,lingglosses,1,13
+ASS,assertive,lingglosses,1,1
+ATR,attributive,lingglosses,1,1
+ATTR,attributive,lingglosses,1,4
+AUG,augment,lingglosses,1,3
+AUX,auxiliary,Leipzig Glossing Rules,1,31
+AV,actor voice,lingglosses,1,1
+AV,agent voice,lingglosses,1,1
+AVS,adversative,lingglosses,1,1
+AVZ,adverbalizer,lingglosses,1,1
+BEN,benefactive,Leipzig Glossing Rules,1,4
+BN,Bare Numeral,lingglosses,1,1
+CAUS,causative,Leipzig Glossing Rules,1,23
+CCNJ,clausal conjunction,lingglosses,1,1
+CF,contrastive focus,lingglosses,1,3
+CINT,interrogative complementizer,lingglosses,1,1
+CIRC,circumstantial modal,lingglosses,1,1
+CIRCG,cirumgressive,lingglosses,1,1
+CISL,cislocative,lingglosses,1,1
+CJ,conjoint,lingglosses,1,1
+CL,clitic,lingglosses,1,36
+CL,classifier,lingglosses,1,20
+CLF,classifier,Leipzig Glossing Rules,1,9
+CLS,classifier,lingglosses,1,1
+CLTC,clitic,lingglosses,1,1
+CM,class marker,lingglosses,1,1
+CMP,comparative,lingglosses,1,1
+CMPR,comparative,lingglosses,1,3
+CNJ,conjunction,lingglosses,1,2
+CNTR,contrastive,lingglosses,1,1
+COLL,collective,lingglosses,1,2
+COM,comitative,Leipzig Glossing Rules,1,7
+COM,comparative,lingglosses,1,1
+COMIT,comitative,lingglosses,1,1
+COMP,complementizer,Leipzig Glossing Rules,1,28
+COMP,comparative,lingglosses,1,6
+COMPL,completive,Leipzig Glossing Rules,1,3
+CON,conditional,lingglosses,1,1
+COND,conditional,Leipzig Glossing Rules,1,20
+CONJ,conjunction,lingglosses,1,9
+CONT,continuative,lingglosses,1,2
+CONT,contrastive focus element,lingglosses,1,2
+CONTR,contrastive,lingglosses,1,1
+CONV,converb,lingglosses,1,1
+COP,copula,Leipzig Glossing Rules,1,35
+CP,completive,lingglosses,1,1
+CPL,complementizer,lingglosses,1,1
+CT,contrastive topic,lingglosses,1,4
+CTR,contrastive topic,lingglosses,1,1
+CV,converb,lingglosses,1,1
+CVB,converb,Leipzig Glossing Rules,1,5
+D,determiner,lingglosses,1,3
+D,definiteness,lingglosses,1,1
+DAT,dative,Leipzig Glossing Rules,1,117
+DEB,debitive,lingglosses,1,1
+DEC,declarative,Leipzig Glossing Rules,1,2
+DECL,declarative,lingglosses,1,11
+DEF,definite,Leipzig Glossing Rules,1,35
+DEL,delative,lingglosses,1,1
+DEM,demonstrative,Leipzig Glossing Rules,1,31
+DEO,deontic,lingglosses,1,1
+DEONT,deontic,lingglosses,1,1
+DES,desiderative,lingglosses,1,1
+DEST,destinative,lingglosses,1,1
+DET,determiner,Leipzig Glossing Rules,1,26
+DIM,diminutive,lingglosses,1,8
+DIMIN,diminutive,lingglosses,1,1
+DIR,direct,lingglosses,1,4
+DIR,directional,lingglosses,1,4
+DISC,discontinuative,lingglosses,1,1
+DIST,distal,Leipzig Glossing Rules,1,3
+DISTR,distributive,Leipzig Glossing Rules,1,2
+DL,dual,lingglosses,1,1
+DO,direct object,lingglosses,1,6
+DOM,differential object marking,lingglosses,1,12
+DPRO,demonstrative pronoun,lingglosses,1,1
+DSM,differential subject marking,lingglosses,1,1
+DST,distal,lingglosses,1,1
+DU,dual,Leipzig Glossing Rules,1,7
+DUB,dubitative,lingglosses,1,1
+DUP,reduplication,lingglosses,1,1
+DUR,durative,Leipzig Glossing Rules,1,4
+ECM,exceptional case marking,lingglosses,1,1
+ELA,elative,lingglosses,1,1
+EMP,emphatic,lingglosses,1,1
+EMPH,emphatic,lingglosses,1,5
+ENCL,enclitic,lingglosses,1,1
+EP,epenthetic,lingglosses,1,1
+EPI,epistemic,lingglosses,1,1
+EPIST,epistemic,lingglosses,1,1
+EPTH,epenthentic,lingglosses,1,1
+ERG,ergative,Leipzig Glossing Rules,1,33
+EV,epenthetic vowel,lingglosses,1,1
+EVD,evidential,lingglosses,1,1
+EVI,evidential,lingglosses,1,1
+EVID,evidential,lingglosses,1,2
+EVID,indirect evidentiality,lingglosses,1,1
+EXC,exclamative,lingglosses,1,1
+EXCL,exclusive,Leipzig Glossing Rules,1,9
+EXCL,exclamation,lingglosses,1,1
+EXH,exhaustifier,lingglosses,1,1
+EXHORT,Exhortative,lingglosses,1,1
+EXIS,existential,lingglosses,1,1
+EXIST,existential,lingglosses,1,1
+EXP,experiential,lingglosses,1,1
+EXPL,expletive,lingglosses,1,3
+EXS,existential,lingglosses,1,1
+F,feminine,Leipzig Glossing Rules,1,76
+FACT,factive,lingglosses,1,1
+FEM,feminine,lingglosses,1,24
+FIN,finite,lingglosses,1,2
+FNP,finite non-past,lingglosses,1,1
+FOC,focus,Leipzig Glossing Rules,1,15
+FUT,future,Leipzig Glossing Rules,1,55
+GEN,genitive,Leipzig Glossing Rules,1,102
+GER,gerund,lingglosses,1,8
+GNR,generic,lingglosses,1,1
+GOAL,goal,lingglosses,1,1
+GoN,Genitive of negation,lingglosses,1,1
+GRND,gerund,lingglosses,1,1
+HAB,habitual,lingglosses,1,11
+HML,humilitive,lingglosses,1,1
+HON,honorific,lingglosses,1,10
+HORT,hortative,lingglosses,1,1
+HORZ,horizontally,lingglosses,1,1
+I,class I,lingglosses,1,1
+IC,inflection class,lingglosses,1,1
+IDEO,ideophone,lingglosses,1,1
+II,class II,lingglosses,1,1
+III,class III,lingglosses,1,1
+ILL,illative,lingglosses,1,1
+ILLA,illative,lingglosses,1,1
+IMM,Immediate,lingglosses,1,1
+IMP,imperative,Leipzig Glossing Rules,1,20
+IMP,imperfect,lingglosses,1,2
+IMP,imperfective,lingglosses,1,1
+IMP,impersonal,lingglosses,1,1
+IMPERF,imperfective,lingglosses,1,3
+IMPF,imperfective,lingglosses,1,9
+IMPF,imperfect,lingglosses,1,2
+IMPRF,imperfective,lingglosses,1,1
+IMPV,imperfective,lingglosses,1,1
+IN,inessive,lingglosses,1,1
+INAL,inalienable,lingglosses,1,2
+INAN,inanimate,lingglosses,1,1
+INANI,inanimate,lingglosses,1,1
+INANIM,inanimate,lingglosses,1,1
+INC,incompletive,lingglosses,1,1
+INCEPT,inceptive,lingglosses,1,1
+INCH,inchoative,lingglosses,1,5
+INCL,inclusive,Leipzig Glossing Rules,1,10
+INCPL,incompletive,lingglosses,1,1
+IND,indicative,Leipzig Glossing Rules,1,17
+INDEF,indefinite,Leipzig Glossing Rules,1,5
+INDF,indefinite,lingglosses,1,11
+INE,inessive,lingglosses,1,3
+INESS,inessive,lingglosses,1,5
+INF,infinitive,Leipzig Glossing Rules,1,63
+INF,infinite,lingglosses,1,1
+INS,instrumental,Leipzig Glossing Rules,1,16
+INST,instrumental,lingglosses,1,5
+INSTR,instrumental,lingglosses,1,10
+INT,interrogative,lingglosses,1,2
+INTENS,intensifier,lingglosses,1,2
+INTERROG,interrogative,lingglosses,1,1
+INTJ,interjection,lingglosses,1,1
+INTR,intransitive,Leipzig Glossing Rules,1,6
+INV,inverse,lingglosses,1,1
+IO,indirect object,lingglosses,1,5
+IPF,imperfective,lingglosses,1,2
+IPFV,imperfective,Leipzig Glossing Rules,1,26
+IRLS,irrealis,lingglosses,1,1
+IRR,irrealis,Leipzig Glossing Rules,1,8
+ITER,iterative,lingglosses,1,1
+ITR,intransitive,lingglosses,1,1
+IV,class IV,lingglosses,1,1
+IX,class IX,lingglosses,1,1
+LAT,lative,lingglosses,1,3
+LIM,limitative,lingglosses,1,1
+LINK,linker,lingglosses,1,1
+LK,linker,lingglosses,1,1
+LNK,linker,lingglosses,1,1
+LOAN,loanword,lingglosses,1,1
+LOC,locative,Leipzig Glossing Rules,1,52
+LOG,logophor,lingglosses,1,1
+M,masculine,Leipzig Glossing Rules,1,82
+MASC,masculine,lingglosses,1,18
+MED,medial,lingglosses,1,1
+MED,mediative,lingglosses,1,1
+MID,middle,lingglosses,1,1
+MIN,minimal,lingglosses,1,1
+MIR,mirative,lingglosses,1,1
+MIXED,mixed declension class,lingglosses,1,1
+MOD,modal,lingglosses,1,4
+MP,modal particle,lingglosses,1,3
+MSD,masdar,lingglosses,1,1
+N,neuter,Leipzig Glossing Rules,1,33
+NACT,non-active,lingglosses,1,4
+NC,noun class,lingglosses,1,1
+NEG,negation,Leipzig Glossing Rules,1,76
+NEU,neuter,lingglosses,1,2
+NEUT,neuter,lingglosses,1,7
+NF,non-finite,lingglosses,1,1
+NFIN,non-finite,lingglosses,1,1
+NFUT,non-future,lingglosses,1,1
+NHON,non-honorific,lingglosses,1,1
+NL,nominalizer,lingglosses,1,2
+NML,nominalizer,lingglosses,1,2
+NMLZ,nominalizer,Leipzig Glossing Rules,1,18
+NMLZ,nominalization,Leipzig Glossing Rules,1,1
+NMM,non-manual marker,lingglosses,1,1
+NOM,nominative,Leipzig Glossing Rules,1,131
+NONAGR,nonagreeing,lingglosses,1,1
+NONP,non-past,lingglosses,1,1
+NONREFL,non-reflexive,lingglosses,1,1
+NONSUBJ,non-subject,lingglosses,1,1
+NONVOL,non-volitional,lingglosses,1,1
+NOT.VIS,not visible,lingglosses,1,1
+NPI,negative polarity item,lingglosses,1,6
+NPST,non-past,lingglosses,1,4
+NS,null subject,lingglosses,1,1
+NSBJ,non-subject,lingglosses,1,1
+NSG,non-singular,lingglosses,1,1
+NUM,numeral,lingglosses,1,1
+O,object,lingglosses,1,7
+OBJ,object,Leipzig Glossing Rules,1,18
+OBL,oblique,Leipzig Glossing Rules,1,17
+OBV,obviative,lingglosses,1,2
+OPT,optative,lingglosses,1,2
+P,patient-like argument of a canonical transitive verb,Leipzig Glossing Rules,1,3
+PA,paucal,lingglosses,1,1
+PAR,partitive,lingglosses,1,2
+PAR,particle,lingglosses,1,1
+PART,partitive,lingglosses,1,10
+PART,participle,lingglosses,1,6
+PART,particle,lingglosses,1,5
+PASS,passive,Leipzig Glossing Rules,1,24
+PAST,past tense,lingglosses,1,16
+PCPT,participle,lingglosses,1,1
+PERF,perfective,lingglosses,1,7
+PERF,perfect,lingglosses,1,3
+PERS,person,lingglosses,1,2
+PF,perfective,lingglosses,1,3
+PFV,perfective,Leipzig Glossing Rules,1,29
+PFX,prefix,lingglosses,1,1
+PL,plural,Leipzig Glossing Rules,1,194
+PLEX,plural exclusive,lingglosses,1,1
+PM,possessum,lingglosses,1,1
+PN,proper name,lingglosses,1,2
+POS,positive,lingglosses,1,4
+POSS,possessive,Leipzig Glossing Rules,1,50
+POSS,possessor,lingglosses,1,4
+PPRT,past participle,lingglosses,1,1
+PQ,polar question,lingglosses,1,1
+PR,possessor,lingglosses,1,1
+PRE,prefix,lingglosses,1,2
+PRED,predicative,Leipzig Glossing Rules,1,3
+PREP,preposition,lingglosses,1,11
+PRES,present,lingglosses,1,23
+PRET,preterite,lingglosses,1,2
+PREV,preverb,lingglosses,1,1
+PRF,perfect,Leipzig Glossing Rules,1,13
+PRF,perfective,lingglosses,1,3
+PRFX,prefix,lingglosses,1,1
+PRG,progressive,lingglosses,1,1
+PRN,pronominalizer,lingglosses,1,1
+PRN,pronoun,lingglosses,1,1
+PROG,progressive,Leipzig Glossing Rules,1,24
+PROGR,progressive,lingglosses,1,1
+PROH,prohibitive,Leipzig Glossing Rules,1,1
+PROJ,projective,lingglosses,1,1
+PRON,pronoun,lingglosses,1,1
+PROS,prospective,lingglosses,1,1
+PROSP,prospective,lingglosses,1,2
+PROX,proximal,Leipzig Glossing Rules,1,4
+PRS,present,Leipzig Glossing Rules,1,50
+PRT,particle,lingglosses,1,17
+PRTC,particle,lingglosses,1,1
+PRTCP,participle,lingglosses,1,1
+PRV,perfective,lingglosses,1,2
+PST,past,Leipzig Glossing Rules,1,73
+PSTPERF,past perfect,lingglosses,1,1
+PT,presentative,lingglosses,1,1
+PTC,particle,lingglosses,1,2
+PTCP,participle,Leipzig Glossing Rules,1,25
+PURP,purposive,Leipzig Glossing Rules,1,3
+PV,patient voice,lingglosses,1,1
+PVF,perfective,lingglosses,1,1
+Q,question,Leipzig Glossing Rules,1,6
+QUAL,qualifier,lingglosses,1,1
+QUOT,quotative,Leipzig Glossing Rules,1,2
+R,realis,lingglosses,1,1
+RC,relative clause,lingglosses,1,6
+RCP,reciprocal,lingglosses,1,1
+RDP,reduplication,lingglosses,1,1
+REAL,realis,lingglosses,1,1
+RECIP,reciprocal,lingglosses,1,1
+RECP,reciprocal,Leipzig Glossing Rules,1,2
+RED,reduplication,lingglosses,1,2
+REDUP,reduplication,lingglosses,1,1
+REF,referential,lingglosses,1,1
+REFL,reflexive,Leipzig Glossing Rules,1,45
+REG,regressive,lingglosses,1,1
+REL,relative,Leipzig Glossing Rules,1,9
+REL,relativizer,lingglosses,1,6
+REM,remote,lingglosses,1,2
+REP,reportative,lingglosses,1,1
+RES,resultative,Leipzig Glossing Rules,1,1
+RESP,responsive,lingglosses,1,1
+RESTR,restrictive,lingglosses,1,2
+RFL,reflexive,lingglosses,1,3
+RLS,realis,lingglosses,1,1
+ROOT,root,lingglosses,1,1
+RP,resumptive pronoun,lingglosses,1,1
+RSTR,restrictive,lingglosses,1,1
+RVZ,relativizer,lingglosses,1,1
+S,single argument of canonical intransitive verb,Leipzig Glossing Rules,1,9
+SBJ,subject,Leipzig Glossing Rules,1,11
+SBJV,subjunctive,lingglosses,1,15
+SEL,selective,lingglosses,1,1
+SENS,sensive,lingglosses,1,1
+SFX,suffix,lingglosses,1,1
+SG,singular,Leipzig Glossing Rules,1,175
+SOC,sociative,lingglosses,1,2
+SP,speaker,lingglosses,1,2
+SPART,subject partitive,lingglosses,1,1
+SPL,superlative,lingglosses,1,1
+SPP,suppositive,lingglosses,1,1
+SPRL,superlative,lingglosses,1,3
+SR,switch-reference,lingglosses,1,1
+SRC,subject relative clause,lingglosses,1,4
+SRC,source,lingglosses,1,1
+SS,same subject,lingglosses,1,2
+STAT,stative,lingglosses,1,4
+SUB,subordinator,lingglosses,1,2
+SUBJ,subjunctive,lingglosses,1,17
+SUBJ,subject,lingglosses,1,6
+SUBL,sublative,lingglosses,1,1
+SUF,suffix,lingglosses,1,1
+SUFF,suffix,lingglosses,1,1
+SUP,superlative,lingglosses,1,3
+SUP,supine,lingglosses,1,2
+SUP,superessive,lingglosses,1,1
+SUP,superlative,lingglosses,1,1
+SUP,supersessive,lingglosses,1,1
+SUP,supine,lingglosses,1,1
+SUPER,superlative,lingglosses,1,1
+SUPERL,superlative,lingglosses,1,1
+T,tense,lingglosses,1,3
+TAM,tense/aspect/mood marker,lingglosses,1,1
+TERM,terminative,lingglosses,1,1
+TH,theme,lingglosses,1,1
+TOP,topic,Leipzig Glossing Rules,1,20
+TR,transitive,Leipzig Glossing Rules,1,7
+TRANS,transitive,lingglosses,1,3
+TRANS,transformative,lingglosses,1,1
+TRANSL,translative,lingglosses,1,1
+TRZ,transitivizer,lingglosses,1,1
+TS,topic shift,lingglosses,1,1
+UNACC,unaccusative,lingglosses,1,1
+UNERG,unergative,lingglosses,1,1
+UNM,unmarked case,lingglosses,1,1
+UNW,unwitnessed,lingglosses,1,1
+V,class V,lingglosses,1,1
+V,verb,lingglosses,1,11
+VBZ,verbalizer,lingglosses,1,1
+VI,class VI,lingglosses,1,1
+VIA,vialis,lingglosses,1,1
+VII,class VII,lingglosses,1,1
+VIII,class VIII,lingglosses,1,1
+VIR,virile,lingglosses,1,2
+VIS,visible,lingglosses,1,2
+VM,verbal modifier,lingglosses,1,1
+VN,verbal noun,lingglosses,1,1
+VOC,vocative,Leipzig Glossing Rules,1,3
+VOL,volitional,lingglosses,1,1
+WH,WH word,lingglosses,1,1
+X,class X,lingglosses,1,1
+XI,class XI,lingglosses,1,1
+XII,class XII,lingglosses,1,1
+XIII,class XIII,lingglosses,1,1
+XIV,class XIV,lingglosses,1,1
+XIX,class XIX,lingglosses,1,1
+XV,class XV,lingglosses,1,1
+XVI,class XVI,lingglosses,1,1
+XVII,class XVII,lingglosses,1,1
+XVIII,class XVIII,lingglosses,1,1
+XX,class XX,lingglosses,1,1
+YNQ,yes-no question,lingglosses,1,1
