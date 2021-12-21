@@ -1,9 +1,10 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE
-codemeta.json
+^codemeta.json
 ^README.md
 ^docs/.*
 ^_pkgdown\.yml$
 ^pkgdown$
 ^codemeta\.json$
+^database_creation*

@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-database_creation*
 inst/doc
 lingglosses.Rproj
 rsconnect
