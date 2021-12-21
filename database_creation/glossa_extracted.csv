@@ -290,1038 +290,155 @@ IPF,imperfective,2
 IPFV,imperfective,26
 IRLS,irrealis,1
 IRR,irrealis,8
-,,
-,,
-,,
-,,
-,,
-,,
-,,
 ITER,iterative,1
 ITR,intransitive,1
-ITR,intransitive auxiliary,1
-ITV,intransitive verb suffix,1
-ITV,itive,1
-IV,intransitive verb,1
-IVD,Intrinsic vowel duration,1
-IZ,izen ‘realis’,1
-iφ,interpretable phi-features,1
-ɩ,intonational phrase,1
-j,[h],1
-ǰ,[ʤ],1
-JEUNG/ZOENG,the Cantonese morpheme used in place of ba in ba construction.,1
-JND,Just noticeable difference,1
-JND,just-noticeable-difference,1
-JSL,Japanese Sign Language (日本手話,1
-K,case,1
-K-state,Kimian state,1
-K&R,Kramer & Rawlins (2009),1
-KA,the marker in the ka construction in TSM,1
-kk,Kata Kolok,1
-KK,Kata Kolok,1
-KM,kakari-musubi,1
-KO,‘ko’,1
-KO,interrogative/focus ko,1
-KP,case phrase,1
-KQSL,Kfar Qasem Sign Language,1
-ksl,Kenyan Sign Language,1
-KSL,Kuwaiti Sign Language,1
-L,low tone,2
-L,form with a long vowel,1
-L-perspectivization,perspectivization in language,1
-L%,low right boundary tone,1
-L1,first language,3
-L1,First language,2
-L2,second language,3
-L2,Second language,3
-LA,Labeling Algorithm,1
-LA,Long Adjective,1
-LA,Low Attachment,1
-LAB,labial,2
-LABDEN,labiodental,1
-LAN,left anterior negativity,1
-LAN,Left Anterior Negativity,1
 LAT,lative,3
-LAT,lateral,1
-LB,left boundary,1
-LC,left-complete count,1
-LCA,Last Conjunct Agreement,1
-LCD,liquid crystal display,1
-LCP,Lower Copy Pronunciation,1
-LCS,Lexical-Conceptual Structure,1
-LD,left-dislocated,1
-LDA,Latent Dirichlet Allocation,1
-LDA,Linear Discriminant Analysis,1
-LER,left-edge resumptive,1
-LF,Logical Form,7
-LF,logical form,2
-LFA,logistic factor analysis,1
-LFG,Lexical-Functional Grammar,1
-lh,left hand,1
-LI,Low Immersion,1
-Libras,Brazilian Sign Language (Língua de Sinais Brasileira),2
-Libras,Brazilian Sign Language (Lingua de Sinais Brasileira),1
-LIFG,left Inferior Frontal Gyrus,1
 LIM,limitative,1
 LINK,linker,1
-LIS,Italian Sign Language,2
-LIS,Italian Sign Language (Lingua dei Segni Italiana),1
-List of A,positive universal,1
-List of abbreviations1,first person,1
-List of abbreviations3,third person,1
-List of AUX,auxiliary,1
-List of BNC,British National Corpus,1
-lit.,literal translation,1
-LIU,Jordanian Sign Language (Lughat al-Ishāra al-Urdunia),1
 LK,linker,1
-LK,linker particle,1
-LME,linear mixed-effects (models),1
-LMTG,left Middle Temporal Gyrus,1
-LN,light noun,1
 LNK,linker,1
-loan,loanword,1
+LOAN,loanword,1
 LOC,locative,52
-LOC,locative case,2
-Loc,Locative,1
-LOC,accusative,1
-LOC,Locative,1
-LOC,locative (to mark Spanish estar ‘be.LOC’,1
-LOC,locative clitic,1
-LOC.VOICE,locative voice,1
 LOG,logophor,1
-LONG,long adjective,1
-LOT,Language of Thought,1
-LOT,lexical operator thesis,1
-LOT,Linear Optimality Theory,1
-LP,late positivity,1
-LPTCP,l-participle,1
-LRT,likelihood ratio test,1
-LS,Logophoric Strategy,1
-LSC,Catalan Sign Language (Llengua de Signes Catalana),2
-LSC,Catalan Sign Language,1
-LSE,Spanish Sign Language (Lengua de Signos Española),1
-LSF,French Sign Language,2
-LSF,French Sign Language (langue des signes française),1
-LSF,French Sign Language (Langue des Signes Française),1
-LSFB,French Belgian Sign Language (Langue des Signes Belge Francophone),1
-LSL,Lybian Sign Language,1
-LSS(G),Linguistic Survey of Scotland (Gaelic),1
-LSTG,left Superior Temporal Gyrus,1
-LV,lengthened vowel,1
-LV,Liquid Vocalization,1
-LV,locative voice,1
-LV,Locative Voice,1
 M,masculine,82
-M,Masculine,4
-m,masculine,2
-M,masculine gender,2
-M,mean,2
-m,mean,1
-M,(stereotypically) masculine,1
-M,marked,1
-M,masculin,1
-M,masculine (in glosses),1
-M,masculine noun class,1
-M (ASC),masculine,1
-M-N,masculine-neuter,1
-M(ASC),masculine gender,1
-M= Masculine,NULL,1
-M1,first spectral moment,1
-MA,Moroccan Arabic,1
-MA/INF,Finnish MA-infinitival,1
-MAP,maximum a posteriori,1
-MAS,masculine,1
 MASC,masculine,18
-masc,masculine,1
-Masc,masculine (in text),1
-MASC,masculine gender,1
-MASS,mass,1
-MaxEnt,Maximum Entropy Grammar,1
-MAXPROP,maximal pronominal partitives,1
-MBA,Muslim Baghdadi Arabic,1
-MC,main clause,1
-MCA,Moroccan Arabic,1
-MCA,multiple correspondence analysis,1
-MCA,Multiple Correspondence Analysis,1
-MCI,Main Clause Infinitival,1
-MCP,Main Clause Phenomena,1
-MCS,Modern Colloquial Sinhala,1
-MCS,Modified Contrastive Specification,1
-MDD,mean dependency distance,1
-Mdn,median,1
-MEAS,measurement,1
 MED,medial,1
 MED,mediative,1
-MEDCOUNTEX,mediative counter-expectational,1
-MEDDECL,mediative declarative,1
-MG,Modern Greek,1
-MHG,Middle High German,2
 MID,middle,1
-MID,Middle morpheme,1
-MID,Minimal Important Difference,1
 MIN,minimal,1
 MIR,mirative,1
-mitadv,adverbial free mit,1
-mitfree,generalized free mit,1
-mitsup,free mit with the superlative,1
 MIXED,mixed declension class,1
-MLA,Mosul Arabic,1
-MLN,Metalinguistic negation,1
-MLS,Modern Literary Sinhala,1
-MN1,metalinguistic negation 1 (upward negation),1
-MN2,metalinguistic negation 2 (presuppositional negation),1
-MNI,Montreal Neurological Institute,1
 MOD,modal,4
-MOD,modal verb,1
-MOD,modalis,1
-ModJ,Modern Japanese,1
-mono,monosyllabic,1
-MOV,movement marker,1
 MP,modal particle,3
-MP,MATCH PHRASE,1
-MP,middle–passive voice,1
-MP,Minimalist Program,1
-MRKR,marker,1
-ms,milliseconds,2
-MS,masculine,1
-MS,Masculine,1
-MSC,masculine,3
-MSD,maṣdar (nominalisation),1
-MTC,movement theory of control,1
-MTG,Middle Temporal Gyrus,1
-MTS,Multitaper Spectra,1
-MTurk,Amazon Mechanical Turk,1
-MUT,mutated nominal,1
-MW,MATCH WORD,1
-MYS,Manyoshu,1
-MZ,mizen ‘irrealis’,1
+MSD,masdar,1
 N,neuter,33
-N,noun,6
-N,Noun,3
-n,noun,2
-n,little n,1
-n,nominal core,1
-n,nominalizing head,1
-N,biased question marker in Shetland,1
-N,Nasal,1
-N,negative clause,1
-N,neuter (in glosses),1
-N,neuter gender,1
-N,neuter noun class,1
-N,neutrum,1
-N,nominal,1
-N,numeration,1
-ñ,[ɲ],1
-N-Agree,agreement with the noun,1
-N.PST,non-past,1
-N(P),noun (phrase),1
-N= Neuter,NULL,1
-N3SG,non-third-singular,1
-N400,negative brain potential 400 ms after onset of critical entity,1
-NA,Missing value,1
-NA,nominal agreement,1
 NACT,non-active,4
-NAR,narrative,1
-nas,nasal,1
-NBD,non-brain-damaged,1
-NBoW,neural bag of words,1
-NC,negative concord,3
-NC,name classifier,1
-NC,Negative Concord,1
-NC,no control,1
 NC,noun class,1
-NCA,null complement anaphora,1
-NCA,Null Complement Anaphora,1
-NCE,neoclassical element,1
-NCS,non construct state,1
-ND,Neighborhood Density,1
-NE,phonetically null nominal element,1
-NECC,necessity,1
 NEG,negation,76
-NEG,negative,16
-NEG,negator,3
-neg,negation,2
-NEG,Negation,2
-NEG,Negative,2
-NEG,negative element,2
-neg,negative,1
-Neg,negation,1
-Neg,negative particle,1
-NEG,Genitive,1
-NEG,negation.,1
-NEG,Negation.,1
-NEG,Negation. An example marked with ‘*’,1
-NEG,negation/negative,1
-NEG,negative clause,1
-NEG,negative marker (ne,1
-NEG,negative proposition,1
-NEG,negative/not,1
-NEG1,Postverbal negation,1
-NEG2,Preverbal negation,1
-NegP,Negative Phrase,1
-NEGP,negation phrase,1
-NEID,North-Eastern Italian Dialect,1
 NEU,neuter,2
 NEUT,neuter,7
-NEUT,neuter gender,2
-Neut,neuter (in text),1
-NEUT,neutrum,1
-nExtP,nominal extended projections,1
-nf,nonfuture,1
-NF,non-final,1
 NF,non-finite,1
-NF,nonfinite,1
 NFIN,non-finite,1
-NFIN,nonfinite,1
-NFS,non-factual stem,1
 NFUT,non-future,1
-NFUT,nonfuture,1
-NFUT,nonfuture tense,1
-ng,[ŋ],1
-NGmc,North Germanic,1
-NGT,Sign Language of the Netherlands,2
-ngt,Sign Language of the Netherlands,1
-NGT,Sign Language of the Netherlands (Nederlandse Gebarentaal),1
-NGT,the Sign Language of the Netherlands (Nederlandse Gebarentaal),1
-NHG,New High German,2
 NHON,non-honorific,1
-NI,reflex of proto-bantu copula *ni,1
-NID,Northern Italian Dialect,1
-NIF,new information focus,1
 NL,nominalizer,2
-NLP,Natural Language Processing,1
 NML,nominalizer,2
-NML,nominal suffix,1
-NML,Nominalizer,1
 NMLZ,nominalizer,18
-NMLZ,nominalization,1
-NMLZ,nominalizer/nominalization,1
 NMM,non-manual marker,1
-NMM,non-manual markers,1
-NMM,non-manual markings,1
-NMNL,nominalizer,1
-NMNLZ,nominalizer,1
-NMP,nominal mapping parameter,1
-NMZ,nominalization,2
-NMZ,nominalized form,1
-NMZ,nominalizer,1
-NMZL,nominalizer,1
-NMZR,nominalizer,1
-NNP,Non-extraction with embedded Noun Phrase,1
-NOC,non-obligatory control,1
-NOC,Non-Obligatory Control,1
 NOM,nominative,131
-NOM,nominative case,13
-NOM,Nominative,11
-nom,nominative,2
-NOM,nominative.,2
-NOM,nominal,1
-NOM,nominalization,1
-NOM,NOMINATIVE,1
-NOM,Nominative case,1
-NOM =nominative,NULL,1
-NOM-ACC,nominative-accusative assigning (verb),1
-NOM-DAT,nominative-dative assigning (verb),1
-NOM.PL,nominative plural,1
-NOM.SG,nominative singular,1
 NONAGR,nonagreeing,1
 NONP,non-past,1
 NONREFL,non-reflexive,1
 NONSUBJ,non-subject,1
-NONVIR,nonvirile,1
-NONVOL,Non-volitional Voice,1
-NORM,non-mobile older rural males,1
+NONVOL,non-volitional,1
 NOT.VIS,not visible,1
-NP,noun phrase,14
-NP,Noun Phrase,5
-NP,Nominal Phrase,2
-NP,Noun phrase,2
-np,noun phrase,1
-nP,little n Phrase,1
-NP,(lexical) nominal phrase,1
-NP,nominal phrase,1
-NP,noun phrases of various sizes,1
-NPAH,noun phrase accessibility hypothesis,1
-NPFV,nonperfective auxiliary,1
 NPI,negative polarity item,6
-NPI,Negative Polarity Item,2
-NPI,negative polarity item.,1
-NPIs,negative polarity items,1
-NPO,negative potential,1
 NPST,non-past,4
-NPST,non-past tense,2
-NPST,near past,1
-NQP,Negative Quantifier Phrase,1
-NS,Japanese Sign Language (Nihon Shuwa),1
 NS,null subject,1
 NSBJ,non-subject,1
 NSG,non-singular,1
-NSL,Nicaraguan Sign Language,1
-NSL,null subject languages,1
-NUM,number,3
-Num,number (feature),1
-Num,numeral,1
-NUM,Number,1
 NUM,numeral,1
-NUM P,Number Phrase,1
-NumP,number phrase,1
-NUMP,numeral phrase,1
-NUN,‘nun’,1
-NVIR,nonvirile,1
-NVP,Non-extraction with embedded Verb Phrase,1
-NWGmc,Northwest Germanic,1
-NX.PST,non-experienced past,1
-NZSL,New Zealand Sign Language,2
 O,object,7
-O,(direct) object,1
-O,negative particular,1
-O,object agreement,1
-O,obstruent,1
-Ö,Övdalian,1
-ø,phonetically null,1
-OB,object,1
 OBJ,object,18
-obj,object,1
-obj,primary object,1
-OBJ,direct object,1
-OBJ,object marker,1
-OBJ,objective,1
-OBJPRO,object pronoun,1
-objθ,secondary object,1
 OBL,oblique,17
-OBL,oblique case,1
-oblθ,oblique,1
-obs,obstruent,1
 OBV,obviative,2
-OBV,obviative third person,1
-OC,obligatory control,2
-OC,Obligatory Control,1
-OCP,Obligatory Contour Principle,3
-OED,Oxford English Dictionary,1
-OFG,Occipital Fusiform Gyrus,1
-OG,object gap,1
-OHG,Old High German,5
-OJ,Old Japanese,2
-ol uses a Spanish-based orthography: ‘,[ʔ],1
-OM,object marker,2
-om,object marker,1
-OM,object agreement marker,1
-ON,Old Norse,1
-OO,output-output,1
-OP,operator,2
-Op,operator,1
-OP,Oral Place,1
-OP,relative operator,1
-OPART,object partitive,1
-OPP,opposition,1
 OPT,optative,2
-OPT,optative mood,2
-OR,Odds Ratio,1
-or.Q,interrogative ‘or’,1
-ORC,object relative clause,4
-OS,object before subject,1
-OS,oblique stem,1
-OS,Old Sinhala,1
-OS,Old Swedish,1
-OSR,Overt Subject Requirement,1
-OSV,object-subject-verb,1
-OT,Optimality Theory,9
-OT-CC,Optimality Theory with Candidate Chains,1
-OUT.OFP,out-of construction,1
-OV,object-verb,2
-OV,object voice,1
-OVS,object-verb-subject,1
 P,patient-like argument of a canonical transitive verb,3
-P,plural,3
-P,preposition,3
-P,person,2
-p,p-value,1
-p,probability,1
-P,(pre/post)-position,1
-P,P argument,1
-P,past,1
-P,patient,1
-P,Patient-like argument,1
-P,phrase,1
-P,plural agreement,1
-P,plural person,1
-P,Predicate,1
-P,Preposition,1
-P,proposition,1
-P,proposition.,1
-P.ACC,the accusative case marker/differential object marker et,1
-P.ADJ,positional adjective,1
-P.ITV,positional intransitive,1
-P.STAT,positional stative predicate,1
-P&B,Partee & Borschev,1
-P2FA,Penn Phonetics Lab Forced Aligner,1
-PA,mais ‘but’,1
-PA,partial agreement,1
 PA,paucal,1
-PAE,Proto Athabaskan-Eyak,1
-PAG,pag,1
-PAH,position of antecedent hypothesis,1
-PAM,person agreement marker,1
-PAR,partitive case,2
+PAR,partitive,2
 PAR,particle,1
-PAR,the -a particle used in casual speech in TSM,1
 PART,partitive,10
 PART,participle,6
 PART,particle,5
-PART,participant,1
-PART,participial,1
-PART,participial (mood),1
-PART,Participle,1
-PART,participle form,1
-PART,Particle,1
-PART,particle ma in Old Babylonian,1
-PART,past participle,1
-PART.ART,partitive article,1
-PAS,Position of Antecedent Strategy,2
-PAS,passive,1
-PAS,past,1
-PAS,Preferred Argument Structure,1
 PASS,passive,24
-PASS,passive voice,1
 PAST,past tense,16
-PAST,past,4
-past,past,1
-PAST,direct past tense,1
-PAST,past temporal marker,1
-PAT,patient,1
-PC,Compound past,1
-PC,partial control,1
-PC,partitive constraint,1
-PCA,Principal Component Analysis,1
-PCC,Person Case Constraint,1
-PCP,Parallel Contrast Principle,1
 PCPT,participle,1
-PD,Personal Dative,1
-PD,Proto Dene,1
-PDA,pronominal determiner analysis,1
-PDE,Present-Day English,1
-PDIST,pluractional distributive,1
-PER,perfective aspect,1
-PER,person,1
 PERF,perfective,7
 PERF,perfect,3
-perf,perfective aspect,2
-perf,perfect,1
-PERF,perfect tense marker,1
-PERF,perfective aspect,1
-PERF,perfective marker,1
-perPr,personal pronoun,1
 PERS,person,2
-PERS,personal particle,1
-PET,positron emission tomography,1
 PF,perfective,3
-PF,phonetic form,2
-PF,Phonetic Form,2
-PF,phonological form,2
-PF,Phonological Form,2
-pf,phonological form,1
-PF,existential preform,1
-PFC,post focus compression,1
 PFV,perfective,29
-PFV,perfective aspect,2
-PFV,imperfective,1
-PFV,Perfective,1
-PFV,perfective.,1
 PFX,prefix,1
-pg,parasitic gap,1
-PG,parasitic gap,1
-PG,Proper Government,1
-PGmc,Proto-Germanic,1
-PIC,Phase Impenetrability Condition,2
-PISL,Providence Island Sign Language,1
 PL,plural,194
-PL,Plural,8
-pl,plural,4
-PL,plural number,2
-pl,plural verbal agreement,1
-PL,‘plural’,1
-PL,(sound) plural,1
-PL,Pair-list reading,1
-PL,plural marker,1
-PL,plural noun,1
-PL,plural subject agreement,1
-PL,plural.,1
-PL= plural,NULL,1
-PL1,basic plural,1
-PL2,suppletive plural,1
-PLC,Pronounce Lower Copy,1
 PLEX,plural exclusive,1
-PLP,plural phrase,1
 PM,possessum,1
-PM,Predicate Modification,1
-PMI,pointwise-mutual information,1
 PN,proper name,2
-PN,proper noun,2
-PN,proper noun connective,1
-PNEA,Proto Northeast Athapaskan,1
-PO,pluractional operator,1
-Po.,Polish,1
-pol,polite,1
-POL,polarity,1
-POL,polite,1
-POL,polite form,1
-POL,Polite marker,1
-POL,politeness,1
-POL,politeness marker,1
-POLITE,politeness marker,1
-POLQ,polar question,1
-poly,polysyllabic,1
 POS,positive,4
-POS,part of speech,1
-POS,positional,1
-POS,positive clause,1
-POS,positive proposition,1
-pos as a subscript,positive form,1
-POSITIVE,positive polarity,1
 POSS,possessive,50
 POSS,possessor,4
-POSS,Possessive,2
-POSS,possesive,1
-POSS,possessive particle,1
-POSS,possessive particles and pronouns.,1
-POSS,possessive pointing sign,1
-POSS,possessive.,1
-POSS,possessor agreement,1
-POSS,possibility,1
-POSSDET,Possessive Determiner,1
-PossP,possessor phrase,1
-PostP,postpositional phrase.,1
-POT,potential suffix,1
-PoV,point of view,1
-PP,prepositional phrase,9
-PP,Prepositional Phrase,2
-pp,person plural,1
-PP,Participle,1
-PP,past participle,1
-PP,postposition phrase,1
-PP,preposition,1
-PP,Prepositional phrase,1
-PP/IO,Prepositional Phrase/Indirect Object,1
-PPA,past participle agreement,1
-PPART,proper partitivity,1
-PPCEME,Penn-Helsinki Parsed Corpus of Early Modern English,1
-PPh,phonological phrase,1
-PPI,positive polarity item,2
-PPI,Participium pro Infinitivo,1
-PPI,Positive Polarity Item,1
-PPlan,partly planned,1
-PPP,past passive participle,1
-PPP,Perfect Participle Paradox,1
-PPPOS,presupposition of POS,1
-PPRO,personal pronoun,1
-PPRT,past-participle,1
-PPT,past participle,1
-PPT,Principles and Parameters Theory,1
-PPVH,Pragmatic Principles Violation Hypothesis,1
-PPVT,Standardized Receptive Vocabulary Test,1
+PPRT,past participle,1
 PQ,polar question,1
-Pr,Present,1
-PR,phonetic representation,1
 PR,possessor,1
-PR,present,1
-PR,Present,1
-PR,present tense,1
-PR,Pronoun,1
-PR,Pseudo-Relative,1
-PR.EVID,prior evidence,1
-PrC,preproprial constructions,1
-PRC,passive relative clause,1
 PRE,prefix,2
-PRE,presuppositional,1
 PRED,predicative,3
-Pred,Predication,1
-PRED,predicate,1
-PRED,predicate marker (Welsh),1
-PRED,predicational head,1
 PREP,preposition,11
-PREP,prepositional,2
-PREP,Preposition,1
-PREP,prepositional case,1
-PrepP,prepositional phrase,1
 PRES,present,23
-PRES,present tense,9
-PRES,Present,1
-PRES,Present tense,1
-PRES,present tense.,1
-PRESENT,present tense,1
-PRESPERF,present perfect,1
 PRET,preterite,2
 PREV,preverb,1
 PRF,perfect,13
 PRF,perfective,3
-PRF,Perfect,1
-PRF,perfect aspect,1
 PRFX,prefix,1
 PRG,progressive,1
 PRN,pronominalizer,1
 PRN,pronoun,1
-PRO,pronoun,5
-pro,null pronoun,1
-pro,null pronouns,1
-pro,null subject,1
-pro,pronoun,1
-PRO,pronoun/pronominal,1
-PRO-1SG,1st person singular pronoun,1
-PRO-3PL,3rd person plural pronoun,1
-PRO-3SG,3rd person singular pronoun,1
-Pro[NP],Plural Pronoun[NP] Constructions,1
 PROG,progressive,24
-PROG,progressive aspect,3
-PROG,progressive element,2
-PROG,progressive marker,1
-PROG,progressive.,1
-PROGR,progressive aspect,1
+PROGR,progressive,1
 PROH,prohibitive,1
 PROJ,projective,1
-pron,pronoun,1
 PRON,pronoun,1
-PROPORP,proportions and percentages,1
 PROS,prospective,1
 PROSP,prospective,2
-PROSP,prospective aspect,2
 PROX,proximal,4
-PROX,proximate,1
-PROX1,proximal (near speaker),1
-PrP,Predication Phrase,1
 PRS,present,50
-PRS,present tense,6
-prs,present,1
-PRSNT,Present,1
-PRSP,prospective,1
 PRT,particle,17
-PRT,participle,5
-PRT,(remote) preterite,1
-PRT,Particle,1
-PRT,partitive,1
-PRT,preterite,1
-PRT,sentence/modal particle,1
-PRTC,participle,2
 PRTC,particle,1
 PRTCP,participle,1
-PRTT,partitive,1
 PRV,perfective,2
-PRV,preverb,1
-ps,person singular,1
-PSEUDOP,pseudopartitives,1
-PSM,Parallel Structures Model,1
-PSMT,Picture Sentence Matching Task,1
-PSP,past participle,1
 PST,past,73
-PST,past tense,14
-PST,Past,4
-pst,past,2
-pst,past tense.,1
-PST,Past tense/perfect aspect suffix.,1
-PST,past.,1
-PST,Past.,1
-PST,present,1
-PST.PCPL,past participle,1
-PST.PTCP,past participle,2
 PSTPERF,past perfect,1
-PSTPRF,past perfect,1
-PSV,passive,1
-PT,past,1
-PT,pointing sign,1
 PT,presentative,1
-PT:PRO1SG,First person singular pronoun,1
-PT:PRO2SG,Second person singular pronoun,1
-PT:PRO3SG,Third person singular pronoun,1
 PTC,particle,2
-PTC,participle,1
-PTCL,particle,2
 PTCP,participle,25
-PTCP,(past) participle,2
-ptcp,participle,1
-PTCP,participal,1
-PTCP,past participle,1
-PTPL,participle. An example marked with ‘*’,1
-PTV,partitive,1
 PURP,purposive,3
 PV,patient voice,1
-PV,preverb,1
 PVF,perfective,1
-PWd,phonological word,1
-Pω,PARSE-INTO-ω,1
-ɸ,phonological phrase,1
-Q,question particle,13
-Q,question marker,7
 Q,question,6
-Q,interrogative,3
-q,question (marker),1
-Q,interrogative marker,1
-Q,polar question,1
-Q,Q complementizer,1
-Q,quantifier,1
-Q,Question,1
-Q,question morpheme,1
-Q,question word,1
-Q,question.,1
-Q,wh-question particle,1
-Q,yes/no question marker,1
-Q MARKER,question marker,1
-Q-Agree,agreement with the quantifier,1
-Q-ALT,alternative question,1
-Q-WH,WH-question,1
-QDet,quantificational determiner,1
-QDiP,question-sensitive discourse particle,1
-QILAI,directional complement,1
-QJT,Quantity Judgment Task.,1
-QL,Quantifier Lowering,1
-QNP,quantified noun phrase,1
-QP,quantifier phrase,1
-QP,Quantifier Phrase,1
-QPT,Quick Placement Test,1
-QR,quantifier raising,2
-QR,Quantifier Raising,2
-QT,quotative marker,1
 QUAL,qualifier,1
-QUD,question under discussion,6
-QUD,Question Under Discussion,1
-QUDD,question under discussion downdate,1
-QUE,interrogative,1
-QUO,quotative,1
 QUOT,quotative,2
-QUOT,quotative particle,1
-QUOT,reported speech,1
-QUP,question particle,1
-R,rannig,2
-R,R-pronoun,1
 R,realis,1
-R,recipient-like internal argument of a ditransitive verb,1
-R,Recipient-type argument,1
-R,sonorant,1
-R̂,Gelman-Rubin statistic,1
-R&F,Roelofsen & Farkas (2015),1
-R&R,Reinhart & Reuland (1993),1
-RA,Resolved Agreement,1
-RAV,regular agreement verb,1
-RB,right boundary,1
 RC,relative clause,6
-RC,Relative Clause,1
-RC,right-complete count,1
-RC(s),relative clause(s),1
-RCD,recursive constraint demotion,1
-RCFSs,Relative Clause Formation Strategies,1
 RCP,reciprocal,1
 RDP,reduplication,1
-re,raised eyebrows,2
-RE,Referring Expression,1
 REAL,realis,1
-REC,recent,1
-REC,recipient inflectional paradigm,1
-RECIP,reciprocal,1
 RECP,reciprocal,2
-recp,reciprocal,1
+RECIP,reciprocal,1
 RED,reduplication,2
-RED,redirective (relational) transitivizer,1
-RED,reduplicative Vocabulary Item,1
 REDUP,reduplication,1
 REF,referential,1
-REF,reflexive,1
-REF.,reference level,1
 REFL,reflexive,45
-REFL,reflexive pronoun,4
-REFL,Reflexive,2
-REFL,reflexive.,2
-refl,reflexive,1
-Refl,reflexive pronoun,1
-REFL,reflexive pronoun.,1
-REFL,relfexive,1
-REFL.POSS,reflexive possessive,1
-RefP,Referential Phrase,1
 REG,regressive,1
-REINF,reinforcer,1
-ReinfP,reinforcer phrase,1
 REL,relative,9
 REL,relativizer,6
-REL,relative clause,2
-rel,non-manual markers associated with relative clauses,1
-rel,relative,1
-rel,relativizer,1
-rel,relativizer or adnominal modifier,1
-Rel,relative pronoun,1
-REL,‘relative marker’,1
-REL,Relative,1
-REL,relative clause marker,1
-REL,relative marker,1
-REL.PRO,relative pronoun,1
-REL.PRON,relative pronoun,1
-REL.SUB,relative subject,1
-RelC,relative complementizer,1
-Relevant glossing abbreviations are as follows: M,masculine,1
-RelM,relative marker,1
 REM,remote,2
 REP,reportative,1
-REP,reported,1
 RES,resultative,1
-RES,resultative prefix,1
-RESP,respect marker,1
 RESP,responsive,1
 RESTR,restrictive,2
-Resyll,Resyllabification,1
-REV,reversal,1
 RFL,reflexive,3
-RFL,reflexive. For a list of standard abbreviations,1
-RFR,rise-fall-rise contour,1
-rg,right gaze,1
-RG,real gap,1
-rh,right hand,1
-Ri,representationi with a propositional form,1
-RIFG,right Inferior Frontal Gyrus,1
-RIK,the rik morpheme,1
 RLS,realis,1
-RLS,realis mode,1
-RM,Relativized Minimality,1
-RM= Representational Modularity,NULL,1
-RMS,root mean square (intensity measure),1
-RN,relational noun,1
-RNR,Right Node Raising,3
-RNR,Right-Node Raising,1
-Ro.,Romanian,1
-ROI,region of interest,2
-ROI,Region Of Interest,1
-Rom,Romance,1
 ROOT,root,1
-ROSE,Research on Salford English,1
-ROTB,richness of the babse,1
-RP,relator phrase,1
 RP,resumptive pronoun,1
-RPA,Rural Palestinian Arabic,1
-RPT,Rapid Prosody Transcription,1
-RPT,relational particle,1
-RPT,reported evidential,1
-RS,Rikssvenska/(modern) Standard Swedish,1
-RSA,Rational Speech Act.,1
-RSL,Russian Sign Language,3
 RSTR,restrictive,1
-RT,reaction time,1
-RT,Reading Time,1
-RT,rentai ‘adnominal’,1
-RTR,Retracted Tongue Root,1
-Ru.,Russian,1
 RVZ,relativizer,1
 S,subject,9
-S,singular,6
-S,single argument of a canonical intransitive verb,2
-s,sagittal,1
-s,semantic type of events,1
-S,form with a short vowel,1
-S,sentence,1
-S,Singular,1
-S,singular agreement.,1
-S,singular person,1
-S,singular.,1
-S,subject agreement,1
-S,subject of a canonical intransitive verb,1
-S,subject.,1
-S,Subject.,1
-š,[∫],1
-S-Mood,speaker mood,1
-S.G.,Sigiri Graffiti,1
-S/P,singular/plural,1
-S2,singular second person,1
-SA,subject agreement,3
-SA,sentence adverbial,1
-SA,Short Adjective,1
-SA,subject of a canonical unergative verb,1
-SA,suspended affixation,1
-SAdvV(N)/SNegAdvVO,subject-negation-adverb-verb-object order,1
-SAdvV(Y)/SAdvVO,affirmative subject-adverb-verb-object order,1
-SAP,Scalar Advantage Principle,1
-SAP,speech act participant,1
-SAP,Speech Act Phrase,1
-SASS,size-and-shape specifier,1
-Sb,Somebody,1
 SBJ,subject,11
-SBJ,subjunctive,2
-sbj,subject,1
-SBJ.PRT,subjunctive particle,1
-SBJNCT,subjunctive,1
 SBJV,subjunctive,15
-SBJV,subjunctive.,1
-SC,small clause,3
-SC,ser capaz ‘be capable’,1
-SC,Serbo-Croatian,1
-SC,Small Clause,1
-SCF,strong contextual felicity,1
-SCL,subject clitic,4
-SCLI,subject clitic inversion,1
-SCLI,Subject Clitic Inversion,1
-SCO,strong cross-over,1
-sCoS,simple change of state,1
-SD,standard deviation,7
-SD,Standard Deviation,2
-SDA,Successive Division Algorithm,2
-SDC,Spanish Dominant Control,1
-SDP,Southern Dative Presentative,1
-SE,standard error,3
-SE,Standard Error,2
-SE,impersonal clitic se..,1
-SE,romance “se”-reflexive.,1
-SE,se clitic,1
-SE,Sentence Ender,1
-SE,simultaneous dependent event,1
-SE,subject extraction,1
-sel,Seoul,1
-SEL,selective marker,1
-SEL-ALT,selection in answer to ALT-question,1
-SEL-EXPL,explicit selection,1
-SEL-IMPL,implicit selection,1
-SEL-WH,selection in answer to WH-question,1
+SEL,selective,1
 SENS,sensive,1
-SEQ,sequential marker,1
-SEQ,sequentialiser.,1
-SF,stem formative,1
-SFORM,short form,1
-SFP,sentence final particle,1
-SFP,sentence final particle. Besides,1
-SFP,sentence-final particle,1
 SFX,suffix,1
 SG,singular,175
-SG,singular.,23
-SG,Singular,4
-sg,singular,2
-sg,singular.,2
-SG,singular number,2
-sg,singular verbal agreement,1
-SG,singular. Dagur does not have its own writing system. Historically,1
-SG/PL,singular/plural,1
-SG= singular,NULL,1
-SGDS,Survey of the Gaelic Dialects of Scotland,1
-SGG,Semantics in generative grammar,1
-sh,subject honorific,1
-ShareP,Share Phrase,1
-SHG,(modern) Standard High German,1
-SHORT,short adjective,1
-SI,scalar implicature,1
-SIG.,significance level,1
-SIM,similarity,1
-SIM,simultaneous marker,1
-sino,Sino-Korean,1
-SIPOS,scalar implicature of the positive clause,1
-SJQCSL,San Juan Quiahije Chatino Sign Language,1
-SJV,subjunctive,1
-SKD,Standard Korean dictionary,1
-SL,sign language,2
-SLH,Strict Layer Hypothesis,1
-SLI,Specific Language Impairment,4
-SLI,specific language impairment,1
-SM,subject marker,2
-SM,serial markedness.,1
-SM,subject agreement marker,1
-SMR,Serial Markedness Reduction,1
-SN,mais ‘but’,1
-SN,subnumeration,1
-SNG,singular,1
-SO,subject before object,1
-SO,subject of a canonical unaccusative verb,1
-SO,syntactic object,1
 SOC,sociative,2
+,,
 SOF,Second Occurrence Focus,1
 SOFT,soft mutation,1
 son,sonorant,1
