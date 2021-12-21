@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^LICENSE
+codemeta.json
+^README.md
+^docs/.*
+^_pkgdown\.yml$
+^pkgdown$
+^codemeta\.json$
