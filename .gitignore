@@ -7,3 +7,4 @@ lingglosses.Rproj
 rsconnect
 doc
 Meta
+*.~lock*
