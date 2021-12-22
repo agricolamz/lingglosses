@@ -14,7 +14,7 @@ License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/agricolamz/lingglosses/, https://agricolamz.github.io/lingglosses/
-BugReports: https://github.com/agricolamz/lingtypology/issues
+BugReports: https://github.com/agricolamz/lingglosses/issues
 Imports: knitr, rmarkdown, kableExtra
 VignetteBuilder: knitr
 RoxygenNote: 7.1.2

@@ -4,12 +4,12 @@
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #'
-#' @param transliteration blah
-#' @param glosses blah
-#' @param free_translation blah
-#' @param orthography blah
-#' @param comment blah
-#' @param line_length blah
+#' @param transliteration character vector of the length one for the transliteration line.
+#' @param glosses character vector of the length one for the glosses line.
+#' @param free_translation character vector of the length one for the free translation line.
+#' @param orthography character vector of the length one for the orthography line (above translation).
+#' @param comment character vector of the length one for the comment line (under the free translation line).
+#' @param line_length integer vector of the length one that denotes maximum number of characters per one line.
 #'
 #' @examples
 #' \dontrun{
@@ -29,37 +29,50 @@
 gloss_example <- function(transliteration,
                           glosses,
                           free_translation = "",
-                          orthography = "",
                           comment = "",
+                          orthography = "",
                           line_length = 70){
 
-  transliteration <- unlist(strsplit(transliteration, " "))
-  glosses <- unlist(strsplit(glosses, " "))
-
-  # check that glosses and transliteration have the same length
-  if(length(transliteration) != length(glosses)){
-    stop(paste0("There is a different number of words and glosses in the
-                following example: ", paste0(transliteration, collapse = " ")))
-  }
-
-  # add glosses
-  single_gl <- unlist(strsplit(glosses, "[-\\.=]"))
-  glosses2add <- gsub("[_\\*]", "", single_gl[single_gl == toupper(single_gl)])
-  assign(.get_variable_name(),
-         append(eval(parse(text = .get_variable_name())), glosses2add),
-         envir = .GlobalEnv)
-
-  # compare language and gloss line by the length
+# prepare vector of splits of the glosses by line --------------------------
   longest <- if(sum(nchar(transliteration)) > sum(nchar(glosses))){
     transliteration
   } else {
     glosses
   }
 
-  # vector of splits of the glosses by line
   splits_by_line <- as.double(cut(cumsum(nchar(longest)),
                                   breaks = 0:1e5*line_length))
 
+  transliteration <- unlist(strsplit(transliteration, " "))
+  glosses_by_word <- unlist(strsplit(glosses, " "))
+
+# check that glosses and transliteration have the same length --------------
+  if(length(transliteration) != length(glosses_by_word)){
+    stop(paste0("There is a different number of words and glosses in the
+                following example: ", paste0(transliteration, collapse = " ")))
+  }
+
+# add glosses --------------------------------------------------------------
+  single_gl <- unlist(strsplit(glosses, "[-\\.= ]"))
+  glosses2add <- gsub("[_\\*]", "", single_gl[single_gl == toupper(single_gl)])
+  assign(.get_variable_name(),
+         append(eval(parse(text = .get_variable_name())), glosses2add),
+         envir = .GlobalEnv)
+
+# add small-caps -----------------------------------------------------------
+  single_gl <- ifelse(single_gl == toupper(single_gl),
+                      paste0('<span style="font-variant:small-caps;">',
+                             tolower(single_gl),
+                             '</span>'),
+                      single_gl)
+  delimeters <- unlist(strsplit(glosses, "[^-\\.= ]"))
+  delimeters <- c(delimeters[delimeters != ""], "")
+  glosses <- paste0(single_gl, delimeters, collapse = "")
+  glosses <- gsub("<span style=", "<span_style=", glosses)
+  glosses <- unlist(strsplit(glosses, " "))
+  glosses <- gsub("<span_style=", "<span style=", glosses)
+
+# long line splitting ------------------------------------------------------
   if(length(unique(splits_by_line)) > 1){
     multi_result <- lapply(unique(splits_by_line), function(i){
       gloss_example(paste0(transliteration[splits_by_line == i]),
@@ -71,7 +84,10 @@ gloss_example <- function(transliteration,
   } else {
     result <- matrix(c(paste0("*", transliteration, "*"), glosses),
                      nrow = 2, byrow = TRUE)
-    result <- kableExtra::kable_minimal(kableExtra::kbl(result),
+    result <- kableExtra::kable_minimal(kableExtra::kbl(result,
+                                                        align = "l",
+                                                        centering = FALSE,
+                                                        escape = FALSE),
                                         position = "left",
                                         full_width = FALSE)
 

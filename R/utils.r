@@ -7,7 +7,7 @@
 
 .onLoad <- function(...) {
   # get document title
-  title <- gsub("\\s", "_", rmarkdown::metadata$title)
+  title <- gsub("\\W", "_", rmarkdown::metadata$title)
   title <- gsub("\\d", "", title)
   title <- paste0(".list_of_glosses_for_", title)
   # write a hidden variable to the global environment
@@ -21,7 +21,7 @@
 #' @importFrom rmarkdown metadata
 #' @export
 .get_variable_name <- function(){
-  gloss_variable <- gsub("\\s", "_", rmarkdown::metadata$title)
+  gloss_variable <- gsub("\\W", "_", rmarkdown::metadata$title)
   gloss_variable <- gsub("\\d", "", gloss_variable)
   gloss_variable <- paste0(".list_of_glosses_for_", gloss_variable)
   gloss_variable

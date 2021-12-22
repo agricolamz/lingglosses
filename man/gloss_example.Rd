@@ -8,23 +8,23 @@ gloss_example(
   transliteration,
   glosses,
   free_translation = "",
-  orthography = "",
   comment = "",
+  orthography = "",
   line_length = 70
 )
 }
 \arguments{
-\item{transliteration}{blah}
+\item{transliteration}{character vector of the length one for the transliteration line.}
 
-\item{glosses}{blah}
+\item{glosses}{character vector of the length one for the glosses line.}
 
-\item{free_translation}{blah}
+\item{free_translation}{character vector of the length one for the free translation line.}
 
-\item{orthography}{blah}
+\item{comment}{character vector of the length one for the comment line (under the free translation line).}
 
-\item{comment}{blah}
+\item{orthography}{character vector of the length one for the orthography line (above translation).}
 
-\item{line_length}{blah}
+\item{line_length}{integer vector of the length one that denotes maximum number of characters per one line.}
 }
 \value{
 no output

@@ -1,0 +1,90 @@
+---
+title: "Introduction to `lingglosses`"
+author: "G. Moroz, [NRU HSE Linguistic Convergence Laboratory](https://ilcl.hse.ru/en/)"
+output: html_document
+bibliography: bibliography.bib
+---
+```{r, include = FALSE}
+options(rmarkdown.html_vignette.check_title = FALSE)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction
+
+Abbreviation list is obligatory part of linguistic articles that nobody reads. This lists contains definitions of abbreviations used in the article (e. g. corpora names or sign language names), but also a list of linguistic glosses --- abbreviations used in linguistic interlinear examples. There is a standardized list of glossing rules [@comrie08] which ends with a list of 84 standard abbreviations. Much bigger list is present on the [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations). However researchers can deviate from this list and provide their own abbreviations.
+
+The worst abbreviation list that I have found in a published article make it clear that there is a room for improvement:
+
+```
+NOM = nominative, GEN = nominative, DAT = nominative, ACC = accusative, VOC = accusative, LOC = accusative, INS = accusative, PL = plural, SG = singular
+```
+
+Except obvious mistakes in this list there are some more problems that I wanted to emphasize:
+
+* lack of the alphabetic order;
+* there is also some abbreviation (SBJV, IMP) in the article that are absent in the abbreviation list.
+
+The main goal of the `lingglosses` package is to provide an option for creating:
+
+* linguistic glosses for `.html` output of `rmarkdown` [@xie18];
+* semi-automatic compiled abbreviation list.
+
+In order to use the package you need to load it with the `library()` call:
+
+```{r}
+library(lingglosses)
+```
+
+# Create glossed examples with `gloss_example()`
+
+The main function of the `lingglosses` package is `gloss_example()`. This package has the following arguments:
+
+* `transliteration`;
+* `glosses`;
+* `free_translation`;
+* `comment`;
+* `orthography`;
+* `line_length`.
+
+Except the last one all arguments are self-exploratory. 
+
+```{r}
+gloss_example(transliteration = "bur-e-**ri** c'in-ne-s:u",
+              glosses = "fly-NPST-**INF** know-HAB-*NEG*",
+              free_translation = "I cannot fly. (Zilo Andi, East Caucasian)",
+              comment = "(lit. do not know how to)")
+```
+
+In this first example you can see that:
+
+* the transliteration line is italic by default;
+* users can use standrad markdown syntax (e. g. `**a**` for **bold** and `*a*` for *italic*);
+* the free translation line is framed with quotation marks.
+
+Since function arguments' names are optional in R, users can omit writing them as far as they follow the order of the arguments (you can always find the correct order in `?gloss_example`):
+
+```{r}
+gloss_example("bur-e-**ri** c'in-ne-s:u",
+              "fly-NPST-**INF** know-HAB-_NEG_",
+              "I cannot fly. (Zilo Andi, East Caucasian)",
+              "(lit. do not know how to)")
+```
+
+It is possible to number and call your examples using strandard `rmarkdown`  `(@)`
+
+# Create semi-automatic compiled abbreviation list
+
+```{r}
+make_gloss_list()
+```
+
+```{r}
+my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
+                               definition = c("non-past tense", "habitual aspect", "infinitive", "negation marker"))
+make_gloss_list(my_abbreviations)
+```
+
+# References
