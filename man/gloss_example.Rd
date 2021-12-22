@@ -33,10 +33,12 @@ no output
 Creates an interlinear glossed example for linguistics.
 }
 \examples{
+\dontrun{
 gloss_example("bur-e-**ri** c'in-ne-s:u",
                "fly-NPST-**INF** know-HAB-NEG",
                "I cannot fly. (Zilo Andi, East Caucasian)",
                comment = "(lit. do not know how to)")
+}
 
 }
 \author{
