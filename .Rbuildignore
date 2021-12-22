@@ -1,6 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^LICENSE
 ^codemeta.json
 ^README.md
 ^docs/.*
@@ -8,3 +7,4 @@
 ^pkgdown$
 ^codemeta\.json$
 ^database_creation*
+^LICENSE\.md$

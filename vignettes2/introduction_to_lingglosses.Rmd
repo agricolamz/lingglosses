@@ -1,21 +1,14 @@
 ---
 title: "Linguistic examples and semi-automatic creation of abbreviation list with `lingglosses` package"
 author: "G. Moroz, [NRU HSE Linguistic Convergence Laboratory](https://ilcl.hse.ru/en/)"
-output: rmarkdown::html_vignette
+date: "`r Sys.Date()`"
 bibliography: bibliography.bib
+output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Introduction to `lingglosses`}
+  %\VignetteIndexEntry{Linguistic examples and semi-automatic creation of abbreviation list with `lingglosses` package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
-```{r, include = FALSE}
-options(rmarkdown.html_vignette.check_title = FALSE)
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
 
 # Introduction
 
