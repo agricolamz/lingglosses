@@ -27,3 +27,9 @@ gloss_example("bur-e-**ri** c'in-ne-s:u",
 ```
 make_gloss_list()
 ```
+
+That will produce the following:
+
+```
+HAB — habitual; INF — infinitive; NEG — negation; NPST — non-past
+```
