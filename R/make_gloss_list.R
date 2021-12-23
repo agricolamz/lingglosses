@@ -38,9 +38,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses,
   }
 
   # create an output
-  res <- paste(paste0('<span style="font-variant:small-caps;">',
-                      tolower(gloss_ld$gloss),
-                      '</span>'),
+  res <- paste(lingglosses::small_caps(gloss_ld$gloss),
                gloss_ld$definition,
                sep = " \u2014 ", collapse = "; ")
   knitr::asis_output(res)

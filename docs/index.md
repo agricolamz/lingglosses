@@ -14,7 +14,6 @@ output:
 bibliography: bibliography.bib
 ---
 
-
 # Introduction
 
 Abbreviation list is obligatory part of linguistic articles that nobody reads. This lists contains definitions of abbreviations used in the article (e. g. corpora names or sign language names), but also a list of linguistic glosses --- abbreviations used in linguistic interlinear examples. There is a standardized list of glossing rules [@comrie08] which ends with a list of 84 standard abbreviations. Much bigger list is present on the [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations). However researchers can deviate from this list and provide their own abbreviations.
@@ -36,6 +35,14 @@ The main goal of the `lingglosses` package is to provide an option for creating:
 * semi-automatic compiled abbreviation list.
 
 [^latex]: If you want to render `.pdf` version you can either use latex and multiple linguistic packages developed for it (see e. g. `gb4e`, `langsci`, `expex`, `philex`), either you can render `.html` first and convert it to `.pdf` afterwards.
+
+For the moment the package is available only from github, so in order to install it you need to run the following commands:
+
+
+```r
+install.packages("remotes")
+remotes::install_github("agricolamz/lingglosses")
+```
 
 In order to use the package you need to load it with the `library()` call:
 
@@ -262,9 +269,21 @@ gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː
 
 If you are not satisfied with the result of automatic split you can change value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
 
+
+
+```r
+2+2
+```
+
+```
+## [1] 4
+```
+
+
+
 # Create semi-automatic compiled abbreviation list
 
-After the 
+After you finished your text, it is possible to call the `make_gloss_list()` function in order to automatically create a list of abbreviations.
 
 
 ```r
@@ -272,6 +291,12 @@ make_gloss_list()
 ```
 
 <span style="font-variant:small-caps;">1sg</span> — first person singular; <span style="font-variant:small-caps;">3</span> — third person; <span style="font-variant:small-caps;">a</span> — agent-like argument of canonical transitive verb; <span style="font-variant:small-caps;">aux</span> — auxiliary; <span style="font-variant:small-caps;">dat</span> — dative; <span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">in</span> — inessive; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">npst</span> — non-past; <span style="font-variant:small-caps;">obl</span> — oblique; <span style="font-variant:small-caps;">pfv</span> — perfective; <span style="font-variant:small-caps;">pl</span> — plural; <span style="font-variant:small-caps;">prf</span> — perfect; <span style="font-variant:small-caps;">prfx</span> — prefix; <span style="font-variant:small-caps;">root</span> — root; <span style="font-variant:small-caps;">sfx</span> — suffix
+
+This function works with the built-in dataset `glosses` that is compiled from Leipzig Glosses, [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations) and articles from the open access journal [Glossa](https://www.glossa-journal.org/)[^glossa]. Everybody can change this dataset for their own purposes. 
+
+[^glossa]: The script for the collecting glosses is available [here](https://github.com/agricolamz/lingglosses/blob/master/database_creation/glossa.R). The glosses list was manually corrected and merged with glosses from other sources. This kind of glosses marked in the `glosses` dataset as `lingglosses` in the `source` column.
+
+It is possible that user can be not satisfied with the result of `make_gloss_list()` function, then there are two possible strategies. First strategy is to copy the result of the `make_gloss_list()`, modify it and paste in your `rmarkdown` document. Sometimes you work on some volume dedicated to on group of languages and you want to assure that glosses are the same across all articles, than you can compile your own table with columns `gloss` and `definition` and use it within `make_gloss_list` function.
 
 
 ```r
@@ -282,4 +307,16 @@ make_gloss_list(my_abbreviations)
 
 <span style="font-variant:small-caps;">hab</span> — habitual aspect; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation marker; <span style="font-variant:small-caps;">npst</span> — non-past tense
 
+Unfortunately, some glosses can have multiple meaning in different traditions (e. g. <span style="font-variant:small-caps;">ass</span> can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`:
+
+
+```r
+make_gloss_list(all_possible_variants = TRUE)
+```
+
+<span style="font-variant:small-caps;">1sg</span> — first person singular; <span style="font-variant:small-caps;">3</span> — third person; <span style="font-variant:small-caps;">a</span> — agent-like argument of canonical transitive verb; <span style="font-variant:small-caps;">aux</span> — auxiliary; <span style="font-variant:small-caps;">dat</span> — dative; <span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">in</span> — inessive; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">npst</span> — non-past; <span style="font-variant:small-caps;">obl</span> — oblique; <span style="font-variant:small-caps;">pfv</span> — perfective; <span style="font-variant:small-caps;">pl</span> — plural; <span style="font-variant:small-caps;">prf</span> — perfect; <span style="font-variant:small-caps;">prf</span> — perfective; <span style="font-variant:small-caps;">prfx</span> — prefix; <span style="font-variant:small-caps;">root</span> — root; <span style="font-variant:small-caps;">sfx</span> — suffix
+
+As you can see there are two possible values for <span style="font-variant:small-caps;">prf</span> that are listed above.
+
 # References
+
