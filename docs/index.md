@@ -18,7 +18,7 @@ bibliography: bibliography.bib
 
 # Introduction
 
-Abbreviation list is obligatory part of linguistic articles that nobody reads. This lists contains definitions of abbreviations used in the article (e. g. corpora names or sign language names), but also a list of linguistic glosses --- abbreviations used in linguistic interlinear examples. There is a standardized list of glossing rules [@comrie08] which ends with a list of 84 standard abbreviations. Much bigger list is present on the [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations). However researchers can deviate from this list and provide their own abbreviations.
+Abbreviation list is obligatory part of linguistic articles that nobody reads. These lists contain definitions of abbreviations used in the article (e. g. corpora names or sign language names), but also a list of linguistic glosses --- abbreviations used in linguistic interlinear examples. There is a standardized list of glossing rules [@comrie08] which ends with a list of 84 standard abbreviations. Much bigger list is present on the [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations). However researchers can deviate from those lists and provide their own abbreviations.
 
 The worst abbreviation list that I have found in a published article make it clear that there is a room for improvement:
 
@@ -26,7 +26,7 @@ The worst abbreviation list that I have found in a published article make it cle
 NOM = nominative, GEN = nominative, DAT = nominative, ACC = accusative, VOC = accusative, LOC = accusative, INS = accusative, PL = plural, SG = singular
 ```
 
-Except obvious mistakes in this list there are some more problems that I wanted to emphasize:
+Except obvious mistakes in this list there are some more problems that I want to emphasize:
 
 * lack of the alphabetic order;
 * there is also some abbreviation (<span style="font-variant:small-caps;">sbjv</span>, <span style="font-variant:small-caps;">imp</span>) in the article that are absent in the abbreviation list.
@@ -95,7 +95,7 @@ Except the last one all arguments are self-exploratory.
 
 
 ```r
-gloss_example(transliteration = "bur-e-**ri** c'in-ne-s:u",
+gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu",
               glosses = "fly-NPST-**INF** know-HAB-*NEG*",
               free_translation = "I cannot fly. (Zilo Andi, East Caucasian)",
               comment = "(lit. do not know how to)",
@@ -110,7 +110,7 @@ gloss_example(transliteration = "bur-e-**ri** c'in-ne-s:u",
   </tr>
   <tr>
    <td style="text-align:left;"> *bur-e-**ri*** </td>
-   <td style="text-align:left;"> *c'in-ne-s:u* </td>
+   <td style="text-align:left;"> *c'in-ne-sːu* </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fly-<span style="font-variant:small-caps;">npst</span>-<span style="font-variant:small-caps;">**inf**</span> </td>
@@ -133,7 +133,7 @@ Since function arguments' names are optional in R, users can omit writing them a
 
 
 ```r
-gloss_example("bur-e-**ri** c'in-ne-s:u",
+gloss_example("bur-e-**ri** c'in-ne-sːu",
               "fly-NPST-**INF** know-HAB-_NEG_",
               "I cannot fly. (Zilo Andi, East Caucasian)",
               "(lit. do not know how to)")
@@ -143,7 +143,7 @@ gloss_example("bur-e-**ri** c'in-ne-s:u",
 <tbody>
   <tr>
    <td style="text-align:left;"> *bur-e-**ri*** </td>
-   <td style="text-align:left;"> *c'in-ne-s:u* </td>
+   <td style="text-align:left;"> *c'in-ne-sːu* </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fly-<span style="font-variant:small-caps;">npst</span>-<span style="font-variant:small-caps;">**inf**</span> </td>
@@ -179,7 +179,7 @@ In order to reference examples in the text you need to give them some names:
 
 With names settled you can reference example (@my_ex) in the text using the following code `(@my_ex)`.
 
-So this kind of example referncing can be used with `lingglosses` examples like in (@lingglosses1) and (@lingglosses2). The only important details are:
+So this kind of example referencing can be used with `lingglosses` examples like in (@lingglosses1) and (@lingglosses2). The only important details are:
 
 * change your code chunk argument to `echo = FALSE` (or specify it for all code chunks with the following comand in the begining of the document `knitr::opts_chunk$set(echo = FALSE")`);
 * do not put an empty line between reference line (with `(@...)`) and the code chunk with `linggloses` code.
@@ -189,7 +189,7 @@ So this kind of example referncing can be used with `lingglosses` examples like 
 <tbody>
   <tr>
    <td style="text-align:left;"> *bur-e-**ri*** </td>
-   <td style="text-align:left;"> *c'in-ne-s:u* </td>
+   <td style="text-align:left;"> *c'in-ne-sːu* </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fly-<span style="font-variant:small-caps;">npst</span>-<span style="font-variant:small-caps;">**inf**</span> </td>
@@ -207,7 +207,7 @@ So this kind of example referncing can be used with `lingglosses` examples like 
 <tbody>
   <tr>
    <td style="text-align:left;"> *bur-e-**ri*** </td>
-   <td style="text-align:left;"> *c'in-ne-s:u* </td>
+   <td style="text-align:left;"> *c'in-ne-sːu* </td>
   </tr>
   <tr>
    <td style="text-align:left;"> fly-<span style="font-variant:small-caps;">npst</span>-<span style="font-variant:small-caps;">**inf**</span> </td>

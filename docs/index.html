@@ -275,10 +275,10 @@ div.tocify {
 
 <div id="introduction" class="section level1" number="1">
 <h1 number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>Abbreviation list is obligatory part of linguistic articles that nobody reads. This lists contains definitions of abbreviations used in the article (e. g. corpora names or sign language names), but also a list of linguistic glosses — abbreviations used in linguistic interlinear examples. There is a standardized list of glossing rules <span class="citation">(Comrie, Haspelmath, and Bickel 2008)</span> which ends with a list of 84 standard abbreviations. Much bigger list is present on the <a href="https://en.wikipedia.org/wiki/List_of_glossing_abbreviations">Wikipedia page</a>. However researchers can deviate from this list and provide their own abbreviations.</p>
+<p>Abbreviation list is obligatory part of linguistic articles that nobody reads. These lists contain definitions of abbreviations used in the article (e. g. corpora names or sign language names), but also a list of linguistic glosses — abbreviations used in linguistic interlinear examples. There is a standardized list of glossing rules <span class="citation">(Comrie, Haspelmath, and Bickel 2008)</span> which ends with a list of 84 standard abbreviations. Much bigger list is present on the <a href="https://en.wikipedia.org/wiki/List_of_glossing_abbreviations">Wikipedia page</a>. However researchers can deviate from those lists and provide their own abbreviations.</p>
 <p>The worst abbreviation list that I have found in a published article make it clear that there is a room for improvement:</p>
 <pre><code>NOM = nominative, GEN = nominative, DAT = nominative, ACC = accusative, VOC = accusative, LOC = accusative, INS = accusative, PL = plural, SG = singular</code></pre>
-<p>Except obvious mistakes in this list there are some more problems that I wanted to emphasize:</p>
+<p>Except obvious mistakes in this list there are some more problems that I want to emphasize:</p>
 <ul>
 <li>lack of the alphabetic order;</li>
 <li>there is also some abbreviation (<span class="smallcaps">sbjv</span>, <span class="smallcaps">imp</span>) in the article that are absent in the abbreviation list.</li>
@@ -306,7 +306,7 @@ remotes::install_github(&quot;agricolamz/lingglosses&quot;)</code></pre>
 <li><code>line_length</code>.</li>
 </ul>
 <p>Except the last one all arguments are self-exploratory.</p>
-<pre class="r"><code>gloss_example(transliteration = &quot;bur-e-**ri** c&#39;in-ne-s:u&quot;,
+<pre class="r"><code>gloss_example(transliteration = &quot;bur-e-**ri** c&#39;in-ne-sːu&quot;,
               glosses = &quot;fly-NPST-**INF** know-HAB-*NEG*&quot;,
               free_translation = &quot;I cannot fly. (Zilo Andi, East Caucasian)&quot;,
               comment = &quot;(lit. do not know how to)&quot;,
@@ -326,7 +326,7 @@ remotes::install_github(&quot;agricolamz/lingglosses&quot;)</code></pre>
 <em>bur-e-<strong>ri</strong></em>
 </td>
 <td style="text-align:left;">
-<em>c’in-ne-s:u</em>
+<em>c’in-ne-sːu</em>
 </td>
 </tr>
 <tr>
@@ -360,7 +360,7 @@ know-<span class="smallcaps">hab</span>-<span class="smallcaps"><em>neg</em></sp
 <li>the free translation line is framed with quotation marks.</li>
 </ul>
 <p>Since function arguments’ names are optional in R, users can omit writing them as far as they follow the order of the arguments (you can always find the correct order in <code>?gloss_example</code>):</p>
-<pre class="r"><code>gloss_example(&quot;bur-e-**ri** c&#39;in-ne-s:u&quot;,
+<pre class="r"><code>gloss_example(&quot;bur-e-**ri** c&#39;in-ne-sːu&quot;,
               &quot;fly-NPST-**INF** know-HAB-_NEG_&quot;,
               &quot;I cannot fly. (Zilo Andi, East Caucasian)&quot;,
               &quot;(lit. do not know how to)&quot;)</code></pre>
@@ -371,7 +371,7 @@ know-<span class="smallcaps">hab</span>-<span class="smallcaps"><em>neg</em></sp
 <em>bur-e-<strong>ri</strong></em>
 </td>
 <td style="text-align:left;">
-<em>c’in-ne-s:u</em>
+<em>c’in-ne-sːu</em>
 </td>
 </tr>
 <tr>
@@ -414,7 +414,7 @@ know-<span class="smallcaps">hab</span>-<span class="smallcaps"><em>neg</em></sp
 <li>example for the referencing</li>
 </ol>
 <p>With names settled you can reference example (4) in the text using the following code <code>(@my_ex)</code>.</p>
-<p>So this kind of example referncing can be used with <code>lingglosses</code> examples like in (5) and (6). The only important details are:</p>
+<p>So this kind of example referencing can be used with <code>lingglosses</code> examples like in (5) and (6). The only important details are:</p>
 <ul>
 <li>change your code chunk argument to <code>echo = FALSE</code> (or specify it for all code chunks with the following comand in the begining of the document <code>knitr::opts_chunk$set(echo = FALSE&quot;)</code>);</li>
 <li>do not put an empty line between reference line (with <code>(@...)</code>) and the code chunk with <code>linggloses</code> code.</li>
@@ -427,7 +427,7 @@ know-<span class="smallcaps">hab</span>-<span class="smallcaps"><em>neg</em></sp
 <em>bur-e-<strong>ri</strong></em>
 </td>
 <td style="text-align:left;">
-<em>c’in-ne-s:u</em>
+<em>c’in-ne-sːu</em>
 </td>
 </tr>
 <tr>
@@ -462,7 +462,7 @@ know-<span class="smallcaps">hab</span>-<span class="smallcaps"><em>neg</em></sp
 <em>bur-e-<strong>ri</strong></em>
 </td>
 <td style="text-align:left;">
-<em>c’in-ne-s:u</em>
+<em>c’in-ne-sːu</em>
 </td>
 </tr>
 <tr>
