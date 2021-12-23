@@ -155,12 +155,6 @@ gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː
 If you are not satisfied with the result of automatic split you can change value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
 
 
-```{r}
-2+2
-```
-
-
-
 # Create semi-automatic compiled abbreviation list
 
 After you finished your text, it is possible to call the `make_gloss_list()` function in order to automatically create a list of abbreviations.
