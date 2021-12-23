@@ -35,13 +35,14 @@ make_gloss_list <- function(definition_source = lingglosses::glosses,
   gloss_list <- eval(parse(text = .get_variable_name()))
   # get definitions and sort them
   gloss_ld <- definition_source[definition_source$gloss %in% gloss_list,]
-  misfits <-
-  gloss_ld <- unique(rbind(
-    gloss_ld,
-    data.frame(gloss = gloss_list[!(gloss_list %in% definition_source$gloss)],
-               definition = "",
-               source = "",
-               weight = 1)))
+  if(length(gloss_list[!(gloss_list %in% definition_source$gloss)]) > 0){
+    gloss_ld <- unique(rbind(
+      gloss_ld,
+      data.frame(gloss = gloss_list[!(gloss_list %in% definition_source$gloss)],
+                 definition = "",
+                 source = "",
+                 weight = 1)))
+  }
 
   # it is sorted in lingglosses::glosses, but may be not sorted in user's tables
   gloss_ld <- gloss_ld[order(gloss_ld$gloss),]
