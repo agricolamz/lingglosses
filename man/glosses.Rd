@@ -9,7 +9,7 @@ A data frame with 479 rows and 4 variables:
 \describe{
   \item{gloss}{the gloss abbreviation}
   \item{definition}{the gloss definition}
-  \item{source}{the gloss source. Two possible values: Leipzig Glossing Rules or lingglosses (this means parsed from Glossa).}
+  \item{source}{the gloss source. Three possible values: Leipzig Glossing Rules, \href{https://en.wikipedia.org/wiki/List_of_glossing_abbreviations}{Wikipedia} or lingglosses (this means parsed from Glossa).}
   \item{weight}{glossa weight used for the choice in case of multiple definitions per gloss.}
 }
 }

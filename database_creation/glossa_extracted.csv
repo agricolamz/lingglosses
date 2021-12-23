@@ -38,31 +38,59 @@ gloss,definition,source,weight
 3SG,third person singular,lingglosses,1
 3SUBJ,third person subject agreement,lingglosses,1
 A,agent-like argument of canonical transitive verb,Leipzig Glossing Rules,1
+ABE,abessive,Wikipedia,1
+ABESS,abessive,Wikipedia,1
 ABL,ablative,Leipzig Glossing Rules,1
 ABS,absolutive,Leipzig Glossing Rules,1
 ABSEN,absentive,lingglosses,1
 ABSL,absolute case,lingglosses,1
-ABST,abstractivizing,lingglosses,1
+ABST,abstractive,Wikipedia,1
+ABSTR,abstract,Wikipedia,1
+ABSV,absentive,Wikipedia,1
 ACC,accusative,Leipzig Glossing Rules,1
+ACCMP,accomplishment,Wikipedia,1
+ACCOM,accompanier,Wikipedia,1
 ACD,antecedent contained deletion,lingglosses,1
+ACH,achievement,Wikipedia,1
 ACT,active,lingglosses,1
-AD,addressee,lingglosses,1
+AD,addressee,lingglosses,0
 AD,adessive,lingglosses,0
-ADD,additive,lingglosses,1
+AD,near,Wikipedia,1
+ADAP,adaptive,Wikipedia,1
+ADD,additive,Wikipedia,1
+ADDIT,additive,Wikipedia,1
 ADDR,addressee,lingglosses,1
-ADE,adessive,lingglosses,1
+ADDR,addressive,Wikipedia,1
+ADE,adessive,Wikipedia,1
+ADEL,adelative,Wikipedia,1
+ADESS,adessive,Wikipedia,1
 ADJ,adjective,Leipzig Glossing Rules,1
-ADJ,adjectiviser,lingglosses,0
+ADJ,adjectivizer,lingglosses,0
 ADJ,adjunct,lingglosses,0
+ADJR,adjectivizer,Wikipedia,1
+ADJZ,adjectivizer,Wikipedia,1
+ADM,admonitive,Wikipedia,1
+ADMON,admonitive,Wikipedia,1
 ADN,adnominal,lingglosses,1
+ADN,adnominalizer,Wikipedia,1
+ADR,addressive,Wikipedia,1
 ADV,adverb,Leipzig Glossing Rules,1
 ADV,adverbial,Leipzig Glossing Rules,0
 ADV,adverbializer,lingglosses,0
 ADVER,adversative,lingglosses,1
+ADVR,adverbializer,Wikipedia,1
+ADVRS,adversative,Wikipedia,1
+ADVRST,adversative,Wikipedia,1
+ADVS,adversative,Wikipedia,1
+ADVZ,adverbializer,Wikipedia,1
+ADVZR,adverbializer,Wikipedia,1
 AE,argument ellipsis,lingglosses,1
+AEQ,aequalis,Wikipedia,1
 AF,agent focus,lingglosses,1
 AFF,affirmative,lingglosses,0
 AFF,affix,lingglosses,1
+AFFECT,affectionate,Wikipedia,1
+AFFT,affective,Wikipedia,1
 AG,agent,lingglosses,0
 AG,agentive,lingglosses,1
 AGR,agreement,Leipzig Glossing Rules,1
@@ -70,41 +98,93 @@ AGT,agent,lingglosses,0
 AGT,agentive,lingglosses,1
 AI,adversity impersonal,lingglosses,0
 AI,intransitive animate,lingglosses,1
-AL,alienable,lingglosses,1
-ALIEN,alienable,lingglosses,1
+AJC,adjacent,Wikipedia,1
+AL,alienable,Wikipedia,1
+ALIEN,alienable,Wikipedia,1
 ALL,allative,Leipzig Glossing Rules,1
 ALL,allocative,lingglosses,0
 ALL,allomorph,lingglosses,0
-ALLOC,allocutive,lingglosses,1
+ALLOC,allocutive,Wikipedia,1
 ALT,alternative,lingglosses,1
-AN,animate,lingglosses,1
-ANAPH,anaphor,lingglosses,1
+ALTER,alterphoric,Wikipedia,1
+AMBIPH,ambiphoric,Wikipedia,1
+AMP,amplifier,Wikipedia,1
+AN,animate,Wikipedia,1
+ANA,anaphoric,Wikipedia,1
+ANAPH,anaphoric,Wikipedia,1
+AND,andative,Wikipedia,1
 ANI,animate,lingglosses,1
-ANIM,animate,lingglosses,1
-ANT,anterior,lingglosses,1
+ANIM,animate,Wikipedia,1
+ANM,animate,Wikipedia,1
+ANP,anaphoric,Wikipedia,1
+ANT,in front of,Wikipedia,1
+ANTC,anticipatory,lingglosses,1
+ANTDIR,antedirective,Wikipedia,1
+ANTE,in front of,Wikipedia,1
+ANTEL,anteelative,Wikipedia,1
+ANTESS,antessive,Wikipedia,1
+ANTIC,anticausative,Wikipedia,1
+ANTIC,anticipatory,Wikipedia,0
 ANTIP,antipassive,Leipzig Glossing Rules,1
+ANTLAT,antelative,Wikipedia,1
 ANZ,adnominalizer,lingglosses,1
 AOR,aorist,lingglosses,1
-AP,antipassive,lingglosses,1
-AP,applicative,lingglosses,0
-APASS,antipassive,lingglosses,1
-APL,apudlative,lingglosses,1
+AP,antipassive,lingglosses,0
+AP,applicative,lingglosses,1
+APASS,antipassive,Wikipedia,1
+APL,applicative,Wikipedia,1
+APL,apudlative,lingglosses,0
+APP,applicative,Wikipedia,1
 APPL,applicative,Leipzig Glossing Rules,1
-APUD,location near,lingglosses,1
-ARG,argument,lingglosses,1
+APPOS,apposition,Wikipedia,1
+APPR,apprehensive,Wikipedia,0
+APPR,approximative,Wikipedia,1
+APPROB,approbation,Wikipedia,1
+APR,apprehensive,Wikipedia,1
+APRX,approximative,Wikipedia,1
+APUD,"near, in the vicinity of",Wikipedia,1
+AR,areal,Wikipedia,1
+AREA,areal,Wikipedia,1
+ARG,argumentative,Wikipedia,1
 ART,article,Leipzig Glossing Rules,1
+AS,aseverative,Wikipedia,1
+ASC,associative,Wikipedia,1
 ASP,aspect,lingglosses,1
-ASS,assertive,lingglosses,1
+ASRT,assertive,Wikipedia,1
+ASS,associative,Wikipedia,1
+ASS,assertive,Wikipedia,0
+ASSC,associative,Wikipedia,1
+ASSERT,assertive,Wikipedia,1
+ASSOC,associative,Wikipedia,1
+ASST,assertive,Wikipedia,1
+ASSU,assumptive,Wikipedia,1
+ASSUM,assumptive,Wikipedia,1
+AST,assistive,Wikipedia,1
+ASYM,asymmetric,Wikipedia,1
 ATR,attributive,lingglosses,1
+ATT,attenuative,Wikipedia,1
+ATTEN,attenuative,Wikipedia,1
+ATTN,attenuative,Wikipedia,1
 ATTR,attributive,lingglosses,1
-AUG,augment,lingglosses,1
+AUD,auditive,Wikipedia,1
+AUG,augment,Wikipedia,1
+AUG,augmentative,Wikipedia,0
 AUX,auxiliary,Leipzig Glossing Rules,1
-AV,actor voice,lingglosses,0
-AV,agent voice,lingglosses,1
+AV,agent voice,Wikipedia,1
+AVERS,aversive,Wikipedia,1
+AVERT,avertive,Wikipedia,1
+AVR,aversive,Wikipedia,1
 AVS,adversative,lingglosses,1
 AVZ,adverbalizer,lingglosses,1
 BEN,benefactive,Leipzig Glossing Rules,1
+BENEF,benefactive,Wikipedia,1
+BG,background,Wikipedia,1
+BCKG,background,Wikipedia,1
+BI,bavalent,Wikipedia,1
 BN,Bare Numeral,lingglosses,1
+BOT,bottom,Wikipedia,1
+BR,bound root,Wikipedia,1
+BV,beneficiary,Wikipedia,1
 CAUS,causative,Leipzig Glossing Rules,1
 CCNJ,clausal conjunction,lingglosses,1
 CF,contrastive focus,lingglosses,1
@@ -184,6 +264,9 @@ EP,epenthetic,lingglosses,1
 EPI,epistemic,lingglosses,1
 EPIST,epistemic,lingglosses,1
 EPTH,epenthentic,lingglosses,1
+EQ,equative,Wikipedia,1
+EQL,equative,Wikipedia,1
+EQTV,equative,Wikipedia,1
 ERG,ergative,Leipzig Glossing Rules,1
 EV,epenthetic vowel,lingglosses,1
 EVD,evidential,lingglosses,1
