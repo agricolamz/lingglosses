@@ -124,8 +124,9 @@ gloss_example("bur-e-**ri** c'in-ne-s:u",
               "(lit. do not know how to)")
 ```
 
-
 # Create semi-automatic compiled abbreviation list
+
+After the 
 
 ```{r}
 make_gloss_list()

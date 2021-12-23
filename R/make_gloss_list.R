@@ -38,9 +38,6 @@ make_gloss_list <- function(definition_source = lingglosses::glosses,
   }
 
   # create an output
-
-
-
   res <- paste(paste0('<span style="font-variant:small-caps;">',
                       tolower(gloss_ld$gloss),
                       '</span>'),
