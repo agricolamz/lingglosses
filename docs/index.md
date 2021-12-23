@@ -13,9 +13,7 @@ output:
     keep_md: true
 bibliography: bibliography.bib
 ---
-```{r, include = FALSE}
-knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
-```
+
 
 # Introduction
 
@@ -41,7 +39,8 @@ The main goal of the `lingglosses` package is to provide an option for creating:
 
 In order to use the package you need to load it with the `library()` call:
 
-```{r}
+
+```r
 library(lingglosses)
 ```
 
@@ -58,12 +57,30 @@ The main function of the `lingglosses` package is `gloss_example()`. This packag
 
 Except the last one all arguments are self-exploratory. 
 
-```{r}
+
+```r
 gloss_example(transliteration = "bur-e-**ri** c'in-ne-s:u",
               glosses = "fly-NPST-**INF** know-HAB-*NEG*",
               free_translation = "I cannot fly. (Zilo Andi, East Caucasian)",
               comment = "(lit. do not know how to)")
 ```
+
+<table class=" lightable-minimal" style='font-family: "Trebuchet MS", verdana, sans-serif; width: auto !important; border-bottom: 0;border-bottom: 0;'>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> *bur-e-**ri*** </td>
+   <td style="text-align:left;"> *c'in-ne-s:u* </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> fly-<span style="font-variant:small-caps;">npst</span>-<span style="font-variant:small-caps;">**inf**</span> </td>
+   <td style="text-align:left;"> know-<span style="font-variant:small-caps;">hab</span>-<span style="font-variant:small-caps;">*neg*</span> </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> (lit. do not know how to)</td></tr></tfoot>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> 'I cannot fly. (Zilo Andi, East Caucasian)'</td></tr></tfoot>
+</table>
 
 In this first example you can see that:
 
@@ -73,12 +90,30 @@ In this first example you can see that:
 
 Since function arguments' names are optional in R, users can omit writing them as far as they follow the order of the arguments (you can always find the correct order in `?gloss_example`):
 
-```{r}
+
+```r
 gloss_example("bur-e-**ri** c'in-ne-s:u",
               "fly-NPST-**INF** know-HAB-_NEG_",
               "I cannot fly. (Zilo Andi, East Caucasian)",
               "(lit. do not know how to)")
 ```
+
+<table class=" lightable-minimal" style='font-family: "Trebuchet MS", verdana, sans-serif; width: auto !important; border-bottom: 0;border-bottom: 0;'>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> *bur-e-**ri*** </td>
+   <td style="text-align:left;"> *c'in-ne-s:u* </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> fly-<span style="font-variant:small-caps;">npst</span>-<span style="font-variant:small-caps;">**inf**</span> </td>
+   <td style="text-align:left;"> know-<span style="font-variant:small-caps;">hab</span>-<span style="font-variant:small-caps;">_neg_</span> </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> (lit. do not know how to)</td></tr></tfoot>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> 'I cannot fly. (Zilo Andi, East Caucasian)'</td></tr></tfoot>
+</table>
 
 It is possible to number and call your examples using strandard `rmarkdown` tool for generating lists `(@)`:
 
@@ -109,32 +144,58 @@ So this kind of example referncing can be used with `lingglosses` examples like 
 * do not put an empty line between reference line (with `(@...)`) and the code chunk with `linggloses` code.
 
 (@lingglosses1)
-```{r, echo = FALSE}
-gloss_example("bur-e-**ri** c'in-ne-s:u",
-              "fly-NPST-**INF** know-HAB-_NEG_",
-              "I cannot fly. (Zilo Andi, East Caucasian)",
-              "(lit. do not know how to)")
-```
+<table class=" lightable-minimal" style='font-family: "Trebuchet MS", verdana, sans-serif; width: auto !important; border-bottom: 0;border-bottom: 0;'>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> *bur-e-**ri*** </td>
+   <td style="text-align:left;"> *c'in-ne-s:u* </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> fly-<span style="font-variant:small-caps;">npst</span>-<span style="font-variant:small-caps;">**inf**</span> </td>
+   <td style="text-align:left;"> know-<span style="font-variant:small-caps;">hab</span>-<span style="font-variant:small-caps;">_neg_</span> </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> (lit. do not know how to)</td></tr></tfoot>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> 'I cannot fly. (Zilo Andi, East Caucasian)'</td></tr></tfoot>
+</table>
 
 (@lingglosses2) Zilo Andi, East Caucasian
-```{r, echo = FALSE}
-gloss_example("bur-e-**ri** c'in-ne-s:u",
-              "fly-NPST-**INF** know-HAB-_NEG_",
-              "I cannot fly.",
-              "(lit. do not know how to)")
-```
+<table class=" lightable-minimal" style='font-family: "Trebuchet MS", verdana, sans-serif; width: auto !important; border-bottom: 0;border-bottom: 0;'>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> *bur-e-**ri*** </td>
+   <td style="text-align:left;"> *c'in-ne-s:u* </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> fly-<span style="font-variant:small-caps;">npst</span>-<span style="font-variant:small-caps;">**inf**</span> </td>
+   <td style="text-align:left;"> know-<span style="font-variant:small-caps;">hab</span>-<span style="font-variant:small-caps;">_neg_</span> </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> (lit. do not know how to)</td></tr></tfoot>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> 'I cannot fly.'</td></tr></tfoot>
+</table>
 
 
 # Create semi-automatic compiled abbreviation list
 
-```{r}
+
+```r
 make_gloss_list()
 ```
 
-```{r}
+<span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">npst</span> — non-past
+
+
+```r
 my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
                                definition = c("non-past tense", "habitual aspect", "infinitive", "negation marker"))
 make_gloss_list(my_abbreviations)
 ```
+
+<span style="font-variant:small-caps;">hab</span> — habitual aspect; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation marker; <span style="font-variant:small-caps;">npst</span> — non-past tense
 
 # References
