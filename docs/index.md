@@ -62,11 +62,16 @@ Except the last one all arguments are self-exploratory.
 gloss_example(transliteration = "bur-e-**ri** c'in-ne-s:u",
               glosses = "fly-NPST-**INF** know-HAB-*NEG*",
               free_translation = "I cannot fly. (Zilo Andi, East Caucasian)",
-              comment = "(lit. do not know how to)")
+              comment = "(lit. do not know how to)",
+              orthography = "Бурери цIиннессу.")
 ```
 
 <table class=" lightable-minimal" style='font-family: "Trebuchet MS", verdana, sans-serif; width: auto !important; border-bottom: 0;border-bottom: 0;'>
 <tbody>
+  <tr>
+   <td style="text-align:left;"> Бурери </td>
+   <td style="text-align:left;"> цIиннессу. </td>
+  </tr>
   <tr>
    <td style="text-align:left;"> *bur-e-**ri*** </td>
    <td style="text-align:left;"> *c'in-ne-s:u* </td>
@@ -179,8 +184,9 @@ So this kind of example referncing can be used with `lingglosses` examples like 
 <sup></sup> 'I cannot fly.'</td></tr></tfoot>
 </table>
 
-
 # Create semi-automatic compiled abbreviation list
+
+After the 
 
 
 ```r

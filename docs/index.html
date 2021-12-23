@@ -306,9 +306,18 @@ div.tocify {
 <pre class="r"><code>gloss_example(transliteration = &quot;bur-e-**ri** c&#39;in-ne-s:u&quot;,
               glosses = &quot;fly-NPST-**INF** know-HAB-*NEG*&quot;,
               free_translation = &quot;I cannot fly. (Zilo Andi, East Caucasian)&quot;,
-              comment = &quot;(lit. do not know how to)&quot;)</code></pre>
+              comment = &quot;(lit. do not know how to)&quot;,
+              orthography = &quot;Бурери цIиннессу.&quot;)</code></pre>
 <table class=" lightable-minimal" style="font-family: &quot;Trebuchet MS&quot;, verdana, sans-serif; width: auto !important; border-bottom: 0;border-bottom: 0;">
 <tbody>
+<tr>
+<td style="text-align:left;">
+Бурери
+</td>
+<td style="text-align:left;">
+цIиннессу.
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 <em>bur-e-<strong>ri</strong></em>
@@ -481,6 +490,7 @@ know-<span class="smallcaps">hab</span>-<span class="smallcaps"><em>neg</em></sp
 </div>
 <div id="create-semi-automatic-compiled-abbreviation-list" class="section level1" number="3">
 <h1 number="3"><span class="header-section-number">3</span> Create semi-automatic compiled abbreviation list</h1>
+<p>After the</p>
 <pre class="r"><code>make_gloss_list()</code></pre>
 <p><span class="smallcaps">hab</span> — habitual; <span class="smallcaps">inf</span> — infinitive; <span class="smallcaps">neg</span> — negation; <span class="smallcaps">npst</span> — non-past</p>
 <pre class="r"><code>my_abbreviations &lt;- data.frame(gloss = c(&quot;NPST&quot;, &quot;HAB&quot;, &quot;INF&quot;, &quot;NEG&quot;),

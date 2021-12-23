@@ -62,7 +62,8 @@ Except the last one all arguments are self-exploratory.
 gloss_example(transliteration = "bur-e-**ri** c'in-ne-s:u",
               glosses = "fly-NPST-**INF** know-HAB-*NEG*",
               free_translation = "I cannot fly. (Zilo Andi, East Caucasian)",
-              comment = "(lit. do not know how to)")
+              comment = "(lit. do not know how to)",
+              orthography = "Бурери цIиннессу.")
 ```
 
 In this first example you can see that:

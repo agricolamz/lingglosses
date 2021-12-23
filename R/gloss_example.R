@@ -46,11 +46,22 @@ gloss_example <- function(transliteration,
   transliteration <- unlist(strsplit(transliteration, " "))
   glosses_by_word <- unlist(strsplit(glosses, " "))
 
+  if(length(orthography) > 0){
+    orthography <- unlist(strsplit(orthography, " "))
+  }
+
 # check that glosses and transliteration have the same length --------------
   if(length(transliteration) != length(glosses_by_word)){
     stop(paste0("There is a different number of words and glosses in the
                 following example: ", paste0(transliteration, collapse = " ")))
   }
+
+  if(length(orthography) > 0 & length(transliteration) != length(orthography)){
+    stop(paste0("There is a different number of words in orthography and
+                transliteration in the following example: ",
+                paste0(transliteration, collapse = " ")))
+  }
+
 
 # add glosses --------------------------------------------------------------
   single_gl <- unlist(strsplit(glosses, "[-\\.= ]"))
@@ -78,19 +89,25 @@ gloss_example <- function(transliteration,
       gloss_example(paste0(transliteration[splits_by_line == i]),
                     paste0(glosses[splits_by_line == i]),
                     free_translation = if(i == max(splits_by_line)){free_translation} else {""},
+                    orthography = paste0(orthography[splits_by_line == i]),
                     line_length = line_length)
     })
     cat(unlist(multi_result))
   } else {
-    result <- matrix(c(paste0("*", transliteration, "*"), glosses),
-                     nrow = 2, byrow = TRUE)
+    if(length(orthography) > 0){
+      for_matrix <- c(orthography, paste0("*", transliteration, "*"), glosses)
+      nrow_matrix <- 3
+    } else {
+      for_matrix <- c(paste0("*", transliteration, "*"), glosses)
+      nrow_matrix <- 2
+    }
+    result <- matrix(for_matrix, nrow = nrow_matrix, byrow = TRUE)
     result <- kableExtra::kable_minimal(kableExtra::kbl(result,
                                                         align = "l",
                                                         centering = FALSE,
                                                         escape = FALSE),
                                         position = "left",
                                         full_width = FALSE)
-
     if(nchar(comment) > 0){
       result <- kableExtra::footnote(kable_input = result,
                                      general = comment,
