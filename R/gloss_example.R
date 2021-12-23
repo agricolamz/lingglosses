@@ -33,22 +33,19 @@ gloss_example <- function(transliteration,
                           orthography = "",
                           line_length = 70){
 
+  transliteration <- unlist(strsplit(transliteration, " "))
+  glosses_by_word <- unlist(strsplit(glosses, " "))
+  if(length(orthography) > 0){
+    orthography <- unlist(strsplit(orthography, " "))
+  }
+
 # prepare vector of splits of the glosses by line --------------------------
   longest <- if(sum(nchar(transliteration)) > sum(nchar(glosses))){
     transliteration
   } else {
-    glosses
+    glosses_by_word
   }
 
-  splits_by_line <- as.double(cut(cumsum(nchar(longest)),
-                                  breaks = 0:1e5*line_length))
-
-  transliteration <- unlist(strsplit(transliteration, " "))
-  glosses_by_word <- unlist(strsplit(glosses, " "))
-
-  if(length(orthography) > 0){
-    orthography <- unlist(strsplit(orthography, " "))
-  }
 
 # check that glosses and transliteration have the same length --------------
   if(length(transliteration) != length(glosses_by_word)){
@@ -84,13 +81,19 @@ gloss_example <- function(transliteration,
   glosses <- gsub("<span_style=", "<span style=", glosses)
 
 # long line splitting ------------------------------------------------------
+  splits_by_line <- as.double(cut(cumsum(nchar(longest)),
+                                  breaks = 0:1e5*line_length))
+
   if(length(unique(splits_by_line)) > 1){
     multi_result <- lapply(unique(splits_by_line), function(i){
-      gloss_example(paste0(transliteration[splits_by_line == i]),
-                    paste0(glosses[splits_by_line == i]),
-                    free_translation = if(i == max(splits_by_line)){free_translation} else {""},
-                    orthography = paste0(orthography[splits_by_line == i]),
-                    line_length = line_length)
+      gloss_example(
+        paste(transliteration[splits_by_line == i], collapse = " "),
+        paste(glosses_by_word[splits_by_line == i], collapse = " "),
+    free_translation = if(i == max(splits_by_line)){free_translation} else {""},
+        orthography = if(length(orthography) > 0){
+            paste(orthography[splits_by_line == i], collapse = " ")},
+        comment = if(i == max(splits_by_line)){comment} else {""},
+        line_length = line_length)
     })
     cat(unlist(multi_result))
   } else {

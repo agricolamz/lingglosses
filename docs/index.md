@@ -52,8 +52,35 @@ The main function of the `lingglosses` package is `gloss_example()`. This packag
 * `glosses`;
 * `free_translation`;
 * `comment`;
-* `orthography`;
+* `orthography`[^orth];
 * `line_length`.
+
+[^orth]: It is also possible to use this tier for the annotation of words like here:
+<table class=" lightable-minimal" style='font-family: "Trebuchet MS", verdana, sans-serif; width: auto !important; border-bottom: 0;'>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> HL </td>
+   <td style="text-align:left;"> H </td>
+   <td style="text-align:left;"> L </td>
+   <td style="text-align:left;"> H </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> *eze* </td>
+   <td style="text-align:left;"> *a* </td>
+   <td style="text-align:left;"> *za* </td>
+   <td style="text-align:left;"> *a* </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> <span style="font-variant:small-caps;">np</span> </td>
+   <td style="text-align:left;"> <span style="font-variant:small-caps;">prfx</span> </td>
+   <td style="text-align:left;"> <span style="font-variant:small-caps;">root</span> </td>
+   <td style="text-align:left;"> <span style="font-variant:small-caps;">sfx</span> </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> 'Eze swept... (Igbo, from [@goldsmith79: 209])'</td></tr></tfoot>
+</table>
+
 
 Except the last one all arguments are self-exploratory. 
 
@@ -128,7 +155,7 @@ It is possible to number and call your examples using strandard `rmarkdown` tool
 (@) my third example
 ```
 
-renders
+renders as:
 
 (@) my first example
 (@) my second example
@@ -184,6 +211,57 @@ So this kind of example referncing can be used with `lingglosses` examples like 
 <sup></sup> 'I cannot fly.'</td></tr></tfoot>
 </table>
 
+Sometimes examples are to long and do not fit into the page. In that case you need to add argument `results='asis'` to your chunk and `gloss_example()` will automatically split your example into multiple rows.
+
+(@tsa_ex) Tsakhur: Mishlesh [@maisak07: 386]
+
+```r
+gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː jaːluʁ-**o-b** **qa-b-ɨ**', 
+               '1SG.OBL-DAT shawl.3 AUX-3 PRF-3-bring.PFV woolen_sock-PL NPL.bring-PL-A.OBL place-IN shawl.3-AUX-3 PRF-3-bring.PFV',
+               '(they) **brought** me a shawl; instead of (lit. in place of bringing) woolen socks, (they) **brought** a shawl.',
+               '(Woolen socks are considered to be more valuable than a shawl.)')
+```
+
+<table class=" lightable-minimal" style='font-family: "Trebuchet MS", verdana, sans-serif; width: auto !important; '>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> *za-s* </td>
+   <td style="text-align:left;"> *jaːluʁ* </td>
+   <td style="text-align:left;"> ***wo-b*** </td>
+   <td style="text-align:left;"> ***qa-b-ɨ**;* </td>
+   <td style="text-align:left;"> *turs-ubɨ* </td>
+   <td style="text-align:left;"> *qal-es-di* </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> <span style="font-variant:small-caps;">1sg</span>.<span style="font-variant:small-caps;">obl</span>-<span style="font-variant:small-caps;">dat</span> </td>
+   <td style="text-align:left;"> shawl.<span style="font-variant:small-caps;">3</span> </td>
+   <td style="text-align:left;"> <span style="font-variant:small-caps;">aux</span>-<span style="font-variant:small-caps;">3</span> </td>
+   <td style="text-align:left;"> <span style="font-variant:small-caps;">prf</span>-<span style="font-variant:small-caps;">3</span>-bring.<span style="font-variant:small-caps;">pfv</span> </td>
+   <td style="text-align:left;"> woolen_sock-<span style="font-variant:small-caps;">pl</span> </td>
+   <td style="text-align:left;"> <span style="font-variant:small-caps;">npl</span>.bring-<span style="font-variant:small-caps;">pl</span>-<span style="font-variant:small-caps;">a</span>.<span style="font-variant:small-caps;">obl</span> </td>
+  </tr>
+</tbody>
+</table> <table class=" lightable-minimal" style='font-family: "Trebuchet MS", verdana, sans-serif; width: auto !important; border-bottom: 0;border-bottom: 0;'>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> *ǯiqj-eː* </td>
+   <td style="text-align:left;"> *jaːluʁ-**o-b*** </td>
+   <td style="text-align:left;"> ***qa-b-ɨ*** </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> place-<span style="font-variant:small-caps;">in</span> </td>
+   <td style="text-align:left;"> shawl.<span style="font-variant:small-caps;">3</span>-<span style="font-variant:small-caps;">aux</span>-<span style="font-variant:small-caps;">3</span> </td>
+   <td style="text-align:left;"> <span style="font-variant:small-caps;">prf</span>-<span style="font-variant:small-caps;">3</span>-bring.<span style="font-variant:small-caps;">pfv</span> </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> (Woolen socks are considered to be more valuable than a shawl.)</td></tr></tfoot>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<sup></sup> '(they) **brought** me a shawl; instead of (lit. in place of bringing) woolen socks, (they) **brought** a shawl.'</td></tr></tfoot>
+</table>
+
+If you are not satisfied with the result of automatic split you can change value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
+
 # Create semi-automatic compiled abbreviation list
 
 After the 
@@ -193,7 +271,7 @@ After the
 make_gloss_list()
 ```
 
-<span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">npst</span> — non-past
+<span style="font-variant:small-caps;">1sg</span> — first person singular; <span style="font-variant:small-caps;">3</span> — third person; <span style="font-variant:small-caps;">a</span> — agent-like argument of canonical transitive verb; <span style="font-variant:small-caps;">aux</span> — auxiliary; <span style="font-variant:small-caps;">dat</span> — dative; <span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">in</span> — inessive; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">npst</span> — non-past; <span style="font-variant:small-caps;">obl</span> — oblique; <span style="font-variant:small-caps;">pfv</span> — perfective; <span style="font-variant:small-caps;">pl</span> — plural; <span style="font-variant:small-caps;">prf</span> — perfect; <span style="font-variant:small-caps;">prfx</span> — prefix; <span style="font-variant:small-caps;">root</span> — root; <span style="font-variant:small-caps;">sfx</span> — suffix
 
 
 ```r

@@ -299,7 +299,7 @@ div.tocify {
 <li><code>glosses</code>;</li>
 <li><code>free_translation</code>;</li>
 <li><code>comment</code>;</li>
-<li><code>orthography</code>;</li>
+<li><code>orthography</code><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>;</li>
 <li><code>line_length</code>.</li>
 </ul>
 <p>Except the last one all arguments are self-exploratory.</p>
@@ -399,7 +399,7 @@ know-<span class="smallcaps">hab</span>-<span class="smallcaps"><em>neg</em></sp
 <pre><code>(@) my first example
 (@) my second example
 (@) my third example</code></pre>
-<p>renders</p>
+<p>renders as:</p>
 <ol class="example" style="list-style-type: decimal">
 <li>my first example</li>
 <li>my second example</li>
@@ -487,12 +487,105 @@ know-<span class="smallcaps">hab</span>-<span class="smallcaps"><em>neg</em></sp
 </tfoot>
 </table></li>
 </ol>
+<p>Sometimes examples are to long and do not fit into the page. In that case you need to add argument <code>results=&#39;asis&#39;</code> to your chunk and <code>gloss_example()</code> will automatically split your example into multiple rows.</p>
+<ol start="7" class="example" style="list-style-type: decimal">
+<li>Tsakhur: Mishlesh <span class="citation">(Maisak and Tatevosov 2007: 386)</span></li>
+</ol>
+<pre class="r"><code>gloss_example(&#39;za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː jaːluʁ-**o-b** **qa-b-ɨ**&#39;, 
+               &#39;1SG.OBL-DAT shawl.3 AUX-3 PRF-3-bring.PFV woolen_sock-PL NPL.bring-PL-A.OBL place-IN shawl.3-AUX-3 PRF-3-bring.PFV&#39;,
+               &#39;(they) **brought** me a shawl; instead of (lit. in place of bringing) woolen socks, (they) **brought** a shawl.&#39;,
+               &#39;(Woolen socks are considered to be more valuable than a shawl.)&#39;)</code></pre>
+<table class=" lightable-minimal" style="font-family: &quot;Trebuchet MS&quot;, verdana, sans-serif; width: auto !important; ">
+<tbody>
+<tr>
+<td style="text-align:left;">
+<em>za-s</em>
+</td>
+<td style="text-align:left;">
+<em>jaːluʁ</em>
+</td>
+<td style="text-align:left;">
+<strong><em>wo-b</em></strong>
+</td>
+<td style="text-align:left;">
+<em><strong>qa-b-ɨ</strong>;</em>
+</td>
+<td style="text-align:left;">
+<em>turs-ubɨ</em>
+</td>
+<td style="text-align:left;">
+<em>qal-es-di</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="smallcaps">1sg</span>.<span class="smallcaps">obl</span>-<span class="smallcaps">dat</span>
+</td>
+<td style="text-align:left;">
+shawl.<span class="smallcaps">3</span>
+</td>
+<td style="text-align:left;">
+<span class="smallcaps">aux</span>-<span class="smallcaps">3</span>
+</td>
+<td style="text-align:left;">
+<span class="smallcaps">prf</span>-<span class="smallcaps">3</span>-bring.<span class="smallcaps">pfv</span>
+</td>
+<td style="text-align:left;">
+woolen_sock-<span class="smallcaps">pl</span>
+</td>
+<td style="text-align:left;">
+<span class="smallcaps">npl</span>.bring-<span class="smallcaps">pl</span>-<span class="smallcaps">a</span>.<span class="smallcaps">obl</span>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-minimal" style="font-family: &quot;Trebuchet MS&quot;, verdana, sans-serif; width: auto !important; border-bottom: 0;border-bottom: 0;">
+<tbody>
+<tr>
+<td style="text-align:left;">
+<em>ǯiqj-eː</em>
+</td>
+<td style="text-align:left;">
+<em>jaːluʁ-<strong>o-b</strong></em>
+</td>
+<td style="text-align:left;">
+<strong><em>qa-b-ɨ</em></strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+place-<span class="smallcaps">in</span>
+</td>
+<td style="text-align:left;">
+shawl.<span class="smallcaps">3</span>-<span class="smallcaps">aux</span>-<span class="smallcaps">3</span>
+</td>
+<td style="text-align:left;">
+<span class="smallcaps">prf</span>-<span class="smallcaps">3</span>-bring.<span class="smallcaps">pfv</span>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> (Woolen socks are considered to be more valuable than a shawl.)
+</td>
+</tr>
+</tfoot>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> ‘(they) <strong>brought</strong> me a shawl; instead of (lit. in place of bringing) woolen socks, (they) <strong>brought</strong> a shawl.’
+</td>
+</tr>
+</tfoot>
+</table>
+<p>If you are not satisfied with the result of automatic split you can change value of the <code>line_length</code> argument (the default value is <code>70</code>, that means 70 characters of the longest line).</p>
 </div>
 <div id="create-semi-automatic-compiled-abbreviation-list" class="section level1" number="3">
 <h1 number="3"><span class="header-section-number">3</span> Create semi-automatic compiled abbreviation list</h1>
 <p>After the</p>
 <pre class="r"><code>make_gloss_list()</code></pre>
-<p><span class="smallcaps">hab</span> — habitual; <span class="smallcaps">inf</span> — infinitive; <span class="smallcaps">neg</span> — negation; <span class="smallcaps">npst</span> — non-past</p>
+<p><span class="smallcaps">1sg</span> — first person singular; <span class="smallcaps">3</span> — third person; <span class="smallcaps">a</span> — agent-like argument of canonical transitive verb; <span class="smallcaps">aux</span> — auxiliary; <span class="smallcaps">dat</span> — dative; <span class="smallcaps">hab</span> — habitual; <span class="smallcaps">in</span> — inessive; <span class="smallcaps">inf</span> — infinitive; <span class="smallcaps">neg</span> — negation; <span class="smallcaps">npst</span> — non-past; <span class="smallcaps">obl</span> — oblique; <span class="smallcaps">pfv</span> — perfective; <span class="smallcaps">pl</span> — plural; <span class="smallcaps">prf</span> — perfect; <span class="smallcaps">prfx</span> — prefix; <span class="smallcaps">root</span> — root; <span class="smallcaps">sfx</span> — suffix</p>
 <pre class="r"><code>my_abbreviations &lt;- data.frame(gloss = c(&quot;NPST&quot;, &quot;HAB&quot;, &quot;INF&quot;, &quot;NEG&quot;),
                                definition = c(&quot;non-past tense&quot;, &quot;habitual aspect&quot;, &quot;infinitive&quot;, &quot;negation marker&quot;))
 make_gloss_list(my_abbreviations)</code></pre>
@@ -504,6 +597,12 @@ make_gloss_list(my_abbreviations)</code></pre>
 <div id="ref-comrie08" class="csl-entry">
 Comrie, B., M. Haspelmath, and B. Bickel. 2008. <span>“The <span>L</span>eipzig <span>G</span>lossing <span>R</span>ules: <span>C</span>onventions for Interlinear Morpheme-by-Morpheme Glosses.”</span>
 </div>
+<div id="ref-goldsmith79" class="csl-entry">
+Goldsmith, J. 1979. <span>“The Aims of Autosegmental Phonology.”</span> In <em>Current Approaches to Phonological Theory</em>, edited by D. A. Dinnsen, 202–22. Indiana University Press Bloomington, IN.
+</div>
+<div id="ref-maisak07" class="csl-entry">
+Maisak, T., and S. Tatevosov. 2007. <span>“Beyond Evidentiality and Mirativity: <span>E</span>vidence from <span>T</span>sakhur.”</span> In <em>L’<span>É</span>nonciation m<span>é</span>diatis<span>é</span>e II</em>, 377–406.
+</div>
 <div id="ref-xie18" class="csl-entry">
 Xie, Y., J. J. Allaire, and G. Grolemund. 2018. <em>R Markdown: The Definitive Guide</em>. CRC Press.
 </div>
@@ -513,6 +612,61 @@ Xie, Y., J. J. Allaire, and G. Grolemund. 2018. <em>R Markdown: The Definitive G
 <hr />
 <ol>
 <li id="fn1"><p>If you want to render <code>.pdf</code> version you can either use latex and multiple linguistic packages developed for it (see e. g. <code>gb4e</code>, <code>langsci</code>, <code>expex</code>, <code>philex</code>), either you can render <code>.html</code> first and convert it to <code>.pdf</code> afterwards.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2">It is also possible to use this tier for the annotation of words like here:
+<table class=" lightable-minimal" style="font-family: &quot;Trebuchet MS&quot;, verdana, sans-serif; width: auto !important; border-bottom: 0;">
+<tbody>
+<tr>
+<td style="text-align:left;">
+HL
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:left;">
+L
+</td>
+<td style="text-align:left;">
+H
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>eze</em>
+</td>
+<td style="text-align:left;">
+<em>a</em>
+</td>
+<td style="text-align:left;">
+<em>za</em>
+</td>
+<td style="text-align:left;">
+<em>a</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="smallcaps">np</span>
+</td>
+<td style="text-align:left;">
+<span class="smallcaps">prfx</span>
+</td>
+<td style="text-align:left;">
+<span class="smallcaps">root</span>
+</td>
+<td style="text-align:left;">
+<span class="smallcaps">sfx</span>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> ‘Eze swept… (Igbo, from <span class="citation">(Goldsmith 1979: 209)</span>)’
+</td>
+</tr>
+</tfoot>
+</table>
+<a href="#fnref2" class="footnote-back">↩︎</a></li>
 </ol>
 </div>
 

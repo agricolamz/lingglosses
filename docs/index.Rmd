@@ -39,6 +39,13 @@ The main goal of the `lingglosses` package is to provide an option for creating:
 
 [^latex]: If you want to render `.pdf` version you can either use latex and multiple linguistic packages developed for it (see e. g. `gb4e`, `langsci`, `expex`, `philex`), either you can render `.html` first and convert it to `.pdf` afterwards.
 
+For the moment the package is available only from github:
+
+```{r, eval = FALSE}
+install.packages("remotes")
+remotes::install_github("agricolamz/lingglosses")
+```
+
 In order to use the package you need to load it with the `library()` call:
 
 ```{r}
@@ -53,8 +60,17 @@ The main function of the `lingglosses` package is `gloss_example()`. This packag
 * `glosses`;
 * `free_translation`;
 * `comment`;
-* `orthography`;
+* `orthography`[^orth];
 * `line_length`.
+
+[^orth]: It is also possible to use this tier for the annotation of words like here:
+```{r, echo=FALSE}
+gloss_example(transliteration = "eze a za a",
+              glosses = "NP PRFX ROOT SFX",
+              free_translation = "Eze swept... (Igbo, from [@goldsmith79: 209])",
+              orthography = "HL H L H")
+```
+
 
 Except the last one all arguments are self-exploratory. 
 
@@ -89,7 +105,7 @@ It is possible to number and call your examples using strandard `rmarkdown` tool
 (@) my third example
 ```
 
-renders
+renders as:
 
 (@) my first example
 (@) my second example
@@ -125,9 +141,21 @@ gloss_example("bur-e-**ri** c'in-ne-s:u",
               "(lit. do not know how to)")
 ```
 
+Sometimes examples are to long and do not fit into the page. In that case you need to add argument `results='asis'` to your chunk and `gloss_example()` will automatically split your example into multiple rows.
+
+(@tsa_ex) Tsakhur: Mishlesh [@maisak07: 386]
+```{r, results='asis'}
+gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː jaːluʁ-**o-b** **qa-b-ɨ**', 
+               '1SG.OBL-DAT shawl.3 AUX-3 PRF-3-bring.PFV woolen_sock-PL NPL.bring-PL-A.OBL place-IN shawl.3-AUX-3 PRF-3-bring.PFV',
+               '(they) **brought** me a shawl; instead of (lit. in place of bringing) woolen socks, (they) **brought** a shawl.',
+               '(Woolen socks are considered to be more valuable than a shawl.)')
+```
+
+If you are not satisfied with the result of automatic split you can change value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
+
 # Create semi-automatic compiled abbreviation list
 
-After the 
+After you 
 
 ```{r}
 make_gloss_list()
