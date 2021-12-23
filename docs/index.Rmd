@@ -14,6 +14,10 @@ output:
 bibliography: bibliography.bib
 ---
 
+```{r, include=FALSE}
+library(lingglosses)
+```
+
 # Introduction
 
 Abbreviation list is obligatory part of linguistic articles that nobody reads. This lists contains definitions of abbreviations used in the article (e. g. corpora names or sign language names), but also a list of linguistic glosses --- abbreviations used in linguistic interlinear examples. There is a standardized list of glossing rules [@comrie08] which ends with a list of 84 standard abbreviations. Much bigger list is present on the [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations). However researchers can deviate from this list and provide their own abbreviations.
@@ -27,7 +31,7 @@ NOM = nominative, GEN = nominative, DAT = nominative, ACC = accusative, VOC = ac
 Except obvious mistakes in this list there are some more problems that I wanted to emphasize:
 
 * lack of the alphabetic order;
-* there is also some abbreviation (SBJV, IMP) in the article that are absent in the abbreviation list.
+* there is also some abbreviation (`r small_caps("sbjv")`, `r small_caps("imp")`) in the article that are absent in the abbreviation list.
 
 The main goal of the `lingglosses` package is to provide an option for creating:
 
@@ -177,7 +181,7 @@ my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
 make_gloss_list(my_abbreviations)
 ```
 
-Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r small_caps("ass")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`:
+As you can see all undefined glosses in our `my_abbreviations` dataset lack definitions. Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r small_caps("ass")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`:
 
 ```{r}
 make_gloss_list(all_possible_variants = TRUE)

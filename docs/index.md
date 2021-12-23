@@ -14,6 +14,8 @@ output:
 bibliography: bibliography.bib
 ---
 
+
+
 # Introduction
 
 Abbreviation list is obligatory part of linguistic articles that nobody reads. This lists contains definitions of abbreviations used in the article (e. g. corpora names or sign language names), but also a list of linguistic glosses --- abbreviations used in linguistic interlinear examples. There is a standardized list of glossing rules [@comrie08] which ends with a list of 84 standard abbreviations. Much bigger list is present on the [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations). However researchers can deviate from this list and provide their own abbreviations.
@@ -27,7 +29,7 @@ NOM = nominative, GEN = nominative, DAT = nominative, ACC = accusative, VOC = ac
 Except obvious mistakes in this list there are some more problems that I wanted to emphasize:
 
 * lack of the alphabetic order;
-* there is also some abbreviation (SBJV, IMP) in the article that are absent in the abbreviation list.
+* there is also some abbreviation (<span style="font-variant:small-caps;">sbjv</span>, <span style="font-variant:small-caps;">imp</span>) in the article that are absent in the abbreviation list.
 
 The main goal of the `lingglosses` package is to provide an option for creating:
 
@@ -290,7 +292,7 @@ After you finished your text, it is possible to call the `make_gloss_list()` fun
 make_gloss_list()
 ```
 
-<span style="font-variant:small-caps;">1sg</span> — first person singular; <span style="font-variant:small-caps;">3</span> — third person; <span style="font-variant:small-caps;">a</span> — agent-like argument of canonical transitive verb; <span style="font-variant:small-caps;">aux</span> — auxiliary; <span style="font-variant:small-caps;">dat</span> — dative; <span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">in</span> — inessive; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">npst</span> — non-past; <span style="font-variant:small-caps;">obl</span> — oblique; <span style="font-variant:small-caps;">pfv</span> — perfective; <span style="font-variant:small-caps;">pl</span> — plural; <span style="font-variant:small-caps;">prf</span> — perfect; <span style="font-variant:small-caps;">prfx</span> — prefix; <span style="font-variant:small-caps;">root</span> — root; <span style="font-variant:small-caps;">sfx</span> — suffix
+<span style="font-variant:small-caps;">1sg</span> — first person singular; <span style="font-variant:small-caps;">3</span> — third person; <span style="font-variant:small-caps;">a</span> — agent-like argument of canonical transitive verb; <span style="font-variant:small-caps;">aux</span> — auxiliary; <span style="font-variant:small-caps;">dat</span> — dative; <span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">in</span> — inessive; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">np</span> — noun phrase; <span style="font-variant:small-caps;">npl</span> — ; <span style="font-variant:small-caps;">npst</span> — non-past; <span style="font-variant:small-caps;">obl</span> — oblique; <span style="font-variant:small-caps;">pfv</span> — perfective; <span style="font-variant:small-caps;">pl</span> — plural; <span style="font-variant:small-caps;">prf</span> — perfect; <span style="font-variant:small-caps;">prfx</span> — prefix; <span style="font-variant:small-caps;">root</span> — root; <span style="font-variant:small-caps;">sfx</span> — suffix
 
 This function works with the built-in dataset `glosses` that is compiled from Leipzig Glosses, [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations) and articles from the open access journal [Glossa](https://www.glossa-journal.org/)[^glossa]. Everybody can change this dataset for their own purposes. 
 
@@ -305,16 +307,16 @@ my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
 make_gloss_list(my_abbreviations)
 ```
 
-<span style="font-variant:small-caps;">hab</span> — habitual aspect; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation marker; <span style="font-variant:small-caps;">npst</span> — non-past tense
+<span style="font-variant:small-caps;">1sg</span> — ; <span style="font-variant:small-caps;">3</span> — ; <span style="font-variant:small-caps;">a</span> — ; <span style="font-variant:small-caps;">aux</span> — ; <span style="font-variant:small-caps;">dat</span> — ; <span style="font-variant:small-caps;">hab</span> — habitual aspect; <span style="font-variant:small-caps;">in</span> — ; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation marker; <span style="font-variant:small-caps;">np</span> — ; <span style="font-variant:small-caps;">npl</span> — ; <span style="font-variant:small-caps;">npst</span> — non-past tense; <span style="font-variant:small-caps;">obl</span> — ; <span style="font-variant:small-caps;">pfv</span> — ; <span style="font-variant:small-caps;">pl</span> — ; <span style="font-variant:small-caps;">prf</span> — ; <span style="font-variant:small-caps;">prfx</span> — ; <span style="font-variant:small-caps;">root</span> — ; <span style="font-variant:small-caps;">sfx</span> — 
 
-Unfortunately, some glosses can have multiple meaning in different traditions (e. g. <span style="font-variant:small-caps;">ass</span> can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`:
+As you can see all undefined glosses in our `my_abbreviations` dataset lack definitions. Unfortunately, some glosses can have multiple meaning in different traditions (e. g. <span style="font-variant:small-caps;">ass</span> can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`:
 
 
 ```r
 make_gloss_list(all_possible_variants = TRUE)
 ```
 
-<span style="font-variant:small-caps;">1sg</span> — first person singular; <span style="font-variant:small-caps;">3</span> — third person; <span style="font-variant:small-caps;">a</span> — agent-like argument of canonical transitive verb; <span style="font-variant:small-caps;">aux</span> — auxiliary; <span style="font-variant:small-caps;">dat</span> — dative; <span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">in</span> — inessive; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">npst</span> — non-past; <span style="font-variant:small-caps;">obl</span> — oblique; <span style="font-variant:small-caps;">pfv</span> — perfective; <span style="font-variant:small-caps;">pl</span> — plural; <span style="font-variant:small-caps;">prf</span> — perfect; <span style="font-variant:small-caps;">prf</span> — perfective; <span style="font-variant:small-caps;">prfx</span> — prefix; <span style="font-variant:small-caps;">root</span> — root; <span style="font-variant:small-caps;">sfx</span> — suffix
+<span style="font-variant:small-caps;">1sg</span> — first person singular; <span style="font-variant:small-caps;">3</span> — third person; <span style="font-variant:small-caps;">a</span> — agent-like argument of canonical transitive verb; <span style="font-variant:small-caps;">aux</span> — auxiliary; <span style="font-variant:small-caps;">dat</span> — dative; <span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">in</span> — inessive; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">np</span> — noun phrase; <span style="font-variant:small-caps;">npl</span> — ; <span style="font-variant:small-caps;">npst</span> — non-past; <span style="font-variant:small-caps;">obl</span> — oblique; <span style="font-variant:small-caps;">pfv</span> — perfective; <span style="font-variant:small-caps;">pl</span> — plural; <span style="font-variant:small-caps;">prf</span> — perfect; <span style="font-variant:small-caps;">prf</span> — perfective; <span style="font-variant:small-caps;">prfx</span> — prefix; <span style="font-variant:small-caps;">root</span> — root; <span style="font-variant:small-caps;">sfx</span> — suffix
 
 As you can see there are two possible values for <span style="font-variant:small-caps;">prf</span> that are listed above.
 

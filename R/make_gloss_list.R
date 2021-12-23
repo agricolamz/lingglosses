@@ -24,12 +24,25 @@ make_gloss_list <- function(definition_source = lingglosses::glosses,
     definition_source$weight <- 1
   }
 
+  if(!("source" %in% names(definition_source))){
+    definition_source$source <- ""
+  }
+
+
   knitr::opts_current$set(results='asis')
 
   # get glosses
   gloss_list <- eval(parse(text = .get_variable_name()))
   # get definitions and sort them
   gloss_ld <- definition_source[definition_source$gloss %in% gloss_list,]
+  misfits <-
+  gloss_ld <- unique(rbind(
+    gloss_ld,
+    data.frame(gloss = gloss_list[!(gloss_list %in% definition_source$gloss)],
+               definition = "",
+               source = "",
+               weight = 1)))
+
   # it is sorted in lingglosses::glosses, but may be not sorted in user's tables
   gloss_ld <- gloss_ld[order(gloss_ld$gloss),]
 
