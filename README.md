@@ -2,6 +2,8 @@
 
 G. Moroz
 
+[![DOI](https://zenodo.org/badge/440443756.svg)](https://zenodo.org/badge/latestdoi/440443756)
+
 ## Installation
 
 Get the development version from GitHub:
