@@ -2,7 +2,7 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "lingglosses",
-  "description": "'lingglosses' provides a functionality that will make it easier to render glossed linguistic examples in 'rmarkdown' and then semiautomatically compile the glosses list at the end of the document.",
+  "description": "'lingglosses' provides a functionality that will make it easier to render glossed linguistic examples in 'rmarkdown' and then semiautomatically. compile the glosses list at the end of the document. TEST hook",
   "name": "lingglosses: Linguistic examples and abbreviation list",
   "relatedLink": "https://agricolamz.github.io/lingglosses/",
   "codeRepository": "https://github.com/agricolamz/lingglosses/",
@@ -78,5 +78,5 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "20.503KB"
+  "fileSize": "20.514KB"
 }

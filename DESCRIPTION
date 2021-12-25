@@ -10,7 +10,7 @@ Authors@R: person("George", "Moroz",
 Maintainer: George Moroz <agricolamz@gmail.com>
 Description: 'lingglosses' provides a functionality that will make it easier to
     render glossed linguistic examples in 'rmarkdown' and then semiautomatically.
-    compile the glosses list at the end of the document. TEST hook
+    compile the glosses list at the end of the document.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
