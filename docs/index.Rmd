@@ -154,7 +154,7 @@ gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː
 
 If you are not satisfied with the result of automatic split you can change value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
 
-Sometimes people gloss morpheme by morpheme (this is especially useful for polysynthetic languages). This also possible in `lingglosses` (and you can annotate slots with `orthography` argument, see footnote 2 for the details):
+Sometimes people gloss morpheme by morpheme (this is especially useful for polysynthetic languages). It is also possible in `lingglosses` (and you can annotate slots with `orthography` argument, see footnote 2 for the details):
 
 (@) Abaza, West Caucasian [@arkadiev20: example 5.2]
 ```{r}

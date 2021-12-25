@@ -5,7 +5,7 @@
   "description": "'lingglosses' helps to render glossed linguistic examples in html rmarkdown documents and then semi-automatically compiles the glosses list at the end of the document. It also provides a database of linguistic glosses.",
   "name": "lingglosses: Linguistic examples and abbreviation list",
   "relatedLink": "https://agricolamz.github.io/lingglosses/",
-  "codeRepository": "https://github.com/agricolamz/lingglosses/",
+  "codeRepository": "https://CRAN.R-project.org/package=phonfieldwork",
   "issueTracker": "https://github.com/agricolamz/lingglosses/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
   "version": "0.0.2",
@@ -42,6 +42,18 @@
     },
     "2": {
       "@type": "SoftwareApplication",
+      "identifier": "kableExtra",
+      "name": "kableExtra",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=kableExtra"
+    },
+    "3": {
+      "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
       "provider": {
@@ -52,7 +64,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
-    "3": {
+    "4": {
       "@type": "SoftwareApplication",
       "identifier": "rmarkdown",
       "name": "rmarkdown",
@@ -64,19 +76,12 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
     },
-    "4": {
+    "5": {
       "@type": "SoftwareApplication",
-      "identifier": "kableExtra",
-      "name": "kableExtra",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=kableExtra"
+      "identifier": "utils",
+      "name": "utils"
     },
     "SystemRequirements": null
   },
-  "fileSize": "20.525KB"
+  "fileSize": "20.538KB"
 }
