@@ -24,6 +24,7 @@
 #' @importFrom kableExtra kable_minimal
 #' @importFrom kableExtra kbl
 #' @importFrom kableExtra footnote
+#' @importFrom utils write.table
 #' @export
 
 gloss_example <- function(transliteration,
@@ -64,9 +65,8 @@ gloss_example <- function(transliteration,
   single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(]"))
   single_gl <- single_gl[single_gl != ""]
   glosses2add <- gsub("[_\\*]", "", single_gl[single_gl == toupper(single_gl)])
-  assign(.get_variable_name(),
-         append(eval(parse(text = .get_variable_name())), glosses2add),
-         envir = .GlobalEnv)
+  write.table(x = glosses2add, file = getOption("lingglosses.glosses_list"),
+              row.names = FALSE, col.names = FALSE, append = TRUE)
 
 # add small-caps -----------------------------------------------------------
   single_gl <- ifelse(single_gl == toupper(single_gl),

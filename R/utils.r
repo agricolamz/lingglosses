@@ -5,13 +5,11 @@
 #' @importFrom rmarkdown metadata
 #' @export
 
-.onLoad <- function(libname = find.package("lingglosses"), pkgname = "lingglosses") {
-  # get document title
-  title <- gsub("\\W", "_", rmarkdown::metadata$title)
-  title <- gsub("\\d", "", title)
-  title <- paste0(".list_of_glosses_for_", title)
-  # write a hidden variable to the global environment
-  assign(title, character(), envir = .GlobalEnv)
+.onLoad <- function(libname = find.package("lingglosses"),
+                    pkgname = "lingglosses") {
+  tmp_file <- tempfile(pattern = .get_variable_name(), fileext = ".csv")
+  options("lingglosses.glosses_list" = tmp_file)
+  invisible()
 }
 
 #' Creates a name of the hidden variable for tracking glosses

@@ -1,7 +1,7 @@
 ---
 title: "Introduction to `lingglosses`"
 author: "G. Moroz, [NRU HSE Linguistic Convergence Laboratory](https://ilcl.hse.ru/en/)"
-date: "23-12-2021"
+date: "`r Sys.Date()`"
 output: 
   html_document:
     toc: true

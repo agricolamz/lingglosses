@@ -8,6 +8,7 @@
 #' @return a string with glosses and their definitions gathered from \code{definition_source} table.
 #' @importFrom knitr asis_output
 #' @importFrom rmarkdown metadata
+#' @importFrom utils read.csv
 #' @export
 
 make_gloss_list <- function(definition_source = lingglosses::glosses_df,
@@ -33,7 +34,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
   knitr::opts_current$set(results='asis')
 
   # get glosses
-  gloss_list <- eval(parse(text = .get_variable_name()))
+  gloss_list <- unlist(utils::read.csv(getOption("lingglosses.glosses_list")))
   # get definitions and sort them
   gloss_ld <- definition_source[definition_source$gloss %in% gloss_list,]
   if(length(gloss_list[!(gloss_list %in% definition_source$gloss)]) > 0){
