@@ -1,0 +1,13 @@
+```bash
+ffmpeg -ss 00:01 -i ex.mp4 -t 00:41 ex_%07d.png
+```
+
+```{r}
+library(magick)
+list.files(path='/home/agricolamz/Desktop/video/result', pattern = '*.png', full.names = TRUE) %>% 
+        image_read() %>% # reads each path file
+        image_join() %>% # joins image
+        image_animate(delay = 120, optimize = TRUE) %>% # animates, can opt for number of loops
+        image_write("FileName.gif") # write to current dir
+```
+

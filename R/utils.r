@@ -5,7 +5,7 @@
 #' @importFrom rmarkdown metadata
 #' @export
 
-.onLoad <- function(...) {
+.onLoad <- function(libname = find.package("lingglosses"), pkgname = "lingglosses") {
   # get document title
   title <- gsub("\\W", "_", rmarkdown::metadata$title)
   title <- gsub("\\d", "", title)

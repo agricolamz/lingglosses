@@ -38,7 +38,7 @@ The main goal of the `lingglosses` package is to provide an option for creating:
 * linguistic glosses for `.html` output of `rmarkdown` [@xie18][^latex];
 * semi-automatic compiled abbreviation list.
 
-[^latex]: If you want to render `.pdf` version you can either use latex and multiple linguistic packages developed for it (see e. g. `gb4e`, `langsci`, `expex`, `philex`), either you can render `.html` first and convert it to `.pdf` afterwards.
+[^latex]: If you want to render `.pdf` version you can either use latex and multiple linguistic packages developed for it (see e. g. [`gb4e`](https://www.ctan.org/pkg/gb4e), [`langsci`](https://www.ctan.org/pkg/langsci), [`expex`](https://www.ctan.org/pkg/expex), [`philex`](https://www.ctan.org/pkg/philex)), either you can render `.html` first and convert it to `.pdf` afterwards.
 
 For the moment the package is available only from github, so in order to install it you need to run the following commands:
 
@@ -85,7 +85,7 @@ gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu",
 
 In this first example you can see that:
 
-* the transliteration line is italic by default;
+* the transliteration line is italic by default (if you do not want it, just add the `transliteration_italic = FALSE` argument);
 * users can use standrad markdown syntax (e. g. `**a**` for **bold** and `*a*` for *italic*);
 * the free translation line is framed with quotation marks.
 
@@ -154,6 +154,16 @@ gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː
 
 If you are not satisfied with the result of automatic split you can change value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
 
+Sometimes people gloss morpheme by morpheme (this is especially useful for polysynthetic languages). This also possible in `lingglosses` (and you can annotate slots with `orthography` argument, see footnote 2 for the details):
+
+(@) Abaza, West Caucasian [@arkadiev20: example 5.2]
+```{r}
+gloss_example("s- z- á- la- nəq'wa -wa –dzə -j -ɕa -t'",
+              "1SG.ABS POT 3SG.N.IO LOC pass IPF LOC 3SG.M.IO seem(AOR) DCL",
+              "It seemed to him that I would be able to pass there.",
+              transliteration_italic = FALSE)
+```
+
 
 # Create semi-automatic compiled abbreviation list
 
@@ -163,9 +173,9 @@ After you finished your text, it is possible to call the `make_gloss_list()` fun
 make_gloss_list()
 ```
 
-This function works with the built-in dataset `glosses` that is compiled from Leipzig Glosses, [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations) and articles from the open access journal [Glossa](https://www.glossa-journal.org/)[^glossa]. Everybody can change this dataset for their own purposes. 
+This function works with the built-in dataset `glosses_df` that is compiled from Leipzig Glosses, [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations) and articles from the open access journal [Glossa](https://www.glossa-journal.org/)[^glossa]. Everybody can change this dataset for their own purposes. 
 
-[^glossa]: The script for the collecting glosses is available [here](https://github.com/agricolamz/lingglosses/blob/master/database_creation/glossa.R). The glosses list was manually corrected and merged with glosses from other sources. This kind of glosses marked in the `glosses` dataset as `lingglosses` in the `source` column.
+[^glossa]: The script for the collecting glosses is available [here](https://github.com/agricolamz/lingglosses/blob/master/database_creation/glossa.R). The glosses list was manually corrected and merged with glosses from other sources. This kind of glosses marked in the `glosses_df` dataset as `lingglosses` in the `source` column.
 
 It is possible that user can be not satisfied with the result of `make_gloss_list()` function, then there are two possible strategies. First strategy is to copy the result of the `make_gloss_list()`, modify it and paste in your `rmarkdown` document. Sometimes you work on some volume dedicated to on group of languages and you want to assure that glosses are the same across all articles, than you can compile your own table with columns `gloss` and `definition` and use it within `make_gloss_list` function.
 
@@ -182,6 +192,22 @@ make_gloss_list(all_possible_variants = TRUE)
 ```
 
 As you can see there are two possible values for `r small_caps("prf")` that are listed above.
+
+# Other output formats
+
+Right now there is no direct way of knitting `lingglosses` to `.docx` format, however you can work around copying and pasting from the `.html` version:
+
+```{r, echo = FALSE}
+knitr::include_graphics("for_word_users.gif")
+```
+
+The `.pdf` output is possible, however there are some known restrictions: 
+
+* markdown bold and italic annotation do not work;
+* example numbers appears beneath the example;
+* there is no non-breaking space in glosses list.
+
+So if you want to avoid those problems the best solution will be to use one of the latex glossing packages listed in the first footnote and the package [`glossaries`](https://www.ctan.org/pkg/glossaries) for automatic compilation of glosses.
 
 # References
 

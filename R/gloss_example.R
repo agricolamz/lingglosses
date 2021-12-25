@@ -10,6 +10,7 @@
 #' @param orthography character vector of the length one for the orthography line (above translation).
 #' @param comment character vector of the length one for the comment line (under the free translation line).
 #' @param line_length integer vector of the length one that denotes maximum number of characters per one line.
+#' @param transliteration_italic logical that denotes, whether you want to italicize your example.
 #'
 #' @examples
 #' \dontrun{
@@ -19,7 +20,6 @@
 #'                comment = "(lit. do not know how to)")
 #' }
 #'
-#' @return no output
 #' @importFrom rmarkdown metadata
 #' @importFrom kableExtra kable_minimal
 #' @importFrom kableExtra kbl
@@ -31,7 +31,8 @@ gloss_example <- function(transliteration,
                           free_translation = "",
                           comment = "",
                           orthography = "",
-                          line_length = 70){
+                          line_length = 70,
+                          transliteration_italic = TRUE){
 
   transliteration <- unlist(strsplit(transliteration, " "))
   glosses_by_word <- unlist(strsplit(glosses, " "))
@@ -59,9 +60,9 @@ gloss_example <- function(transliteration,
                 paste0(transliteration, collapse = " ")))
   }
 
-
 # add glosses --------------------------------------------------------------
-  single_gl <- unlist(strsplit(glosses, "[-\\.= ]"))
+  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(]"))
+  single_gl <- single_gl[single_gl != ""]
   glosses2add <- gsub("[_\\*]", "", single_gl[single_gl == toupper(single_gl)])
   assign(.get_variable_name(),
          append(eval(parse(text = .get_variable_name())), glosses2add),
@@ -71,7 +72,7 @@ gloss_example <- function(transliteration,
   single_gl <- ifelse(single_gl == toupper(single_gl),
                       lingglosses::small_caps(single_gl),
                       single_gl)
-  delimeters <- unlist(strsplit(glosses, "[^-\\.= ]"))
+  delimeters <- unlist(strsplit(glosses, "[^-:\\.= \\)\\(]"))
   delimeters <- c(delimeters[delimeters != ""], "")
   glosses <- paste0(single_gl, delimeters, collapse = "")
   glosses <- gsub("<span style=", "<span_style=", glosses)
@@ -95,18 +96,22 @@ gloss_example <- function(transliteration,
     })
     cat(unlist(multi_result))
   } else {
+
+    if(isTRUE(transliteration_italic)){
+      transliteration <- paste0("*", transliteration, "*")
+    }
+
     if(length(orthography) > 0){
-      for_matrix <- c(orthography, paste0("*", transliteration, "*"), glosses)
+      for_matrix <- c(orthography, transliteration, glosses)
       nrow_matrix <- 3
     } else {
-      for_matrix <- c(paste0("*", transliteration, "*"), glosses)
+      for_matrix <- c(transliteration, glosses)
       nrow_matrix <- 2
     }
     result <- matrix(for_matrix, nrow = nrow_matrix, byrow = TRUE)
-    result <- kableExtra::kable_minimal(kableExtra::kbl(result,
-                                                        align = "l",
-                                                        centering = FALSE,
-                                                        escape = FALSE),
+    result <- kableExtra::kbl(result, align = "l", centering = FALSE,
+                              escape = FALSE, vline = "")
+    result <- kableExtra::kable_minimal(result,
                                         position = "left",
                                         full_width = FALSE)
     if(nchar(comment) > 0){
@@ -118,7 +123,11 @@ gloss_example <- function(transliteration,
       result <- kableExtra::footnote(kable_input = result,
                                      general = paste0("'", free_translation, "'"),
                                      general_title = "")
-      }
+    }
+    result <- gsub("\\\\toprule", "", result)
+    result <- gsub("\\\\midrule", "", result)
+    result <- gsub("\\\\bottomrule", "", result)
+    result <- gsub("\\\\hline", "", result)
     return(result)
   }
 }

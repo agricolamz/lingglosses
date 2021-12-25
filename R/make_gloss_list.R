@@ -7,9 +7,10 @@
 #' @param all_possible_variants logical. Some glosses have multiple definitions.
 #' @return a string with glosses and their definitions gathered from \code{definition_source} table.
 #' @importFrom knitr asis_output
+#' @importFrom rmarkdown metadata
 #' @export
 
-make_gloss_list <- function(definition_source = lingglosses::glosses,
+make_gloss_list <- function(definition_source = lingglosses::glosses_df,
                             all_possible_variants = FALSE){
 
   if(!("data.frame" %in% attr(definition_source, "class"))){
@@ -51,9 +52,17 @@ make_gloss_list <- function(definition_source = lingglosses::glosses,
     gloss_ld <- gloss_ld[gloss_ld$weight != 0,]
   }
 
+  # generate non breacking space
+  if(!is.null(rmarkdown::metadata$output) &&
+     grepl("latex", unlist(rmarkdown::metadata$output))){
+    gloss_sep = " --- "
+  } else {
+    gloss_sep = "\u00A0\u2014\u00A0"
+  }
+
   # create an output
   res <- paste(lingglosses::small_caps(gloss_ld$gloss),
                gloss_ld$definition,
-               sep = " \u2014 ", collapse = "; ")
+               sep = gloss_sep, collapse = "; ")
   knitr::asis_output(res)
 }

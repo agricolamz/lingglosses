@@ -116,6 +116,6 @@ for_analysis %>%
 # after this I go through the file and change it manually
 
 # save file as rds ---------------------------------------------------------
-glosses <- read.csv("database_creation/glossa_extracted.csv")
-save(glosses, file="data/glosses.RData", compress='xz')
+glosses_df <- read.csv("database_creation/glossa_extracted.csv")
+save(glosses_df, file="data/glosses_df.RData", compress='xz')
 

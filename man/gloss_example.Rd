@@ -10,7 +10,8 @@ gloss_example(
   free_translation = "",
   comment = "",
   orthography = "",
-  line_length = 70
+  line_length = 70,
+  transliteration_italic = TRUE
 )
 }
 \arguments{
@@ -25,9 +26,8 @@ gloss_example(
 \item{orthography}{character vector of the length one for the orthography line (above translation).}
 
 \item{line_length}{integer vector of the length one that denotes maximum number of characters per one line.}
-}
-\value{
-no output
+
+\item{transliteration_italic}{logical that denotes, whether you want to italicize your example.}
 }
 \description{
 Creates an interlinear glossed example for linguistics.
