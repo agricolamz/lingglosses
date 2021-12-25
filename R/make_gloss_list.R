@@ -5,6 +5,7 @@
 #' @author George Moroz <agricolamz@gmail.com>
 #' @param definition_source dataframe with the columns \code{gloss} and \code{definition} that helps to automatic search for the gloss definitions.
 #' @param all_possible_variants logical. Some glosses have multiple definitions.
+#' @param annotate_problematic logical. Whether emphasize duplicaded and definitionless glosses
 #' @return a string with glosses and their definitions gathered from \code{definition_source} table.
 #' @importFrom knitr asis_output
 #' @importFrom knitr opts_current
@@ -14,7 +15,7 @@
 
 make_gloss_list <- function(definition_source = lingglosses::glosses_df,
                             all_possible_variants = FALSE,
-                            annotate_definitionless = TRUE){
+                            annotate_problematic = TRUE){
 
   knitr::opts_current$set(results='asis')
 
@@ -79,7 +80,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
   }
 
 # annotate -----------------------------------------------------------------
-  if(isTRUE(annotate_definitionless) && length(definitionless) > 0){
+  if(isTRUE(annotate_problematic) && length(definitionless) > 0){
     glosses_dataset$gloss <- unlist(
       lapply(seq_along(definitionless), function(x){
         ifelse(glosses_dataset$gloss == definitionless[x],
@@ -91,7 +92,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
 
   duplicated_glosses <- glosses_dataset$gloss[duplicated(glosses_dataset$gloss)]
 
-  if(isTRUE(annotate_definitionless) && length(duplicated_glosses) > 0){
+  if(isTRUE(annotate_problematic) && length(duplicated_glosses) > 0){
     glosses_dataset$gloss <- unlist(
       lapply(seq_along(duplicated_glosses), function(x){
         ifelse(glosses_dataset$gloss == duplicated_glosses[x],

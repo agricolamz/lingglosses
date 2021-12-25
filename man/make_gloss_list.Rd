@@ -7,13 +7,15 @@
 make_gloss_list(
   definition_source = lingglosses::glosses_df,
   all_possible_variants = FALSE,
-  annotate_definitionless = TRUE
+  annotate_problematic = TRUE
 )
 }
 \arguments{
 \item{definition_source}{dataframe with the columns \code{gloss} and \code{definition} that helps to automatic search for the gloss definitions.}
 
 \item{all_possible_variants}{logical. Some glosses have multiple definitions.}
+
+\item{annotate_problematic}{logical. Whether emphasize duplicaded and definitionless glosses}
 }
 \value{
 a string with glosses and their definitions gathered from \code{definition_source} table.

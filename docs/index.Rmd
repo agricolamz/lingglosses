@@ -190,10 +190,10 @@ Unfortunately, some glosses can have multiple meaning in different traditions (e
 make_gloss_list(all_possible_variants = TRUE)
 ```
 
-You could have notice that problematic glosses (those without definition or duplicated) are colored. This can be switched off adding the argument `annotate_definitionless = FALSE`:
+You could have notice that problematic glosses (those without definition or duplicated) are colored. This can be switched off adding the argument `annotate_problematic = FALSE`:
 
 ```{r}
-make_gloss_list(all_possible_variants = TRUE, annotate_definitionless = FALSE)
+make_gloss_list(all_possible_variants = TRUE, annotate_problematic = FALSE)
 ```
 
 
