@@ -14,8 +14,8 @@ Description: 'lingglosses' helps to render glossed linguistic examples in html
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/agricolamz/lingglosses/, https://agricolamz.github.io/lingglosses/
+URL: https://CRAN.R-project.org/package=phonfieldwork, https://agricolamz.github.io/lingglosses/
 BugReports: https://github.com/agricolamz/lingglosses/issues
-Imports: knitr, rmarkdown, kableExtra
+Imports: kableExtra, knitr, rmarkdown, utils
 VignetteBuilder: knitr
 RoxygenNote: 7.1.2
