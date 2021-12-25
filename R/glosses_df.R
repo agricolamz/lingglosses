@@ -4,7 +4,7 @@
 #' Comrie, Haspelmath, and Bickel and other glosses automatically gathered from
 #' Glossa Journal articles.
 #'
-#' @format A data frame with 624 rows and 4 variables:
+#' @format A data frame with 678 rows and 4 variables:
 #' \describe{
 #'   \item{gloss}{the gloss abbreviation}
 #'   \item{definition}{the gloss definition}

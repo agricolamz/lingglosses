@@ -3,7 +3,6 @@ gloss,definition,source,weight
 2,second person,Leipzig Glossing Rules,1
 3,third person,Leipzig Glossing Rules,1
 &,coordination marker,lingglosses,1
-√,lexical root,lingglosses,1
 1DU,first dual,lingglosses,1
 1O,first person object,lingglosses,1
 1OBJ,first person object,lingglosses,1
@@ -151,8 +150,8 @@ AS,aseverative,Wikipedia,1
 ASC,associative,Wikipedia,1
 ASP,aspect,lingglosses,1
 ASRT,assertive,Wikipedia,1
-ASS,associative,Wikipedia,1
 ASS,assertive,Wikipedia,0
+ASS,associative,Wikipedia,1
 ASSC,associative,Wikipedia,1
 ASSERT,assertive,Wikipedia,1
 ASSOC,associative,Wikipedia,1
@@ -197,11 +196,11 @@ CESS,cessative,Wikipedia,1
 CF,contrastive focus,lingglosses,1
 CFOC,contrastive focus,Wikipedia,1
 CHR,cohortative,Wikipedia,1
-CIRC,circumstantive,Wikipedia,0
 CIRC,circumstantial,Wikipedia,1
+CIRC,circumstantive,Wikipedia,0
 CIRCG,cirumgressive,lingglosses,1
-CIRCUM,circumstantive,Wikipedia,0
 CIRCUM,circumstantial,Wikipedia,1
+CIRCUM,circumstantive,Wikipedia,0
 CIS,cislocative,Wikipedia,1
 CISL,cislocative,Wikipedia,1
 CISLOC,cislocative,Wikipedia,1
@@ -239,9 +238,9 @@ COLL,collective,Wikipedia,1
 COM,comitative,Leipzig Glossing Rules,1
 COM,comparative,lingglosses,0
 COMIT,comitative,Wikipedia,1
-COMP,completive,Wikipedia,0
 COMP,comparative,Wikipedia,0
 COMP,complementizer,Leipzig Glossing Rules,1
+COMP,completive,Wikipedia,0
 COMPL,completive,Leipzig Glossing Rules,1
 COMPLET,completive,Wikipedia,1
 COMPR,comparative,Wikipedia,1
@@ -258,10 +257,10 @@ CONJUN,conjunction,Wikipedia,1
 CONN,connective,Wikipedia,1
 CONR,connector,Wikipedia,1
 CONS,consequential,Wikipedia,1
-CONT,continuative,Wikipedia,1
-CONT,on a verticle surface,Wikipedia,0
 CONT,contentive,Wikipedia,0
+CONT,continuative,Wikipedia,1
 CONT,contrastive,lingglosses,0
+CONT,on a verticle surface,Wikipedia,0
 CONTEMP,contemporative,Wikipedia,1
 CONTR,contrastive,Wikipedia,1
 CONV,converb,Wikipedia,1
@@ -271,8 +270,8 @@ COP,copula,Leipzig Glossing Rules,1
 COR,coreferential,Wikipedia,1
 COTEMP,contemporative,Wikipedia,1
 CP,completive,lingglosses,1
-CPL,completive,Wikipedia,0
 CPL,complementizer,lingglosses,1
+CPL,completive,Wikipedia,0
 CRAS,crastinal,Wikipedia,1
 CSO,cosubordinator,Wikipedia,1
 CT,contrastive topic,lingglosses,1
@@ -288,34 +287,89 @@ CVB,converb,Leipzig Glossing Rules,1
 D,definiteness,lingglosses,0
 D,determiner,lingglosses,1
 DAT,dative,Leipzig Glossing Rules,1
+DBT,dubitative,Wikipedia,1
+DCL,declarative,Wikipedia,1
+DE,different event,Wikipedia,1
+DEAG,deagentive,Wikipedia,1
 DEB,debitive,lingglosses,1
+DEC,decausative,Wikipedia,0
 DEC,declarative,Leipzig Glossing Rules,1
 DECL,declarative,lingglosses,1
+DED,deductive,Wikipedia,1
 DEF,definite,Leipzig Glossing Rules,1
-DEL,delative,lingglosses,1
+DEFIN,definitive,Wikipedia,1
+DEFOC,defocus,Wikipedia,1
+DEFR,deferential,Wikipedia,1
+DEIC,deictic,Wikipedia,1
+DEL,delative,Wikipedia,1
+DEL,deliberative,Wikipedia,0
 DEM,demonstrative,Leipzig Glossing Rules,1
-DEO,deontic,lingglosses,1
-DEONT,deontic,lingglosses,1
-DES,desiderative,lingglosses,1
-DEST,destinative,lingglosses,1
+DENOM,denominal,Wikipedia,1
+DEO,deontic,Wikipedia,1
+DEOBJ,deobjective,Wikipedia,1
+DEONT,deontic,Wikipedia,1
+DEP,dependent,Wikipedia,1
+DER,derivation,Wikipedia,1
+DERIV,derivation,Wikipedia,1
+DES,desiderative,Wikipedia,1
+DESI,desiderative,Wikipedia,1
+DESID,desiderative,Wikipedia,1
+DEST,destinative,Wikipedia,1
 DET,determiner,Leipzig Glossing Rules,1
-DIM,diminutive,lingglosses,1
-DIMIN,diminutive,lingglosses,1
-DIR,direct,lingglosses,0
-DIR,directional,lingglosses,1
-DISC,discontinuative,lingglosses,1
+DETR,detransitive,Wikipedia,1
+DFLT,default,Wikipedia,1
+DH,"downhill, seaward",Wikipedia,1
+DI,dual inclusive,Wikipedia,1
+DIM,diminutive,Wikipedia,1
+DIMIN,diminutive,Wikipedia,1
+DIR,directional,Wikipedia,1
+DIR,directive,lingglosses,0
+DIREC,directional,Wikipedia,1
+DIS,dislocative,Wikipedia,1
+DISC,discontinuative,lingglosses,0
+DISC,discourse marker,Wikipedia,1
+DISCNT,discontinuative,Wikipedia,1
+DISCONT,discontinuative,Wikipedia,1
+DISJ,disjunction,Wikipedia,1
 DIST,distal,Leipzig Glossing Rules,1
 DISTR,distributive,Leipzig Glossing Rules,1
+DISTR,distributive plural,Wikipedia,0
+DITR,ditransitive,Wikipedia,1
+DIV,diversative,Wikipedia,1
 DL,dual,lingglosses,1
+DLM,delimitative,Wikipedia,1
+DM,directive,Wikipedia,1
+DN,deverbal noun,Wikipedia,1
 DO,direct object,lingglosses,1
-DOM,differential object marking,lingglosses,1
+DOM,differential object marking,Wikipedia,1
+DOM,direct-object marker,Wikipedia,0
+DON,donative,Wikipedia,1
+DOWN,downward,Wikipedia,1
+DOX,doxastic,Wikipedia,1
+DP,distant past,Wikipedia,1
+DPAST,direct past,Wikipedia,1
+DPC,distant past continuative,Wikipedia,1
 DPRO,demonstrative pronoun,lingglosses,1
+DR,different reference,Wikipedia,0
+DR,downriver,Wikipedia,1
+DSC,discontinuative,Wikipedia,1
 DSM,differential subject marking,lingglosses,1
 DST,distal,lingglosses,1
+DSTL,distal,Wikipedia,1
+DT,different taxis,Wikipedia,1
+DTR,detrimentary,Wikipedia,1
+DTRNZ,detransitivizer,Wikipedia,1
 DU,dual,Leipzig Glossing Rules,1
-DUB,dubitative,lingglosses,1
+DUB,dubitative,Wikipedia,1
+DUBIT,dubitative,Wikipedia,1
 DUP,reduplication,lingglosses,1
+DUPLIC,duplicative,Wikipedia,1
 DUR,durative,Leipzig Glossing Rules,1
+DWN,downward,Wikipedia,1
+DY,dyadic,Wikipedia,1
+DYAD,dyadic,Wikipedia,1
+DYN,dynamic,Wikipedia,1
+DYNM,dynamic,Wikipedia,1
 ECM,exceptional case marking,lingglosses,1
 ELA,elative,lingglosses,1
 EMP,emphatic,lingglosses,1
