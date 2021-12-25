@@ -4,3 +4,4 @@
 - fix `(`, `)` and `:` bug in glossing line
 - add non-breaking space to `make_gloss_list()` output
 - add compatibility to the `latex` outputs
+- fill non-specified by user glosses with values from `lingglosses::glosses`

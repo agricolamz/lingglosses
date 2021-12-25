@@ -158,10 +158,9 @@ Sometimes people gloss morpheme by morpheme (this is especially useful for polys
 
 (@) Abaza, West Caucasian [@arkadiev20: example 5.2]
 ```{r}
-gloss_example("s- z- á- la- nəq'wa -wa –dzə -j -ɕa -t'",
+gloss_example("s- z- á- la- nəq'wa -wa -dzə -j -ɕa -t'",
               "1SG.ABS POT 3SG.N.IO LOC pass IPF LOC 3SG.M.IO seem(AOR) DCL",
-              "It seemed to him that I would be able to pass there.",
-              transliteration_italic = FALSE)
+              "It seemed to him that I would be able to pass there.")
 ```
 
 
@@ -185,7 +184,7 @@ my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
 make_gloss_list(my_abbreviations)
 ```
 
-As you can see all undefined glosses in our `my_abbreviations` dataset lack definitions. Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r small_caps("ass")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`:
+As you can see all glosses specified in the `my_abbreviations` dataset changed their values in the output. Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r small_caps("ass")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`:
 
 ```{r}
 make_gloss_list(all_possible_variants = TRUE)
