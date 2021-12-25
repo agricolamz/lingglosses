@@ -359,8 +359,8 @@ Right now there is no direct way of knitting `lingglosses` to `.docx` format, ho
 
 The `.pdf` output is possible, however there are some known restrictions: 
 
-* markdown bold and italic annotation do not work;
-* example numbers appears beneath the example;
+* markdown bold and italic annotations do not work;
+* example numbers appears above the example;
 * there is no non-breaking space in glosses list.
 
 So if you want to avoid those problems the best solution will be to use one of the latex glossing packages listed in the first footnote and the package [`glossaries`](https://www.ctan.org/pkg/glossaries) for automatic compilation of glosses.
