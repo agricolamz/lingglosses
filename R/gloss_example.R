@@ -97,10 +97,17 @@ gloss_example <- function(transliteration,
     cat(unlist(multi_result))
   } else {
 
+# italic of the language line ----------------------------------------------
     if(isTRUE(transliteration_italic)){
-      transliteration <- paste0("*", transliteration, "*")
+      if(!is.null(rmarkdown::metadata$output) &&
+         grepl("latex", unlist(rmarkdown::metadata$output))){
+        transliteration <- paste0("\\textit{", transliteration, "}")
+      } else {
+        transliteration <- paste0("*", transliteration, "*")
+      }
     }
 
+# combine everything into table --------------------------------------------
     if(length(orthography) > 0){
       for_matrix <- c(orthography, transliteration, glosses)
       nrow_matrix <- 3
@@ -114,20 +121,30 @@ gloss_example <- function(transliteration,
     result <- kableExtra::kable_minimal(result,
                                         position = "left",
                                         full_width = FALSE)
+
+# add comment --------------------------------------------------------------
     if(nchar(comment) > 0){
       result <- kableExtra::footnote(kable_input = result,
                                      general = comment,
                                      general_title = "")
     }
+
+# add free translation -----------------------------------------------------
     if(nchar(free_translation) > 0){
       result <- kableExtra::footnote(kable_input = result,
                                      general = paste0("'", free_translation, "'"),
                                      general_title = "")
     }
-    result <- gsub("\\\\toprule", "", result)
-    result <- gsub("\\\\midrule", "", result)
-    result <- gsub("\\\\bottomrule", "", result)
-    result <- gsub("\\\\hline", "", result)
+
+# remove lines from LaTeX --------------------------------------------------
+    if(!is.null(rmarkdown::metadata$output) &&
+       grepl("latex", unlist(rmarkdown::metadata$output))){
+      result <- gsub("\\\\toprule", "", result)
+      result <- gsub("\\\\midrule", "", result)
+      result <- gsub("\\\\bottomrule", "", result)
+      result <- gsub("\\\\hline", "", result)
+    }
+
     return(result)
   }
 }

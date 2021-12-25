@@ -4,7 +4,6 @@
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #' @param gloss vector of characters.
-#' @return a strings small caps span html tags.
 #' @export
 #' @importFrom rmarkdown metadata
 

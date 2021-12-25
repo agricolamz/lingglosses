@@ -9,9 +9,6 @@ small_caps(gloss)
 \arguments{
 \item{gloss}{vector of characters.}
 }
-\value{
-a strings small caps span html tags.
-}
 \description{
 Convert upper script to small caps.
 }

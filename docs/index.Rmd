@@ -176,7 +176,7 @@ This function works with the built-in dataset `glosses_df` that is compiled from
 
 [^glossa]: The script for the collecting glosses is available [here](https://github.com/agricolamz/lingglosses/blob/master/database_creation/glossa.R). The glosses list was manually corrected and merged with glosses from other sources. This kind of glosses marked in the `glosses_df` dataset as `lingglosses` in the `source` column.
 
-It is possible that user can be not satisfied with the result of `make_gloss_list()` function, then there are two possible strategies. First strategy is to copy the result of the `make_gloss_list()`, modify it and paste in your `rmarkdown` document. Sometimes you work on some volume dedicated to on group of languages and you want to assure that glosses are the same across all articles, than you can compile your own table with columns `gloss` and `definition` and use it within `make_gloss_list` function.
+It is possible that user can be not satisfied with the result of `make_gloss_list()` function, then there are two possible strategies. First strategy is to copy the result of the `make_gloss_list()`, modify it and paste in your `rmarkdown` document. Sometimes you work on some volume dedicated to on group of languages and you want to assure that glosses are the same across all articles, than you can compile your own table with columns `gloss` and `definition` and use it within `make_gloss_list` function. As you can see, all glosses specified in the `my_abbreviations` dataset changed their values in the output below:
 
 ```{r}
 my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
@@ -184,13 +184,18 @@ my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
 make_gloss_list(my_abbreviations)
 ```
 
-As you can see all glosses specified in the `my_abbreviations` dataset changed their values in the output. Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r small_caps("ass")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`:
+Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r small_caps("ass")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`. As you can see, there are two possible values for `r small_caps("prf")` that are listed below:
 
 ```{r}
 make_gloss_list(all_possible_variants = TRUE)
 ```
 
-As you can see there are two possible values for `r small_caps("prf")` that are listed above.
+You could have notice that problematic glosses (those without definition or duplicated) are colored. This can be switched off adding the argument `annotate_definitionless = FALSE`:
+
+```{r}
+make_gloss_list(all_possible_variants = TRUE, annotate_definitionless = FALSE)
+```
+
 
 # Other output formats
 

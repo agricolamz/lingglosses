@@ -6,7 +6,8 @@
 \usage{
 make_gloss_list(
   definition_source = lingglosses::glosses_df,
-  all_possible_variants = FALSE
+  all_possible_variants = FALSE,
+  annotate_definitionless = TRUE
 )
 }
 \arguments{

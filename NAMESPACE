@@ -2,6 +2,7 @@
 
 export(.get_variable_name)
 export(.onLoad)
+export(color_annotate)
 export(gloss_example)
 export(make_gloss_list)
 export(small_caps)

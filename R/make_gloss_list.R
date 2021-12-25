@@ -13,7 +13,8 @@
 #' @export
 
 make_gloss_list <- function(definition_source = lingglosses::glosses_df,
-                            all_possible_variants = FALSE){
+                            all_possible_variants = FALSE,
+                            annotate_definitionless = TRUE){
 
   knitr::opts_current$set(results='asis')
 
@@ -36,39 +37,71 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
 
 # get glosses --------------------------------------------------------------
 
-  gloss_list <- unlist(utils::read.csv(getOption("lingglosses.glosses_list")))
+  gloss_list <- sort(unique(unlist(utils::read.csv(
+    getOption("lingglosses.glosses_list")))))
 
 # create a temporal file with all glosses that will be modified ------------
-  glosses_dataset <- lingglosses::glosses_df[lingglosses::glosses_df$gloss %in%
-                                               gloss_list, ]
+  glosses_dataset <- unique(lingglosses::glosses_df[
+    lingglosses::glosses_df$gloss %in% gloss_list, ])
 
 # change definition from lingglosses::glosses to user's values -------------
-  res <- lapply(seq_along(definition_source$gloss), function(x){
-    glosses_dataset[glosses_dataset$gloss ==
-                             definition_source$gloss[x],
-                           "definition"] <<- definition_source$definition[x]
-  })
+  if(!identical(definition_source, lingglosses::glosses_df)){
+    glosses_dataset$definition <- unlist(
+      lapply(seq_along(glosses_dataset$gloss), function(i){
+        id <- which(definition_source$gloss %in% glosses_dataset$gloss[i])
+        ifelse(length(id) > 0,
+               definition_source$definition[id],
+               glosses_dataset$definition[i])
+      })
+    )
+  }
 
-# keep only those that are present in the document -------------------------
+  # keep only those that are present in the document -------------------------
   glosses_dataset <- glosses_dataset[glosses_dataset$gloss %in% gloss_list, ]
 
 # for those glosses that are not present in our and user's database --------
-  if(length(gloss_list[!(gloss_list %in% glosses_dataset$gloss)]) > 0){
+  definitionless <- gloss_list[!(gloss_list %in% glosses_dataset$gloss)]
+
+  if(length(definitionless) > 0){
     glosses_dataset <- unique(rbind(
       glosses_dataset,
-      data.frame(gloss = gloss_list[!(gloss_list %in% glosses_dataset$gloss)],
+      data.frame(gloss = definitionless,
                  definition = "",
                  source = "",
                  weight = 1)))
   }
 
+# sort after addition definitionless glosses -------------------------------
   glosses_dataset <- glosses_dataset[order(glosses_dataset$gloss),]
 
   if(isFALSE(all_possible_variants)){
     glosses_dataset <- glosses_dataset[glosses_dataset$weight != 0,]
   }
 
-  # generate non breacking space
+# annotate -----------------------------------------------------------------
+  if(isTRUE(annotate_definitionless) && length(definitionless) > 0){
+    glosses_dataset$gloss <- unlist(
+      lapply(seq_along(definitionless), function(x){
+        ifelse(glosses_dataset$gloss == definitionless[x],
+               color_annotate(glosses_dataset$gloss),
+               glosses_dataset$gloss)
+      })
+    )
+  }
+
+  duplicated_glosses <- glosses_dataset$gloss[duplicated(glosses_dataset$gloss)]
+
+  if(isTRUE(annotate_definitionless) && length(duplicated_glosses) > 0){
+    glosses_dataset$gloss <- unlist(
+      lapply(seq_along(duplicated_glosses), function(x){
+        ifelse(glosses_dataset$gloss == duplicated_glosses[x],
+               color_annotate(glosses_dataset$gloss),
+               glosses_dataset$gloss)
+    }))
+  }
+
+
+# generate non breaking space ----------------------------------------------
   if(!is.null(rmarkdown::metadata$output) &&
      grepl("latex", unlist(rmarkdown::metadata$output))){
     gloss_sep = " --- "

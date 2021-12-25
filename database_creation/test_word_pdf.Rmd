@@ -1,8 +1,9 @@
 ---
-title: "Test word"
+title: "Test pdf"
 output:
   pdf_document:
     latex_engine: xelatex
+    keep_tex: true
 bibliography: bibliography.bib
 ---
 
@@ -11,17 +12,12 @@ knitr::opts_chunk$set(echo = FALSE)
 library(lingglosses)
 ```
 
-```{r}
-str(rmarkdown::metadata$output)
-```
-
-
 Lorem ipsum dolor sit amet, ridiculus, sed ut sed est quis. Mus sed consectetur nec, augue, sed. Per ultricies non cursus non nascetur lectus sed ipsum libero!
 
 (@andi) 
 ```{r}
-gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu",
-              glosses = "fly-NPST-**INF** know-HAB-*NEG*",
+gloss_example(transliteration = "bur-e-ri c'in-ne-sːu",
+              glosses = "fly-NPST-INF know-HAB-NEG",
               free_translation = "I cannot fly.",
               comment = "(lit. do not know how to)")
 ```
@@ -31,9 +27,8 @@ Quis tellus nullam eu libero urna tempor amet pulvinar tincidunt aenean nam ultr
 (@abaza)
 ```{r}
 gloss_example("s- z- á- la- nəq'wa -wa –dzə -j -ɕa -t'",
-              "1SG.ABS POT 3SG.N.IO LOC pass IPF LOC 3SG.M.IO seem(AOR) DCL",
-              "It seemed to him that I would be able to pass there.",
-              transliteration_italic = FALSE)
+              "1SG.ABS POT 3SG.N.IO LOC pass IPF LOC 3SG.M.IO seem(AOR) DCLRT",
+              "It seemed to him that I would be able to pass there.")
 ```
 
 # List of Glosses
@@ -41,5 +36,10 @@ gloss_example("s- z- á- la- nəq'wa -wa –dzə -j -ɕa -t'",
 ```{r}
 make_gloss_list()
 ```
+
+```{r}
+read.csv(getOption("lingglosses.glosses_list"), col.names = FALSE)
+```
+
 
 # References
