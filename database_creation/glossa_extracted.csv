@@ -369,33 +369,71 @@ DY,dyadic,Wikipedia,1
 DYAD,dyadic,Wikipedia,1
 DYN,dynamic,Wikipedia,1
 DYNM,dynamic,Wikipedia,1
+EA,epistemic authority,Wikipedia,1
 ECM,exceptional case marking,lingglosses,1
+EFF,effector,Wikipedia,1
+EFOC,extra-focal,Wikipedia,1
+EGO,egophoric,Wikipedia,1
+EGR,egressive,Wikipedia,1
 ELA,elative,lingglosses,1
-EMP,emphatic,lingglosses,1
-EMPH,emphatic,lingglosses,1
+ELAT,elative,lingglosses,1
+EMO,emotive,Wikipedia,1
+EMOT,emotive,Wikipedia,1
+EMP,emphatic,Wikipedia,1
+EMPH,emphatic,Wikipedia,1
 ENCL,enclitic,lingglosses,1
-EP,epenthetic,lingglosses,1
-EPI,epistemic,lingglosses,1
-EPIST,epistemic,lingglosses,1
+ENDO,endopathic,Wikipedia,1
+ENZ,enunciative,Wikipedia,1
+EP,epenthetic,Wikipedia,1
+EPENT,epenthetic,Wikipedia,1
+EPENTH,epenthetic,Wikipedia,1
+EPI,epistemic,Wikipedia,1
+EPIS,epistemic,Wikipedia,1
+EPIST,epistemic,Wikipedia,1
 EPTH,epenthentic,lingglosses,1
 EQ,equative,Wikipedia,1
 EQL,equative,Wikipedia,1
 EQTV,equative,Wikipedia,1
+EQU,equative,Wikipedia,1
 ERG,ergative,Leipzig Glossing Rules,1
-EV,epenthetic vowel,lingglosses,1
-EVD,evidential,lingglosses,1
-EVI,evidential,lingglosses,1
-EVID,evidential,lingglosses,1
-EXC,exclamative,lingglosses,1
-EXCL,exclamation,lingglosses,0
+ESS,essive,Wikipedia,1
+ETOP,emphatic topic,Wikipedia,1
+EV,evidential,Wikipedia,1
+EV,epenthetic vowel,lingglosses,0
+EV,experiencer voice,Wikipedia,1
+EVD,evidential,Wikipedia,1
+EVI,evidential,Wikipedia,1
+EVID,evidential,Wikipedia,1
+EVIT,evitative,Wikipedia,1
+EVT,eventual,Wikipedia,1
+EXAL,exaltive,Wikipedia,1
+EXC,excessive,Wikipedia,1
+EXC,exclamative,lingglosses,0
+EXCL,exclamative,Wikipedia,0
 EXCL,exclusive,Leipzig Glossing Rules,1
-EXH,exhaustifier,lingglosses,1
-EXHORT,Exhortative,lingglosses,1
-EXIS,existential,lingglosses,1
-EXIST,existential,lingglosses,1
-EXP,experiential,lingglosses,1
+EXCLAM,exclamative,Wikipedia,1
+EXCLM,exclamative,Wikipedia,1
+EXEC,executive,Wikipedia,1
+EXESS,exessive,Wikipedia,1
+EXFOC,extra-focal,Wikipedia,1
+EXH,exhaustifier,lingglosses,0
+EXH,exhortative,Wikipedia,1
+EXHORT,exhortative,lingglosses,1
+EXIS,existential,Wikipedia,1
+EXIST,existential,Wikipedia,1
+EXO,exocentric,Wikipedia,1
+EXP,experiential,Wikipedia,1
+EXP,experiencer,Wikipedia,1
+EXPECT,expectational,Wikipedia,1
+EXPER,experiential,Wikipedia,1
+EXPER,experiencer,Wikipedia,0
 EXPL,expletive,lingglosses,1
-EXS,existential,lingglosses,1
+EXPR,expressive,Wikipedia,1
+EXS,existential,Wikipedia,1
+EXT,extended,Wikipedia,1
+EXT,extent,Wikipedia,0
+EXT,external evidential,Wikipedia,0
+EZF,ezafe,Wikipedia,1
 F,feminine,Leipzig Glossing Rules,1
 FACT,factive,lingglosses,1
 FEM,feminine,lingglosses,1
@@ -464,6 +502,7 @@ ITER,iterative,lingglosses,1
 ITR,intransitive,lingglosses,1
 IV,class IV,lingglosses,1
 IX,class IX,lingglosses,1
+IZAF,izafet,Wikipedia,1
 LAT,lative,lingglosses,1
 LIM,limitative,lingglosses,1
 LINK,linker,lingglosses,1
@@ -487,6 +526,7 @@ N,neuter,Leipzig Glossing Rules,1
 NACT,non-active,lingglosses,1
 NC,noun class,lingglosses,1
 NEG,negation,Leipzig Glossing Rules,1
+NEGO,non-egophoric,Wikipedia,1
 NEU,neuter,lingglosses,1
 NEUT,neuter,lingglosses,1
 NF,non-finite,lingglosses,1
