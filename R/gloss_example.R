@@ -20,7 +20,7 @@
 #'                comment = "(lit. do not know how to)")
 #' }
 #'
-#' @importFrom rmarkdown metadata
+#' @importFrom knitr is_latex_output
 #' @importFrom kableExtra kable_minimal
 #' @importFrom kableExtra kbl
 #' @importFrom kableExtra footnote
@@ -35,6 +35,23 @@ gloss_example <- function(transliteration,
                           line_length = 70,
                           transliteration_italic = TRUE){
 
+# check arguments ----------------------------------------------------------
+  lapply(names(formals(gloss_example)),
+         function(argument){
+             if(length(eval(parse(text = argument))) != 1 |
+                typeof(eval(parse(text = argument))) != "character"){
+               stop(paste0(argument,
+                           " argument should be a character vector of length 1"))
+             }
+           })
+
+  if(length(line_length) != 1 |
+     typeof(line_length) != "double"){
+    stop(paste0("line_length",
+                " argument should be a character vector of length 1"))
+  }
+
+# split arguments by spaces ------------------------------------------------
   transliteration <- unlist(strsplit(transliteration, " "))
   glosses_by_word <- unlist(strsplit(glosses, " "))
   if(length(orthography) > 0){
@@ -47,7 +64,6 @@ gloss_example <- function(transliteration,
   } else {
     glosses_by_word
   }
-
 
 # check that glosses and transliteration have the same length --------------
   if(length(transliteration) != length(glosses_by_word)){
@@ -99,8 +115,7 @@ gloss_example <- function(transliteration,
 
 # italic of the language line ----------------------------------------------
     if(isTRUE(transliteration_italic)){
-      if(!is.null(rmarkdown::metadata$output) &&
-         grepl("latex", unlist(rmarkdown::metadata$output))){
+      if(knitr::is_latex_output()){
         transliteration <- paste0("\\textit{", transliteration, "}")
       } else {
         transliteration <- paste0("*", transliteration, "*")
@@ -137,8 +152,7 @@ gloss_example <- function(transliteration,
     }
 
 # remove lines from LaTeX --------------------------------------------------
-    if(!is.null(rmarkdown::metadata$output) &&
-       grepl("latex", unlist(rmarkdown::metadata$output))){
+    if(knitr::is_latex_output()){
       result <- gsub("\\\\toprule", "", result)
       result <- gsub("\\\\midrule", "", result)
       result <- gsub("\\\\bottomrule", "", result)

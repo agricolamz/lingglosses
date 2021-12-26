@@ -9,7 +9,7 @@
 #' @return a string with glosses and their definitions gathered from \code{definition_source} table.
 #' @importFrom knitr asis_output
 #' @importFrom knitr opts_current
-#' @importFrom rmarkdown metadata
+#' @importFrom knitr is_latex_output
 #' @importFrom utils read.csv
 #' @export
 
@@ -101,10 +101,8 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
     }))
   }
 
-
 # generate non breaking space ----------------------------------------------
-  if(!is.null(rmarkdown::metadata$output) &&
-     grepl("latex", unlist(rmarkdown::metadata$output))){
+  if(knitr::is_latex_output()){
     gloss_sep = " --- "
   } else {
     gloss_sep = "\u00A0\u2014\u00A0"

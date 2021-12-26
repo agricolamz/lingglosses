@@ -10,7 +10,6 @@ output:
     toc_float: yes
     number_sections: true
     df_print: paged
-    keep_md: true
 bibliography: bibliography.bib
 ---
 

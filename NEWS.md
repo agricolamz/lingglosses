@@ -6,3 +6,4 @@
 - add compatibility to the `latex` outputs
 - fill non-specified by user glosses with values from `lingglosses::glosses`
 - add color annotation for glosses without definition or duplicated glosses with the argument `annotate_definitionless`
+- update `lingglosses::glosses` file with glosses from Wikipedia
