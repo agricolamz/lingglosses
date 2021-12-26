@@ -36,7 +36,7 @@ gloss_example <- function(transliteration,
                           transliteration_italic = TRUE){
 
 # check arguments ----------------------------------------------------------
-  lapply(names(formals(gloss_example)),
+  lapply(names(formals(gloss_example))[1:2],
          function(argument){
              if(length(eval(parse(text = argument))) != 1 |
                 typeof(eval(parse(text = argument))) != "character"){
@@ -45,8 +45,7 @@ gloss_example <- function(transliteration,
              }
            })
 
-  if(length(line_length) != 1 |
-     typeof(line_length) != "double"){
+  if(length(line_length) != 1 | typeof(line_length) != "double"){
     stop(paste0("line_length",
                 " argument should be a character vector of length 1"))
   }
