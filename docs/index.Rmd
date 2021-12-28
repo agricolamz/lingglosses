@@ -54,6 +54,8 @@ library(lingglosses)
 
 # Create glossed examples with `gloss_example()`
 
+## Basic usage
+
 The main function of the `lingglosses` package is `gloss_example()`. This package has the following arguments:
 
 * `transliteration`;
@@ -141,6 +143,17 @@ gloss_example("bur-e-**ri** c'in-ne-sːu",
               "(lit. do not know how to)")
 ```
 
+Sometimes people gloss morpheme by morpheme (this is especially useful for polysynthetic languages). It is also possible in `lingglosses` (and you can annotate slots with `orthography` argument, see footnote 2 for the details):
+
+(@) Abaza, West Caucasian [@arkadiev20: example 5.2]
+```{r}
+gloss_example("s- z- á- la- nəq'wa -wa -dzə -j -ɕa -t'",
+              "1SG.ABS POT 3SG.N.IO LOC pass IPF LOC 3SG.M.IO seem(AOR) DCL",
+              "It seemed to him that I would be able to pass there.")
+```
+
+## Multiline examples
+
 Sometimes examples are to long and do not fit into the page. In that case you need to add argument `results='asis'` to your chunk and `gloss_example()` will automatically split your example into multiple rows.
 
 (@tsa_ex) Tsakhur: Mishlesh [@maisak07: 386]
@@ -153,15 +166,15 @@ gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː
 
 If you are not satisfied with the result of automatic split you can change value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
 
-Sometimes people gloss morpheme by morpheme (this is especially useful for polysynthetic languages). It is also possible in `lingglosses` (and you can annotate slots with `orthography` argument, see footnote 2 for the details):
+## In-text examples
 
-(@) Abaza, West Caucasian [@arkadiev20: example 5.2]
-```{r}
-gloss_example("s- z- á- la- nəq'wa -wa -dzə -j -ɕa -t'",
-              "1SG.ABS POT 3SG.N.IO LOC pass IPF LOC 3SG.M.IO seem(AOR) DCL",
-              "It seemed to him that I would be able to pass there.")
+When an example is small, author may do not want to put it in a separate paragraph, but rather prefer to keep it within the text. It is possible to achieve using standard for `rmarkdown` [inline code](https://rmarkdown.rstudio.com/lesson-4.html). The result of the R code can be inserted into the rmarkdown document by using [backtick symbol](https://en.wikipedia.org/wiki/Grave_accent#Use_in_programming) and small r, for example <code>&grave;r 2+2&grave;</code> will be rendered as `r 2+2`. Currently `lingglosses` can not automatically detect, whether code provided via code chunk or inline. So if you want to use in-text glosses and want them to appear in the glosses list, it is better to write them using the `gloss_example()` with the `intext = TRUE` argument. Here is an example from (@delancey97): `r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)` that was produced with the following inline code:
+
+```
+gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)
 ```
 
+In the next section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r lingglosses:::small_caps("mir")` gloss appears only in this exact section in the in-text example above, it appears in the gloss list created in the next section.
 
 # Create semi-automatic compiled abbreviation list
 

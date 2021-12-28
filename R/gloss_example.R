@@ -10,7 +10,8 @@
 #' @param orthography character vector of the length one for the orthography line (above translation).
 #' @param comment character vector of the length one for the comment line (under the free translation line).
 #' @param line_length integer vector of the length one that denotes maximum number of characters per one line.
-#' @param transliteration_italic logical that denotes, whether you want to italicize your example.
+#' @param transliteration_italic logical variable that denotes, whether you want to italicize your example.
+#' @param intext logical variable that denotes, whether example should be considered as part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})
 #'
 #' @examples
 #' \dontrun{
@@ -19,7 +20,10 @@
 #'                "I cannot fly. (Zilo Andi, East Caucasian)",
 #'                comment = "(lit. do not know how to)")
 #' }
-#'
+#' gloss_example("bur-e-**ri** c'in-ne-s:u",
+#'                "fly-NPST-**INF** know-HAB-NEG",
+#'                "I cannot fly.",
+#'                intext = TRUE)
 #' @importFrom knitr is_latex_output
 #' @importFrom kableExtra kable_minimal
 #' @importFrom kableExtra kbl
@@ -33,17 +37,18 @@ gloss_example <- function(transliteration,
                           comment = "",
                           orthography = "",
                           line_length = 70,
-                          transliteration_italic = TRUE){
+                          transliteration_italic = TRUE,
+                          intext = FALSE){
 
 # check arguments ----------------------------------------------------------
   lapply(names(formals(gloss_example))[1:2],
          function(argument){
-             if(length(eval(parse(text = argument))) != 1 |
-                typeof(eval(parse(text = argument))) != "character"){
-               stop(paste0(argument,
-                           " argument should be a character vector of length 1"))
-             }
-           })
+           if(length(eval(parse(text = argument))) != 1 |
+              typeof(eval(parse(text = argument))) != "character"){
+             stop(paste0(argument,
+                         " argument should be a character vector of length 1"))
+           }
+         })
 
   if(length(line_length) != 1 | typeof(line_length) != "double"){
     stop(paste0("line_length",
@@ -76,7 +81,7 @@ gloss_example <- function(transliteration,
                 paste0(transliteration, collapse = " ")))
   }
 
-# add glosses --------------------------------------------------------------
+# add glosses to the document gloss list -----------------------------------
   single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(]"))
   single_gl <- single_gl[single_gl != ""]
   glosses2add <- gsub("[_\\*]", "", single_gl[single_gl == toupper(single_gl)])
@@ -94,70 +99,89 @@ gloss_example <- function(transliteration,
   glosses <- unlist(strsplit(glosses, " "))
   glosses <- gsub("<span_style=", "<span style=", glosses)
 
+# italic of the language line ----------------------------------------------
+  if(isTRUE(transliteration_italic)){
+    if(knitr::is_latex_output()){
+      transliteration <- paste0("\\textit{", transliteration, "}")
+    } else {
+      transliteration <- paste0("*", transliteration, "*")
+    }
+  }
+
 # long line splitting ------------------------------------------------------
   splits_by_line <- as.double(cut(cumsum(nchar(longest)),
                                   breaks = 0:1e5*line_length))
 
-  if(length(unique(splits_by_line)) > 1){
-    multi_result <- lapply(unique(splits_by_line), function(i){
-      gloss_example(
-        paste(transliteration[splits_by_line == i], collapse = " "),
-        paste(glosses_by_word[splits_by_line == i], collapse = " "),
-    free_translation = if(i == max(splits_by_line)){free_translation} else {""},
-        orthography = if(length(orthography) > 0){
-            paste(orthography[splits_by_line == i], collapse = " ")},
-        comment = if(i == max(splits_by_line)){comment} else {""},
-        line_length = line_length)
-    })
-    cat(unlist(multi_result))
-  } else {
+# for inline examples ------------------------------------------------------
+  if(isTRUE(intext)){
+    result <- paste(paste(transliteration, collapse = " "),
+                    paste(glosses, collapse = " "),
+                    if(nchar(free_translation) > 0){
+                      paste0("'", free_translation, "'")} else {""},
+                    comment,
+                    collapse = " ")
+  } else{
 
-# italic of the language line ----------------------------------------------
-    if(isTRUE(transliteration_italic)){
-      if(knitr::is_latex_output()){
-        transliteration <- paste0("\\textit{", transliteration, "}")
-      } else {
-        transliteration <- paste0("*", transliteration, "*")
-      }
-    }
+# long line splitting ------------------------------------------------------
+
+    if(length(unique(splits_by_line)) > 1){
+      multiline_result <- lapply(unique(splits_by_line), function(i){
+        gloss_example(
+          paste(transliteration[splits_by_line == i], collapse = " "),
+          paste(glosses_by_word[splits_by_line == i], collapse = " "),
+          free_translation = if(i == max(splits_by_line)){free_translation} else {""},
+          orthography = if(length(orthography) > 0){
+            paste(orthography[splits_by_line == i], collapse = " ")},
+          comment = if(i == max(splits_by_line)){comment} else {""},
+          transliteration_italic = FALSE,
+          line_length = line_length,
+          intext = FALSE)
+      })
+    } else {
 
 # combine everything into table --------------------------------------------
-    if(length(orthography) > 0){
-      for_matrix <- c(orthography, transliteration, glosses)
-      nrow_matrix <- 3
-    } else {
-      for_matrix <- c(transliteration, glosses)
-      nrow_matrix <- 2
-    }
-    result <- matrix(for_matrix, nrow = nrow_matrix, byrow = TRUE)
-    result <- kableExtra::kbl(result, align = "l", centering = FALSE,
-                              escape = FALSE, vline = "")
-    result <- kableExtra::kable_minimal(result,
-                                        position = "left",
-                                        full_width = FALSE)
+      if(length(orthography) > 0){
+        for_matrix <- c(orthography, transliteration, glosses)
+        nrow_matrix <- 3
+      } else {
+        for_matrix <- c(transliteration, glosses)
+        nrow_matrix <- 2
+      }
+      result <- matrix(for_matrix, nrow = nrow_matrix, byrow = TRUE)
+      result <- kableExtra::kbl(result, align = "l", centering = FALSE,
+                                escape = FALSE, vline = "")
+      result <- kableExtra::kable_minimal(result,
+                                          position = "left",
+                                          full_width = FALSE)
 
 # add comment --------------------------------------------------------------
-    if(nchar(comment) > 0){
-      result <- kableExtra::footnote(kable_input = result,
-                                     general = comment,
-                                     general_title = "")
-    }
+      if(nchar(comment) > 0){
+        result <- kableExtra::footnote(kable_input = result,
+                                       general = comment,
+                                       general_title = "")
+      }
 
 # add free translation -----------------------------------------------------
-    if(nchar(free_translation) > 0){
-      result <- kableExtra::footnote(kable_input = result,
-                                     general = paste0("'", free_translation, "'"),
-                                     general_title = "")
-    }
+      if(nchar(free_translation) > 0){
+        result <- kableExtra::footnote(kable_input = result,
+                                       general = paste0("'", free_translation, "'"),
+                                       general_title = "")
+      }
 
 # remove lines from LaTeX --------------------------------------------------
-    if(knitr::is_latex_output()){
-      result <- gsub("\\\\toprule", "", result)
-      result <- gsub("\\\\midrule", "", result)
-      result <- gsub("\\\\bottomrule", "", result)
-      result <- gsub("\\\\hline", "", result)
+      if(knitr::is_latex_output()){
+        result <- gsub("\\\\toprule", "", result)
+        result <- gsub("\\\\midrule", "", result)
+        result <- gsub("\\\\bottomrule", "", result)
+        result <- gsub("\\\\hline", "", result)
+      }
     }
+  }
 
+# return output ------------------------------------------------------------
+  if(length(unique(splits_by_line)) > 1){
+    cat(unlist(multiline_result))
+  } else{
     return(result)
   }
 }

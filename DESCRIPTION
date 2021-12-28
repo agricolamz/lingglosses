@@ -1,6 +1,6 @@
 Package: lingglosses
 Type: Package
-Title: Linguistic examples and abbreviation list
+Title: Linguistic Examples and Abbreviation Lists Generation
 Version: 0.0.2
 Depends: R (>= 3.5.0)
 Authors@R: person("George", "Moroz",

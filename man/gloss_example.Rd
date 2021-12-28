@@ -11,7 +11,8 @@ gloss_example(
   comment = "",
   orthography = "",
   line_length = 70,
-  transliteration_italic = TRUE
+  transliteration_italic = TRUE,
+  intext = FALSE
 )
 }
 \arguments{
@@ -27,7 +28,9 @@ gloss_example(
 
 \item{line_length}{integer vector of the length one that denotes maximum number of characters per one line.}
 
-\item{transliteration_italic}{logical that denotes, whether you want to italicize your example.}
+\item{transliteration_italic}{logical variable that denotes, whether you want to italicize your example.}
+
+\item{intext}{logical variable that denotes, whether example should be considered as part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})}
 }
 \description{
 Creates an interlinear glossed example for linguistics.
@@ -39,7 +42,10 @@ gloss_example("bur-e-**ri** c'in-ne-s:u",
                "I cannot fly. (Zilo Andi, East Caucasian)",
                comment = "(lit. do not know how to)")
 }
-
+gloss_example("bur-e-**ri** c'in-ne-s:u",
+               "fly-NPST-**INF** know-HAB-NEG",
+               "I cannot fly.",
+               intext = TRUE)
 }
 \author{
 George Moroz <agricolamz@gmail.com>
