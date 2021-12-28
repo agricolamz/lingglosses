@@ -123,7 +123,7 @@ With names settled you can reference example (@my_ex) in the text using the foll
 So this kind of example referencing can be used with `lingglosses` examples like in (@lingglosses1) and (@lingglosses2). The only important details are:
 
 * change your code chunk argument to `echo = FALSE` (or specify it for all code chunks with the following comand in the begining of the document `knitr::opts_chunk$set(echo = FALSE")`);
-* do not put an empty line between reference line (with `(@...)`) and the code chunk with `linggloses` code.
+* do not put an empty line between reference line (with `(@...)`) and the code chunk with `lingglosses` code.
 
 (@lingglosses1)
 ```{r, echo = FALSE}

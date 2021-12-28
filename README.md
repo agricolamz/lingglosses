@@ -1,7 +1,3 @@
----
-output: github_document
----
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
@@ -31,7 +27,7 @@ gloss_example(transliteration = "bur-e-ri c'in-ne-sːu",
 make_gloss_list()
 ```
 
-<span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation
+<span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">npst</span> — non-past
 
 For more details see the [html-version of the tutorial](https://agricolamz.github.io/lingglosses/).
 
@@ -53,9 +49,8 @@ citation("lingglosses")
 #> 
 #> To cite lingglosses in publications use:
 #> 
-#>   Moroz G. (2021) lingglosses: Linguistic glosses and semi-automatic
-#>   list of glosses creation.  (Version 0.0.2). Zenodo
-#>   https://doi.org/10.5281/zenodo.5801712
+#>   Moroz G. (2021) lingglosses: Linguistic glosses and semi-automatic list of glosses
+#>   creation.  (Version 0.0.2). Zenodo https://doi.org/10.5281/zenodo.5801712
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -66,3 +61,4 @@ citation("lingglosses")
 #>     doi = {10.5281/zenodo.5801712},
 #>   }
 ```
+
