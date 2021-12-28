@@ -1,0 +1,59 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+library(lingglosses)
+```
+
+# lingglosses
+
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![DOI](https://zenodo.org/badge/440443756.svg)](https://zenodo.org/badge/latestdoi/440443756)
+[![R build status](https://github.com/agricolamz/lingglosses/workflows/R-CMD-check/badge.svg)](https://github.com/agricolamz/lingglosses/actions)
+
+The main goal of the `lingglosses` package is to create:
+
+* linguistic glosses for `.html` output of `rmarkdown`;
+```{r, eval = FALSE}
+gloss_example(transliteration = "bur-e-ri c'in-ne-sːu",
+              glosses = "fly-NPST-INF know-HAB-NEG", 
+              free_translation = "I cannot fly.", 
+              comment = "(lit. do not know how to)")
+```
+
+```{r, include=FALSE}
+write.table(x = c("NPST", "INF", "HAB", "NEG"), 
+            file = getOption("lingglosses.glosses_list"),
+            row.names = FALSE, col.names = FALSE, append = TRUE)
+```
+
+* semi-automatic compiled abbreviation list.
+```{r}
+make_gloss_list()
+```
+
+For more details see the [html-version of the tutorial](https://agricolamz.github.io/lingglosses/).
+
+## Installation
+
+You can install the development version of lingglosses from [GitHub](https://github.com/) with:
+
+```{r, eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("agricolamz/lingglosses")
+```
+
+## How to cite this package
+
+```{r}
+citation("lingglosses")
+```

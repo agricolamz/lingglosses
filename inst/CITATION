@@ -1,0 +1,10 @@
+citHeader("To cite lingglosses in publications use:")
+
+citEntry(
+  entry    = "Manual",
+  title    = "lingglosses: Linguistic glosses and semi-automatic list of glosses creation",
+  author   = "George Moroz",
+  year     = "2021",
+  doi      = "10.5281/zenodo.5801712",
+  textVersion = "Moroz G. (2021) lingglosses: Linguistic glosses and semi-automatic list of glosses creation.  (Version 0.0.2). Zenodo https://doi.org/10.5281/zenodo.5801712"
+)

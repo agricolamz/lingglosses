@@ -1,38 +1,66 @@
-# `checkdown`
 
-G. Moroz
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# lingglosses
+
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![DOI](https://zenodo.org/badge/440443756.svg)](https://zenodo.org/badge/latestdoi/440443756)
-[![R build status](https://github.com/agricolamz/lingglosses/workflows/R-CMD-check/badge.svg)](https://github.com/agricolamz/lingglosses/actions)
+[![R build
+status](https://github.com/agricolamz/lingglosses/workflows/R-CMD-check/badge.svg)](https://github.com/agricolamz/lingglosses/actions)
 
-## Installation
+The main goal of the `lingglosses` package is to create:
 
-Get the development version from GitHub:
+-   linguistic glosses for `.html` output of `rmarkdown`;
 
-```{r, eval=FALSE}
-install.packages("remotes")
-remotes::install_github("agricolamz/lingglosses")
+``` r
+gloss_example(transliteration = "bur-e-ri c'in-ne-sːu",
+              glosses = "fly-NPST-INF know-HAB-NEG", 
+              free_translation = "I cannot fly.", 
+              comment = "(lit. do not know how to)")
 ```
 
-## 1. Demo (it is better to look in the [html-version](https://agricolamz.github.io/lingglosses/))
+-   semi-automatic compiled abbreviation list.
 
-The main goal of the `lingglosses` package is to provide an option for creating:
-
-* linguistic glosses for `.html` output of `rmarkdown`;
-```
-gloss_example("bur-e-**ri** c'in-ne-s:u",
-              "fly-NPST-**INF** know-HAB-_NEG_",
-              "I cannot fly.",
-              "(lit. do not know how to)")
-```
-
-* semi-automatic compiled abbreviation list.
-```
+``` r
 make_gloss_list()
 ```
 
-That will produce the following:
+<span class="smallcaps">hab</span> — habitual; <span
+class="smallcaps">inf</span> — infinitive; <span
+class="smallcaps">neg</span> — negation
 
+For more details see the
+[html-version](https://agricolamz.github.io/lingglosses/).
+
+## Installation
+
+You can install the development version of lingglosses from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("agricolamz/lingglosses")
 ```
-HAB — habitual; INF — infinitive; NEG — negation; NPST — non-past
+
+## How to cite this package
+
+``` r
+citation("lingglosses")
+#> 
+#> To cite lingglosses in publications use:
+#> 
+#>   Moroz G. (2021) lingglosses: Linguistic glosses and semi-automatic
+#>   list of glosses creation.  (Version 0.0.2). Zenodo
+#>   https://doi.org/10.5281/zenodo.5801712
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {lingglosses: Linguistic glosses and semi-automatic list of glosses creation},
+#>     author = {George Moroz},
+#>     year = {2021},
+#>     doi = {10.5281/zenodo.5801712},
+#>   }
 ```
