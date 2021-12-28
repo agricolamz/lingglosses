@@ -30,7 +30,7 @@ NOM = nominative, GEN = nominative, DAT = nominative, ACC = accusative, VOC = ac
 Except obvious mistakes in this list there are some more problems that I want to emphasize:
 
 * lack of the alphabetic order;
-* there is also some abbreviation (`r small_caps("sbjv")`, `r small_caps("imp")`) in the article that are absent in the abbreviation list.
+* there is also some abbreviation (`r lingglosses:::small_caps("sbjv")`, `r lingglosses:::small_caps("imp")`) in the article that are absent in the abbreviation list.
 
 The main goal of the `lingglosses` package is to provide an option for creating:
 
@@ -183,7 +183,7 @@ my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
 make_gloss_list(my_abbreviations)
 ```
 
-Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r small_caps("ass")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`. As you can see, there are two possible values for `r small_caps("prf")` that are listed below:
+Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r lingglosses:::small_caps("ass")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`. As you can see, there are two possible values for `r lingglosses:::small_caps("prf")` that are listed below:
 
 ```{r}
 make_gloss_list(all_possible_variants = TRUE)

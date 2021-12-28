@@ -84,7 +84,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
     glosses_dataset$gloss <- unlist(
       lapply(seq_along(definitionless), function(x){
         ifelse(glosses_dataset$gloss == definitionless[x],
-               color_annotate(glosses_dataset$gloss),
+               lingglosses:::color_annotate(glosses_dataset$gloss),
                glosses_dataset$gloss)
       })
     )
@@ -109,7 +109,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
   }
 
   # create an output
-  res <- paste(lingglosses::small_caps(glosses_dataset$gloss),
+  res <- paste(lingglosses:::small_caps(glosses_dataset$gloss),
                glosses_dataset$definition,
                sep = gloss_sep, collapse = "; ")
   knitr::asis_output(res)

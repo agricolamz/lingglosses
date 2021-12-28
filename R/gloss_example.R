@@ -85,7 +85,7 @@ gloss_example <- function(transliteration,
 
 # add small-caps -----------------------------------------------------------
   single_gl <- ifelse(single_gl == toupper(single_gl),
-                      lingglosses::small_caps(single_gl),
+                      lingglosses:::small_caps(single_gl),
                       single_gl)
   delimeters <- unlist(strsplit(glosses, "[^-:\\.= \\)\\(]"))
   delimeters <- c(delimeters[delimeters != ""], "")
