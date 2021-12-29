@@ -474,10 +474,23 @@ FUNC,functional,Wikipedia,0
 FUNC,functive,Wikipedia,1
 FUT,future,Leipzig Glossing Rules,1
 GEN,genitive,Leipzig Glossing Rules,1
-GER,gerund,lingglosses,1
-GNR,generic,lingglosses,1
+GENZ,generalized,Wikipedia,1
+GER,gerund,Wikipedia,1
+GRD,gerund,Wikipedia,1
+GIV,given,Wikipedia,1
+GKN,general knowledge,Wikipedia,1
+GNO,gnomic,Wikipedia,1
+GNR,generic,Wikipedia,1
+GENR,generic,Wikipedia,1
+GNRL,generic,Wikipedia,1
+GENER,generic,Wikipedia,1
+GENRL,generic,Wikipedia,1
+GNT,general tense,Wikipedia,1
+GPST,general past,Wikipedia,1
 GOAL,goal,lingglosses,1
+GV,goal voice,Wikipedia,1
 GRND,gerund,lingglosses,1
+H,head,Wikipedia,1
 HAB,habitual,lingglosses,1
 HML,humilitive,lingglosses,1
 HON,honorific,lingglosses,1

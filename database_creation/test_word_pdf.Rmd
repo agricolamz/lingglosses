@@ -22,7 +22,7 @@ gloss_example(transliteration = "bur-e-ri c'in-ne-sːu",
               comment = "(lit. do not know how to)")
 ```
 
-Quis tellus nullam eu libero urna tempor amet pulvinar tincidunt aenean nam ultricies pellentesque. Nam penatibus nec at leo pretium enim sed, cras eget suspendisse mauris nisl.
+Quis tellus nullam eu libero urna tempor amet pulvinar tincidunt aenean nam ultricies pellentesque. Nam penatibus nec at leo pretium enim sed, cras eget suspendisse mauris nisl. 
 
 (@abaza)
 ```{r}
@@ -31,14 +31,23 @@ gloss_example("s- z- á- la- nəq'wa -wa –dzə -j -ɕa -t'",
               "It seemed to him that I would be able to pass there.")
 ```
 
+|                      | `r add_gloss("AFF")` | `r add_gloss("NEG")` |
+|----------------------|----------------------|----------------------|
+| `r add_gloss("AOR")` | -∅                   | *-sːu*               |
+| `r add_gloss("MSD")` | *-r*                 | *-sːu-r*             |
+| `r add_gloss("HAB")` | *-do*                | *-do-sːu*            |
+| `r add_gloss("FUT")` | *-dja*               | *-do-sːja*           |
+| `r add_gloss("INF")` | *-du*                | *-du-sːu*            |
+
+Even though the `r add_gloss("MIR")` gloss appears only in this exact section in the in-text example above, it appears in the gloss lists presented in the third section.
+
+`r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)` that was produced with the following inline code:
+
+
 # List of Glosses
 
 ```{r}
 make_gloss_list()
-```
-
-```{r}
-read.csv(getOption("lingglosses.glosses_list"), col.names = FALSE)
 ```
 
 

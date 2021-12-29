@@ -5,7 +5,7 @@
 \alias{glosses_df}
 \title{Catalog of glosses}
 \format{
-A data frame with 756 rows and 4 variables:
+A data frame with 769 rows and 4 variables:
 \describe{
   \item{gloss}{the gloss abbreviation}
   \item{definition}{the gloss definition}
