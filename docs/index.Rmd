@@ -182,7 +182,7 @@ In the third section I show how to create a semi-automatic compiled abbreviation
 
 ## Stand-alone glosses with `add_gloss()`
 
-Sometimes glosses are used in text without any example, e. g. in the table or in the text. So if you want to use in-text glosses and want them to appear in the glosses list, it is possible to write them using the `add_gloss()` function. As an example I adapted the verbal inflection paradigm of Andi (East Caucasian) from the Table 2 [@verhees19: 199]:
+Sometimes glosses are used in text without any example, e. g. in the table or in the text. So if you want to use in-text glosses and want them to appear in the glosses list, it is possible to write them using the `add_gloss()` function. As an example I adapted part of the verbal inflection paradigm of Andi (East Caucasian) from the Table 2 [@verhees19: 199]:
 
 |                      | `r add_gloss("AFF")` | `r add_gloss("NEG")` |
 |----------------------|----------------------|----------------------|
