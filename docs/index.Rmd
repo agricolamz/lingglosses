@@ -208,7 +208,7 @@ that is generated using the folowing markdown[^poortable] code[^tablesgenerator]
 | `r add_gloss("INF")` | *-du*                | *-du-sːu*            |
 ```
 
-In the third section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r add_gloss("FUT")` and  `r add_gloss("MSD")` gloss appears only in this exact section in the table above, it appears in the gloss lists presented in the third section.
+In the third section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r add_gloss("FUT")` and  `r add_gloss("MSD")` glosses appears only in this exact section in the table above, it appears in the gloss lists presented in the third section.
 
 # Create semi-automatic compiled abbreviation list
 
