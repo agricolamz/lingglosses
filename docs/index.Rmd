@@ -105,7 +105,7 @@ gloss_example("bur-e-**ri** c'in-ne-sːu",
 
 It is possible to number and call your examples using strandard `rmarkdown` tool for generating lists `(@)`:
 
-```
+```{md}
 (@) my first example
 (@) my second example
 (@) my third example
@@ -119,7 +119,7 @@ renders as:
 
 In order to reference examples in the text you need to give them some names:
 
-```
+```{md}
 (@my_ex) example for the referencing
 ```
 (@my_ex) example for the referencing
