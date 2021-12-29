@@ -7,7 +7,7 @@
 add_gloss(glosses)
 }
 \arguments{
-\item{gloss}{character vector with glosses in upper case.}
+\item{glosses}{character vector with glosses in upper case.}
 }
 \description{
 Adds glosses to the glosses list and adds small capitals to glosses.

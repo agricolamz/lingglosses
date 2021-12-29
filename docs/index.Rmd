@@ -230,9 +230,9 @@ my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
 make_gloss_list(my_abbreviations)
 ```
 
-Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r add_gloss("ASS")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`. As you can see, there are two possible values for `r add_gloss("PRF")` and `r add_gloss("AFF")` that are listed below:
+Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r add_gloss("ASS")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`. As you can see, there are multiple possible values for `r add_gloss("AFF")`, `r add_gloss("ASS")`, `r add_gloss("IMP")` and `r add_gloss("PRF")`:
 
-```{r, eval = FALSE}
+```{r}
 make_gloss_list(all_possible_variants = TRUE)
 ```
 

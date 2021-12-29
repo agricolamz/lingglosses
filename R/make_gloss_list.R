@@ -81,24 +81,17 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
 
 # annotate -----------------------------------------------------------------
   if(isTRUE(annotate_problematic) && length(definitionless) > 0){
-    glosses_dataset$gloss <- unlist(
-      lapply(seq_along(definitionless), function(x){
-        ifelse(glosses_dataset$gloss == definitionless[x],
-               lingglosses:::color_annotate(glosses_dataset$gloss),
-               glosses_dataset$gloss)
-      })
-    )
+    change <- which(glosses_dataset$gloss %in% definitionless)
+    glosses_dataset$gloss[change] <- color_annotate(
+      glosses_dataset$gloss[change])
   }
 
   duplicated_glosses <- glosses_dataset$gloss[duplicated(glosses_dataset$gloss)]
 
   if(isTRUE(annotate_problematic) && length(duplicated_glosses) > 0){
-    glosses_dataset$gloss <- unlist(
-      lapply(seq_along(duplicated_glosses), function(x){
-        ifelse(glosses_dataset$gloss == duplicated_glosses[x],
-               color_annotate(glosses_dataset$gloss),
-               glosses_dataset$gloss)
-    }))
+    change <- which(glosses_dataset$gloss %in% duplicated_glosses)
+    glosses_dataset$gloss[change] <- color_annotate(
+      glosses_dataset$gloss[change])
   }
 
 # generate non breaking space ----------------------------------------------
@@ -109,7 +102,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
   }
 
   # create an output
-  res <- paste(lingglosses:::small_caps(glosses_dataset$gloss),
+  res <- paste(small_caps(glosses_dataset$gloss),
                glosses_dataset$definition,
                sep = gloss_sep, collapse = "; ")
   knitr::asis_output(res)

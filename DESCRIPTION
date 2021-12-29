@@ -17,5 +17,4 @@ LazyData: true
 URL: https://CRAN.R-project.org/package=phonfieldwork, https://agricolamz.github.io/lingglosses/
 BugReports: https://github.com/agricolamz/lingglosses/issues
 Imports: kableExtra, knitr, rmarkdown, utils
-VignetteBuilder: knitr
 RoxygenNote: 7.1.2

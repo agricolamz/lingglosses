@@ -4,7 +4,7 @@
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #'
-#' @param gloss character vector with glosses in upper case.
+#' @param glosses character vector with glosses in upper case.
 #'
 #' @examples
 #' add_gloss(c("ABS", "ERG"))
@@ -26,7 +26,7 @@ add_gloss <- function(glosses){
 
 # add small caps -----------------------------------------------------------
   glosses <- ifelse(glosses == toupper(glosses),
-                    lingglosses:::small_caps(glosses),
+                    small_caps(glosses),
                     glosses)
   return(glosses)
 }
