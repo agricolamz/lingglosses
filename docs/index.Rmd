@@ -180,7 +180,7 @@ When an example is small, author may do not want to put it in a separate paragra
 
 In the third section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r add_gloss("MIR")` gloss appears only in this exact section in the in-text example above, it appears in the gloss lists presented in the third section.
 
-## Stand-alone glosses
+## Stand-alone glosses with `add_gloss()`
 
 Sometimes glosses are used in text without any example, e. g. in the table or in the text. So if you want to use in-text glosses and want them to appear in the glosses list, it is possible to write them using the `add_gloss()` function. As an example I adapted the verbal inflection paradigm of Andi (East Caucasian) from the Table 2 [@verhees19: 199]:
 
