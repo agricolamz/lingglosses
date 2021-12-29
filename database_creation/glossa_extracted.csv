@@ -474,28 +474,54 @@ FUNC,functional,Wikipedia,0
 FUNC,functive,Wikipedia,1
 FUT,future,Leipzig Glossing Rules,1
 GEN,genitive,Leipzig Glossing Rules,1
+GENER,generic,Wikipedia,1
+GENR,generic,Wikipedia,1
+GENRL,generic,Wikipedia,1
 GENZ,generalized,Wikipedia,1
 GER,gerund,Wikipedia,1
-GRD,gerund,Wikipedia,1
 GIV,given,Wikipedia,1
 GKN,general knowledge,Wikipedia,1
 GNO,gnomic,Wikipedia,1
 GNR,generic,Wikipedia,1
-GENR,generic,Wikipedia,1
 GNRL,generic,Wikipedia,1
-GENER,generic,Wikipedia,1
-GENRL,generic,Wikipedia,1
 GNT,general tense,Wikipedia,1
-GPST,general past,Wikipedia,1
 GOAL,goal,lingglosses,1
-GV,goal voice,Wikipedia,1
+GPST,general past,Wikipedia,1
+GRD,gerund,Wikipedia,1
 GRND,gerund,lingglosses,1
-H,head,Wikipedia,1
-HAB,habitual,lingglosses,1
-HML,humilitive,lingglosses,1
-HON,honorific,lingglosses,1
-HORT,hortative,lingglosses,1
-HORZ,horizontally,lingglosses,1
+GV,goal voice,Wikipedia,1
+H,head,Wikipedia,0
+H,hearer,Wikipedia,0
+H,human,Wikipedia,1
+HAB,habitual,Wikipedia,1
+HABIT,habitual,Wikipedia,1
+HBL,habilitive,Wikipedia,1
+HCR,hypocoristic,Wikipedia,1
+HDU,human dual,lingglosses,1
+HES,hesitation,Wikipedia,1
+HESIT,hesitation,Wikipedia,1
+HEST,hesternal,Wikipedia,1
+HIST,historical,Wikipedia,1
+HML,humilitive,Wikipedia,1
+HNDR,number of hundreds,Wikipedia,1
+HNR,honorific,Wikipedia,1
+HOD,hodiernal,Wikipedia,1
+HON,honorific,Wikipedia,1
+HOR,horizon of interest,Wikipedia,0
+HOR,horizontal,Wikipedia,1
+HORT,hortative,Wikipedia,1
+HORZ,horizontal,lingglosses,1
+HPL,human plural,lingglosses,1
+HR,heard,Wikipedia,1
+HRS,hearsay,Wikipedia,1
+HRSY,hearsay,Wikipedia,1
+HSG,human singular,lingglosses,1
+HSY,hearsay/reported evidential,Wikipedia,1
+HUM,human,Wikipedia,1
+HUM,humilitive,Wikipedia,1
+HYP,hypothetical,Wikipedia,1
+HYPO,hypothetical,Wikipedia,1
+HYPOTH,hypothetical,Wikipedia,1
 I,class I,lingglosses,1
 IC,inflection class,lingglosses,1
 IDEO,ideophone,lingglosses,1
