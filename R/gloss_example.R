@@ -83,15 +83,9 @@ gloss_example <- function(transliteration,
 
 # add glosses to the document gloss list -----------------------------------
   single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(]"))
-  single_gl <- single_gl[single_gl != ""]
-  glosses2add <- gsub("[_\\*]", "", single_gl[single_gl == toupper(single_gl)])
-  write.table(x = glosses2add, file = getOption("lingglosses.glosses_list"),
-              row.names = FALSE, col.names = FALSE, append = TRUE)
+  single_gl <- lingglosses::add_gloss(single_gl)
 
-# add small-caps -----------------------------------------------------------
-  single_gl <- ifelse(single_gl == toupper(single_gl),
-                      lingglosses:::small_caps(single_gl),
-                      single_gl)
+# get delimeters back ------------------------------------------------------
   delimeters <- unlist(strsplit(glosses, "[^-:\\.= \\)\\(]"))
   delimeters <- c(delimeters[delimeters != ""], "")
   glosses <- paste0(single_gl, delimeters, collapse = "")
@@ -114,12 +108,15 @@ gloss_example <- function(transliteration,
 
 # for inline examples ------------------------------------------------------
   if(isTRUE(intext)){
-    result <- paste(paste(transliteration, collapse = " "),
+    result <- paste0(paste(transliteration, collapse = " "),
+                    " (",
                     paste(glosses, collapse = " "),
                     if(nchar(free_translation) > 0){
-                      paste0("'", free_translation, "'")} else {""},
-                    comment,
-                    collapse = " ")
+                      paste0(" '", free_translation, "'")} else {""},
+                    if(nchar(comment) > 0){
+                      paste0(" ", comment)} else {""},
+                    ")",
+                    collapse = "")
   } else{
 
 # long line splitting ------------------------------------------------------

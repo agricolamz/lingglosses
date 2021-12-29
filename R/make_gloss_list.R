@@ -10,7 +10,7 @@
 #' @importFrom knitr asis_output
 #' @importFrom knitr opts_current
 #' @importFrom knitr is_latex_output
-#' @importFrom utils read.csv
+#' @importFrom utils read.table
 #' @export
 
 make_gloss_list <- function(definition_source = lingglosses::glosses_df,
@@ -38,8 +38,8 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
 
 # get glosses --------------------------------------------------------------
 
-  gloss_list <- sort(unique(unlist(utils::read.csv(
-    getOption("lingglosses.glosses_list")))))
+  gloss_list <- sort(unique(unlist(utils::read.table(
+    getOption("lingglosses.glosses_list"), header = FALSE, encoding = "UTF-8"))))
 
 # create a temporal file with all glosses that will be modified ------------
   glosses_dataset <- unique(lingglosses::glosses_df[

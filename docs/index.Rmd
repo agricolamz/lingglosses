@@ -14,6 +14,10 @@ bibliography: bibliography.bib
 ---
 
 ```{r, include=FALSE}
+knitr::knit_engines$set(md = function(options){
+  code <- paste(options$code, collapse = '\n')
+  knitr::engine_output(options, code, out = NULL)
+  })
 library(lingglosses)
 ```
 
@@ -30,7 +34,7 @@ NOM = nominative, GEN = nominative, DAT = nominative, ACC = accusative, VOC = ac
 Except obvious mistakes in this list there are some more problems that I want to emphasize:
 
 * lack of the alphabetic order;
-* there is also some abbreviation (`r lingglosses:::small_caps("sbjv")`, `r lingglosses:::small_caps("imp")`) in the article that are absent in the abbreviation list.
+* there is also some abbreviation (`r add_gloss("SBJV")`, `r add_gloss("IMP")`) in the article that are absent in the abbreviation list.
 
 The main goal of the `lingglosses` package is to provide an option for creating:
 
@@ -156,7 +160,7 @@ gloss_example("s- z- á- la- nəq'wa -wa -dzə -j -ɕa -t'",
 
 Sometimes examples are to long and do not fit into the page. In that case you need to add argument `results='asis'` to your chunk and `gloss_example()` will automatically split your example into multiple rows.
 
-(@tsa_ex) Tsakhur: Mishlesh [@maisak07: 386]
+(@tsa_ex) Mishlesh Tsakhur, East Caucasian [@maisak07: 386]
 ```{r, results='asis'}
 gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː jaːluʁ-**o-b** **qa-b-ɨ**', 
                '1SG.OBL-DAT shawl.3 AUX-3 PRF-3-bring.PFV woolen_sock-PL NPL.bring-PL-A.OBL place-IN shawl.3-AUX-3 PRF-3-bring.PFV',
@@ -168,13 +172,43 @@ If you are not satisfied with the result of automatic split you can change value
 
 ## In-text examples
 
-When an example is small, author may do not want to put it in a separate paragraph, but rather prefer to keep it within the text. It is possible to achieve using standard for `rmarkdown` [inline code](https://rmarkdown.rstudio.com/lesson-4.html). The result of the R code can be inserted into the rmarkdown document by using [backtick symbol](https://en.wikipedia.org/wiki/Grave_accent#Use_in_programming) and small r, for example <code>&grave;r 2+2&grave;</code> will be rendered as `r 2+2`. Currently `lingglosses` can not automatically detect, whether code provided via code chunk or inline. So if you want to use in-text glosses and want them to appear in the glosses list, it is better to write them using the `gloss_example()` with the `intext = TRUE` argument. Here is an example from (@delancey97): `r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)` that was produced with the following inline code:
+When an example is small, author may do not want to put it in a separate paragraph, but rather prefer to keep it within the text. It is possible to achieve using standard for `rmarkdown` [inline code](https://rmarkdown.rstudio.com/lesson-4.html). The result of the R code can be inserted into the rmarkdown document by using [backtick symbol](https://en.wikipedia.org/wiki/Grave_accent#Use_in_programming) and small r, for example <code>&grave;r 2+2&grave;</code> will be rendered as `r 2+2`. Currently `lingglosses` can not automatically detect, whether code provided via code chunk or inline. So if you want to use in-text glossed example and want them to appear in the glosses list, it is possible to write them using the `gloss_example()` with the `intext = TRUE` argument. Here is a Turkish example from (@delancey97): `r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)` that was produced with the following inline code:
 
-```
-gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)
+```{md}
+`r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)`
 ```
 
-In the next section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r lingglosses:::small_caps("mir")` gloss appears only in this exact section in the in-text example above, it appears in the gloss list created in the next section.
+In the third section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r add_gloss("MIR")` gloss appears only in this exact section in the in-text example above, it appears in the gloss lists presented in the third section.
+
+## Stand-alone glosses
+
+Sometimes glosses are used in text without any example, e. g. in the table or in the text. So if you want to use in-text glosses and want them to appear in the glosses list, it is possible to write them using the `add_gloss()` function. As an example I adapted the verbal inflection paradigm of Andi (East Caucasian) from the Table 2 [@verhees19: 199]:
+
+|                      | `r add_gloss("AFF")` | `r add_gloss("NEG")` |
+|----------------------|----------------------|----------------------|
+| `r add_gloss("AOR")` | -∅                   | *-sːu*               |
+| `r add_gloss("MSD")` | *-r*                 | *-sːu-r*             |
+| `r add_gloss("HAB")` | *-do*                | *-do-sːu*            |
+| `r add_gloss("FUT")` | *-dja*               | *-do-sːja*           |
+| `r add_gloss("INF")` | *-du*                | *-du-sːu*            |
+  
+that is generated using the folowing markdown[^poortable] code[^tablesgenerator]:
+
+[^poortable]: The table generated with markdown is visualy poor. There is a lot of other ways to generate a table in R: `kable()` from `knitr`; `kableExtra` package, `DT` package and many others.
+
+[^tablesgenerator]: It is easier to generate Markdown or Latex tables with Libre Office or MS Excel and then use some online transformation websites like <https://www.tablesgenerator.com/>.
+
+```{md}
+|                      | `r add_gloss("AFF")` | `r add_gloss("NEG")` |
+|----------------------|----------------------|----------------------|
+| `r add_gloss("AOR")` | -∅                   | *-sːu*               |
+| `r add_gloss("MSD")` | *-r*                 | *-sːu-r*             |
+| `r add_gloss("HAB")` | *-do*                | *-do-sːu*            |
+| `r add_gloss("FUT")` | *-dja*               | *-do-sːja*           |
+| `r add_gloss("INF")` | *-du*                | *-du-sːu*            |
+```
+
+In the third section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r add_gloss("FUT")` and  `r add_gloss("MSD")` gloss appears only in this exact section in the table above, it appears in the gloss lists presented in the third section.
 
 # Create semi-automatic compiled abbreviation list
 
@@ -196,9 +230,9 @@ my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
 make_gloss_list(my_abbreviations)
 ```
 
-Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r lingglosses:::small_caps("ass")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`. As you can see, there are two possible values for `r lingglosses:::small_caps("prf")` that are listed below:
+Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r add_gloss("ASS")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`. As you can see, there are two possible values for `r add_gloss("PRF")` and `r add_gloss("AFF")` that are listed below:
 
-```{r}
+```{r, eval = FALSE}
 make_gloss_list(all_possible_variants = TRUE)
 ```
 
