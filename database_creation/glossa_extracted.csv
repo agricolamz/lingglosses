@@ -435,11 +435,43 @@ EXT,extent,Wikipedia,0
 EXT,external evidential,Wikipedia,0
 EZF,ezafe,Wikipedia,1
 F,feminine,Leipzig Glossing Rules,1
-FACT,factive,lingglosses,1
+FAC,factive,Wikipedia,1
+FAC,factitive,Wikipedia,0
+FACT,factive,Wikipedia,1
+FACT,factitive,Wikipedia,0
+FACT,factative,Wikipedia,1
+FAM,familiar,Wikipedia,1
+FCL,facilitive,Wikipedia,1
+FDU,female dual,lingglosses,1
 FEM,feminine,lingglosses,1
-FIN,finite,lingglosses,1
+FH,firsthand,Wikipedia,1
+FI,feminine indefinite,Wikipedia,1
+FIN,finite,Wikipedia,1
+FIN,finalis,Wikipedia,0
+FIRSTH,firsthand,Wikipedia,1
 FNP,finite non-past,lingglosses,1
 FOC,focus,Leipzig Glossing Rules,1
+FOR,formal,Wikipedia,1
+FORM,formal,Wikipedia,1
+FP,far past,Wikipedia,1
+FPL,female plural,lingglosses,1
+FPRT,future participle,Wikipedia,1
+FPST,far past,Wikipedia,1
+FR,frustrative,Wikipedia,1
+FRACT,fractional,Wikipedia,1
+FREQ,frequentative,Wikipedia,1
+FRM,formal,Wikipedia,1
+FRML,formal,Wikipedia,1
+FRQ,frequentative,Wikipedia,1
+FRST,frustrative,Wikipedia,1
+FRT,front,Wikipedia,1
+FRUS,frustrative,Wikipedia,1
+FRUST,frustrative,Wikipedia,1
+FS,false start,Wikipedia,1
+FSG,female singular,lingglosses,1
+FTV,factative,Wikipedia,1
+FUNC,functional,Wikipedia,0
+FUNC,functive,Wikipedia,1
 FUT,future,Leipzig Glossing Rules,1
 GEN,genitive,Leipzig Glossing Rules,1
 GER,gerund,lingglosses,1
@@ -513,6 +545,7 @@ LOC,locative,Leipzig Glossing Rules,1
 LOG,logophor,lingglosses,1
 M,masculine,Leipzig Glossing Rules,1
 MASC,masculine,lingglosses,1
+MDU,male dual,lingglosses,1
 MED,medial,lingglosses,1
 MED,mediative,lingglosses,0
 MID,middle,lingglosses,1
@@ -521,15 +554,19 @@ MIR,mirative,lingglosses,1
 MIXED,mixed declension class,lingglosses,1
 MOD,modal,lingglosses,1
 MP,modal particle,lingglosses,1
+MPL,male plural,lingglosses,1
 MSD,masdar,lingglosses,1
+MSG,male singular,lingglosses,1
 N,neuter,Leipzig Glossing Rules,1
 NACT,non-active,lingglosses,1
 NC,noun class,lingglosses,1
+NDU,neutral dual,lingglosses,1
 NEG,negation,Leipzig Glossing Rules,1
 NEGO,non-egophoric,Wikipedia,1
 NEU,neuter,lingglosses,1
 NEUT,neuter,lingglosses,1
 NF,non-finite,lingglosses,1
+NFH,non-firsthand,Wikipedia,1
 NFIN,non-finite,lingglosses,1
 NFUT,non-future,lingglosses,1
 NHON,non-honorific,lingglosses,1
@@ -547,9 +584,11 @@ NONVOL,non-volitional,lingglosses,1
 NOT.VIS,not visible,lingglosses,1
 NP,noun phrase,lingglosses,1
 NPI,negative polarity item,lingglosses,1
+NPL,neutral plural,lingglosses,1
 NPST,non-past,lingglosses,1
 NS,null subject,lingglosses,1
 NSBJ,non-subject,lingglosses,1
+NSG,neutral singular,lingglosses,1
 NSG,non-singular,lingglosses,1
 NUM,numeral,lingglosses,1
 O,object,lingglosses,1
