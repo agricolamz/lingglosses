@@ -19,6 +19,8 @@ knitr::knit_engines$set(md = function(options){
   knitr::engine_output(options, code, out = NULL)
   })
 library(lingglosses)
+# in order to have the same list of glosses through the whole document
+options("lingglosses.refresh_glosses_list" = FALSE)
 ```
 
 # Introduction

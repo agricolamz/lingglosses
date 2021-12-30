@@ -1,9 +1,6 @@
 ---
 title: "Test pdf"
-output:
-  pdf_document:
-    latex_engine: xelatex
-    keep_tex: true
+output: html_document
 bibliography: bibliography.bib
 ---
 
@@ -14,37 +11,35 @@ library(lingglosses)
 
 Lorem ipsum dolor sit amet, ridiculus, sed ut sed est quis. Mus sed consectetur nec, augue, sed. Per ultricies non cursus non nascetur lectus sed ipsum libero!
 
-(@andi) 
-```{r}
-gloss_example(transliteration = "bur-e-ri c'in-ne-sːu",
-              glosses = "fly-NPST-INF know-HAB-NEG",
-              free_translation = "I cannot fly.",
-              comment = "(lit. do not know how to)")
-```
-
-Quis tellus nullam eu libero urna tempor amet pulvinar tincidunt aenean nam ultricies pellentesque. Nam penatibus nec at leo pretium enim sed, cras eget suspendisse mauris nisl. 
-
-(@abaza)
-```{r}
-gloss_example("s- z- á- la- nəq'wa -wa –dzə -j -ɕa -t'",
-              "1SG.ABS POT 3SG.N.IO LOC pass IPF LOC 3SG.M.IO seem(AOR) DCLRT",
-              "It seemed to him that I would be able to pass there.")
-```
-
-|                      | `r add_gloss("AFF")` | `r add_gloss("NEG")` |
-|----------------------|----------------------|----------------------|
-| `r add_gloss("AOR")` | -∅                   | *-sːu*               |
-| `r add_gloss("MSD")` | *-r*                 | *-sːu-r*             |
-| `r add_gloss("HAB")` | *-do*                | *-do-sːu*            |
-| `r add_gloss("FUT")` | *-dja*               | *-do-sːja*           |
-| `r add_gloss("INF")` | *-du*                | *-du-sːu*            |
-
-Even though the `r add_gloss("MIR")` gloss appears only in this exact section in the in-text example above, it appears in the gloss lists presented in the third section.
-
-`r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)` that was produced with the following inline code:
-
 
 # List of Glosses
+
+```{r}
+make_gloss_list()
+```
+
+```{r}
+make_gloss_list()
+```
+
+`r add_gloss("MIR")`
+
+```{r}
+make_gloss_list()
+```
+
+```{r}
+options("lingglosses.refresh_glosses_list" = FALSE)
+```
+
+`r add_gloss("ABS")`
+
+```{r}
+make_gloss_list()
+```
+
+
+`r add_gloss("MIR")`
 
 ```{r}
 make_gloss_list()
