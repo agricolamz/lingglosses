@@ -10,3 +10,4 @@ Meta
 *.~lock*
 database_creation/test_word_pdf.html
 database_creation/test_word_pdf.pdf
+database_creation/test_word_pdf.tex
