@@ -1,0 +1,4 @@
+name: lingglosses Document
+description: >
+  Create a document with usage of examples in `lingglosses`.
+create_dir: TRUE

@@ -26,7 +26,7 @@ add_gloss <- function(glosses){
 
 # add small caps -----------------------------------------------------------
   glosses <- ifelse(glosses == toupper(glosses),
-                    .small_caps(glosses),
+                    small_caps(glosses),
                     glosses)
   return(glosses)
 }

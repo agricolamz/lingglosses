@@ -91,7 +91,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
     # annotate -----------------------------------------------------------------
     if(isTRUE(annotate_problematic) && length(definitionless) > 0){
       change <- which(glosses_dataset$gloss %in% definitionless)
-      glosses_dataset$gloss[change] <- .color_annotate(
+      glosses_dataset$gloss[change] <- color_annotate(
         glosses_dataset$gloss[change])
     }
 
@@ -99,7 +99,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
 
     if(isTRUE(annotate_problematic) && length(duplicated_glosses) > 0){
       change <- which(glosses_dataset$gloss %in% duplicated_glosses)
-      glosses_dataset$gloss[change] <- .color_annotate(
+      glosses_dataset$gloss[change] <- color_annotate(
         glosses_dataset$gloss[change])
     }
 
@@ -111,7 +111,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
     }
 
     # create an output
-    res <- paste(.small_caps(glosses_dataset$gloss),
+    res <- paste(small_caps(glosses_dataset$gloss),
                  glosses_dataset$definition,
                  sep = gloss_sep, collapse = "; ")
     knitr::asis_output(res)

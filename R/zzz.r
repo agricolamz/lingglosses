@@ -5,7 +5,7 @@
 
 .onLoad <- function(libname = find.package("lingglosses"),
                     pkgname = "lingglosses") {
-  tmp_file <- tempfile(pattern = .get_variable_name(), fileext = ".csv")
+  tmp_file <- tempfile(pattern = get_variable_name(), fileext = ".csv")
   options("lingglosses.glosses_list" = tmp_file)
   options("lingglosses.refresh_glosses_list" = TRUE)
   invisible()
@@ -17,7 +17,7 @@
 #' @noRd
 #' @importFrom rmarkdown metadata
 
-.get_variable_name <- function(){
+get_variable_name <- function(){
   gloss_variable <- gsub("\\W", "_", rmarkdown::metadata$title)
   gloss_variable <- gsub("\\d", "", gloss_variable)
   gloss_variable <- paste0(".list_of_glosses_for_", gloss_variable)
@@ -35,7 +35,7 @@
 #' small_caps("NOM")
 #' @importFrom knitr is_latex_output
 
-.small_caps <- function(gloss){
+small_caps <- function(gloss){
   if(knitr::is_latex_output()){
     paste(paste0('\\textsc{', tolower(gloss), '}'))
   } else {
@@ -56,7 +56,7 @@
 #' color_annotate("NOM")
 #' @importFrom knitr is_latex_output
 
-.color_annotate <- function(gloss){
+color_annotate <- function(gloss){
   if(knitr::is_latex_output()){
     paste(paste0('\\colorbox{cyan}{', gloss, '}'))
   } else {

@@ -48,7 +48,7 @@ The main goal of the `lingglosses` package is to provide an option for creating:
 For the moment the package is available only from github, so in order to install it you need to run the following commands:
 
 ```{r, eval = FALSE}
-install.packages("remotes")
+# install.packages("remotes") # in case you do not have this package
 remotes::install_github("agricolamz/lingglosses")
 ```
 
