@@ -9,4 +9,6 @@
 - add possibility to add in-text examples with additional argument `intext` for the `gloss_example()` function
 - add possibility to add stand-alone examples with the `add_gloss()` function
 - update `lingglosses::glosses_df` file with glosses from Wikipedia
-- make the package wrok with `bookdown`
+- make the package work with `bookdown`
+- add lingglosses rmarkdown template
+
