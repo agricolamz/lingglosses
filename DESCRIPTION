@@ -20,4 +20,5 @@ Imports: kableExtra, knitr, rmarkdown, utils
 RoxygenNote: 7.1.2
 Suggests: 
     testthat (>= 3.0.0)
+    tinytex
 Config/testthat/edition: 3
