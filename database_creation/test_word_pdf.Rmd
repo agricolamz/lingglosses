@@ -3,7 +3,7 @@ title: "Test pdf"
 output:
   pdf_document:
     latex_engine: xelatex
-    keep_tex: true
+    keep_tex: FALSE
 bibliography: bibliography.bib
 ---
 
