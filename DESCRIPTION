@@ -18,7 +18,5 @@ URL: https://CRAN.R-project.org/package=phonfieldwork, https://agricolamz.github
 BugReports: https://github.com/agricolamz/lingglosses/issues
 Imports: kableExtra, knitr, rmarkdown, utils
 RoxygenNote: 7.1.2
-Suggests: 
-    testthat (>= 3.0.0)
-    tinytex
+Suggests: testthat (>= 3.0.0), tinytex
 Config/testthat/edition: 3
