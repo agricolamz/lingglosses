@@ -39,7 +39,7 @@ Except obvious mistakes in this list there are some more problems that I want to
 * lack of the alphabetic order;
 * there is also some abbreviation (`r add_gloss("SBJV")`, `r add_gloss("IMP")`) in the article that are absent in the abbreviation list.
 
-The main goal of the `lingglosses` package is to provide an option for creating:
+The main goal of the `lingglosses` R package is to provide an option for creating:
 
 * linguistic glosses for `.html` output of `rmarkdown` [@xie18][^latex];
 * semi-automatic compiled abbreviation list.
