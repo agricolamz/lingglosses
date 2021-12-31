@@ -47,7 +47,7 @@ In (@andi_example) author used some glosses like `r add_gloss("DEM")`, `r add_gl
 
 ## Some subsection
 
-There is also a verbal inflection paradigm of Andi (East Caucasian) presented in [@verhees19: 199]:
+There is also a verbal inflection paradigm of Andi (East Caucasian) presented in [@verhees19: 199] \@ref(tab:tw):
 
 |                      | `r add_gloss("AFF")` | `r add_gloss("NEG")` |
 |----------------------|----------------------|----------------------|

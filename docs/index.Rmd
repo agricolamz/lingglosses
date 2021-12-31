@@ -58,6 +58,8 @@ In order to use the package you need to load it with the `library()` call:
 library(lingglosses)
 ```
 
+You can go through examples in this tutorial, but you can also create an lingglosses example from the rmarkdown template (File > New File > R Markdown... > From Template > lingglosses Document).
+
 # Create glossed examples with `gloss_example()`
 
 ## Basic usage
