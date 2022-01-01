@@ -6,12 +6,15 @@
 \usage{
 make_gloss_list(
   definition_source = lingglosses::glosses_df,
+  remove_glosses = "",
   all_possible_variants = FALSE,
   annotate_problematic = TRUE
 )
 }
 \arguments{
 \item{definition_source}{dataframe with the columns \code{gloss} and \code{definition} that helps to automatic search for the gloss definitions.}
+
+\item{remove_glosses}{character vector that contains glosses that should be removed from the abbreviation list.}
 
 \item{all_possible_variants}{logical. Some glosses have multiple definitions.}
 

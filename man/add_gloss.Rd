@@ -10,7 +10,7 @@ add_gloss(glosses)
 \item{glosses}{character vector with glosses in upper case.}
 }
 \description{
-Adds glosses to the glosses list and adds small capitals to glosses.
+Adds glosses to the glosses list and adds small capitals to glosses. Escapes strings that begins and ends with curly brackets.
 }
 \examples{
 add_gloss(c("ABS", "ERG"))

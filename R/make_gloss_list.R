@@ -4,6 +4,7 @@
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #' @param definition_source dataframe with the columns \code{gloss} and \code{definition} that helps to automatic search for the gloss definitions.
+#' @param remove_glosses character vector that contains glosses that should be removed from the abbreviation list.
 #' @param all_possible_variants logical. Some glosses have multiple definitions.
 #' @param annotate_problematic logical. Whether emphasize duplicaded and definitionless glosses
 #' @return a string with glosses and their definitions gathered from \code{definition_source} table.
@@ -15,10 +16,26 @@
 #' @export
 
 make_gloss_list <- function(definition_source = lingglosses::glosses_df,
+                            remove_glosses = "",
                             all_possible_variants = FALSE,
                             annotate_problematic = TRUE){
 
   knitr::opts_current$set(results='asis')
+
+# arg checks ---------------------------------------------------------------
+  if(typeof(remove_glosses) != "character"){
+    warning("The remove_glosses should be character.")
+  } else {
+    remove_glosses <- toupper(remove_glosses)
+  }
+
+  if(typeof(all_possible_variants) != "logical"){
+    warning("The remove_glosses should be logical.")
+  }
+
+  if(typeof(annotate_problematic) != "logical"){
+    warning("The annotate_problematic should be logical.")
+  }
 
   # checks for the user's dataset --------------------------------------------
   if(!("data.frame" %in% attr(definition_source, "class"))){
@@ -101,6 +118,11 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
       change <- which(glosses_dataset$gloss %in% duplicated_glosses)
       glosses_dataset$gloss[change] <- color_annotate(
         glosses_dataset$gloss[change])
+    }
+
+    if(length(remove_glosses) > 0){
+      keep <- which(!(glosses_dataset$gloss %in% remove_glosses))
+      glosses_dataset <- glosses_dataset[keep,]
     }
 
     # generate non breaking space ----------------------------------------------

@@ -161,6 +161,17 @@ gloss_example("s- z- á- la- nəq'wa -wa -dzə -j -ɕa -t'",
               "It seemed to him that I would be able to pass there.")
 ```
 
+Glossing extraction algorithm implemented in `lingglosses` is case sensitive, so if you want to escape it you can use curly brackets:
+
+(@) Kvankhidatli Andi, [@verhees19: 203]
+```{r}
+gloss_example("den=no he.ʃː-qi hartʃ'on-k'o w-uʁi w-uk'o.",
+              "{I}=ADD DEM.M-INS watch-CVB M-stand.AOR M-be.AOR",
+              "And I stood there, watching him.")
+```
+
+In the example above `{I}` is just English word *I* that will be escaped and will not appear in the gloss list as *marker of class I*.
+
 ## Multiline examples
 
 Sometimes examples are to long and do not fit into the page. In that case you need to add argument `results='asis'` to your chunk and `gloss_example()` will automatically split your example into multiple rows.
@@ -215,6 +226,26 @@ that is generated using the folowing markdown[^poortable] code[^tablesgenerator]
 
 In the third section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r add_gloss("FUT")` and  `r add_gloss("MSD")` glosses appears only in this exact section in the table above, it appears in the gloss lists presented in the third section.
 
+## Glossing Sign languages
+
+Unfortunately, glossing extraction implemented in `lingglosses` is case sensitive. That makes it hard to use for the Sign Languages glossing, because 
+
+1) Sign linguists used to gloss with capitalized english translations;
+2) Sign language glosses are splited into two lines associated with two hands.
+3) Sign language glosses should be somehow aligned with video/pictures (see the fascinating  [signglossR](https://github.com/borstell/signglossR) by Calle Börstell);
+4) There can be empty space in glosses;
+5) There can be some placeholders that corresponds to utterance by first hand, which
+are held stationary in the signing space during the articulation made by another hand.
+
+```{r}
+gloss_example("LH: CHAIR ---",
+              "RH: --- CL:SIT.ON",
+              "The cat sits on the chair", 
+              comment = "[RSL; Eks3–12]")
+```
+
+[@kimmelman12]
+
 # Create semi-automatic compiled abbreviation list
 
 After you finished your text, it is possible to call the `make_gloss_list()` function in order to automatically create a list of abbreviations.
@@ -247,6 +278,11 @@ You could have notice that problematic glosses (those without definition or dupl
 make_gloss_list(all_possible_variants = TRUE, annotate_problematic = FALSE)
 ```
 
+In case you want to remove some glosses from the list, you can use argument `remove_glosses`:
+
+```{r}
+make_gloss_list(remove_glosses = c("1SG", "3SG"))
+```
 
 # Other output formats
 

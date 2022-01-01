@@ -2,8 +2,8 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "lingglosses",
-  "description": "'lingglosses' helps to render glossed linguistic examples in html rmarkdown documents and then semi-automatically compiles the glosses list at the end of the document. It also provides a database of linguistic glosses.",
-  "name": "lingglosses: Linguistic examples and abbreviation list",
+  "description": "Helps to render glossed linguistic examples in html rmarkdown documents and then semi-automatically compiles the glosses list at the end of the document. It also provides a database of linguistic glosses.",
+  "name": "lingglosses: Linguistic Examples and Abbreviation Lists Generation",
   "relatedLink": "https://agricolamz.github.io/lingglosses/",
   "codeRepository": "https://CRAN.R-project.org/package=phonfieldwork",
   "issueTracker": "https://github.com/agricolamz/lingglosses/issues",
@@ -31,6 +31,21 @@
       "familyName": "Moroz",
       "email": "agricolamz@gmail.com",
       "@id": "https://orcid.org/0000-0003-1990-6083"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "version": ">= 3.0.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
     }
   ],
   "softwareRequirements": {
@@ -83,5 +98,22 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "20.538KB"
+  "fileSize": "33.767KB",
+  "citation": [
+    {
+      "@type": "SoftwareSourceCode",
+      "datePublished": "2021",
+      "author": [
+        {
+          "@type": "Person",
+          "givenName": "George",
+          "familyName": "Moroz"
+        }
+      ],
+      "name": "lingglosses: Linguistic glosses and semi-automatic list of glosses creation",
+      "identifier": "10.5281/zenodo.5801712",
+      "@id": "https://doi.org/10.5281/zenodo.5801712",
+      "sameAs": "https://doi.org/10.5281/zenodo.5801712"
+    }
+  ]
 }

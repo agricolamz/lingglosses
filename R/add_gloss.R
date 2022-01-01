@@ -1,6 +1,6 @@
 #' Gloss an example
 #'
-#' Adds glosses to the glosses list and adds small capitals to glosses.
+#' Adds glosses to the glosses list and adds small capitals to glosses. Escapes strings that begins and ends with curly brackets.
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #'
@@ -25,8 +25,10 @@ add_gloss <- function(glosses){
               fileEncoding = "UTF-8")
 
 # add small caps -----------------------------------------------------------
-  glosses <- ifelse(glosses == toupper(glosses),
+  glosses <- ifelse(glosses == toupper(glosses) &
+                      !(grepl("^\\{", glosses) & grepl("\\}$", glosses)),
                     small_caps(glosses),
                     glosses)
+  glosses <- gsub("[\\}\\{]", "", glosses)
   return(glosses)
 }
