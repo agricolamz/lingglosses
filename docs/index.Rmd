@@ -230,16 +230,16 @@ In the third section I show how to create a semi-automatic compiled abbreviation
 
 Unfortunately, glossing extraction implemented in `lingglosses` is case sensitive. That makes it hard to use for the Sign Languages glossing, because 
 
-1) Sign linguists used to gloss with capitalized english translations;
-2) Sign language glosses are splited into two lines associated with two hands.
+1) Sign linguists used to gloss with capitalized English translations;
+2) Sign language glosses sometimes are splited into two lines associated with two hands.
 3) Sign language glosses should be somehow aligned with video/pictures (see the fascinating  [signglossR](https://github.com/borstell/signglossR) by Calle Börstell);
 4) There can be empty space in glosses;
 5) There can be some placeholders that corresponds to utterance by first hand, which
 are held stationary in the signing space during the articulation made by another hand.
 
 ```{r}
-gloss_example("LH: CHAIR ---",
-              "RH: --- CL:SIT.ON",
+gloss_example("{LH}: {CHAIR} ---",
+              "{RH}: {} CL:{SIT}.{ON}",
               "The cat sits on the chair", 
               comment = "[RSL; Eks3–12]")
 ```

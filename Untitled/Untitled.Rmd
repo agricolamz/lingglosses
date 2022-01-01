@@ -1,0 +1,68 @@
+---
+title: "Use linguistic glosses with `linggloses`"
+author: 
+  - name          : "Jeannie Ferrami"
+    affiliation   : "Jones Falls University"
+    email         : "your@email.edu"
+    role:         # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
+      - Conceptualization
+      - Writing - Original Draft Preparation
+      - Writing - Review & Editing
+  - name          : "Daria Morgendorffer"
+    affiliation   : "Raft College"
+    role:
+      - Writing - Review & Editing
+date: "`r Sys.Date()`"
+bibliography: bibliography.bib
+output: 
+  html_document:
+    toc: true
+    toc_position: right
+    toc_depth: 2
+    number_sections: true
+    df_print: paged
+  pdf_document:
+    latex_engine: xelatex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(lingglosses)
+```
+
+# Introduction
+
+This is an example of `rmarkdown` document. When you click the **Knit** button a document will be generated and you will see the result.
+
+# Some section
+
+In [@comrie08] you can find multiple glosses like `r add_gloss("ABS")` and `r add_gloss("ERG")`. You can also find them in [@verhees19: 198], where she describes general converb constructions in Andi, see example (@andi_example):
+
+(@andi_example)
+```{r}
+gloss_example("hede-w w-ulon",
+              "DEM-M M-go.AOR",
+              "He went.")
+```
+
+In (@andi_example) author used some glosses like `r add_gloss("DEM")`, `r add_gloss("M")` and `r add_gloss("AOR")` defined in [@comrie08]. She also mentioned that tn some dialects the auxiliary `r gloss_example("CL-iʁi", "CL-stop.AOR", intext = TRUE)` can be used as an equivalent of the aorist of `r gloss_example("CL-uk'", "CL-be", intext = TRUE)`. 
+
+## Some subsection
+
+There is also a verbal inflection paradigm of Andi (East Caucasian) presented in [@verhees19: 199] \@ref(tab:tw):
+
+|                      | `r add_gloss("AFF")` | `r add_gloss("NEG")` |
+|----------------------|----------------------|----------------------|
+| `r add_gloss("AOR")` | -∅                   | *-sːu*               |
+| `r add_gloss("MSD")` | *-r*                 | *-sːu-r*             |
+| `r add_gloss("HAB")` | *-do*                | *-do-sːu*            |
+| `r add_gloss("FUT")` | *-dja*               | *-do-sːja*           |
+| `r add_gloss("INF")` | *-du*                | *-du-sːu*            |
+  
+
+# List of glosses
+```{r}
+make_gloss_list()
+```
+
+# References
