@@ -68,6 +68,7 @@ ADJ,adjunct,lingglosses,0
 ADJR,adjectivizer,Wikipedia,1
 ADJZ,adjectivizer,Wikipedia,1
 ADM,admonitive,Wikipedia,1
+ADM,admirative,Wikipedia,0
 ADMON,admonitive,Wikipedia,1
 ADN,adnominal,lingglosses,1
 ADN,adnominalizer,Wikipedia,1
@@ -159,6 +160,7 @@ ASSU,assumptive,Wikipedia,1
 ASSUM,assumptive,Wikipedia,1
 AST,assistive,Wikipedia,1
 ASYM,asymmetric,Wikipedia,1
+ATEL,atelic,Wikipedia,1
 ATR,attributive,lingglosses,1
 ATT,attenuative,Wikipedia,1
 ATTEN,attenuative,Wikipedia,1
@@ -530,11 +532,13 @@ IC,inflection class,lingglosses,0
 IC,involuntary causative,Wikipedia,1
 IC,inderective copula,Wikipedia,1
 ICOM,involuntary comitative,Wikipedia,1
+ICP,incompletive,Wikipedia,1
 ICVB,imperfective converb,Wikipedia,1
 IDENT,identical,Wikipedia,1
 IDENTIF,identifiable,Wikipedia,1
 IDEO,ideophone,Wikipedia,1
 IDEOPH,ideophone,Wikipedia,1
+IDF,indefinite,Wikipedia,1
 IDPH,ideophone,Wikipedia,1
 IFUT,indefinite future,Wikipedia,1
 IGN,ignorative,Wikipedia,1
@@ -583,20 +587,25 @@ INC,increment,Wikipedia,0
 INC,inceptive,Wikipedia,1
 INC,inchoative,Wikipedia,0
 INC,inclusive,Wikipedia,0
+INC,incompletive,Wikipedia,0
 INCEP,inceptive,Wikipedia,1
 INCH,inchoative,lingglosses,1
 INCHO,inchoative,Wikipedia,1
 INCIP,inceptive,Wikipedia,1
 INCL,inclusive,Leipzig Glossing Rules,1
+INCMP,incompletive,Wikipedia,1
+INCMPL,incompletive,Wikipedia,1
+INCOMPL,incompletive,Wikipedia,1
 INCP,inceptive,Wikipedia,1
-INCPL,incompletive,lingglosses,1
+INCPL,incompletive,Wikipedia,1
 IND,indicative,Leipzig Glossing Rules,1
 IND,independent,Wikipedia,0
+IND,indefinite,Wikipedia,0
 INDCAUS,indirect causative,Wikipedia,1
 INDEF,indefinite,Leipzig Glossing Rules,1
 INDEP,independent,Wikipedia,1
 INDET,indeterminate,Wikipedia,1
-INDF,indefinite,lingglosses,1
+INDF,indefinite,Wikipedia,1
 INDH,indefinite human,Wikipedia,1
 INDIC,indicative,Wikipedia,1
 INDIR,indirective,Wikipedia,1
@@ -622,7 +631,9 @@ INST,instrumental,Wikipedia,1
 INSTR,instrumental,Wikipedia,1
 INT,interrogative,lingglosses,1
 INTEN,intensifier,Wikipedia,1
+INTEN,intentional,Wikipedia,0
 INTENS,intensifier,Wikipedia,1
+INTENTV,intentive,Wikipedia,1
 INTER,within (a solid object),Wikipedia,1
 INTERESS,interessive,Wikipedia,1
 INTERJ,interjection,Wikipedia,1
@@ -633,8 +644,6 @@ INTF,interfix,Wikipedia,1
 INTJ,interjection,Wikipedia,1
 INTJ,interjection,Wikipedia,1
 INTL,intentional,Wikipedia,1
-INTEN,intentional,Wikipedia,0
-INTENTV,intentive,Wikipedia,1
 INTN,intensifier,Wikipedia,1
 INTNS,intensifier,Wikipedia,1
 INTR,intransitive,Leipzig Glossing Rules,1
@@ -644,6 +653,7 @@ INTRV,introversive,Wikipedia,1
 INTS,intensifier,Wikipedia,1
 INTV,intentive,Wikipedia,1
 INV,inverse,lingglosses,1
+INVIS,invisible,Wikipedia,1
 INVN,inverse number,Wikipedia,1
 INW,inward,Wikipedia,1
 IO,indirect object,Wikipedia,1
@@ -665,14 +675,14 @@ IRRELEV,irrelevence,Wikipedia,1
 IS,indirect speech,Wikipedia,1
 IS,impersonal subject,Wikipedia,1
 IS,immediate scope,Wikipedia,1
+IT,itive,Wikipedia,1
 ITE,iterative,Wikipedia,1
 ITER,iterative,Wikipedia,1
-ITV,itive,Wikipedia,1
-IT,itive,Wikipedia,1
+ITG,intangible,Wikipedia,1
 ITIV,itive,Wikipedia,1
 ITM,intermittent,Wikipedia,1
 ITR,intransitive,lingglosses,1
-ITG,intangible,Wikipedia,1
+ITV,itive,Wikipedia,1
 IV,class IV,lingglosses,1
 IVC,impersonal verb construction,Wikipedia,1
 IX,class IX,lingglosses,1
@@ -681,67 +691,139 @@ JUS,jussive,Wikipedia,1
 JUSS,jussive,Wikipedia,1
 KIN,kinship,Wikipedia,1
 KNWN,known,Wikipedia,1
-LAT,lative,lingglosses,1
-LIM,limitative,lingglosses,1
-LINK,linker,lingglosses,1
-LK,linker,lingglosses,1
-LNK,linker,lingglosses,1
+L,local (exophoric) person,Wikipedia,1
+LAT,lative,Wikipedia,1
+LCL,limited control,Wikipedia,1
+LCV,locative,Wikipedia,1
+LIG,ligature,Wikipedia,1
+LIM,limitative,Wikipedia,1
+LINK,linker,Wikipedia,1
+LK,linker,Wikipedia,1
+LKLY,likely,Wikipedia,1
+LL,land gender,Wikipedia,0
+LL,lower level,Wikipedia,1
+LM,landmark,Wikipedia,1
+LMT,limitative,Wikipedia,1
+LNK,linker,Wikipedia,1
 LOAN,loanword,lingglosses,1
 LOC,locative,Leipzig Glossing Rules,1
-LOG,logophor,lingglosses,1
+LOG,logophor,Wikipedia,1
+LOQ,delocutive,Wikipedia,1
+LS,lexical stem,Wikipedia,1
+LV,location voice,Wikipedia,1
 M,masculine,Leipzig Glossing Rules,1
+MAL,malefactive,Wikipedia,1
+MAN,manner,Wikipedia,1
 MASC,masculine,lingglosses,1
+MASD,masdar,Wikipedia,1
 MDU,male dual,lingglosses,1
-MED,medial,lingglosses,1
-MED,mediative,lingglosses,0
-MID,middle,lingglosses,1
+MEA,measure,Wikipedia,1
+MED,medial,lingglosses,0
+MED,mediative,Wikipedia,1
+MID,middle voice,Wikipedia,1
+MID,mediopassive,Wikipedia,0
+MIM,mimetic,Wikipedia,1
 MIN,minimal,lingglosses,1
-MIR,mirative,lingglosses,1
+MIR,mirative,Wikipedia,1
+MIRN,negative mirative,Wikipedia,1
+MIS,miscellaneous gender,Wikipedia,1
+MIT,mitigation,Wikipedia,1
 MIXED,mixed declension class,lingglosses,1
-MOD,modal,lingglosses,1
+MLOC,modal locative,Wikipedia,1
+MLTP,multiplicative,Wikipedia,1
+MOD,modal,Wikipedia,1
+MOD,modifier,Wikipedia,0
+MOD,modalis,Wikipedia,0
+MOM,momentane,Wikipedia,1
+MONO,monofocal person,Wikipedia,1
+MOT,motion,Wikipedia,1
+MOV,movement,Wikipedia,1
 MP,modal particle,lingglosses,1
 MPL,male plural,lingglosses,1
-MSD,masdar,lingglosses,1
+MSD,masdar,Wikipedia,1
 MSG,male singular,lingglosses,1
+MUL,multiplicative,Wikipedia,1
+MULT,multiplicative,Wikipedia,1
+MULT,multal,Wikipedia,0
+MVMT,movoment,Wikipedia,1
+MVR,mover,Wikipedia,1
 N,neuter,Leipzig Glossing Rules,1
 NACT,non-active,lingglosses,1
-NC,noun class,lingglosses,1
+NARR,narrative,Wikipedia,1
+NC,noun class,Wikipedia,1
+NC,noncontrol,Wikipedia,0
+NCOMPL,incompletive,Wikipedia,1
+NDEF,indefinite,Wikipedia,1
 NDU,neutral dual,lingglosses,1
+NEC,necessitative,Wikipedia,1
 NEG,negation,Leipzig Glossing Rules,1
+NEGAT,negatory,Wikipedia,1
 NEGO,non-egophoric,Wikipedia,1
 NEU,neuter,lingglosses,1
-NEUT,neuter,lingglosses,1
-NF,non-finite,lingglosses,1
+NEUT,neuter,Wikipedia,1
+NEX,non-extended,Wikipedia,1
+NF,non-finite,Wikipedia,1
+NF,non-final,Wikipedia,0
 NFH,non-firsthand,Wikipedia,1
 NFIN,non-finite,lingglosses,1
 NFUT,non-future,lingglosses,1
+NH,non-human,Wikipedia,1
 NHON,non-honorific,lingglosses,1
 NL,nominalizer,lingglosses,1
+NM,non-masculine,Wikipedia,1
+NMASC,non-masculine,Wikipedia,1
 NML,nominalizer,lingglosses,1
 NMLZ,nominalization,Leipzig Glossing Rules,0
 NMLZ,nominalizer,Leipzig Glossing Rules,1
 NMM,non-manual marker,lingglosses,1
+NMZ,nominalizer,Wikipedia,1
 NOM,nominative,Leipzig Glossing Rules,1
 NONAGR,nonagreeing,lingglosses,1
+NONIN,noninstigational,Wikipedia,1
 NONP,non-past,lingglosses,1
 NONREFL,non-reflexive,lingglosses,1
 NONSUBJ,non-subject,lingglosses,1
 NONVOL,non-volitional,lingglosses,1
 NOT.VIS,not visible,lingglosses,1
 NP,noun phrase,lingglosses,1
+NPFV,imperfective,Wikipedia,1
 NPI,negative polarity item,lingglosses,1
 NPL,neutral plural,lingglosses,1
+NPOSS,non-possesed,Wikipedia,1
 NPST,non-past,lingglosses,1
-NS,null subject,lingglosses,1
+NR,near,Wikipedia,1
+NS,null subject,lingglosses,0
+NS,non-singular,Wikipedia,1
 NSBJ,non-subject,lingglosses,1
 NSG,neutral singular,lingglosses,1
 NSG,non-singular,lingglosses,1
-NUM,numeral,lingglosses,1
-O,object,lingglosses,1
+NT,neuter,Wikipedia,1
+NTEL,atelic,Wikipedia,1
+NTL,neutral direction ,Wikipedia,1
+NTR,neutral,Wikipedia,1
+NTS,non-topical subject,Wikipedia,1
+NUM,numeral,Wikipedia,1
+NV,neutral version,Wikipedia,1
+NVEXP,nonvisual experiential,Wikipedia,1
+NVIS,non-visual,Wikipedia,1
+NVOL,nonvolitional,Wikipedia,1
+NW,non-witnessed,Wikipedia,1
+O,object,Wikipedia,1
 OBJ,object,Leipzig Glossing Rules,1
+OBJV,objective,Wikipedia,1
 OBL,oblique,Leipzig Glossing Rules,1
 OBV,obviative,lingglosses,1
-OPT,optative,lingglosses,1
+OBS,observation,Wikipedia,1
+OINV,inverted object,Wikipedia,1
+ONOM,onomatopoeia,Wikipedia,1
+OPP,opposite,Wikipedia,1
+OPT,optative,Wikipedia,1
+OR,orientation,Wikipedia,1
+ORD,ordinal,Wikipedia,1
+ORIG,originative,Wikipedia,1
+OS,oblique stem,Wikipedia,1
+OUT,outward,Wikipedia,1
+OV,objective version,Wikipedia,1
 P,patient-like argument of a canonical transitive verb,Leipzig Glossing Rules,1
 PA,paucal,lingglosses,1
 PAR,particle,lingglosses,1
@@ -874,6 +956,7 @@ TS,topic shift,lingglosses,1
 UNACC,unaccusative,lingglosses,1
 UNERG,unergative,lingglosses,1
 UNM,unmarked case,lingglosses,1
+UNPOSS,non-possesed,Wikipedia,1
 UNW,unwitnessed,lingglosses,1
 V,class V,lingglosses,1
 V,verb,lingglosses,0
