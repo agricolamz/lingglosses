@@ -252,7 +252,7 @@ So, first of all the capitalization that is not used for glossing is embraced wi
 It is also possible to use pictures in a transliteration line, see example from Kazakh-Russian Sign Language [@kuznetsova21: 51] (pictures are used with the permission of Anna Kuznetsova, the author):
 
 ```{r}
-gloss_example("![](when2.png) ![](mom2.png) ![](tired2.png)",
+gloss_example("![](when.png) ![](mom.png) ![](tired.png)",
               c("br_raise_______ {} {}",
                 "chin_up_______ {} {}",
                 "{WHEN} {MOM} {TIRED}"), 
