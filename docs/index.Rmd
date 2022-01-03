@@ -226,8 +226,6 @@ that is generated using the folowing markdown[^poortable] code[^tablesgenerator]
 
 In the third section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r add_gloss("FUT")` and  `r add_gloss("MSD")` glosses appears only in this exact section in the table above, it appears in the gloss lists presented in the third section.
 
-`r add_gloss("ADDDDD")`
-
 ## Glossing Sign languages
 
 Unfortunately, glossing extraction implemented in `lingglosses` is case sensitive. That makes it hard to use for the Sign Languages glossing, because 
@@ -250,6 +248,18 @@ gloss_example(glosses = c("LH: {CHAIR} ________",
 ```
 
 So, first of all the capitalization that is not used for glossing is embraced with curly brackets, so `lingglosses` does not treat it as a gloss. Two separate gloss lines for different hands are provided with a vector with two elements (see `c()` function for the vector creation). It is important to provide the `drop_transliteration = TRUE` argument, otherwise internal tests within the `gloss_example()` function will fail.
+
+It is also possible to use pictures in a transliteration line, see example from Kazakh-Russian Sign Language [@kuznetsova21: 51]:
+
+```{r, eval = FALSE}
+gloss_example("![](when.png) ![](mom.png) ![](tired.png)",
+              c("br_raise_______ {} {}",
+                "chin_up_______ {} {}",
+                "{WHEN} {MOM} {TIRED}"), 
+              "When was mom tired?")
+```
+
+The first line correpsonds to pictures in markdown format that should be located in the same folder (otherwise you need to specify the path to them, e. g. `![](images/your_plot.png)`). The next three lines correspond to different lines in the example with some non-manual articulation: as before all glossing lines stored as a vector of strings.
 
 # Create semi-automatic compiled abbreviation list
 

@@ -40,6 +40,7 @@ gloss_example <- function(transliteration,
                           line_length = 70,
                           italic_transliteration = TRUE,
                           drop_transliteration = FALSE,
+                          cell_underline = 1,
                           intext = FALSE){
 
 # fix for multiple glosses line --------------------------------------------
@@ -84,10 +85,11 @@ gloss_example <- function(transliteration,
   }
 
 # check that glosses and transliteration have the same length --------------
-  if(length(transliteration) != length(glosses_by_word)){
-    stop(paste0("There is a different number of words and glosses in the
-                following example: ", paste0(transliteration, collapse = " ")))
-  }
+  # if(length(transliteration) != length(glosses_by_word)){
+  #   stop(paste0("There is a different number of words and glosses in the
+  #               following example: ", paste0(transliteration, collapse = " ")))
+  # }
+  #
 
   if(length(orthography) > 0 & length(transliteration) != length(orthography)){
     stop(paste0("There is a different number of words in orthography and
