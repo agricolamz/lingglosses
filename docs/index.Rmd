@@ -232,8 +232,8 @@ In the third section I show how to create a semi-automatic compiled abbreviation
 
 Unfortunately, glossing extraction implemented in `lingglosses` is case sensitive. That makes it hard to use for the Sign Languages glossing, because 
 
-1) Sign linguists used to gloss with capitalized English translations;
-2) Sign language glosses sometimes are splited into two lines associated with two hands (or even more if you want to account for non-manual markers);
+1) Sign linguists used to gloss lexical items with capitalized English translations;
+2) Sign language glosses sometimes are splitted into two lines associated with two hands (or even more if you want to account for non-manual markers);
 3) Sign language glosses should be somehow aligned with video/pictures (see the fascinating  [signglossR](https://github.com/borstell/signglossR) by Calle Börstell);
 4) There can be empty space in glosses;
 5) There can be some placeholders that corresponds to utterance by one articulator (e. g. hand), which
