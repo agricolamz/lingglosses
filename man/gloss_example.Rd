@@ -11,7 +11,8 @@ gloss_example(
   comment = "",
   orthography = "",
   line_length = 70,
-  transliteration_italic = TRUE,
+  italic_transliteration = TRUE,
+  drop_transliteration = FALSE,
   intext = FALSE
 )
 }
@@ -28,7 +29,9 @@ gloss_example(
 
 \item{line_length}{integer vector of the length one that denotes maximum number of characters per one line.}
 
-\item{transliteration_italic}{logical variable that denotes, whether you want to italicize your example.}
+\item{italic_transliteration}{logical variable that denotes, whether user wants to italicize your example.}
+
+\item{drop_transliteration}{logical variable that denotes, whether user wants to have an example without tranliteration.}
 
 \item{intext}{logical variable that denotes, whether example should be considered as part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})}
 }

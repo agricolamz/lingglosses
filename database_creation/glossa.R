@@ -111,11 +111,11 @@ for_analysis %>%
          definition = map(gloss, 2) %>% as.character(),
          gloss = map(gloss, 1) %>% as.character()) %>%
   count(gloss, definition, sort = TRUE) %>%
-  write_csv("database_creation/glossa_extracted.csv")
+  write_csv("database_creation/glosses_extracted.csv")
 
 # after this I go through the file and change it manually
 
 # save file as rds ---------------------------------------------------------
-glosses_df <- read.csv("database_creation/glossa_extracted.csv")
+glosses_df <- read.csv("database_creation/glosses_extracted.csv")
 save(glosses_df, file="data/glosses_df.RData", compress='xz')
 

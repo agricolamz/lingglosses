@@ -13,3 +13,5 @@
 - add lingglosses rmarkdown template
 - add possibility to remove glosses in the `make_gloss_list()` output with the `remove_glosses` argument.
 - add possibility to escape glossing with curly brackets, e. g. `{I}`.
+- provide an ability to have a multiline glosses example for Sign Languages.
+- provide an ability to have a transliterationless example.

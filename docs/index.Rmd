@@ -95,7 +95,7 @@ gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu",
 
 In this first example you can see that:
 
-* the transliteration line is italic by default (if you do not want it, just add the `transliteration_italic = FALSE` argument);
+* the transliteration line is italic by default (if you do not want it, just add the `italic_transliteration = FALSE` argument);
 * users can use standrad markdown syntax (e. g. `**a**` for **bold** and `*a*` for *italic*);
 * the free translation line is framed with quotation marks.
 
@@ -237,14 +237,17 @@ Unfortunately, glossing extraction implemented in `lingglosses` is case sensitiv
 5) There can be some placeholders that corresponds to utterance by first hand, which
 are held stationary in the signing space during the articulation made by another hand.
 
+I will illustrate all this problems with the example from Russian Sign Language [@kimmelman12: 421]:
+
 ```{r}
-gloss_example("{LH}: {CHAIR} ---",
-              "{RH}: {} CL:{SIT}.{ON}",
-              "The cat sits on the chair", 
-              comment = "[RSL; Eks3–12]")
+gloss_example(glosses = c("LH: {CHAIR} ________",
+                          "RH: {} CL:{SIT}.{ON}"),
+              free_translation = "The cat sits on the chair", 
+              comment = "[RSL; Eks3–12]",
+              drop_transliteration = TRUE)
 ```
 
-[@kimmelman12]
+So, first of all the capitalization that is not used for glossing is embraced with curly brackets, so `lingglosses` does not treat it as a gloss. Two separate gloss lines for different hands are provided with a vector with two elements (see `c()` function for the vector creation). It is important to provide the `drop_transliteration = TRUE` argument, otherwise internal tests within the `gloss_example()` function will fail.
 
 # Create semi-automatic compiled abbreviation list
 
@@ -266,7 +269,7 @@ my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
 make_gloss_list(my_abbreviations)
 ```
 
-Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r add_gloss("ASS")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`. As you can see, there are multiple possible values for `r add_gloss("AFF")`, `r add_gloss("ASS")`, `r add_gloss("IMP")` and `r add_gloss("PRF")`:
+Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r add_gloss("ASS")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`. As you can see, there are multiple possible values for `r add_gloss("AFF")`, `r add_gloss("ASS")`, `r add_gloss("CL")`, `r add_gloss("IMP")`, `r add_gloss("IN")`, `r add_gloss("INS")`, and `r add_gloss("PRF")`:
 
 ```{r}
 make_gloss_list(all_possible_variants = TRUE)

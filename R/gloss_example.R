@@ -10,7 +10,8 @@
 #' @param orthography character vector of the length one for the orthography line (above translation).
 #' @param comment character vector of the length one for the comment line (under the free translation line).
 #' @param line_length integer vector of the length one that denotes maximum number of characters per one line.
-#' @param transliteration_italic logical variable that denotes, whether you want to italicize your example.
+#' @param italic_transliteration logical variable that denotes, whether user wants to italicize your example.
+#' @param drop_transliteration logical variable that denotes, whether user wants to have an example without tranliteration.
 #' @param intext logical variable that denotes, whether example should be considered as part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})
 #'
 #' @examples
@@ -37,18 +38,25 @@ gloss_example <- function(transliteration,
                           comment = "",
                           orthography = "",
                           line_length = 70,
-                          transliteration_italic = TRUE,
+                          italic_transliteration = TRUE,
+                          drop_transliteration = FALSE,
                           intext = FALSE){
 
+# fix for multiple glosses line --------------------------------------------
+  length_glosses <- length(glosses)
+  if(length_glosses > 1){
+    glosses <- c(paste0(glosses[-length_glosses], " "), glosses[length_glosses])
+  }
+
 # check arguments ----------------------------------------------------------
-  lapply(names(formals(gloss_example))[1:2],
-         function(argument){
-           if(length(eval(parse(text = argument))) != 1 |
-              typeof(eval(parse(text = argument))) != "character"){
-             stop(paste0(argument,
-                         " argument should be a character vector of length 1"))
-           }
-         })
+  # lapply(names(formals(gloss_example))[1:2],
+  #        function(argument){
+  #          if(length(eval(parse(text = argument))) != 1 |
+  #             typeof(eval(parse(text = argument))) != "character"){
+  #            stop(paste0(argument,
+  #                        " argument should be a character vector of length 1"))
+  #          }
+  #        })
 
   if(length(line_length) != 1 | typeof(line_length) != "double"){
     stop(paste0("line_length",
@@ -56,8 +64,14 @@ gloss_example <- function(transliteration,
   }
 
 # split arguments by spaces ------------------------------------------------
+  if(drop_transliteration){
+    transliteration <- glosses
+  }
+
   transliteration <- unlist(strsplit(transliteration, " "))
   glosses_by_word <- unlist(strsplit(glosses, " "))
+
+
   if(length(orthography) > 0){
     orthography <- unlist(strsplit(orthography, " "))
   }
@@ -82,11 +96,11 @@ gloss_example <- function(transliteration,
   }
 
 # add glosses to the document gloss list -----------------------------------
-  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(]"))
+  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?]"))
   single_gl <- lingglosses::add_gloss(single_gl)
 
 # get delimeters back ------------------------------------------------------
-  delimeters <- unlist(strsplit(glosses, "[^-:\\.= \\)\\(]"))
+  delimeters <- unlist(strsplit(glosses, "[^-:\\.= \\)\\(!\\?]"))
   delimeters <- c(delimeters[delimeters != ""], "")
   glosses <- paste0(single_gl, delimeters, collapse = "")
   glosses <- gsub("<span style=", "<span_style=", glosses)
@@ -94,7 +108,7 @@ gloss_example <- function(transliteration,
   glosses <- gsub("<span_style=", "<span style=", glosses)
 
 # italic of the language line ----------------------------------------------
-  if(isTRUE(transliteration_italic)){
+  if(isTRUE(italic_transliteration) & !drop_transliteration){
     if(knitr::is_latex_output()){
       transliteration <- paste0("\\textit{", transliteration, "}")
     } else {
@@ -108,15 +122,26 @@ gloss_example <- function(transliteration,
 
 # for inline examples ------------------------------------------------------
   if(isTRUE(intext)){
-    result <- paste0(paste(transliteration, collapse = " "),
-                    " (",
-                    paste(glosses, collapse = " "),
-                    if(nchar(free_translation) > 0){
-                      paste0(" '", free_translation, "'")} else {""},
-                    if(nchar(comment) > 0){
-                      paste0(" ", comment)} else {""},
-                    ")",
-                    collapse = "")
+    if(!drop_transliteration){
+      inline_transliteration <- paste(transliteration, collapse = " ")
+      sep1 <- " ("
+      sep2 <- ")"
+    } else {
+      inline_transliteration <- ""
+      sep1 <- ""
+      sep2 <- ""
+    }
+
+
+    result <- paste0(inline_transliteration,
+                     sep1,
+                     paste(glosses, collapse = " "),
+                     if(nchar(free_translation) > 0){
+                       paste0(" '", free_translation, "'")} else {""},
+                     if(nchar(comment) > 0){
+                       paste0(" ", comment)} else {""},
+                     sep2,
+                     collapse = "")
   } else{
 
 # long line splitting ------------------------------------------------------
@@ -130,20 +155,19 @@ gloss_example <- function(transliteration,
           orthography = if(length(orthography) > 0){
             paste(orthography[splits_by_line == i], collapse = " ")},
           comment = if(i == max(splits_by_line)){comment} else {""},
-          transliteration_italic = FALSE,
+          italic_transliteration = FALSE,
           line_length = line_length,
+          drop_transliteration = drop_transliteration,
           intext = FALSE)
       })
     } else {
 
 # combine everything into table --------------------------------------------
-      if(length(orthography) > 0){
-        for_matrix <- c(orthography, transliteration, glosses)
-        nrow_matrix <- 3
-      } else {
-        for_matrix <- c(transliteration, glosses)
-        nrow_matrix <- 2
-      }
+      orth <- if(length(orthography) > 0){orthography} else{NULL}
+      trans <- if(!drop_transliteration){transliteration} else{NULL}
+      for_matrix <- c(orth, trans, glosses)
+      nrow_matrix <- length_glosses + (length(orth) > 0) + (length(trans) > 0)
+
       result <- matrix(for_matrix, nrow = nrow_matrix, byrow = TRUE)
       result <- kableExtra::kbl(result, align = "l", centering = FALSE,
                                 escape = FALSE, vline = "")
