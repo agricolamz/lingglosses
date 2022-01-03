@@ -117,5 +117,11 @@ for_analysis %>%
 
 # save file as rds ---------------------------------------------------------
 glosses_df <- read.csv("database_creation/glosses_extracted.csv")
+
+glosses_df %>%
+  count(gloss, weight, sort = TRUE) %>%
+  pivot_wider(names_from = weight, values_from = n) %>%
+  View()
+
 save(glosses_df, file="data/glosses_df.RData", compress='xz')
 

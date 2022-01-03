@@ -58,7 +58,7 @@ AD,near,Wikipedia,1
 ADAP,adaptive,Wikipedia,1
 ADD,additive,Wikipedia,1
 ADDIT,additive,Wikipedia,1
-ADDR,addressee,lingglosses,1
+ADDR,addressee,lingglosses,0
 ADDR,addressive,Wikipedia,1
 ADE,adessive,Wikipedia,1
 ADEL,adelative,Wikipedia,1
@@ -68,10 +68,10 @@ ADJ,adjectivizer,lingglosses,0
 ADJ,adjunct,lingglosses,0
 ADJR,adjectivizer,Wikipedia,1
 ADJZ,adjectivizer,Wikipedia,1
-ADM,admonitive,Wikipedia,1
 ADM,admirative,Wikipedia,0
+ADM,admonitive,Wikipedia,1
 ADMON,admonitive,Wikipedia,1
-ADN,adnominal,lingglosses,1
+ADN,adnominal,lingglosses,0
 ADN,adnominalizer,Wikipedia,1
 ADR,addressive,Wikipedia,1
 ADV,adverb,Leipzig Glossing Rules,1
@@ -401,9 +401,9 @@ EQU,equative,Wikipedia,1
 ERG,ergative,Leipzig Glossing Rules,1
 ESS,essive,Wikipedia,1
 ETOP,emphatic topic,Wikipedia,1
-EV,evidential,Wikipedia,1
 EV,epenthetic vowel,lingglosses,0
-EV,experiencer voice,Wikipedia,1
+EV,evidential,Wikipedia,1
+EV,experiencer voice,Wikipedia,0
 EVD,evidential,Wikipedia,1
 EVI,evidential,Wikipedia,1
 EVID,evidential,Wikipedia,1
@@ -425,11 +425,11 @@ EXHORT,exhortative,lingglosses,1
 EXIS,existential,Wikipedia,1
 EXIST,existential,Wikipedia,1
 EXO,exocentric,Wikipedia,1
+EXP,experiencer,Wikipedia,0
 EXP,experiential,Wikipedia,1
-EXP,experiencer,Wikipedia,1
 EXPECT,expectational,Wikipedia,1
-EXPER,experiential,Wikipedia,1
 EXPER,experiencer,Wikipedia,0
+EXPER,experiential,Wikipedia,1
 EXPL,expletive,lingglosses,1
 EXPR,expressive,Wikipedia,1
 EXS,existential,Wikipedia,1
@@ -438,19 +438,19 @@ EXT,extent,Wikipedia,0
 EXT,external evidential,Wikipedia,0
 EZF,ezafe,Wikipedia,1
 F,feminine,Leipzig Glossing Rules,1
-FAC,factive,Wikipedia,1
 FAC,factitive,Wikipedia,0
-FACT,factive,Wikipedia,1
-FACT,factitive,Wikipedia,0
-FACT,factative,Wikipedia,1
+FAC,factive,Wikipedia,1
+FACT,factative,Wikipedia,0
+FACT,factitive,Wikipedia,1
+FACT,factive,Wikipedia,0
 FAM,familiar,Wikipedia,1
 FCL,facilitive,Wikipedia,1
 FDU,female dual,lingglosses,1
 FEM,feminine,lingglosses,1
 FH,firsthand,Wikipedia,1
 FI,feminine indefinite,Wikipedia,1
-FIN,finite,Wikipedia,1
 FIN,finalis,Wikipedia,0
+FIN,finite,Wikipedia,1
 FIRSTH,firsthand,Wikipedia,1
 FNP,finite non-past,lingglosses,1
 FOC,focus,Leipzig Glossing Rules,1
@@ -521,7 +521,7 @@ HRSY,hearsay,Wikipedia,1
 HSG,human singular,lingglosses,1
 HSY,hearsay/reported evidential,Wikipedia,1
 HUM,human,Wikipedia,1
-HUM,humilitive,Wikipedia,1
+HUM,humilitive,Wikipedia,0
 HYP,hypothetical,Wikipedia,1
 HYPO,hypothetical,Wikipedia,1
 HYPOTH,hypothetical,Wikipedia,1
@@ -529,9 +529,9 @@ I,class I,lingglosses,1
 IA,indirect agent,Wikipedia,0
 IA,involuntary agent ,Wikipedia,1
 IAM,iametive,Wikipedia,1
+IC,inderective copula,Wikipedia,0
 IC,inflection class,lingglosses,0
 IC,involuntary causative,Wikipedia,1
-IC,inderective copula,Wikipedia,1
 ICOM,involuntary comitative,Wikipedia,1
 ICP,incompletive,Wikipedia,1
 ICVB,imperfective converb,Wikipedia,1
@@ -549,8 +549,8 @@ III,class III,lingglosses,1
 ILL,illative,Wikipedia,1
 ILLA,illative,Wikipedia,1
 ILLAT,illative,Wikipedia,1
-IM,interrogative mark,Wikipedia,1
 IM,immediate,Wikipedia,0
+IM,interrogative mark,Wikipedia,1
 IMI,impersonal infinitive,Wikipedia,1
 IMM,Immediate,lingglosses,1
 IMMED,Immediate,Wikipedia,1
@@ -559,7 +559,6 @@ IMP,imperative,Leipzig Glossing Rules,1
 IMP,imperfect,lingglosses,0
 IMP,imperfective,lingglosses,0
 IMP,impersonal,lingglosses,0
-IMPERF,imperfective,lingglosses,1
 IMPERF,imperfective,Wikipedia,1
 IMPERS,impersonal,Wikipedia,1
 IMPF,imperfect,Wikipedia,0
@@ -567,8 +566,8 @@ IMPF,imperfective,Wikipedia,1
 IMPL,implicative,Wikipedia,1
 IMPOSS,modal impossibility,Wikipedia,1
 IMPOT,impotential,Wikipedia,1
-IMPR,imprecative,Wikipedia,1
 IMPR,impersonal,Wikipedia,0
+IMPR,imprecative,Wikipedia,1
 IMPREC,imprecative,Wikipedia,1
 IMPRF,imperfective,Wikipedia,1
 IMPRS,impersonal,Wikipedia,1
@@ -583,12 +582,12 @@ INAL,inalienable,Wikipedia,1
 INAN,inanimate,Wikipedia,1
 INANI,inanimate,lingglosses,1
 INANIM,inanimate,Wikipedia,1
-INC,incompletive,lingglosses,0
-INC,increment,Wikipedia,0
 INC,inceptive,Wikipedia,1
 INC,inchoative,Wikipedia,0
 INC,inclusive,Wikipedia,0
+INC,incompletive,lingglosses,0
 INC,incompletive,Wikipedia,0
+INC,increment,Wikipedia,0
 INCEP,inceptive,Wikipedia,1
 INCH,inchoative,lingglosses,1
 INCHO,inchoative,Wikipedia,1
@@ -599,9 +598,9 @@ INCMPL,incompletive,Wikipedia,1
 INCOMPL,incompletive,Wikipedia,1
 INCP,inceptive,Wikipedia,1
 INCPL,incompletive,Wikipedia,1
-IND,indicative,Leipzig Glossing Rules,1
-IND,independent,Wikipedia,0
 IND,indefinite,Wikipedia,0
+IND,independent,Wikipedia,0
+IND,indicative,Leipzig Glossing Rules,1
 INDCAUS,indirect causative,Wikipedia,1
 INDEF,indefinite,Leipzig Glossing Rules,1
 INDEP,independent,Wikipedia,1
@@ -626,8 +625,8 @@ ING,ingressive,Wikipedia,1
 INGR,ingressive,Wikipedia,1
 INH,inchoative,Wikipedia,1
 INJ,interjection,Wikipedia,1
-INS,instrumental,Leipzig Glossing Rules,1
 INS,instantiated,Wikipedia,0
+INS,instrumental,Leipzig Glossing Rules,1
 INST,instrumental,Wikipedia,1
 INSTR,instrumental,Wikipedia,1
 INT,interrogative,lingglosses,1
@@ -642,7 +641,6 @@ INTERP,interpellative,Wikipedia,1
 INTERR,interrogative,Wikipedia,1
 INTERROG,interrogative,Wikipedia,1
 INTF,interfix,Wikipedia,1
-INTJ,interjection,Wikipedia,1
 INTJ,interjection,Wikipedia,1
 INTL,intentional,Wikipedia,1
 INTN,intensifier,Wikipedia,1
@@ -673,9 +671,9 @@ IRR,irrealis,Leipzig Glossing Rules,1
 IRREAL,irrealis,Wikipedia,1
 IRREL,irrelevence,Wikipedia,1
 IRRELEV,irrelevence,Wikipedia,1
+IS,immediate scope,Wikipedia,0
+IS,impersonal subject,Wikipedia,0
 IS,indirect speech,Wikipedia,1
-IS,impersonal subject,Wikipedia,1
-IS,immediate scope,Wikipedia,1
 IT,itive,Wikipedia,1
 ITE,iterative,Wikipedia,1
 ITER,iterative,Wikipedia,1
@@ -722,8 +720,8 @@ MDU,male dual,lingglosses,1
 MEA,measure,Wikipedia,1
 MED,medial,lingglosses,0
 MED,mediative,Wikipedia,1
-MID,middle voice,Wikipedia,1
 MID,mediopassive,Wikipedia,0
+MID,middle voice,Wikipedia,1
 MIM,mimetic,Wikipedia,1
 MIN,minimal,lingglosses,1
 MIR,mirative,Wikipedia,1
@@ -734,8 +732,8 @@ MIXED,mixed declension class,lingglosses,1
 MLOC,modal locative,Wikipedia,1
 MLTP,multiplicative,Wikipedia,1
 MOD,modal,Wikipedia,1
-MOD,modifier,Wikipedia,0
 MOD,modalis,Wikipedia,0
+MOD,modifier,Wikipedia,0
 MOM,momentane,Wikipedia,1
 MONO,monofocal person,Wikipedia,1
 MOT,motion,Wikipedia,1
@@ -745,15 +743,15 @@ MPL,male plural,lingglosses,1
 MSD,masdar,Wikipedia,1
 MSG,male singular,lingglosses,1
 MUL,multiplicative,Wikipedia,1
-MULT,multiplicative,Wikipedia,1
 MULT,multal,Wikipedia,0
+MULT,multiplicative,Wikipedia,1
 MVMT,movoment,Wikipedia,1
 MVR,mover,Wikipedia,1
 N,neuter,Leipzig Glossing Rules,1
 NACT,non-active,lingglosses,1
 NARR,narrative,Wikipedia,1
-NC,noun class,Wikipedia,1
 NC,noncontrol,Wikipedia,0
+NC,noun class,Wikipedia,1
 NCOMPL,incompletive,Wikipedia,1
 NDEF,indefinite,Wikipedia,1
 NDU,neutral dual,lingglosses,1
@@ -764,8 +762,8 @@ NEGO,non-egophoric,Wikipedia,1
 NEU,neuter,lingglosses,1
 NEUT,neuter,Wikipedia,1
 NEX,non-extended,Wikipedia,1
-NF,non-finite,Wikipedia,1
 NF,non-final,Wikipedia,0
+NF,non-finite,Wikipedia,1
 NFH,non-firsthand,Wikipedia,1
 NFIN,non-finite,lingglosses,1
 NFUT,non-future,lingglosses,1
@@ -794,11 +792,11 @@ NPL,neutral plural,lingglosses,1
 NPOSS,non-possesed,Wikipedia,1
 NPST,non-past,lingglosses,1
 NR,near,Wikipedia,1
-NS,null subject,lingglosses,0
 NS,non-singular,Wikipedia,1
+NS,null subject,lingglosses,0
 NSBJ,non-subject,lingglosses,1
 NSG,neutral singular,lingglosses,1
-NSG,non-singular,lingglosses,1
+NSG,non-singular,lingglosses,0
 NT,neuter,Wikipedia,1
 NTEL,atelic,Wikipedia,1
 NTL,neutral direction ,Wikipedia,1
@@ -829,19 +827,21 @@ OV,objective version,Wikipedia,1
 P,patient-like argument of a canonical transitive verb,Leipzig Glossing Rules,1
 PA,paucal,lingglosses,1
 PABS,past absolutive,Wikipedia,1
-PAR,particle,lingglosses,1
-PAR,partitive,lingglosses,1
-PART,participle,lingglosses,0
+PAR,particle,lingglosses,0
+PAR,partitive,Wikipedia,1
+PART,participle,Wikipedia,0
 PART,particle,lingglosses,0
-PART,partitive,lingglosses,1
+PART,partitive,Wikipedia,1
+PARTVE,partitive,Wikipedia,1
 PASS,passive,Leipzig Glossing Rules,1
-PAST,past tense,lingglosses,1
+PAST,past tense,Wikipedia,1
+PASTP,past participle,Wikipedia,1
 PAT,patientive,Wikipedia,1
 PAU,paucal number,Wikipedia,1
 PAUC,paucal number,Wikipedia,1
 PAUS,pausal,Wikipedia,1
-PC,past completive,Wikipedia,1
 PC,concord particle,Wikipedia,0
+PC,past completive,Wikipedia,1
 PCP,completive participle,Wikipedia,0
 PCP,participatory evidence,Wikipedia,1
 PCPT,participle,lingglosses,1
@@ -851,20 +851,21 @@ PEJ,pejorative,Wikipedia,1
 PERAMB,perambulative,Wikipedia,1
 PERF,perfect,Wikipedia,1
 PERF,perfective,Wikipedia,0
+PERFORM,performative,Wikipedia,1
 PERFV,perfective,Wikipedia,1
 PERI,peripheral,Wikipedia,1
 PERL,perlative,Wikipedia,1
 PERM,permanent,Wikipedia,1
-PERS,personal,Wikipedia,1
 PERS,persistive,Wikipedia,0
+PERS,personal,Wikipedia,1
 PERSE,personal experience,Wikipedia,1
 PERSIS,persistive,Wikipedia,1
 PERT,pertensive,Wikipedia,1
 PERV,pervasive,Wikipedia,1
 PF,perfective,Wikipedia,1
+PFT,perfect,Wikipedia,1
 PFV,perfective,Leipzig Glossing Rules,1
 PFX,prefix,lingglosses,1
-PFT,perfect,Wikipedia,1
 PHAB,past habitual,Wikipedia,1
 PHAS,phasal aspect,Wikipedia,1
 PIMPF,progressive imperfective,Wikipedia,1
@@ -880,37 +881,41 @@ PLU,pluractional,Wikipedia,0
 PLUP,pluperfect,Wikipedia,1
 PLUPERF,pluperfect,Wikipedia,1
 PLUPRF,pluperfect,Wikipedia,1
-PLUR,plural,Wikipedia,0
 PLUR,pluractional,Wikipedia,1
+PLUR,plural,Wikipedia,0
 PLURAC,pluractional,Wikipedia,1
 PM,possessum,lingglosses,1
 PN,proper name,Wikipedia,1
+PNC,punctual,Wikipedia,1
+PNCL,punctual,Wikipedia,1
+PNCT,punctual,Wikipedia,1
 PO,primary object,Wikipedia,1
 PODIR,postdirective,Wikipedia,1
 POEL,postelative,Wikipedia,1
-POSTEL,postelative,Wikipedia,1
 POESS,postessive,Wikipedia,1
 POL,polite,Wikipedia,1
-POSTE,postessive,Wikipedia,1
-POSTESS,postessive,Wikipedia,1
 POS,positive,Wikipedia,1
+POSB,possible,Wikipedia,1
 POSS,possessive,Leipzig Glossing Rules,1
 POSS,possessor,Wikipedia,0
-POSB,possible,Wikipedia,1
 POSSB,possible,Wikipedia,1
-POSSIB,possible,Wikipedia,1
 POSSD,possessed,Wikipedia,1
+POSSIB,possible,Wikipedia,1
 POST,postlocative,Wikipedia,1
 POST,postposition,Wikipedia,0
-POSTP,postposition,Wikipedia,1
+POSTE,postessive,Wikipedia,1
+POSTEL,postelative,Wikipedia,1
+POSTESS,postessive,Wikipedia,1
 POSTL,postlative,Wikipedia,1
+POSTP,postposition,Wikipedia,1
 POT,potential,Wikipedia,1
 POTEN,potential,Wikipedia,1
-PP,predicative possessive particle,Wikipedia,0
-PP,present progressive,Wikipedia,1
 PP,past perfect,Wikipedia,0
 PP,pragmatic particle,Wikipedia,0
+PP,predicative possessive particle,Wikipedia,0
+PP,present progressive,Wikipedia,1
 PPA,active perfect participle,Wikipedia,1
+PPART,past participle,Wikipedia,1
 PPAST,post-terminal past,Wikipedia,1
 PPERF,pluperfect,Wikipedia,1
 PPF,perfect participle,Wikipedia,1
@@ -919,8 +924,6 @@ PPP,past passive participle,Wikipedia,1
 PPP,past perfect participle,Wikipedia,0
 PPRF,pluperfect,Wikipedia,1
 PPRT,past participle,Wikipedia,1
-PPART,past participle,Wikipedia,1
-PASTP,past participle,Wikipedia,1
 PPS,pseudo-passive,Wikipedia,1
 PQ,polar question,lingglosses,1
 PR,possessor,lingglosses,1
@@ -941,126 +944,387 @@ PREV,previous,Wikipedia,0
 PREVEN,preventative,Wikipedia,1
 PRF,perfect,Leipzig Glossing Rules,1
 PRF,perfective,lingglosses,0
-PRFX,prefix,lingglosses,1
 PRFRM,performative,Wikipedia,1
-PERFORM,performative,Wikipedia,1
+PRFX,prefix,lingglosses,1
 PRG,progressive,lingglosses,1
 PRIOR,prior,Wikipedia,1
+PRL,prolative,Wikipedia,1
 PRN,pronominalizer,lingglosses,1
 PRN,pronoun,lingglosses,0
+PRO,"pronominal base, proform",Wikipedia,1
+PROB,probabilitive,Wikipedia,1
+PROCOMP,procomplement,Wikipedia,1
+PROD,product verbalizer,Wikipedia,1
 PROG,progressive,Leipzig Glossing Rules,1
-PROGR,progressive,lingglosses,1
+PROGR,progressive,Wikipedia,1
 PROH,prohibitive,Leipzig Glossing Rules,1
+PROHIB,prohibitive,Wikipedia,1
 PROJ,projective,lingglosses,1
+PROL,prolative,Wikipedia,1
+PROL,prolonged action,Wikipedia,0
+PROLAT,prolative,Wikipedia,1
 PRON,pronoun,lingglosses,1
+PROP,propositive,Wikipedia,0
+PROP,proprietive,Wikipedia,1
 PROPN,proper name,Wikipedia,1
+PROPOS,propositive,Wikipedia,1
+PROS,prosecutive,Wikipedia,0
 PROS,prospective,lingglosses,1
-PROSP,prospective,lingglosses,1
+PROSEC,prosecutive,Wikipedia,1
+PROSP,prospective,Wikipedia,1
+PROT,protasis,Wikipedia,1
+PROV,pro-verb,Wikipedia,1
 PROX,proximal,Leipzig Glossing Rules,1
+PRP,purposive,Wikipedia,1
 PRS,present,Leipzig Glossing Rules,1
+PRSV,presentative,Wikipedia,1
 PRT,particle,lingglosses,1
 PRTC,particle,lingglosses,1
 PRTCP,participle,lingglosses,1
+PRTV,partitive,Wikipedia,1
 PRV,perfective,lingglosses,1
+PRX,proximal,Wikipedia,1
+PS,passing state ,Wikipedia,1
 PSS,passive,Wikipedia,1
+PSSM,possessum,Wikipedia,1
+PSSR,possessor,Wikipedia,1
 PST,past,Leipzig Glossing Rules,1
+PSTN,past nominalization,Wikipedia,1
 PSTPERF,past perfect,lingglosses,1
 PT,presentative,lingglosses,1
 PTC,particle,lingglosses,1
 PTCP,participle,Leipzig Glossing Rules,1
+PTH,path,Wikipedia,1
+PTT,partitive,Wikipedia,1
+PTV,partitive,Wikipedia,1
+PUNC,punctual,Wikipedia,1
+PUNCT,punctual,Wikipedia,1
+PUR,purposive,Wikipedia,1
 PURP,purposive,Leipzig Glossing Rules,1
-PV,patient voice,lingglosses,1
+PV,patient voice,Wikipedia,1
+PV,pivot form,Wikipedia,0
+PV,possessive verbalizer,Wikipedia,0
+PVB,preverb,Wikipedia,1
 PVF,perfective,lingglosses,1
+PVP,post-verbal particle,Wikipedia,1
+PX,possessive suffix,Wikipedia,1
 Q,question,Leipzig Glossing Rules,1
-QUAL,qualifier,lingglosses,1
+QM,quantity marker,Wikipedia,1
+QNT,quantifier,Wikipedia,1
+QST,question,Wikipedia,1
+QT,quotative,Wikipedia,1
+QUAL,qualifier,Wikipedia,1
+QUANT,quantifier,Wikipedia,1
+QUES,question,Wikipedia,1
+QUEST,question,Wikipedia,1
+QUO,quotative,Wikipedia,1
 QUOT,quotative,Leipzig Glossing Rules,1
+R,rational,Wikipedia,0
 R,realis,lingglosses,1
+RA,relative agreement,Wikipedia,1
+RA,repeated action,Wikipedia,0
+RAR,raritive,Wikipedia,1
 RC,relative clause,lingglosses,1
-RCP,reciprocal,lingglosses,1
-RDP,reduplication,lingglosses,1
-REAL,realis,lingglosses,1
-RECIP,reciprocal,lingglosses,1
+RCP,reciprocal,Wikipedia,1
+RCT,recent,Wikipedia,1
+RDP,reduplication,Wikipedia,1
+RDPL,reduplication,Wikipedia,1
+RE,refactive,Wikipedia,1
+REA,reactive,Wikipedia,1
+REAL,realis,Wikipedia,1
+REC,recent,Wikipedia,0
+REC,receptive,Wikipedia,1
+REC,reciprocal,Wikipedia,0
+RECIP,reciprocal,Wikipedia,1
+RECIPR,reciprocal,Wikipedia,1
 RECP,reciprocal,Leipzig Glossing Rules,1
-RED,reduplication,lingglosses,1
-REDUP,reduplication,lingglosses,1
-REF,referential,lingglosses,1
+RED,reduplication,Wikipedia,1
+REDUP,reduplication,Wikipedia,1
+REF,referential,Wikipedia,1
 REFL,reflexive,Leipzig Glossing Rules,1
-REG,regressive,lingglosses,1
+REFLX,reflexive,Wikipedia,1
+REG,regal,Wikipedia,1
+REG,regressive,Wikipedia,0
+REGR,regressive,Wikipedia,1
+REL,relational,Wikipedia,0
 REL,relative,Leipzig Glossing Rules,1
-REL,relativizer,lingglosses,1
-REM,remote,lingglosses,1
-REP,reportative,lingglosses,1
+REL,relativizer,lingglosses,0
+RELEV,relevance,Wikipedia,1
+REM,remote,Wikipedia,1
+REP,repeated,Wikipedia,0
+REP,repetitive,Wikipedia,1
+REP,reportative,lingglosses,0
+RES,resignative,Wikipedia,0
 RES,resultative,Leipzig Glossing Rules,1
-RESP,responsive,lingglosses,1
+RES,resumptive pronoun,Wikipedia,0
+RESID,residue,Wikipedia,1
+RESP,respect,Wikipedia,0
+RESP,responsive,Wikipedia,1
+REST,restrictive,Wikipedia,1
 RESTR,restrictive,lingglosses,1
-RFL,reflexive,lingglosses,1
+RESU,resultative,Wikipedia,1
+RESULT,resultative,Wikipedia,1
+RET,retrospective,Wikipedia,1
+RETRO,retrospective,Wikipedia,1
+REV,reverential,Wikipedia,0
+REV,reversative,Wikipedia,1
+REV,revisionary,Wikipedia,0
+REVID,reported evidential,Wikipedia,1
+RFL,reflexive,Wikipedia,1
+RFLEX,reflexive,Wikipedia,1
+RFLX,reflexive,Wikipedia,1
+RFR,referential,Wikipedia,1
 RH,right hand,lingglosses,1
-RLS,realis,lingglosses,1
+RHET,rhetorical question,Wikipedia,1
+RL,realis,Wikipedia,1
+RLN,relational,Wikipedia,1
+RLS,realis,Wikipedia,1
+RMT,remote,Wikipedia,1
 ROOT,root,lingglosses,1
+ROY,royal,Wikipedia,1
+RP,recent past,Wikipedia,0
+RP,remote past,Wikipedia,0
 RP,resumptive pronoun,lingglosses,1
-RSTR,restrictive,lingglosses,1
+RPC,remote past continuous,Wikipedia,1
+RPI,remote past inferred,Wikipedia,1
+RPL,rational plural,Wikipedia,1
+RPR,remote past reported,Wikipedia,1
+RPRT,reported evidential,Wikipedia,1
+RPST,remote past,Wikipedia,1
+RPT,reported evidential,Wikipedia,1
+RQ,rhetorical question,Wikipedia,1
+RQT,rhetorical question,Wikipedia,1
+RSG,rational singular,Wikipedia,1
+RSM,resumptive pronoun,Wikipedia,1
+RSN,reason,Wikipedia,1
+RST,restrictive,Wikipedia,1
+RSTR,restrictive,Wikipedia,1
 RVZ,relativizer,lingglosses,1
 S,single argument of canonical intransitive verb,Leipzig Glossing Rules,1
+SAL,salient,Wikipedia,1
+SBDIR,sublative,Wikipedia,1
+SBEL,subelative,Wikipedia,1
+SBEN,self-benefactive,Wikipedia,1
+SBESS,subessive,Wikipedia,1
 SBJ,subject,Leipzig Glossing Rules,1
-SBJV,subjunctive,lingglosses,1
+SBJT,subject,Wikipedia,1
+SBJV,subjunctive,Wikipedia,1
+SBRD,subordinator,Wikipedia,1
+SBST,substuntivizer,Wikipedia,1
+SBV,subjective,Wikipedia,1
+SCEP,sceptical,Wikipedia,1
+SD,suden-discovery,Wikipedia,1
+SEC,second hand,Wikipedia,1
+SEJ,sejunct,Wikipedia,1
 SEL,selective,lingglosses,1
-SENS,sensive,lingglosses,1
+SEM,semelfactive,Wikipedia,1
+SEMBL,semblative,Wikipedia,1
+SEMEL,semelfactive,Wikipedia,1
+SEN,sensory evidential,Wikipedia,1
+SENS,sensive,lingglosses,0
+SENS,sensory evidential,Wikipedia,1
+SEP,separative,Wikipedia,1
+SEQ,sequential,Wikipedia,1
+SER,serial,Wikipedia,1
+SF,subject focus,Wikipedia,1
+SFN,softener,Wikipedia,1
 SFX,suffix,lingglosses,1
 SG,singular,Leipzig Glossing Rules,1
-SOC,sociative,lingglosses,1
-SP,speaker,lingglosses,1
+SGLT,singulative number,Wikipedia,1
+SGT,singulative number,Wikipedia,1
+SGV,singulative number,Wikipedia,1
+SH,subhect honorific,Wikipedia,1
+SIM,similative,Wikipedia,0
+SIM,simultaneous,Wikipedia,1
+SIMV,similative,Wikipedia,1
+SING,singular,Wikipedia,0
+SING,singulative number,Wikipedia,1
+SINGL,singulative number,Wikipedia,1
+SINV,inverted subject,Wikipedia,1
+SIT,situative,Wikipedia,1
+SJV,subjunctive,Wikipedia,1
+SL,same level,Wikipedia,1
+SM,series marker,Wikipedia,1
+SMBL,semblative,Wikipedia,1
+SMI,semeliterative,Wikipedia,1
+SML,similative,Wikipedia,1
+SMLF,semelfactive,Wikipedia,1
+SNS,sensory evidential,Wikipedia,1
+SO,same object,Wikipedia,1
+SOC,sociative,Wikipedia,1
+SP,speaker,Wikipedia,0
+SP,specific,Wikipedia,1
 SPART,subject partitive,lingglosses,1
-SPL,superlative,lingglosses,1
+SPC,specific,Wikipedia,1
+SPCF,specific,Wikipedia,1
+SPEC,specific,Wikipedia,0
+SPEC,specifier,Wikipedia,1
+SPECFC,specific,Wikipedia,1
+SPECFR,specifier,Wikipedia,1
+SPL,spotlighting,Wikipedia,1
+SPL,superlative,lingglosses,0
 SPP,suppositive,lingglosses,1
+SPR,superlocative,Wikipedia,1
+SPRESS,superessive,Wikipedia,1
 SPRL,superlative,lingglosses,1
 SR,switch-reference,lingglosses,1
 SRC,source,lingglosses,0
 SRC,subject relative clause,lingglosses,1
+SRDIR,superlative,Wikipedia,1
+SREL,superlative,Wikipedia,1
+SRESS,superessive,Wikipedia,1
+SRP,self-reporting pronoun,Wikipedia,1
 SS,same subject,lingglosses,1
-STAT,stative,lingglosses,1
-SUB,subordinator,lingglosses,1
-SUBJ,subject,lingglosses,0
-SUBJ,subjunctive,lingglosses,1
-SUBL,sublative,lingglosses,1
+ST,stative,Wikipedia,1
+STA,stative,Wikipedia,1
+STAT,stative,Wikipedia,1
+STEM,stem,Wikipedia,1
+STIM,stimulative,Wikipedia,1
+STT,stative,Wikipedia,1
+STV,stative,Wikipedia,1
+SUB,sublocative,Wikipedia,1
+SUB,subordinator,lingglosses,0
+SUBDIR,sublative,Wikipedia,1
+SUBE,subessive,Wikipedia,1
+SUBEL,subelative,Wikipedia,1
+SUBESS,subessive,Wikipedia,1
+SUBJ,subject,Wikipedia,1
+SUBJ,subjective,Wikipedia,0
+SUBJ,subjunctive,Wikipedia,0
+SUBJV,subjunctive,Wikipedia,1
+SUBL,sublative,Wikipedia,1
+SUBLAT,sublative,Wikipedia,1
+SUBORD,subordinator,Wikipedia,1
+SUBR,subordinator,Wikipedia,1
+SUBS,subsequent,Wikipedia,1
+SUBSEC,suvsecutive,Wikipedia,1
+SUBST,substitutive,Wikipedia,1
+SUC,successive,Wikipedia,1
 SUF,suffix,lingglosses,1
 SUFF,suffix,lingglosses,1
-SUP,superessive,lingglosses,0
-SUP,superlative,lingglosses,0
-SUP,supersessive,lingglosses,0
-SUP,supine,lingglosses,1
-SUPER,superlative,lingglosses,1
+SUG,suggestive,Wikipedia,1
+SUP,superessive,Wikipedia,0
+SUP,superlative,Wikipedia,0
+SUP,supine,Wikipedia,1
+SUP,supplucative,Wikipedia,0
+SUPDIR,superlative,Wikipedia,1
+SUPE,superessive,Wikipedia,1
+SUPEL,superlative,Wikipedia,1
+SUPER,superlative,lingglosses,0
+SUPER,superlocative,Wikipedia,1
+SUPEREL,superlative,Wikipedia,1
+SUPERESS,superessive,Wikipedia,1
 SUPERL,superlative,lingglosses,1
-T,tense,lingglosses,1
+SUPL,superlative,Wikipedia,0
+SUPL,supplucative,Wikipedia,1
+SUPLAT,superlative,Wikipedia,1
+SUPPL,supplucative,Wikipedia,1
+SURP,surprise,Wikipedia,1
+SYM,symmetric,Wikipedia,1
+T,temporal,Wikipedia,1
+T,tense,lingglosses,0
+TAG,tag question,Wikipedia,1
 TAM,tense/aspect/mood marker,lingglosses,1
-TERM,terminative,lingglosses,1
-TH,theme,lingglosses,1
+TEL,telic,Wikipedia,1
+TEM,temporal,Wikipedia,1
+TEMP,temporal,Wikipedia,1
+TEMP,temporarily,Wikipedia,0
+TENS,tens,Wikipedia,1
+TENT,tentative,Wikipedia,1
+TER,terminative,Wikipedia,1
+TERM,terminative,Wikipedia,1
+TERMIN,terminative,Wikipedia,1
+TH,thematic,Wikipedia,1
+TJ,trajector,Wikipedia,1
+TKN,teknonym,Wikipedia,1
+TND,tendency,Wikipedia,1
+TNS,tense,Wikipedia,1
 TOP,topic,Leipzig Glossing Rules,1
+TOT,totalitative,Wikipedia,1
+TPC,topic,Wikipedia,1
+TR,trajector,Wikipedia,0
 TR,transitive,Leipzig Glossing Rules,1
+TRA,translative,Wikipedia,1
+TRA,translocative,Wikipedia,0
 TRANS,transformative,lingglosses,1
-TRANS,transitive,lingglosses,0
-TRANSL,translative,lingglosses,1
-TRZ,transitivizer,lingglosses,1
+TRANS,transitive,Wikipedia,0
+TRANSF,transformative,Wikipedia,1
+TRANSL,translative,Wikipedia,1
+TRANSL,translocative,Wikipedia,0
+TRANSLAT,translative,Wikipedia,1
+TRANSLOC,translocative,Wikipedia,1
+TRI,trial number,Wikipedia,1
+TRM,transmutative,Wikipedia,1
+TRN,transnumeral,Wikipedia,1
+TRNS,transitive,Wikipedia,1
+TRNSF,transformative,Wikipedia,1
+TRNSL,translative,Wikipedia,1
+TRNSL,translocative,Wikipedia,0
+TRPOSS,tranfer of possession,Wikipedia,1
+TRZ,transitivizer,Wikipedia,1
 TS,topic shift,lingglosses,1
+TVF,truth value focus,Wikipedia,1
+TZ,transitivizer,Wikipedia,1
+UC,upcoast,Wikipedia,1
+UF,uncertain future,Wikipedia,1
+UF,undergoer focus,Wikipedia,0
+UGR,undergoer,Wikipedia,1
+UH,uphill,Wikipedia,1
+UL,upper level,Wikipedia,1
 UNACC,unaccusative,lingglosses,1
+UNCERT,uncertain,Wikipedia,1
 UNERG,unergative,lingglosses,1
+UNIF,unified,Wikipedia,1
 UNM,unmarked case,lingglosses,1
 UNPOSS,non-possesed,Wikipedia,1
-UNW,unwitnessed,lingglosses,1
+UNSP,unspecified,Wikipedia,1
+UNSPEC,unspecified,Wikipedia,1
+UNW,unwillingness,Wikipedia,1
+UNW,unwitnessed,lingglosses,0
+UP,upward,Wikipedia,1
+UR,upriver,Wikipedia,1
+USIT,usitative,Wikipedia,1
+UTIL,utilitive,Wikipedia,1
+UV,uncertain visual,Wikipedia,1
+UV,undergoer voice,Wikipedia,0
+UWPST,unwitnessed past,Wikipedia,1
 V,class V,lingglosses,1
 V,verb,lingglosses,0
-VBZ,verbalizer,lingglosses,1
+V,viewer,Wikipedia,0
+VA,verbal adjective,Wikipedia,1
+VBLZ,verbalizer,Wikipedia,1
+VBLZR,verbalizer,Wikipedia,1
+VBZ,verbalizer,Wikipedia,1
+VBZR,verbalizer,Wikipedia,1
+VCO,voluntary comitative,Wikipedia,1
+VE,vegetable gender,Wikipedia,1
+VEN,venitive,Wikipedia,1
+VENT,venitive,Wikipedia,1
+VER,verdical,Wikipedia,1
+VERBL,verbalizer,Wikipedia,1
+VERIF,verificative,Wikipedia,1
+VERS,versionizer,Wikipedia,1
+VERT,vertical,Wikipedia,1
+VEVID,visual evidential,Wikipedia,1
 VI,class VI,lingglosses,1
-VIA,vialis,lingglosses,1
+VIA,vialis,Wikipedia,1
 VII,class VII,lingglosses,1
 VIII,class VIII,lingglosses,1
 VIR,virile,lingglosses,1
-VIS,visible,lingglosses,1
+VIRT,vertual,Wikipedia,1
+VIS,visible,Wikipedia,0
+VIS,visual,Wikipedia,1
+VLOC,verbal locative,Wikipedia,1
 VM,verbal modifier,lingglosses,1
-VN,verbal noun,lingglosses,1
+VN,verbal noun,Wikipedia,1
 VOC,vocative,Leipzig Glossing Rules,1
-VOL,volitional,lingglosses,1
+VOL,volitional,Wikipedia,1
 VPL,pluractional,Wikipedia,1
-WH,WH word,lingglosses,1
+WH,interrogative pronoun,Wikipedia,1
+WHQ,wh-question,Wikipedia,1
+WIT,witnessed,Wikipedia,1
+WP,witnessed past,Wikipedia,1
+WPST,witnessed past,Wikipedia,1
 X,class X,lingglosses,1
 XI,class XI,lingglosses,1
 XII,class XII,lingglosses,1
@@ -1073,3 +1337,4 @@ XVII,class XVII,lingglosses,1
 XVIII,class XVIII,lingglosses,1
 XX,class XX,lingglosses,1
 YNQ,yes-no question,lingglosses,1
+ZO,zoic,Wikipedia,1

@@ -269,7 +269,7 @@ After you finished your text, it is possible to call the `make_gloss_list()` fun
 make_gloss_list()
 ```
 
-This function works with the built-in dataset `glosses_df` that is compiled from Leipzig Glosses, [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations) and articles from the open access journal [Glossa](https://www.glossa-journal.org/)[^glossa]. Everybody can [download](https://raw.githubusercontent.com/agricolamz/lingglosses/master/database_creation/glosses_extracted.csv) and change this dataset for their own purposes. 
+This function works with the built-in dataset `glosses_df` that is compiled from Leipzig Glosses, [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations) and articles from the open access journal [Glossa](https://www.glossa-journal.org/)[^glossa]. Everybody can [download](https://raw.githubusercontent.com/agricolamz/lingglosses/master/database_creation/glosses_extracted.csv) and change this dataset for their own purposes. I will be thankful if you leave your proposals for the dataset change for this list in the [issue tracker](https://github.com/agricolamz/lingglosses/issues) on GitHub. 
 
 [^glossa]: The script for the collecting glosses is available [here](https://github.com/agricolamz/lingglosses/blob/master/database_creation/glossa.R). The glosses list was manually corrected and merged with glosses from other sources. This kind of glosses marked in the `glosses_df` dataset as `lingglosses` in the `source` column.
 
