@@ -4,6 +4,7 @@
 
 # lingglosses
 
+[![CRAN version](http://www.r-pkg.org/badges/version/lingglosses)](https://cran.r-project.org/package=lingglosses)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![DOI](https://zenodo.org/badge/440443756.svg)](https://zenodo.org/badge/latestdoi/440443756)
 [![R build status](https://github.com/agricolamz/lingglosses/workflows/R-CMD-check/badge.svg)](https://github.com/agricolamz/lingglosses/actions)
@@ -18,6 +19,8 @@ gloss_example(transliteration = "bur-e-ri c'in-ne-sːu",
               free_translation = "I cannot fly.", 
               comment = "(lit. do not know how to)")
 ```
+
+
 
 * semi-automatic compiled abbreviation list.
 
