@@ -40,7 +40,6 @@ gloss_example <- function(transliteration,
                           line_length = 70,
                           italic_transliteration = TRUE,
                           drop_transliteration = FALSE,
-                          cell_underline = 1,
                           intext = FALSE){
 
 # fix for multiple glosses line --------------------------------------------
