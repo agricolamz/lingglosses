@@ -1,0 +1,23 @@
+---
+title: "SL test"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(lingglosses)
+```
+
+
+# Some section
+
+```{r}
+gloss_example(glosses = c("EYE: 👀 👀",
+                          "MOUTH: 👄 👄",
+                          "LH: {CHAIR} ________",
+                          "RH: {} CL:{SIT}.{ON}"),
+              free_translation = "The cat sits on the chair", 
+              comment = "[RSL; Eks3–12]",
+              drop_transliteration = TRUE)
+```
+
