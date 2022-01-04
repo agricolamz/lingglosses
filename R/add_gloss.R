@@ -6,6 +6,8 @@
 #'
 #' @param glosses character vector with glosses in upper case.
 #'
+#' @return vector of small capitalized glosses (if string is in the upper case) and not glosses (if string is not in the upper case)
+#'
 #' @examples
 #' add_gloss(c("ABS", "ERG"))
 #'

@@ -8,9 +8,10 @@ Authors@R: person("George", "Moroz",
                   email = "agricolamz@gmail.com",
                   comment = c(ORCID="0000-0003-1990-6083"))
 Maintainer: George Moroz <agricolamz@gmail.com>
-Description: Helps to render glossed linguistic examples in html rmarkdown 
+Description: Helps to render glossed linguistic examples in html 'rmarkdown' 
     documents and then semi-automatically compiles the glosses list at the end 
     of the document. It also provides a database of linguistic glosses.
+Language: en-US
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true

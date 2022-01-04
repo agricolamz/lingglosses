@@ -9,6 +9,9 @@ add_gloss(glosses)
 \arguments{
 \item{glosses}{character vector with glosses in upper case.}
 }
+\value{
+vector of small capitalized glosses (if string is in the upper case) and not glosses (if string is not in the upper case)
+}
 \description{
 Adds glosses to the glosses list and adds small capitals to glosses. Escapes strings that begins and ends with curly brackets.
 }

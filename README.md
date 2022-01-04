@@ -30,7 +30,7 @@ make_gloss_list()
 
 <span style="font-variant:small-caps;">hab</span> — habitual; <span style="font-variant:small-caps;">inf</span> — infinitive; <span style="font-variant:small-caps;">neg</span> — negation; <span style="font-variant:small-caps;">npst</span> — non-past
 
-For more details see the [html-version of the tutorial](https://agricolamz.github.io/lingglosses/).
+For more details see the [html-version of the tutorial](https://agricolamz.githtranliteration ub.io/lingglosses/).
 
 You can also be interested in [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx).
 

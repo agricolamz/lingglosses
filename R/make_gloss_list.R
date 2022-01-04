@@ -6,8 +6,9 @@
 #' @param definition_source dataframe with the columns \code{gloss} and \code{definition} that helps to automatic search for the gloss definitions.
 #' @param remove_glosses character vector that contains glosses that should be removed from the abbreviation list.
 #' @param all_possible_variants logical. Some glosses have multiple definitions.
-#' @param annotate_problematic logical. Whether emphasize duplicaded and definitionless glosses
+#' @param annotate_problematic logical. Whether emphasize duplicated and definitionless glosses
 #' @return a string with glosses and their definitions gathered from \code{definition_source} table.
+#'hab
 #' @importFrom knitr asis_output
 #' @importFrom knitr opts_current
 #' @importFrom knitr is_latex_output

@@ -11,20 +11,21 @@
 #' @param comment character vector of the length one for the comment line (under the free translation line).
 #' @param line_length integer vector of the length one that denotes maximum number of characters per one line.
 #' @param italic_transliteration logical variable that denotes, whether user wants to italicize your example.
-#' @param drop_transliteration logical variable that denotes, whether user wants to have an example without tranliteration.
+#' @param drop_transliteration logical variable that denotes, whether user wants to have an example without transliteration.
 #' @param intext logical variable that denotes, whether example should be considered as part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})
+#' @return html/latex output(s) with glossed examples.
 #'
 #' @examples
-#' \dontrun{
 #' gloss_example("bur-e-**ri** c'in-ne-s:u",
 #'                "fly-NPST-**INF** know-HAB-NEG",
 #'                "I cannot fly. (Zilo Andi, East Caucasian)",
 #'                comment = "(lit. do not know how to)")
-#' }
+#'
 #' gloss_example("bur-e-**ri** c'in-ne-s:u",
 #'                "fly-NPST-**INF** know-HAB-NEG",
 #'                "I cannot fly.",
 #'                intext = TRUE)
+#'
 #' @importFrom knitr is_latex_output
 #' @importFrom kableExtra kable_minimal
 #' @importFrom kableExtra kbl

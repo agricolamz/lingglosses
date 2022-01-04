@@ -31,24 +31,27 @@ gloss_example(
 
 \item{italic_transliteration}{logical variable that denotes, whether user wants to italicize your example.}
 
-\item{drop_transliteration}{logical variable that denotes, whether user wants to have an example without tranliteration.}
+\item{drop_transliteration}{logical variable that denotes, whether user wants to have an example without transliteration.}
 
 \item{intext}{logical variable that denotes, whether example should be considered as part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})}
+}
+\value{
+html/latex output(s) with glossed examples.
 }
 \description{
 Creates an interlinear glossed example for linguistics.
 }
 \examples{
-\dontrun{
 gloss_example("bur-e-**ri** c'in-ne-s:u",
                "fly-NPST-**INF** know-HAB-NEG",
                "I cannot fly. (Zilo Andi, East Caucasian)",
                comment = "(lit. do not know how to)")
-}
+
 gloss_example("bur-e-**ri** c'in-ne-s:u",
                "fly-NPST-**INF** know-HAB-NEG",
                "I cannot fly.",
                intext = TRUE)
+
 }
 \author{
 George Moroz <agricolamz@gmail.com>
