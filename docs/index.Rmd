@@ -228,7 +228,7 @@ In the third section I show how to create a semi-automatic compiled abbreviation
 
 ## Glossing Sign languages
 
-Unfortunately, glossing extraction implemented in `lingglosses` is case sensitive. That makes it hard to use for the Sign Languages glossing, because 
+Unfortunately, gloss extraction implemented in `lingglosses` is case sensitive. That makes it hard to use for the Sign Languages glossing, because 
 
 1) Sign linguists used to gloss lexical items with capitalized English translations;
 2) Sign language glosses sometimes are splitted into two lines associated with two hands (or even more if you want to account for non-manual markers);
@@ -298,6 +298,8 @@ In case you want to remove some glosses from the list, you can use argument `rem
 ```{r}
 make_gloss_list(remove_glosses = c("1SG", "3SG"))
 ```
+
+It is really important that one should not treat results of the `make_gloss_list()` function as carved in stone: once it compiled you can copy, modify and paste it in your document. You can try to spent time improving the output of the function, but on the final stage it is faster to correct it manually.
 
 # Other output formats
 
