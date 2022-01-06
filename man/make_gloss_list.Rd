@@ -22,7 +22,6 @@ make_gloss_list(
 }
 \value{
 a string with glosses and their definitions gathered from \code{definition_source} table.
-hab
 }
 \description{
 Creates a gloss list based on glosses used in \code{\link{gloss_example}}. This function tries to guess the meaning of used glosses based on some internal database or database provided by user. You shouldn't treat result as carved in stone: you can copy, modify and paste in your markdown document. If you want your glossing list to be created automatically with \code{make_gloss_list} you can compile your own table in the \code{definition_source} argument.

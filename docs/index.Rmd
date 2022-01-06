@@ -10,6 +10,7 @@ output:
     toc_float: yes
     number_sections: true
     df_print: paged
+    self_contained: no
 bibliography: bibliography.bib
 ---
 
@@ -23,6 +24,8 @@ library(lingglosses)
 # in order to have the same list of glosses through the whole document
 options("lingglosses.refresh_glosses_list" = FALSE)
 ```
+
+[![CRAN version](https://www.r-pkg.org/badges/version/lingglosses/)](https://cran.r-project.org/package=lingglosses)
 
 # Introduction
 
@@ -46,10 +49,16 @@ The main goal of the `lingglosses` R package is to provide an option for creatin
 
 [^latex]: If you want to render `.pdf` version you can either use latex and multiple linguistic packages developed for it (see e. g. [`gb4e`](https://www.ctan.org/pkg/gb4e), [`langsci`](https://www.ctan.org/pkg/langsci), [`expex`](https://www.ctan.org/pkg/expex), [`philex`](https://www.ctan.org/pkg/philex)), either you can render `.html` first and convert it to `.pdf` afterwards.
 
-For the moment the package is available only from github, so in order to install it you need to run the following commands:
+You can install the stable version from CRAN:
 
 ```{r, eval = FALSE}
-# install.packages("remotes") # in case you do not have this package
+install.packages("lingglosses")
+```
+
+You can also install the development version of `lingglosses` from [GitHub](https://github.com/agricolamz/lingglosses) with:
+
+```{r, eval=FALSE}
+# install.packages("remotes")
 remotes::install_github("agricolamz/lingglosses")
 ```
 
