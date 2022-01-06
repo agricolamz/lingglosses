@@ -62,4 +62,3 @@ remotes::install_github("agricolamz/lingglosses")
 ```{r}
 citation("lingglosses")
 ```
-
