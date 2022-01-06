@@ -61,7 +61,7 @@ citation("lingglosses")
 #> 
 #>   Moroz, G. (2021) lingglosses: Linguistic glosses and semi-automatic
 #>   list of glosses creation. (Version 0.0.2). Zenodo
-#>   https://doi.org/10.5281/zenodo.5801712
+#>   https://doi.org/10.5281/zenodo.5825067
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -69,7 +69,6 @@ citation("lingglosses")
 #>     title = {lingglosses: Linguistic glosses and semi-automatic list of glosses creation},
 #>     author = {George Moroz},
 #>     year = {2021},
-#>     doi = {10.5281/zenodo.5801712},
+#>     doi = {10.5281/zenodo.5825067},
 #>   }
 ```
-
