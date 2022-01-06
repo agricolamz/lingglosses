@@ -1,5 +1,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# `lingglosses`: Linguistic glosses and semi-automatic list of glosses creation
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

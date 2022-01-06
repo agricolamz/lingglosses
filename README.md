@@ -1,5 +1,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# `lingglosses`: Linguistic glosses and semi-automatic list of glosses creation
+
 
 
 [![CRAN version](https://www.r-pkg.org/badges/version/lingglosses)](https://cran.r-project.org/package=lingglosses)
