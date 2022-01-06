@@ -1,3 +1,5 @@
+# lingglosses 0.0.3
+
 # lingglosses 0.0.2
 
 - change `glosses` dataset to `glosses_df` (to avoid the same name with the `gloss_example()`'s argument)
