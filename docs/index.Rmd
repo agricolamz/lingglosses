@@ -1,7 +1,10 @@
 ---
 title: "Introduction to `lingglosses`"
-author: "G. Moroz, [NRU HSE Linguistic Convergence Laboratory](https://ilcl.hse.ru/en/)"
-date: "`r Sys.Date()`"
+author: 
+  - name          : "George Moroz"
+    affiliation   : "[Linguistic Convergence Laboratory, NRU HSE](https://ilcl.hse.ru/en/)"
+date: '[<span class="iconify" data-icon="logos:github-icon"></span>](https://github.com/agricolamz/lingglosses)
+ `r Sys.Date()`'
 output: 
   html_document:
     toc: true
@@ -12,6 +15,8 @@ output:
     df_print: paged
 bibliography: bibliography.bib
 ---
+
+<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
 ```{r, include=FALSE}
 knitr::knit_engines$set(md = function(options){
