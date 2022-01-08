@@ -1,6 +1,3 @@
----
-bibliography: docs/bibliography.bib
----
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # `lingglosses`: Linguistic glosses and semi-automatic list of glosses creation
