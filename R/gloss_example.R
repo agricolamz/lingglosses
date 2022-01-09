@@ -7,7 +7,7 @@
 #' @param transliteration character vector of the length one for the transliteration line.
 #' @param glosses character vector of the length one for the glosses line.
 #' @param free_translation character vector of the length one for the free translation line.
-#' @param orthography character vector of the length one for the orthography line (above translation).
+#' @param annotation character vector of the length one for the annotation line (above translation).
 #' @param comment character vector of the length one for the comment line (under the free translation line).
 #' @param line_length integer vector of the length one that denotes maximum number of characters per one line.
 #' @param italic_transliteration logical variable that denotes, whether user wants to italicize your example.
@@ -17,14 +17,14 @@
 #'
 #' @examples
 #' gloss_example("bur-e-**ri** c'in-ne-s:u",
-#'                "fly-NPST-**INF** know-HAB-NEG",
-#'                "I cannot fly. (Zilo Andi, East Caucasian)",
-#'                comment = "(lit. do not know how to)")
+#'               "fly-NPST-**INF** know-HAB-NEG",
+#'               "I cannot fly. (Zilo Andi, East Caucasian)",
+#'               comment = "(lit. do not know how to)")
 #'
 #' gloss_example("bur-e-**ri** c'in-ne-s:u",
-#'                "fly-NPST-**INF** know-HAB-NEG",
-#'                "I cannot fly.",
-#'                intext = TRUE)
+#'               "fly-NPST-**INF** know-HAB-NEG",
+#'               "I cannot fly.",
+#'               intext = TRUE)
 #'
 #' @importFrom knitr is_latex_output
 #' @importFrom kableExtra kable_minimal
@@ -37,11 +37,15 @@ gloss_example <- function(transliteration,
                           glosses,
                           free_translation = "",
                           comment = "",
-                          orthography = "",
+                          annotation = "",
                           line_length = 70,
                           italic_transliteration = TRUE,
                           drop_transliteration = FALSE,
                           intext = FALSE){
+
+# add 1 to the counter -----------------------------------------------------
+  example_counter <- getOption("lingglosses.example_counter")
+  options("lingglosses.example_counter" = as.double(example_counter)+1)
 
 # fix for multiple glosses line --------------------------------------------
   length_glosses <- length(glosses)
@@ -50,15 +54,6 @@ gloss_example <- function(transliteration,
   }
 
 # check arguments ----------------------------------------------------------
-  # lapply(names(formals(gloss_example))[1:2],
-  #        function(argument){
-  #          if(length(eval(parse(text = argument))) != 1 |
-  #             typeof(eval(parse(text = argument))) != "character"){
-  #            stop(paste0(argument,
-  #                        " argument should be a character vector of length 1"))
-  #          }
-  #        })
-
   if(length(line_length) != 1 | typeof(line_length) != "double"){
     stop(paste0("line_length",
                 " argument should be a character vector of length 1"))
@@ -73,8 +68,8 @@ gloss_example <- function(transliteration,
   glosses_by_word <- unlist(strsplit(glosses, " "))
 
 
-  if(length(orthography) > 0){
-    orthography <- unlist(strsplit(orthography, " "))
+  if(length(annotation) > 0){
+    annotation <- unlist(strsplit(annotation, " "))
   }
 
 # prepare vector of splits of the glosses by line --------------------------
@@ -84,25 +79,19 @@ gloss_example <- function(transliteration,
     glosses_by_word
   }
 
-# check that glosses and transliteration have the same length --------------
-  # if(length(transliteration) != length(glosses_by_word)){
-  #   stop(paste0("There is a different number of words and glosses in the
-  #               following example: ", paste0(transliteration, collapse = " ")))
-  # }
-  #
-
-  if(length(orthography) > 0 & length(transliteration) != length(orthography)){
-    stop(paste0("There is a different number of words in orthography and
-                transliteration in the following example: ",
-                paste0(transliteration, collapse = " ")))
-  }
-
 # add glosses to the document gloss list -----------------------------------
-  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?]"))
+  glossed_df <- lingglosses::convert_to_df(transliteration = transliteration,
+                                           glosses = glosses,
+                                           free_translation = free_translation,
+                                           comment = comment,
+                                           annotation = annotation,
+                                    drop_transliteration = drop_transliteration)
+
+  single_gl <- unlist(strsplit(glossed_df$gloss, "[-\\.=:"))
   single_gl <- lingglosses::add_gloss(single_gl)
 
 # get delimeters back ------------------------------------------------------
-  delimeters <- unlist(strsplit(glosses, "[^-:\\.= \\)\\(!\\?]"))
+  delimeters <- unlist(strsplit(glosses, "[^-:\\.= \\)\\(!\\?”“]"))
   delimeters <- c(delimeters[delimeters != ""], "")
   glosses <- paste0(single_gl, delimeters, collapse = "")
   glosses <- gsub("<span style=", "<span_style=", glosses)
@@ -154,8 +143,8 @@ gloss_example <- function(transliteration,
           paste(transliteration[splits_by_line == i], collapse = " "),
           paste(glosses_by_word[splits_by_line == i], collapse = " "),
           free_translation = if(i == max(splits_by_line)){free_translation} else {""},
-          orthography = if(length(orthography) > 0){
-            paste(orthography[splits_by_line == i], collapse = " ")},
+          annotation = if(length(annotation) > 0){
+            paste(annotation[splits_by_line == i], collapse = " ")},
           comment = if(i == max(splits_by_line)){comment} else {""},
           italic_transliteration = FALSE,
           line_length = line_length,
@@ -165,7 +154,7 @@ gloss_example <- function(transliteration,
     } else {
 
 # combine everything into table --------------------------------------------
-      orth <- if(length(orthography) > 0){orthography} else{NULL}
+      orth <- if(length(annotation) > 0){annotation} else{NULL}
       trans <- if(!drop_transliteration){transliteration} else{NULL}
       for_matrix <- c(orth, trans, glosses)
       nrow_matrix <- length_glosses + (length(orth) > 0) + (length(trans) > 0)

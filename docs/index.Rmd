@@ -68,6 +68,7 @@ In order to use the package you need to load it with the `library()` call:
 
 ```{r}
 library(lingglosses)
+getOption("lingglosses.example_counter")
 ```
 
 You can go through examples in this tutorial, but you can also create an lingglosses example from the rmarkdown template (File > New File > R Markdown... > From Template > lingglosses Document).
@@ -82,26 +83,25 @@ The main function of the `lingglosses` package is `gloss_example()`. This packag
 * `glosses`;
 * `free_translation`;
 * `comment`;
-* `orthography`[^orth];
+* `annotation`[^orth];
 * `line_length`.
 
-[^orth]: It is also possible to use this tier for the annotation of words like here:
+[^orth]: I used `annotation` for representing orthography, but it also possible to use this tier for the annotation of words like here:
 ```{r, echo=FALSE}
 gloss_example(transliteration = "eze a za a",
               glosses = "NP PRFX ROOT SFX",
               free_translation = "Eze swept... (Igbo, from [@goldsmith79: 209])",
-              orthography = "HL H L H")
+              annotation = "HL H L H")
 ```
-
 
 Except the last one all arguments are self-exploratory. 
 
 ```{r}
 gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu",
-              glosses = "fly-NPST-**INF** know-HAB-*NEG*",
+              glosses = "fly-NPST-**INF** know-HAB-NEG",
               free_translation = "I cannot fly. (Zilo Andi, East Caucasian)",
               comment = "(lit. do not know how to)",
-              orthography = "Бурери цIиннессу.")
+              annotation = "Бурери цIиннессу.")
 ```
 
 In this first example you can see that:
@@ -114,7 +114,7 @@ Since function arguments' names are optional in R, users can omit writing them a
 
 ```{r}
 gloss_example("bur-e-**ri** c'in-ne-sːu",
-              "fly-NPST-**INF** know-HAB-_NEG_",
+              "fly-NPST-**INF** know-HAB-NEG",
               "I cannot fly. (Zilo Andi, East Caucasian)",
               "(lit. do not know how to)")
 ```
@@ -150,7 +150,7 @@ So this kind of example referencing can be used with `lingglosses` examples like
 (@lingglosses1)
 ```{r, echo = FALSE}
 gloss_example("bur-e-**ri** c'in-ne-sːu",
-              "fly-NPST-**INF** know-HAB-_NEG_",
+              "fly-NPST-**INF** know-HAB-NEG",
               "I cannot fly. (Zilo Andi, East Caucasian)",
               "(lit. do not know how to)")
 ```
@@ -158,12 +158,12 @@ gloss_example("bur-e-**ri** c'in-ne-sːu",
 (@lingglosses2) Zilo Andi, East Caucasian
 ```{r, echo = FALSE}
 gloss_example("bur-e-**ri** c'in-ne-sːu",
-              "fly-NPST-**INF** know-HAB-_NEG_",
+              "fly-NPST-**INF** know-HAB-NEG",
               "I cannot fly.",
               "(lit. do not know how to)")
 ```
 
-Sometimes people gloss morpheme by morpheme (this is especially useful for polysynthetic languages). It is also possible in `lingglosses` (and you can annotate slots with `orthography` argument, see footnote 2 for the details):
+Sometimes people gloss morpheme by morpheme (this is especially useful for polysynthetic languages). It is also possible in `lingglosses` (and you can annotate slots with `annotation` argument, see footnote 2 for the details):
 
 (@) Abaza, West Caucasian [@arkadiev20: example 5.2]
 ```{r}
@@ -341,6 +341,16 @@ Most definitions are purposely too general: for example `r add_gloss("ASC")` is 
 * [ODIN project](https://odin.linguistlist.org/);
 * a Python library [`pyigt`](https://github.com/cldf/pyigt);
 * [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx).
+
+```{r}
+convert_to_df(transliteration = "bur-e-**ri** c'in-ne-sːu",
+              glosses = "fly-NPST-**INF** know-HAB-NEG",
+              free_translation = "I cannot fly.",
+              comment = "(lit. do not know how to)",
+              annotation = "Бурери цIиннессу.")
+```
+
+
 
 # References
 

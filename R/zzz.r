@@ -5,8 +5,14 @@
 
 .onLoad <- function(libname = find.package("lingglosses"),
                     pkgname = "lingglosses") {
-  tmp_file <- tempfile(pattern = get_variable_name(), fileext = ".csv")
-  options("lingglosses.glosses_list" = tmp_file)
+  tmp_file1 <- tempfile(pattern = get_variable_name(), fileext = ".csv")
+  options("lingglosses.glosses_list" = tmp_file1)
+  tmp_file2 <- tempfile(pattern = "lingglosses.example.table", fileext = ".csv")
+  options("lingglosses.example_table" = tmp_file2)
+  tmp_file3 <- tempfile(pattern = "lingglosses.example.counter", fileext = ".csv")
+  write.table(x = 0, file = tmp_file3, row.names = FALSE, col.names = FALSE,
+              fileEncoding = "UTF-8")
+  options("lingglosses.example_counter" = 0)
   options("lingglosses.refresh_glosses_list" = TRUE)
   invisible()
 }

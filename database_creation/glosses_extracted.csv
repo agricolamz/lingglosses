@@ -998,7 +998,7 @@ PTH,path,Wikipedia,1
 PTT,partitive,Wikipedia,1
 PTV,partitive,Wikipedia,1
 PUNC,punctual,Wikipedia,1
-PUNCT,punctual,Wikipedia,1
+PUNCT,punctuation,lingglosses,1
 PUR,purposive,Wikipedia,1
 PURP,purposive,Leipzig Glossing Rules,1
 PV,patient voice,Wikipedia,1

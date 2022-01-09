@@ -9,7 +9,7 @@ gloss_example(
   glosses,
   free_translation = "",
   comment = "",
-  orthography = "",
+  annotation = "",
   line_length = 70,
   italic_transliteration = TRUE,
   drop_transliteration = FALSE,
@@ -25,7 +25,7 @@ gloss_example(
 
 \item{comment}{character vector of the length one for the comment line (under the free translation line).}
 
-\item{orthography}{character vector of the length one for the orthography line (above translation).}
+\item{annotation}{character vector of the length one for the annotation line (above translation).}
 
 \item{line_length}{integer vector of the length one that denotes maximum number of characters per one line.}
 
@@ -43,14 +43,14 @@ Creates an interlinear glossed example for linguistics.
 }
 \examples{
 gloss_example("bur-e-**ri** c'in-ne-s:u",
-               "fly-NPST-**INF** know-HAB-NEG",
-               "I cannot fly. (Zilo Andi, East Caucasian)",
-               comment = "(lit. do not know how to)")
+              "fly-NPST-**INF** know-HAB-NEG",
+              "I cannot fly. (Zilo Andi, East Caucasian)",
+              comment = "(lit. do not know how to)")
 
 gloss_example("bur-e-**ri** c'in-ne-s:u",
-               "fly-NPST-**INF** know-HAB-NEG",
-               "I cannot fly.",
-               intext = TRUE)
+              "fly-NPST-**INF** know-HAB-NEG",
+              "I cannot fly.",
+              intext = TRUE)
 
 }
 \author{
