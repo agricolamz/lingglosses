@@ -1,9 +1,17 @@
-#' Converts example to the data.frame and adds it to the database
+#' Converts example to a data.frame
 #'
-#' Converts example to the data.frame and adds it to the database
+#' Converts example to a data.frame and adds it to the database of Interlinear-Glossed examples.
 #'
 #' @author George Moroz <agricolamz@gmail.com>
-#'
+#' @param transliteration character vector of the length one for the transliteration line.
+#' @param glosses character vector of the length one for the glosses line.
+#' @param free_translation character vector of the length one for the free translation line.
+#' @param annotation character vector of the length one for the annotation line (above translation).
+#' @param comment character vector of the length one for the comment line (under the free translation line).
+#' @param drop_transliteration logical variable that denotes, whether user wants to have an example without transliteration.
+#' @param write_to_db logical variable that denotes, whether example should be added to the example database.
+#' @param counter double, value that denotes example id. By default gathered automatically through hidden variables in the Rmd document.
+
 #' @return dataframe with
 #'
 #' @export
@@ -32,7 +40,8 @@ convert_to_df <- function(transliteration,
   transliteration_by_word <- unlist(lapply(seq_along(transliteration_by_word),
 function(i) {
   if(!grepl("^!\\[\\]\\(.*?\\)", transliteration_by_word[i])){
-    gsub("[!\\?”“]", " PUNCT ", transliteration_by_word[i])
+    gsub("[!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F]", " PUNCT ",
+         transliteration_by_word[i])
     } else {transliteration_by_word[i]}}))
 
   transliteration_by_word <- gsub("\\s{1,}", " ", transliteration_by_word)

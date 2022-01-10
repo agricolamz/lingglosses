@@ -13,7 +13,7 @@
 #' @param italic_transliteration logical variable that denotes, whether user wants to italicize your example.
 #' @param drop_transliteration logical variable that denotes, whether user wants to have an example without transliteration.
 #' @param intext logical variable that denotes, whether example should be considered as part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})
-#' @param add_example_to_db logical variable that denotes, whether example should be added to the example database.
+#' @param write_to_db logical variable that denotes, whether example should be added to the example database.
 #' @return html/latex output(s) with glossed examples.
 #'
 #' @examples
@@ -42,7 +42,7 @@ gloss_example <- function(transliteration,
                           italic_transliteration = TRUE,
                           drop_transliteration = FALSE,
                           intext = FALSE,
-                          add_example_to_db = TRUE){
+                          write_to_db = TRUE){
 
 # add 1 to the counter -----------------------------------------------------
   example_counter <- getOption("lingglosses.example_counter")
@@ -77,7 +77,7 @@ gloss_example <- function(transliteration,
 
 
 # add example to the example list ------------------------------------------
-  if(add_example_to_db){
+  if(write_to_db){
     glossed_df <- lingglosses::convert_to_df(
       transliteration = paste0(transliteration, collapse = " "),
       glosses = glosses,
@@ -92,7 +92,8 @@ gloss_example <- function(transliteration,
   single_gl <- lingglosses::add_gloss(single_gl)
 
 # get delimiters back ------------------------------------------------------
-  delimiters <- unlist(strsplit(glosses, "[^-:\\.= \\)\\(!\\?”“]"))
+  delimiters <- unlist(strsplit(glosses,
+"[^-:\\.= \\)\\(!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F]"))
   delimiters <- c(delimiters[delimiters != ""], "")
   glosses <- paste0(single_gl, delimiters, collapse = "")
   glosses <- gsub("<span style=", "<span_style=", glosses)
@@ -151,7 +152,7 @@ gloss_example <- function(transliteration,
           line_length = line_length,
           drop_transliteration = drop_transliteration,
           intext = FALSE,
-          add_example_to_db = FALSE)
+          write_to_db = FALSE)
       })
     } else {
 

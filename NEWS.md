@@ -1,6 +1,7 @@
 # lingglosses 0.0.3
 
 - rename `orthography` to `annotation` in the `gloss_example()` function.
+- add functions for creating example database: `convert_to_df()` and `get_example_db()`
 
 # lingglosses 0.0.2
 

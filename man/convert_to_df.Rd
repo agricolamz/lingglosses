@@ -2,7 +2,7 @@
 % Please edit documentation in R/convert_to_df.R
 \name{convert_to_df}
 \alias{convert_to_df}
-\title{Converts example to the data.frame and adds it to the database}
+\title{Converts example to a data.frame}
 \usage{
 convert_to_df(
   transliteration,
@@ -15,11 +15,28 @@ convert_to_df(
   counter = getOption("lingglosses.example_counter")
 )
 }
+\arguments{
+\item{transliteration}{character vector of the length one for the transliteration line.}
+
+\item{glosses}{character vector of the length one for the glosses line.}
+
+\item{free_translation}{character vector of the length one for the free translation line.}
+
+\item{comment}{character vector of the length one for the comment line (under the free translation line).}
+
+\item{annotation}{character vector of the length one for the annotation line (above translation).}
+
+\item{drop_transliteration}{logical variable that denotes, whether user wants to have an example without transliteration.}
+
+\item{write_to_db}{logical variable that denotes, whether example should be added to the example database.}
+
+\item{counter}{double, value that denotes example id. By default gathered automatically through hidden variables in the Rmd document.}
+}
 \value{
 dataframe with
 }
 \description{
-Converts example to the data.frame and adds it to the database
+Converts example to a data.frame and adds it to the database of Interlinear-Glossed examples.
 }
 \author{
 George Moroz <agricolamz@gmail.com>
