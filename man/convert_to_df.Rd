@@ -9,10 +9,10 @@ convert_to_df(
   glosses,
   free_translation = "",
   comment = "",
-  annotation = "",
+  annotation = NULL,
   drop_transliteration = FALSE,
   write_to_db = TRUE,
-  counter = getOption("lingglosses.examples_counter")
+  counter = getOption("lingglosses.example_counter")
 )
 }
 \value{

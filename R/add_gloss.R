@@ -11,6 +11,8 @@
 #' @examples
 #' add_gloss(c("ABS", "ERG"))
 #'
+#' @importFrom utils write.table
+#'
 #' @export
 
 add_gloss <- function(glosses){
@@ -25,9 +27,10 @@ add_gloss <- function(glosses){
   glosses2add <- glosses2add[without_escape]
 
 # add glosses to the list --------------------------------------------------
-  write.table(x = glosses2add, file = getOption("lingglosses.glosses_list"),
-              row.names = FALSE, col.names = FALSE, append = TRUE,
-              fileEncoding = "UTF-8")
+  utils::write.table(x = glosses2add,
+                     file = getOption("lingglosses.glosses_list"),
+                     row.names = FALSE, col.names = FALSE, append = TRUE,
+                     fileEncoding = "UTF-8")
 
 # add small caps -----------------------------------------------------------
   glosses <- ifelse(glosses == toupper(glosses) &

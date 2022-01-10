@@ -12,7 +12,7 @@ convert_to_df <- function(transliteration,
                           glosses,
                           free_translation = "",
                           comment = "",
-                          annotation = "",
+                          annotation = NULL,
                           drop_transliteration = FALSE,
                           write_to_db = TRUE,
                           counter = getOption("lingglosses.example_counter")){
@@ -28,7 +28,13 @@ convert_to_df <- function(transliteration,
 
 # add PUNCT to translation -------------------------------------------------
   transliteration_by_word <- unlist(strsplit(transliteration, " "))
-  transliteration_by_word <- gsub("[!\\?”“]", " PUNCT ", transliteration_by_word)
+
+  transliteration_by_word <- unlist(lapply(seq_along(transliteration_by_word),
+function(i) {
+  if(!grepl("^!\\[\\]\\(.*?\\)", transliteration_by_word[i])){
+    gsub("[!\\?”“]", " PUNCT ", transliteration_by_word[i])
+    } else {transliteration_by_word[i]}}))
+
   transliteration_by_word <- gsub("\\s{1,}", " ", transliteration_by_word)
   transliteration_by_word <- gsub("^ ", "", transliteration_by_word)
   transliteration_by_word <- gsub(" $", "", transliteration_by_word)
@@ -50,43 +56,69 @@ convert_to_df <- function(transliteration,
                                            "w_")
   names(glosses_by_word) <- paste0(seq_along(transliteration_by_word),
                                            "w_")
-  single_tr <- unlist(strsplit(transliteration_by_word, "[-=]"))
-  single_gl <- unlist(strsplit(glosses_by_word, "[-=]"))
 
-  delimeters <- unlist(strsplit(paste0(glosses_by_word, " "), "[^-= ]"))
-  delimeters <- delimeters[-c(which(delimeters == ""))]
+  single_tr <- gsub("[-=]$", "", transliteration_by_word)
+  single_tr <- gsub("^[-=]", "", single_tr)
+  single_tr <- unlist(strsplit(single_tr, "[-=]"))
+
+  single_gl <- gsub("[-=]$", "", glosses_by_word)
+  single_gl <- gsub("^[-=]", "", single_gl)
+  single_gl <- unlist(strsplit(single_gl, "[-=]"))
+
+  single_tr <- single_tr[single_tr != ""]
+  single_gl <- single_gl[single_gl != ""]
+
+  delimiters <- unlist(strsplit(paste0(glosses_by_word, " "), "[^-= ]"))
+  delimiters <- delimiters[-c(which(delimiters == ""))]
 
   morpheme_id <- gsub("\\d{1,}w_", "", names(single_tr))
   morpheme_id[which(morpheme_id == "")] <- "1"
 
-  emph_gl <- grepl("^\\*\\*.*\\*\\*$", single_gl)
-  emph_tr <- grepl("^\\*\\*.*\\*\\*$", single_tr)
+  emph_gl_st <- grepl("^\\*\\*.*", single_gl)
+  emph_gl_end <- grepl(".*\\*\\*$", single_gl)
+  emph_tr_st <- grepl("^\\*\\*.*", single_tr)
+  emph_tr_end <- grepl(".*\\*\\*$", single_tr)
 
-  emphasize <- lapply(seq_along(emph_gl), function(i){
-    if(emph_gl[i] & emph_tr[i]){
+  emphasize_start <- lapply(seq_along(emph_gl_st), function(i){
+    if(emph_gl_st[i] & emph_tr_st[i]){
       "both"
-    } else if(emph_gl[i]){
+    } else if(emph_gl_st[i]){
       "glosses"
-    } else if(emph_tr[i]){
+    } else if(emph_tr_st[i]){
       "transliteration"
     } else {
       ""
     }
   })
 
+  emphasize_end <- lapply(seq_along(emph_gl_end), function(i){
+    if(emph_gl_end[i] & emph_tr_end[i]){
+      "both"
+    } else if(emph_gl_end[i]){
+      "gloss"
+    } else if(emph_tr_end[i]){
+      "transliteration"
+    } else {
+      ""
+    }
+  })
+
+
   if(drop_transliteration){
-    emphasize <- gsub("both", "glosses", emphasize)
+    emphasize_start <- gsub("both", "gloss", emphasize_start)
+    emphasize_end <- gsub("both", "gloss", emphasize_end)
   }
 
-  results <- data.frame(sentance_id = counter,
+  results <- data.frame(example_id = counter,
                         word_id = gsub("w_.*", "", names(single_tr)),
                         morpheme_id = morpheme_id,
                         transliteration =   if(drop_transliteration){
                           ""
                           } else {unname(single_tr)},
                         gloss = unname(single_gl),
-                        delimeter = delimeters,
-                        emphasize = unlist(emphasize),
+                        delimiter = delimiters,
+                        emphasize_start = unlist(emphasize_start),
+                        emphasize_end = unlist(emphasize_end),
                         transliteration_orig = if(drop_transliteration){
                           ""
                         } else {transliteration},
@@ -94,36 +126,50 @@ convert_to_df <- function(transliteration,
                         free_translation = free_translation,
                         comment = comment)
 
-  annotation <- if(length(annotation) > 0){
-    unlist(strsplit(annotation, " "))
-  } else {""}
+  if(!is.null(annotation)){
+    annotation <- unlist(strsplit(annotation, " "))
+    if(!is.null(annotation) > 0 &
+       length(transliteration_by_word) != length(annotation)){
+      stop(paste0("There is a different number of words in annotation and ",
+                  "transliteration in the following example: ",
+                  paste0(transliteration_by_word, collapse = " ")))
+    }
+  } else {
+    annotation <- ""
+    }
 
-  if(length(annotation) > 0 & length(transliteration) != length(annotation)){
-    stop(paste0("There is a different number of words in annotation and
-                transliteration in the following example: ",
-                paste0(transliteration, collapse = " ")))
-  }
 
   results <- merge(results,
                    data.frame(word_id = unique(results$word_id),
                               annotation = annotation),
                    by = "word_id")
 
-  results <- results[, c("sentance_id",
+  results <- results[, c("example_id",
                          "word_id",
                          "morpheme_id",
                          "transliteration",
                          "gloss",
-                         "delimeter",
-                         "emphasize",
+                         "delimiter",
+                         "emphasize_start",
+                         "emphasize_end",
                          "transliteration_orig",
                          "glosses_orig",
                          "free_translation",
                          "comment")]
+
+  results$example_id <- as.double(results$example_id)
+  results$word_id <- as.double(results$word_id)
+  results$morpheme_id <- as.double(results$morpheme_id)
+  results <- results[order(results$word_id, results$morpheme_id),]
+  row.names(results) <- seq_along(results$example_id)
+
   if(write_to_db){
-    write.table(x = results, file = getOption("lingglosses.example_table"),
-                row.names = FALSE, col.names = FALSE, append = TRUE,
-                fileEncoding = "UTF-8")
+    utils::write.table(x = results,
+                       file = getOption("lingglosses.example_table"),
+                       row.names = TRUE, col.names = FALSE, append = TRUE,
+                       fileEncoding = "UTF-8")
   }
+
+
   return(results)
 }

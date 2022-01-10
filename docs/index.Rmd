@@ -116,7 +116,8 @@ Since function arguments' names are optional in R, users can omit writing them a
 gloss_example("bur-e-**ri** c'in-ne-sːu",
               "fly-NPST-**INF** know-HAB-NEG",
               "I cannot fly. (Zilo Andi, East Caucasian)",
-              "(lit. do not know how to)")
+              "(lit. do not know how to)",
+              "Бурери цIиннессу.")
 ```
 
 It is possible to number and call your examples using strandard `rmarkdown` tool for generating lists `(@)`:
@@ -336,18 +337,60 @@ As mentioned above the `make_gloss_list` function's definitions are based on `gl
 str(glosses_df)
 ```
 
-Most definitions are purposely too general: for example `r add_gloss("ASC")` is defined as `associative`, that can be associative case, associative plural, associative mood, or associated motion. Since user can easily replace the output with their own definitions, it is not a problem for the `lingglosses` package. However, it will make things easier, comparable and reproducible, if linguists would have created unified database of glosses, similar to [concepticon](https://concepticon.clld.org/) [@list21a]. There are several attempts of creating databases or infrastructure for Interlinear-Glossed examples that might be interesting for the reader: 
+Most definitions are purposely too general: for example `r add_gloss("ASC")` is defined as `associative`, that can be associative case, associative plural, associative mood, or associated motion. Since user can easily replace the output with their own definitions, it is not a problem for the `lingglosses` package. However, it will make things easier, comparable and reproducible, if linguists would have created unified database of glosses, similar to [concepticon](https://concepticon.clld.org/) [@list21a].
+
+# Towards a database of iinterlinear-glossed examples
+
+There are several attempts of creating databases or infrastructure for Interlinear-Glossed examples that might be interesting for the reader: 
 
 * [ODIN project](https://odin.linguistlist.org/);
 * a Python library [`pyigt`](https://github.com/cldf/pyigt);
 * [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx).
 
-```{r}
+Each example could be easily transformed into the table using the `convert_to_df()` function.
+
+```{r, eval = FALSE}
 convert_to_df(transliteration = "bur-e-**ri** c'in-ne-sːu",
               glosses = "fly-NPST-**INF** know-HAB-NEG",
               free_translation = "I cannot fly.",
               comment = "(lit. do not know how to)",
               annotation = "Бурери цIиннессу.")
+```
+
+```{r, echo = FALSE}
+convert_to_df(transliteration = "bur-e-**ri** c'in-ne-sːu",
+              glosses = "fly-NPST-**INF** know-HAB-NEG",
+              free_translation = "I cannot fly.",
+              comment = "(lit. do not know how to)",
+              annotation = "Бурери цIиннессу.",
+              write_to_db = FALSE)
+```
+This table have everything that can be useful for the database and it has the following columns:
+
+* `id` --- unique identifier through the whole table;
+* `example_id` --- unique identifier of particular examples;
+* `word_id` --- unique identifier of the word in the example (delimented with spaces and other punctuation);
+* `morpheme_id` --- unique identifier of the morpheme within the word (delimeted with signs `-` or `=`);
+* `transliteration` --- language material;
+* `gloss` --- glosses;
+* `delimeter` --- delimiters: space, `-` or `=`
+* `emphasize_start` --- start of the amphasization (the possible values are `transliteration`, `gloss` or `both`);
+* `emphasize_end` --- end of the amphasization (the possible values are `transliteration`, `gloss` or `both`);
+* `transliteration_orig` --- original string with transliteration;
+* `glosses_orig` --- original string with glosses;
+* `free_translation` --- original string with the free translation;
+* `comment` --- original string with the comment;
+
+When you use the `gloss_example()` function the table of the structure described above is added to the database, so in the end you can extract it saving the output of the `get_examples_db()` function to the file:
+
+```{r}
+get_examples_db()
+```
+
+You of course can use just a subset of some columns:
+
+```{r}
+unique(get_examples_db()[, c("example_id", "transliteration_orig", "glosses_orig")])
 ```
 
 

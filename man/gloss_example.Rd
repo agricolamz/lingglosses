@@ -9,11 +9,12 @@ gloss_example(
   glosses,
   free_translation = "",
   comment = "",
-  annotation = "",
+  annotation = NULL,
   line_length = 70,
   italic_transliteration = TRUE,
   drop_transliteration = FALSE,
-  intext = FALSE
+  intext = FALSE,
+  add_example_to_db = TRUE
 )
 }
 \arguments{
@@ -34,6 +35,8 @@ gloss_example(
 \item{drop_transliteration}{logical variable that denotes, whether user wants to have an example without transliteration.}
 
 \item{intext}{logical variable that denotes, whether example should be considered as part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})}
+
+\item{add_example_to_db}{logical variable that denotes, whether example should be added to the example database.}
 }
 \value{
 html/latex output(s) with glossed examples.

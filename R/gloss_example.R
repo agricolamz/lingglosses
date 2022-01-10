@@ -13,6 +13,7 @@
 #' @param italic_transliteration logical variable that denotes, whether user wants to italicize your example.
 #' @param drop_transliteration logical variable that denotes, whether user wants to have an example without transliteration.
 #' @param intext logical variable that denotes, whether example should be considered as part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})
+#' @param add_example_to_db logical variable that denotes, whether example should be added to the example database.
 #' @return html/latex output(s) with glossed examples.
 #'
 #' @examples
@@ -30,18 +31,18 @@
 #' @importFrom kableExtra kable_minimal
 #' @importFrom kableExtra kbl
 #' @importFrom kableExtra footnote
-#' @importFrom utils write.table
 #' @export
 
 gloss_example <- function(transliteration,
                           glosses,
                           free_translation = "",
                           comment = "",
-                          annotation = "",
+                          annotation = NULL,
                           line_length = 70,
                           italic_transliteration = TRUE,
                           drop_transliteration = FALSE,
-                          intext = FALSE){
+                          intext = FALSE,
+                          add_example_to_db = TRUE){
 
 # add 1 to the counter -----------------------------------------------------
   example_counter <- getOption("lingglosses.example_counter")
@@ -67,11 +68,6 @@ gloss_example <- function(transliteration,
   transliteration <- unlist(strsplit(transliteration, " "))
   glosses_by_word <- unlist(strsplit(glosses, " "))
 
-
-  if(length(annotation) > 0){
-    annotation <- unlist(strsplit(annotation, " "))
-  }
-
 # prepare vector of splits of the glosses by line --------------------------
   longest <- if(sum(nchar(transliteration)) > sum(nchar(glosses))){
     transliteration
@@ -79,21 +75,26 @@ gloss_example <- function(transliteration,
     glosses_by_word
   }
 
-# add glosses to the document gloss list -----------------------------------
-  glossed_df <- lingglosses::convert_to_df(transliteration = transliteration,
-                                           glosses = glosses,
-                                           free_translation = free_translation,
-                                           comment = comment,
-                                           annotation = annotation,
-                                    drop_transliteration = drop_transliteration)
 
-  single_gl <- unlist(strsplit(glossed_df$gloss, "[-\\.=:"))
+# add example to the example list ------------------------------------------
+  if(add_example_to_db){
+    glossed_df <- lingglosses::convert_to_df(
+      transliteration = paste0(transliteration, collapse = " "),
+      glosses = glosses,
+      free_translation = free_translation,
+      comment = comment,
+      annotation = annotation,
+      drop_transliteration = drop_transliteration)
+  }
+
+# add glosses to the document gloss list -----------------------------------
+  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?]"))
   single_gl <- lingglosses::add_gloss(single_gl)
 
-# get delimeters back ------------------------------------------------------
-  delimeters <- unlist(strsplit(glosses, "[^-:\\.= \\)\\(!\\?”“]"))
-  delimeters <- c(delimeters[delimeters != ""], "")
-  glosses <- paste0(single_gl, delimeters, collapse = "")
+# get delimiters back ------------------------------------------------------
+  delimiters <- unlist(strsplit(glosses, "[^-:\\.= \\)\\(!\\?”“]"))
+  delimiters <- c(delimiters[delimiters != ""], "")
+  glosses <- paste0(single_gl, delimiters, collapse = "")
   glosses <- gsub("<span style=", "<span_style=", glosses)
   glosses <- unlist(strsplit(glosses, " "))
   glosses <- gsub("<span_style=", "<span style=", glosses)
@@ -143,21 +144,26 @@ gloss_example <- function(transliteration,
           paste(transliteration[splits_by_line == i], collapse = " "),
           paste(glosses_by_word[splits_by_line == i], collapse = " "),
           free_translation = if(i == max(splits_by_line)){free_translation} else {""},
-          annotation = if(length(annotation) > 0){
-            paste(annotation[splits_by_line == i], collapse = " ")},
+          annotation = if(!is.null(annotation)){
+            paste(annotation[splits_by_line == i], collapse = " ")} else {""},
           comment = if(i == max(splits_by_line)){comment} else {""},
           italic_transliteration = FALSE,
           line_length = line_length,
           drop_transliteration = drop_transliteration,
-          intext = FALSE)
+          intext = FALSE,
+          add_example_to_db = FALSE)
       })
     } else {
 
 # combine everything into table --------------------------------------------
-      orth <- if(length(annotation) > 0){annotation} else{NULL}
+      if(!is.null(annotation)){
+        annotation <- unlist(strsplit(annotation, " "))
+      }
+
+      ann <- if(!is.null(annotation)){annotation} else{NULL}
       trans <- if(!drop_transliteration){transliteration} else{NULL}
-      for_matrix <- c(orth, trans, glosses)
-      nrow_matrix <- length_glosses + (length(orth) > 0) + (length(trans) > 0)
+      for_matrix <- c(ann, trans, glosses)
+      nrow_matrix <- length_glosses + (length(ann) > 0) + (length(trans) > 0)
 
       result <- matrix(for_matrix, nrow = nrow_matrix, byrow = TRUE)
       result <- kableExtra::kbl(result, align = "l", centering = FALSE,
