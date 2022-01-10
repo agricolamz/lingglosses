@@ -31,27 +31,27 @@ options("lingglosses.refresh_glosses_list" = FALSE)
 
 # Introduction
 
-Abbreviation list is an obligatory part of linguistic articles that nobody reads. These lists contain definitions of abbreviations used in the article (e. g. corpora names or sign language names), but also a list of linguistic glosses --- abbreviations used in linguistic interlinear examples. There is a standardized list of glossing rules [@comrie08] which ends with a list of 84 standard abbreviations. Much bigger list is present on the [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations). However researchers can deviate from those lists and provide their own abbreviations.
+The list of abbreviations is an obligatory part of linguistic articles that nobody reads. These lists contain definitions of abbreviations used in the article (e.g. the names of corpora or sign languages), but also a list of linguistic glosses --- abbreviations used in interlinear examples. There is a document proposing standardized glossing rules [@comrie08], which ends with a list of 84 standard abbreviations. A much bigger list of standard abbreviations is present on [Wikipedia](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations). However, researchers can deviate from the proposed abbreviations and use their own instead.
 
-The worst abbreviation list that I have found in a published article make it clear that there is a room for improvement:
+The following list of abbreviations, which I came across in a published article, makes it clear that there is room for improvement in compiling such lists:
 
 ```
 NOM = nominative, GEN = nominative, DAT = nominative, ACC = accusative, VOC = accusative, LOC = accusative, INS = accusative, PL = plural, SG = singular
 ```
 
-Except obvious mistakes in this list there are some more problems that I want to emphasize:
+Besides the obvious errors, this list contains more problems that I would like to point out:
 
-* lack of the alphabetic order;
-* there is also some abbreviation (`r add_gloss("SBJV")`, `r add_gloss("IMP")`) in the article that are absent in the abbreviation list.
+* the lack of alphabetic order;
+* some abbreviations used in the article (`r add_gloss("SBJV")`, `r add_gloss("IMP")`) are absent in the list.
 
 The main goal of the `lingglosses` R package is to provide an option for creating:
 
-* linguistic glosses for `.html` output of `rmarkdown` [@xie18][^latex];
-* semi-automatic compiled abbreviation list.
+* linguistic glosses for an `.html` output of `rmarkdown` [@xie18][^latex];
+* a semi-automatically compiled list of abbreviations.
 
-[^latex]: If you want to render `.pdf` version you can either use latex and multiple linguistic packages developed for it (see e. g. [`gb4e`](https://www.ctan.org/pkg/gb4e), [`langsci`](https://www.ctan.org/pkg/langsci), [`expex`](https://www.ctan.org/pkg/expex), [`philex`](https://www.ctan.org/pkg/philex)), either you can render `.html` first and convert it to `.pdf` afterwards.
+[^latex]: If you want to render a `.pdf` version you can either use latex and multiple linguistic packages developed for it (see e. g. [`gb4e`](https://www.ctan.org/pkg/gb4e), [`langsci`](https://www.ctan.org/pkg/langsci), [`expex`](https://www.ctan.org/pkg/expex), [`philex`](https://www.ctan.org/pkg/philex)), or you can render `.html` first and convert it to `.pdf` afterwards.
 
-You can install the stable version from CRAN:
+You can install the stable version of the package from CRAN:
 
 ```{r, eval = FALSE}
 install.packages("lingglosses")
@@ -71,7 +71,7 @@ library(lingglosses)
 getOption("lingglosses.example_counter")
 ```
 
-You can go through examples in this tutorial, but you can also create an lingglosses example from the rmarkdown template (File > New File > R Markdown... > From Template > lingglosses Document).
+You can go through the examples in this tutorial or you can create a lingglosses example from the rmarkdown template (File > New File > R Markdown... > From Template > lingglosses Document).
 
 # Create glossed examples with `gloss_example()`
 
@@ -86,7 +86,7 @@ The main function of the `lingglosses` package is `gloss_example()`. This packag
 * `annotation`[^orth];
 * `line_length`.
 
-[^orth]: I used `annotation` for representing orthography, but it also possible to use this tier for the annotation of words like here:
+[^orth]: I used `annotation` for representing orthography, but it also possible to use this tier for the annotation of words, like here:
 ```{r, echo=FALSE}
 gloss_example(transliteration = "eze a za a",
               glosses = "NP PRFX ROOT SFX",
@@ -94,7 +94,7 @@ gloss_example(transliteration = "eze a za a",
               annotation = "HL H L H")
 ```
 
-Except the last one all arguments are self-exploratory. 
+All arguments except the last one are self-explanatory. 
 
 ```{r}
 gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu",
@@ -106,11 +106,11 @@ gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu",
 
 In this first example you can see that:
 
-* the transliteration line is italic by default (if you do not want it, just add the `italic_transliteration = FALSE` argument);
-* users can use standrad markdown syntax (e. g. `**a**` for **bold** and `*a*` for *italic*);
-* the free translation line is framed with quotation marks.
+* the transliteration line is italic by default (if you do not want it, just add the argument `italic_transliteration = FALSE`);
+* you can use standard markdown syntax (e.g. `**a**` for **bold** and `*a*` for *italic*);
+* the free translation line is automatically framed with quotation marks.
 
-Since function arguments' names are optional in R, users can omit writing them as far as they follow the order of the arguments (you can always find the correct order in `?gloss_example`):
+Since the function arguments' names are optional in R, users can omit them as long as they follow the order of the arguments (you can always find the correct order in `?gloss_example`):
 
 ```{r}
 gloss_example("bur-e-**ri** c'in-ne-sːu",
@@ -120,7 +120,7 @@ gloss_example("bur-e-**ri** c'in-ne-sːu",
               "Бурери цIиннессу.")
 ```
 
-It is possible to number and call your examples using strandard `rmarkdown` tool for generating lists `(@)`:
+It is possible to number and call your examples using the standard `rmarkdown` tool for generating lists `(@)`:
 
 ```{md}
 (@) my first example
@@ -134,19 +134,19 @@ renders as:
 (@) my second example
 (@) my third example
 
-In order to reference examples in the text you need to give them some names:
+In order to reference examples in the text you need to give them names:
 
 ```{md}
-(@my_ex) example for the referencing
+(@my_ex) example for referencing
 ```
-(@my_ex) example for the referencing
+(@my_ex) example for referencing
 
-With names settled you can reference example (@my_ex) in the text using the following code `(@my_ex)`.
+With the names settled you can reference the example (@my_ex) in the text using the following code `(@my_ex)`.
 
 So this kind of example referencing can be used with `lingglosses` examples like in (@lingglosses1) and (@lingglosses2). The only important details are:
 
 * change your code chunk argument to `echo = FALSE` (or specify it for all code chunks with the following comand in the begining of the document `knitr::opts_chunk$set(echo = FALSE")`);
-* do not put an empty line between reference line (with `(@...)`) and the code chunk with `lingglosses` code.
+* do not put an empty line between the reference line (with `(@...)`) and the code chunk with `lingglosses` code.
 
 (@lingglosses1)
 ```{r, echo = FALSE}
@@ -164,7 +164,7 @@ gloss_example("bur-e-**ri** c'in-ne-sːu",
               "(lit. do not know how to)")
 ```
 
-Sometimes people gloss morpheme by morpheme (this is especially useful for polysynthetic languages). It is also possible in `lingglosses` (and you can annotate slots with `annotation` argument, see footnote 2 for the details):
+Sometimes people gloss morpheme by morpheme (this is especially useful for polysynthetic languages). It is also possible in `lingglosses`. You can annotate slots with the `annotation` argument, see footnote 2 for the details.
 
 (@) Abaza, West Caucasian [@arkadiev20: example 5.2]
 ```{r}
@@ -173,7 +173,7 @@ gloss_example("s- z- á- la- nəq'wa -wa -dzə -j -ɕa -t'",
               "It seemed to him that I would be able to pass there.")
 ```
 
-Glossing extraction algorithm implemented in `lingglosses` is case sensitive, so if you want to escape it you can use curly brackets:
+The glossing extraction algorithm implemented in `lingglosses` is case sensitive, so if you want to escape it you can use curly brackets:
 
 (@) Kvankhidatli Andi, [@verhees19: 203]
 ```{r}
@@ -182,11 +182,11 @@ gloss_example("den=no he.ʃː-qi hartʃ'on-k'o w-uʁi w-uk'o.",
               "And I stood there, watching him.")
 ```
 
-In the example above `{I}` is just English word *I* that will be escaped and will not appear in the gloss list as *marker of class I*.
+In the example above `{I}` is just the English word *I* that will be escaped and will not appear in the gloss list as *marker of class I*.
 
 ## Multiline examples
 
-Sometimes examples are to long and do not fit into the page. In that case you need to add argument `results='asis'` to your chunk and `gloss_example()` will automatically split your example into multiple rows.
+Sometimes examples are too long and do not fit onto the page. In that case you need to add the argument `results='asis'` to your chunk. `gloss_example()` will then automatically split your example into multiple rows.
 
 (@tsa_ex) Mishlesh Tsakhur, East Caucasian [@maisak07: 386]
 ```{r, results='asis'}
@@ -196,21 +196,21 @@ gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː
                '(Woolen socks are considered to be more valuable than a shawl.)')
 ```
 
-If you are not satisfied with the result of automatic split you can change value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
+If you are not satisfied with the result of the automatic split you can change the value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
 
 ## In-text examples
 
-When an example is small, author may do not want to put it in a separate paragraph, but rather prefer to keep it within the text. It is possible to achieve using standard for `rmarkdown` [inline code](https://rmarkdown.rstudio.com/lesson-4.html). The result of the R code can be inserted into the rmarkdown document by using [backtick symbol](https://en.wikipedia.org/wiki/Grave_accent#Use_in_programming) and small r, for example <code>&grave;r 2+2&grave;</code> will be rendered as `r 2+2`. Currently `lingglosses` can not automatically detect, whether code provided via code chunk or inline. So if you want to use in-text glossed example and want them to appear in the glosses list, it is possible to write them using the `gloss_example()` with the `intext = TRUE` argument. Here is a Turkish example from (@delancey97): `r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)` that was produced with the following inline code:
+When an example is small, the author may not want to put it in a separate paragraph, but prefer to display it as part of the running text. This is possible to achieve using the standard for `rmarkdown` [inline code](https://rmarkdown.rstudio.com/lesson-4.html). The result of the R code can be inserted into the rmarkdown document using the [backtick symbol](https://en.wikipedia.org/wiki/Grave_accent#Use_in_programming) and the small r, for example <code>&grave;r 2+2&grave;</code> will be rendered as `r 2+2`. Currently `lingglosses` can not automatically detect whether code was provided via code chunk or inline. So if you want to use an in-text glossed example and want the glosses to appear in list, it is possible to write them using the `gloss_example()` with the `intext = TRUE` argument. Here is a Turkish example from (@delancey97): `r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)` that was produced with the following inline code:
 
 ```{md}
 `r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)`
 ```
 
-In the third section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r add_gloss("MIR")` gloss appears only in this exact section in the in-text example above, it appears in the gloss lists presented in the third section.
+In the third section I show how you can create a semi-automatically compiled list of abbreviations for your document. As an example I provide the list for this exact document. Even though the `r add_gloss("MIR")` gloss appears only in this exact section in the in-text example above, it appears in the lists presented in the third section.
 
 ## Stand-alone glosses with `add_gloss()`
 
-Sometimes glosses are used in text without any example, e. g. in the table or in the text. So if you want to use in-text glosses and want them to appear in the glosses list, it is possible to write them using the `add_gloss()` function. As an example I adapted part of the verbal inflection paradigm of Andi (East Caucasian) from the Table 2 [@verhees19: 199]:
+Sometimes glosses are used in other environments besides examples, e.g. in a table or in the text. So if you want to use in-text glosses and want them to appear in the glosses list, it is possible to add them using the `add_gloss()` function. As an example I adapted part of the verbal inflection paradigm of Andi (East Caucasian) from Table 2 [@verhees19: 199]:
 
 |                      | `r add_gloss("AFF")` | `r add_gloss("NEG")` |
 |----------------------|----------------------|----------------------|
@@ -222,9 +222,9 @@ Sometimes glosses are used in text without any example, e. g. in the table or in
   
 that is generated using the folowing markdown[^poortable] code[^tablesgenerator]:
 
-[^poortable]: The table generated with markdown is visualy poor. There is a lot of other ways to generate a table in R: `kable()` from `knitr`; `kableExtra` package, `DT` package and many others.
+[^poortable]: The table generated with markdown is visually poor. There are a lot of other ways to generate a table in R: `kable()` from `knitr`; `kableExtra` package, `DT` package and many others.
 
-[^tablesgenerator]: It is easier to generate Markdown or Latex tables with Libre Office or MS Excel and then use some online transformation websites like <https://www.tablesgenerator.com/>.
+[^tablesgenerator]: It is easier to generate Markdown or Latex tables with Libre Office or MS Excel and then use an online table generator website like <https://www.tablesgenerator.com/>.
 
 ```{md}
 |                      | `r add_gloss("AFF")` | `r add_gloss("NEG")` |
@@ -236,20 +236,20 @@ that is generated using the folowing markdown[^poortable] code[^tablesgenerator]
 | `r add_gloss("INF")` | *-du*                | *-du-sːu*            |
 ```
 
-In the third section I show how to create a semi-automatic compiled abbreviation list for your document. As an example I provide the abbreviation list for this exact document. Even though the `r add_gloss("FUT")` and  `r add_gloss("MSD")` glosses appears only in this exact section in the table above, it appears in the gloss lists presented in the third section.
+In the third section I show you how to create a semi-automatically compiled abbreviation list for your document. As an example I provide the list of abbreviations for this exact document. Even though the `r add_gloss("FUT")` and  `r add_gloss("MSD")` glosses appears only in this exact section in the table above, it appears in the lists presented in the third section.
 
 ## Glossing Sign languages
 
-Unfortunately, gloss extraction implemented in `lingglosses` is case sensitive. That makes it hard to use for the Sign Languages glossing, because 
+Unfortunately, gloss extraction implemented in `lingglosses` is case sensitive. That makes it hard to use for the glossing of Sign Languages, because: 
 
-1) Sign linguists used to gloss lexical items with capitalized English translations;
-2) Sign language glosses sometimes are splitted into two lines associated with two hands (or even more if you want to account for non-manual markers);
+1) Sign linguists gloss lexical items with capitalized English translations;
+2) Sign language glosses are sometimes split into two lines, each of which is associated with one hand (or even more if you want to account for non-manual markers);
 3) Sign language glosses should be somehow aligned with video/pictures (see the fascinating  [signglossR](https://github.com/borstell/signglossR) by Calle Börstell);
 4) There can be empty space in glosses;
-5) There can be some placeholders that corresponds to utterance by one articulator (e. g. hand), which
+5) There can be some placeholders that corresponds to an utterance by one articulator (e.g. a hand), which
 are held stationary in the signing space during the articulation made by another articulator.
 
-I will illustrate all this problems with the example from Russian Sign Language [@kimmelman12: 421]:
+I will illustrate these problems with an example from Russian Sign Language [@kimmelman12: 421]:
 
 ```{r}
 gloss_example(glosses = c("LH: {CHAIR} ________",
@@ -259,9 +259,9 @@ gloss_example(glosses = c("LH: {CHAIR} ________",
               drop_transliteration = TRUE)
 ```
 
-So, first of all the capitalization that is not used for glossing is embraced with curly brackets, so `lingglosses` does not treat it as a gloss. Two separate gloss lines for different hands are provided with a vector with two elements (see `c()` function for the vector creation). It is important to provide the `drop_transliteration = TRUE` argument, otherwise internal tests within the `gloss_example()` function will fail.
+The capitalization that is not used for morphemic glossing is embraced with curly brackets, so that `lingglosses` does not treat these items as glosses. Two separate gloss lines for different hands are provided with a vector with two elements (see `c()` function for the vector creation). It is important to provide the `drop_transliteration = TRUE` argument, otherwise internal tests within the `gloss_example()` function will fail.
 
-It is also possible to use pictures in a transliteration line, see example from Kazakh-Russian Sign Language [@kuznetsova21: 51] (pictures are used with the permission of Anna Kuznetsova, the author):
+It is also possible to use pictures in a transliteration line, see an example from Kazakh-Russian Sign Language [@kuznetsova21: 51] (pictures are used with the permission of the author Anna Kuznetsova):
 
 ```{r}
 gloss_example("![](when.png) ![](mom.png) ![](tired.png)",
@@ -271,7 +271,7 @@ gloss_example("![](when.png) ![](mom.png) ![](tired.png)",
               "When was mom tired?")
 ```
 
-The first line corresponds to pictures in markdown format that should be located in the same folder (otherwise you need to specify the path to them, e. g. `![](images/your_plot.png)`). The next three lines correspond to different lines in the example with some non-manual articulation: as before all glossing lines stored as a vector of strings. User can replace `{}` with `_______` in order to show the scope of non-manual articulation.
+The first line corresponds to pictures in markdown format that should be located in the same folder (otherwise you need to specify the path to them, e.g. `![](images/your_plot.png)`). The next three lines correspond to different lines in the example with some non-manual articulation: as before, all glossing lines are stored as a vector of strings. The user can replace `{}` with `_______` in order to show the scope of non-manual articulation.
 
 # Create semi-automatic compiled abbreviation list
 
@@ -281,11 +281,11 @@ After you finished your text, it is possible to call the `make_gloss_list()` fun
 make_gloss_list()
 ```
 
-This function works with the built-in dataset `glosses_df` that is compiled from Leipzig Glosses, [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations) and articles from the open access journal [Glossa](https://www.glossa-journal.org/)[^glossa]. Everybody can [download](https://raw.githubusercontent.com/agricolamz/lingglosses/master/database_creation/glosses_extracted.csv) and change this dataset for their own purposes. I will be thankful if you leave your proposals for the dataset change for this list in the [issue tracker](https://github.com/agricolamz/lingglosses/issues) on GitHub. 
+This function works with the built-in dataset `glosses_df` that is compiled from Leipzig Glosses, [Wikipedia page](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations) and articles from the open access journal [Glossa](https://www.glossa-journal.org/)[^glossa]. Everybody can [download](https://raw.githubusercontent.com/agricolamz/lingglosses/master/database_creation/glosses_extracted.csv) and change this dataset for their own purposes. I would be grateful if you leave your proposals for changes to the dataset for this list in the [issue tracker](https://github.com/agricolamz/lingglosses/issues) on GitHub. 
 
-[^glossa]: The script for the collecting glosses is available [here](https://github.com/agricolamz/lingglosses/blob/master/database_creation/glossa.R). The glosses list was manually corrected and merged with glosses from other sources. This kind of glosses marked in the `glosses_df` dataset as `lingglosses` in the `source` column.
+[^glossa]: The script for collecting glosses is available [here](https://github.com/agricolamz/lingglosses/blob/master/database_creation/glossa.R). The list was manually corrected and merged with glosses from other sources. This kind of glosses are marked in the `glosses_df` dataset as `lingglosses` in the `source` column.
 
-It is possible that user can be not satisfied with the result of `make_gloss_list()` function, then there are two possible strategies. First strategy is to copy the result of the `make_gloss_list()`, modify it and paste in your `rmarkdown` document. Sometimes you work on some volume dedicated to on group of languages and you want to assure that glosses are the same across all articles, than you can compile your own table with columns `gloss` and `definition` and use it within `make_gloss_list` function. As you can see, all glosses specified in the `my_abbreviations` dataset changed their values in the output below:
+It is possible that the user is not satisfied with the result of the `make_gloss_list()` function. In this case there are two possible strategies. The first strategy is to copy the result of the `make_gloss_list()`, modify it and paste it into your `rmarkdown` document. Sometimes you work on some volume dedicated to a particular group of languages and you want to assure that glosses are the same across all articles. Then you can compile your own table with the columns `gloss` and `definition` and use it within the `make_gloss_list` function. As you can see, all glosses specified in the `my_abbreviations` dataset changed their values in the output below:
 
 ```{r}
 my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
@@ -293,61 +293,61 @@ my_abbreviations <- data.frame(gloss = c("NPST", "HAB", "INF", "NEG"),
 make_gloss_list(my_abbreviations)
 ```
 
-Unfortunately, some glosses can have multiple meaning in different traditions (e. g. `r add_gloss("ASS")` can be either associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the package author. You can see all possibilities, if you add argument `all_possible_variants = TRUE`. As you can see, there are multiple possible values for `r add_gloss("AFF")`, `r add_gloss("ASS")`, `r add_gloss("CL")`, `r add_gloss("IMP")`, `r add_gloss("IN")`, `r add_gloss("INS")`, and `r add_gloss("PRF")`:
+Unfortunately, some glosses can have multiple meanings in different traditions (e.g. `r add_gloss("ASS")` can be either an associative plural or assertive mood). By default `make_gloss_list()` shows only some entries that were chosen by the author of this package. You can see all the possibilities if you add the argument `all_possible_variants = TRUE`. As you can see, there are multiple possible values for `r add_gloss("AFF")`, `r add_gloss("ASS")`, `r add_gloss("CL")`, `r add_gloss("IMP")`, `r add_gloss("IN")`, `r add_gloss("INS")`, and `r add_gloss("PRF")`:
 
 ```{r}
 make_gloss_list(all_possible_variants = TRUE)
 ```
 
-You can notice that problematic glosses (those without definition or duplicated) are colored. This can be switched off adding the argument `annotate_problematic = FALSE`:
+You can notice that problematic glosses (those which lack a definition or are duplicated) are colored. This can be switched off adding the argument `annotate_problematic = FALSE`:
 
 ```{r}
 make_gloss_list(all_possible_variants = TRUE, annotate_problematic = FALSE)
 ```
 
-In case you want to remove some glosses from the list, you can use argument `remove_glosses`:
+In case you want to remove some glosses from the list, you can use the argument `remove_glosses`:
 
 ```{r}
 make_gloss_list(remove_glosses = c("1SG", "3SG"))
 ```
 
-It is really important that one should not treat results of the `make_gloss_list()` function as carved in stone: once it compiled you can copy, modify and paste it in your document. You can try to spent time improving the output of the function, but on the final stage it is faster to correct it manually.
+It is really important that one should not treat the results of the `make_gloss_list()` function as carved in stone: once it is compiled you can copy, modify and paste it in your document. You can try to spend time improving the output of the function, but at the final stage it is probably faster to correct it manually.
 
 # Other output formats
 
-Right now there is no direct way of knitting `lingglosses` to `.docx` format, however you can work around copying and pasting from the `.html` version:
+Right now there is no direct way of knitting `lingglosses` to `.docx` format. You can work around this by copying and pasting from the `.html` version:
 
 ```{r, echo = FALSE}
 knitr::include_graphics("for_word_users.gif")
 ```
 
-The `.pdf` output is possible, however there are some known restrictions: 
+`.pdf` output is possible, but there are some known restrictions: 
 
 * markdown bold and italic annotations do not work;
-* example numbers appears above the example;
-* there is no non-breaking space in glosses list.
+* example numbers appear above the example;
+* there is no non-breaking space in the list of glosses.
 
-So if you want to avoid those problems the best solution will be to use one of the latex glossing packages listed in the first footnote and the package [`glossaries`](https://www.ctan.org/pkg/glossaries) for automatic compilation of glosses.
+So if you want to avoid these problems, the best solution is to use one of the latex glossing packages listed in the first footnote and the package [`glossaries`](https://www.ctan.org/pkg/glossaries) for automatic compilation of glosses.
 
-# About `glosses_df` dataset
+# About the `glosses_df` dataset
 
-As mentioned above the `make_gloss_list` function's definitions are based on `glosses_df` dataset.
+As mentioned above, the `make_gloss_list` function's definitions are based on the `glosses_df` dataset.
 
 ```{r}
 str(glosses_df)
 ```
 
-Most definitions are purposely too general: for example `r add_gloss("ASC")` is defined as `associative`, that can be associative case, associative plural, associative mood, or associated motion. Since user can easily replace the output with their own definitions, it is not a problem for the `lingglosses` package. However, it will make things easier, comparable and reproducible, if linguists would have created unified database of glosses, similar to [concepticon](https://concepticon.clld.org/) [@list21a].
+Most definitions are too general on purpose: `r add_gloss("ASC")`, for example, is defined as `associative`, which can be associative case, associative plural, associative mood, or associated motion. Since the user can easily replace the output with their own definitions, it is not a problem for the `lingglosses` package. However, it will make things easier, and more comparable and reproducible, if linguists would create a unified database of glosses, similar to the [concepticon](https://concepticon.clld.org/) [@list21a].
 
-# Towards a database of interlinear-glossed examples
+# Towards a database of interlinear glossed examples
 
-There are several attempts of creating databases or infrastructure for Interlinear-Glossed examples that might be interesting for the reader: 
+There have been several attempts towards creating databases or infrastructure for interlinear glossed examples that might be interesting for the reader: 
 
 * [ODIN project](https://odin.linguistlist.org/);
 * a Python library [`pyigt`](https://github.com/cldf/pyigt);
 * [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx).
 
-Each example could be easily transformed into the table using the `convert_to_df()` function.
+Each example could be easily transformed into a table using the `convert_to_df()` function.
 
 ```{r, eval = FALSE}
 convert_to_df(transliteration = "bur-e-**ri** c'in-ne-sːu",
@@ -365,34 +365,33 @@ convert_to_df(transliteration = "bur-e-**ri** c'in-ne-sːu",
               annotation = "Бурери цIиннессу.",
               write_to_db = FALSE)
 ```
-This table have everything that can be useful for the database and it has the following columns:
+This table lists all the parameters that could be useful for a database, and has the following columns:
 
 * `id` --- unique identifier through the whole table;
 * `example_id` --- unique identifier of particular examples;
-* `word_id` --- unique identifier of the word in the example (delimented with spaces and other punctuation);
-* `morpheme_id` --- unique identifier of the morpheme within the word (delimeted with signs `-` or `=`);
+* `word_id` --- unique identifier of the word in the example (delimited with spaces and other punctuation);
+* `morpheme_id` --- unique identifier of the morpheme within the word (delimited with `-` or `=`);
 * `transliteration` --- language material;
 * `gloss` --- glosses;
-* `delimeter` --- delimiters: space, `-` or `=`
-* `emphasize_start` --- start of the amphasization (the possible values are `transliteration`, `gloss` or `both`);
-* `emphasize_end` --- end of the amphasization (the possible values are `transliteration`, `gloss` or `both`);
+* `delimiter` --- delimiters: space, `-` or `=`
+* `emphasize_start` --- start of the emphasization (the possible values are `transliteration`, `gloss` or `both`);
+* `emphasize_end` --- end of the emphasization (the possible values are `transliteration`, `gloss` or `both`);
 * `transliteration_orig` --- original string with transliteration;
 * `glosses_orig` --- original string with glosses;
 * `free_translation` --- original string with the free translation;
-* `comment` --- original string with the comment;
+* `comment` --- original string with a comment;
 
-When you use the `gloss_example()` function the table of the structure described above is added to the database, so in the end you can extract it saving the output of the `get_examples_db()` function to the file:
+When you use the `gloss_example()` function, a table of the structure described above is added to the database, so in the end you can extract it by saving the output of the `get_examples_db()` function to the file:
 
 ```{r}
 get_examples_db()
 ```
 
-Of course one can use just a subset of some columns:
+Of course one can just use a subset of some columns:
 
 ```{r}
 unique(get_examples_db()[, c("example_id", "transliteration_orig", "glosses_orig")])
 ```
-
 
 
 # References
