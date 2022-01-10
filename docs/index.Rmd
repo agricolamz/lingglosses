@@ -339,7 +339,7 @@ str(glosses_df)
 
 Most definitions are purposely too general: for example `r add_gloss("ASC")` is defined as `associative`, that can be associative case, associative plural, associative mood, or associated motion. Since user can easily replace the output with their own definitions, it is not a problem for the `lingglosses` package. However, it will make things easier, comparable and reproducible, if linguists would have created unified database of glosses, similar to [concepticon](https://concepticon.clld.org/) [@list21a].
 
-# Towards a database of iinterlinear-glossed examples
+# Towards a database of interlinear-glossed examples
 
 There are several attempts of creating databases or infrastructure for Interlinear-Glossed examples that might be interesting for the reader: 
 
@@ -387,7 +387,7 @@ When you use the `gloss_example()` function the table of the structure described
 get_examples_db()
 ```
 
-You of course can use just a subset of some columns:
+Of course one can use just a subset of some columns:
 
 ```{r}
 unique(get_examples_db()[, c("example_id", "transliteration_orig", "glosses_orig")])
