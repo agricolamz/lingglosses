@@ -34,9 +34,10 @@ For more details see the [html-version of the tutorial](https://agricolamz.githu
 
 You can also be interested in 
 
-* [ODIN project](https://odin.linguistlist.org/) [@lewis10];
-* newer attempt  [@list21b], where authors also provided a Python library [`pyigt`](https://github.com/cldf/pyigt);
-* [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx).
+* [ODIN project](https://odin.linguistlist.org/);
+* a Python library [`Xigt`](https://github.com/xigt/xigt);
+* [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx);
+* a Python library [`pyigt`](https://github.com/cldf/pyigt).
 
 ## Installation
 
@@ -63,8 +64,8 @@ citation("lingglosses")
 #> 
 #> To cite lingglosses in publications use:
 #> 
-#>   Moroz, G. (2021) lingglosses: Linguistic glosses and semi-automatic list of
-#>   glosses creation. (Version 0.0.2). Zenodo
+#>   Moroz, G. (2021) lingglosses: Linguistic glosses and semi-automatic
+#>   list of glosses creation. (Version 0.0.2). Zenodo
 #>   https://doi.org/10.5281/zenodo.5801712.
 #> 
 #> A BibTeX entry for LaTeX users is

@@ -19,11 +19,6 @@ bibliography: bibliography.bib
 <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
 ```{r, include=FALSE}
-knitr::knit_engines$set(md = function(options){
-  code <- paste(options$code, collapse = '\n')
-  knitr::engine_output(options, code, out = NULL)
-  })
-
 library(lingglosses)
 # in order to have the same list of glosses through the whole document
 options("lingglosses.refresh_glosses_list" = FALSE)
@@ -31,7 +26,7 @@ options("lingglosses.refresh_glosses_list" = FALSE)
 
 # Introduction
 
-The list of abbreviations is an obligatory part of linguistic articles that nobody reads. These lists contain definitions of abbreviations used in the article (e.g. the names of corpora or sign languages), but also a list of linguistic glosses --- abbreviations used in interlinear examples. There is a document proposing standardized glossing rules [@comrie08], which ends with a list of 84 standard abbreviations. A much bigger list of standard abbreviations is present on [Wikipedia](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations). However, researchers can deviate from the proposed abbreviations and use their own instead.
+The list of abbreviations is an obligatory part of linguistic articles that nobody reads. These lists contain definitions of abbreviations used in the article (e.g. the names of corpora or sign languages), but also a list of linguistic glosses --- abbreviations used in interlinear glossed examples. There is a document proposing standardized glossing rules [@comrie08], which ends with a list of 84 standard abbreviations. A much bigger list of standard abbreviations is present on [Wikipedia](https://en.wikipedia.org/wiki/List_of_glossing_abbreviations). However, researchers can deviate from the proposed abbreviations and use their own instead.
 
 The following list of abbreviations, which I came across in a published article, makes it clear that there is room for improvement in compiling such lists:
 
@@ -46,8 +41,8 @@ Besides the obvious errors, this list contains more problems that I would like t
 
 The main goal of the `lingglosses` R package is to provide an option for creating:
 
-* linguistic glosses for an `.html` output of `rmarkdown` [@xie18][^latex];
-* a semi-automatically compiled list of abbreviations.
+* interlinear glossed linguistic glosses for an `.html` output of `rmarkdown` [@xie18][^latex];
+* a semi-automatically compiled list of glosses.
 
 [^latex]: If you want to render a `.pdf` version you can either use latex and multiple linguistic packages developed for it (see e. g. [`gb4e`](https://www.ctan.org/pkg/gb4e), [`langsci`](https://www.ctan.org/pkg/langsci), [`expex`](https://www.ctan.org/pkg/expex), [`philex`](https://www.ctan.org/pkg/philex)), or you can render `.html` first and convert it to `.pdf` afterwards.
 
@@ -68,7 +63,6 @@ In order to use the package you need to load it with the `library()` call:
 
 ```{r}
 library(lingglosses)
-getOption("lingglosses.example_counter")
 ```
 
 You can go through the examples in this tutorial or you can create a lingglosses example from the rmarkdown template (File > New File > R Markdown... > From Template > lingglosses Document).
@@ -107,7 +101,7 @@ gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu",
 In this first example you can see that:
 
 * the transliteration line is italic by default (if you do not want it, just add the argument `italic_transliteration = FALSE`);
-* you can use standard markdown syntax (e.g. `**a**` for **bold** and `*a*` for *italic*);
+* you can use standard markdown syntax (e.g. `**a**` for **bold**);
 * the free translation line is automatically framed with quotation marks.
 
 Since the function arguments' names are optional in R, users can omit them as long as they follow the order of the arguments (you can always find the correct order in `?gloss_example`):
@@ -122,7 +116,7 @@ gloss_example("bur-e-**ri** c'in-ne-sːu",
 
 It is possible to number and call your examples using the standard `rmarkdown` tool for generating lists `(@)`:
 
-```{md}
+```{verbatim}
 (@) my first example
 (@) my second example
 (@) my third example
@@ -136,7 +130,7 @@ renders as:
 
 In order to reference examples in the text you need to give them names:
 
-```{md}
+```{verbatim}
 (@my_ex) example for referencing
 ```
 (@my_ex) example for referencing
@@ -202,7 +196,7 @@ If you are not satisfied with the result of the automatic split you can change t
 
 When an example is small, the author may not want to put it in a separate paragraph, but prefer to display it as part of the running text. This is possible to achieve using the standard for `rmarkdown` [inline code](https://rmarkdown.rstudio.com/lesson-4.html). The result of the R code can be inserted into the rmarkdown document using the [backtick symbol](https://en.wikipedia.org/wiki/Grave_accent#Use_in_programming) and the small r, for example <code>&grave;r 2+2&grave;</code> will be rendered as `r 2+2`. Currently `lingglosses` can not automatically detect whether code was provided via code chunk or inline. So if you want to use an in-text glossed example and want the glosses to appear in list, it is possible to write them using the `gloss_example()` with the `intext = TRUE` argument. Here is a Turkish example from (@delancey97): `r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)` that was produced with the following inline code:
 
-```{md}
+```{verbatim}
 `r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)`
 ```
 
@@ -226,7 +220,7 @@ that is generated using the folowing markdown[^poortable] code[^tablesgenerator]
 
 [^tablesgenerator]: It is easier to generate Markdown or Latex tables with Libre Office or MS Excel and then use an online table generator website like <https://www.tablesgenerator.com/>.
 
-```{md}
+```{verbatim}
 |                      | `r add_gloss("AFF")` | `r add_gloss("NEG")` |
 |----------------------|----------------------|----------------------|
 | `r add_gloss("AOR")` | -∅                   | *-sːu*               |
@@ -331,7 +325,7 @@ So if you want to avoid these problems, the best solution is to use one of the l
 
 # About the `glosses_df` dataset
 
-As mentioned above, the `make_gloss_list` function's definitions are based on the `glosses_df` dataset.
+As mentioned above, the `make_gloss_list()` function's definitions are based on the `glosses_df` dataset.
 
 ```{r}
 str(glosses_df)
@@ -343,9 +337,10 @@ Most definitions are too general on purpose: `r add_gloss("ASC")`, for example, 
 
 There have been several attempts towards creating databases or infrastructure for interlinear glossed examples that might be interesting for the reader: 
 
-* [ODIN project](https://odin.linguistlist.org/);
-* a Python library [`pyigt`](https://github.com/cldf/pyigt);
-* [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx).
+* [ODIN project](https://odin.linguistlist.org/) [@lewis10];
+* a Python library [`Xigt`](https://github.com/xigt/xigt)  [@goodman15];
+* [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx) [@hieber20];
+* a Python library [`pyigt`](https://github.com/cldf/pyigt)  [@list21b].
 
 Each example could be easily transformed into a table using the `convert_to_df()` function.
 
@@ -393,6 +388,7 @@ Of course one can just use a subset of some columns:
 unique(get_examples_db()[, c("example_id", "transliteration_orig", "glosses_orig")])
 ```
 
+I also wanted to mention paper by [@round20], where authors provided script for the automated identification and parsing of interlinear glossed text from scanned page images (see their [script](https://github.com/erichround/LREC_IGT/)).
 
 # References
 

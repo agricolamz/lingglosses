@@ -15,7 +15,7 @@
 - add possibility to add stand-alone examples with the `add_gloss()` function
 - update `lingglosses::glosses_df` file with glosses from Wikipedia
 - make the package work with `bookdown`
-- add lingglosses rmarkdown template
+- add `lingglosses` rmarkdown template
 - add possibility to remove glosses in the `make_gloss_list()` output with the `remove_glosses` argument
 - add possibility to escape glossing with curly brackets, e.g. `{I}`
 - provide the ability to have multiline lines of glosses in an example for Sign Languages

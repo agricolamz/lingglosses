@@ -2,8 +2,8 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "lingglosses",
-  "description": "Helps to render glossed linguistic examples in html 'rmarkdown' documents and then semi-automatically compiles the glosses list at the end of the document. It also provides a database of linguistic glosses.",
-  "name": "lingglosses: Linguistic Examples and Abbreviation Lists Generation",
+  "description": "Helps to render interlinear glossed linguistic examples in html 'rmarkdown' documents and then semi-automatically compiles the list of glosses at the end of the document. It also provides a database of linguistic glosses.",
+  "name": "lingglosses: Interlinear Glossed Linguistic Examples and Abbreviation Lists Generation",
   "relatedLink": "https://agricolamz.github.io/lingglosses/",
   "codeRepository": "https://CRAN.R-project.org/package=phonfieldwork",
   "issueTracker": "https://github.com/agricolamz/lingglosses/issues",
@@ -104,7 +104,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "51.071KB",
+  "fileSize": "51.134KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
