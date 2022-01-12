@@ -331,20 +331,32 @@ As mentioned above, the `make_gloss_list()` function's definitions are based on 
 str(glosses_df)
 ```
 
-Most definitions are too general on purpose: `r add_gloss("ASC")`, for example, is defined as `associative`, which can be associative case, associative plural, associative mood, or associated motion. Since the user can easily replace the output with their own definitions, it is not a problem for the `lingglosses` package. However, it will make things easier, and more comparable and reproducible, if linguists would create a unified database of glosses, similar to the [concepticon](https://concepticon.clld.org/) [@list21a].
+Most definitions are too general on purpose: `r add_gloss("ASC")`, for example, is defined as `associative`, which can be associative case, associative plural, associative mood, or associated motion. Since the user can easily replace the output with their own definitions, it is not a problem for the `lingglosses` package. However, it will make things easier, and more comparable and reproducible, if linguists would create a unified database of glosses, similar to the [concepticon](https://concepticon.clld.org/) [@list21a]. If you think that some glosses and definitions do not hesitate to open [an issue on the GitHub page](https://github.com/agricolamz/lingglosses/issues/new?assignees=&labels=enhancement&template=glosses_list_suggestions.md&title=) of the `lingglosses` project.
 
 # Towards a database of interlinear glossed examples
 
-There have been several attempts towards creating databases or infrastructure for interlinear glossed examples that might be interesting for the reader: 
+There have been several alternative to `lingglosses` infrastructure for interlinear glossed examples that might be interesting for the reader: 
 
-* [ODIN project](https://odin.linguistlist.org/) [@lewis10];
+* multiple packages for glossing in LaTeX:
+    * [`gb4e`](https://www.ctan.org/pkg/gb4e),
+    * [`langsci`](https://www.ctan.org/pkg/langsci),
+    * [`expex`](https://www.ctan.org/pkg/expex),
+    * [`philex`](https://www.ctan.org/pkg/philex)
+* [ODIN project](https://odin.linguistlist.org/) [@lewis10] (looks like this project is not longer active);
+* [a Java-script library Leipzig.js](https://bdchauvette.net/leipzig.js/);
 * a Python library [`Xigt`](https://github.com/xigt/xigt)  [@goodman15];
 * [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx) [@hieber20];
 * a Python library [`pyigt`](https://github.com/cldf/pyigt)  [@list21b].
 
-Each example could be easily transformed into a table using the `convert_to_df()` function.
+Only several of them (`ODIN`, `Xigt`, `scription` and `pyigt`) are attempts towards creating a standard for the databases of interlinear glossed examples. I also wanted to mention paper by [@round20], where authors provided a [script](https://github.com/erichround/LREC_IGT/) for the automated identification and parsing of interlinear glossed text from scanned page images. The motivation for creating cross-linguistic database of interlinear glossed examples is the following:
 
-```{r, eval = FALSE}
+* Prevent from disappearing of linguistic facts due to the projects fail (for example field notes of the researcher that did not manage to finish his work: article, dictionary, grammar etc.);
+* Fight with the publication bias, which cause some linguistic facts left unpublished since they not support a basic idea of author;
+* Make linguistic work more reproducible and linguistic facts reusable (cf. with human genome database, biodiversity databases or astronomical catalogues).
+
+The `lingglosses` package make an attempt for going in this direction and provide an ability to extract examples in table format that can be further transformed into other formats. Each interlinear glossed example could be easily represented as a table using the `convert_to_df()` function.
+
+```{r}
 convert_to_df(transliteration = "bur-e-**ri** c'in-ne-sːu",
               glosses = "fly-NPST-**INF** know-HAB-NEG",
               free_translation = "I cannot fly.",
@@ -352,14 +364,6 @@ convert_to_df(transliteration = "bur-e-**ri** c'in-ne-sːu",
               annotation = "Бурери цIиннессу.")
 ```
 
-```{r, echo = FALSE}
-convert_to_df(transliteration = "bur-e-**ri** c'in-ne-sːu",
-              glosses = "fly-NPST-**INF** know-HAB-NEG",
-              free_translation = "I cannot fly.",
-              comment = "(lit. do not know how to)",
-              annotation = "Бурери цIиннессу.",
-              write_to_db = FALSE)
-```
 This table lists all the parameters that could be useful for a database, and has the following columns:
 
 * `id` --- unique identifier through the whole table;
@@ -387,8 +391,6 @@ Of course one can just use a subset of some columns:
 ```{r}
 unique(get_examples_db()[, c("example_id", "transliteration_orig", "glosses_orig")])
 ```
-
-I also wanted to mention paper by [@round20], where authors provided script for the automated identification and parsing of interlinear glossed text from scanned page images (see their [script](https://github.com/erichround/LREC_IGT/)).
 
 # References
 
