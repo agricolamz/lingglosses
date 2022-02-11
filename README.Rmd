@@ -14,6 +14,7 @@ library(lingglosses)
 
 [![CRAN version](https://www.r-pkg.org/badges/version/lingglosses)](https://cran.r-project.org/package=lingglosses)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/lingglosses)](https://CRAN.R-project.org/package=lingglosses)
 [![DOI](https://zenodo.org/badge/440443756.svg)](https://zenodo.org/badge/latestdoi/440443756)
 [![R build status](https://github.com/agricolamz/lingglosses/workflows/R-CMD-check/badge.svg)](https://github.com/agricolamz/lingglosses/actions)
 
