@@ -138,6 +138,7 @@ gloss_example <- function(transliteration,
 
     result <- paste0(inline_transliteration,
                      sep1,
+                     grammaticality,
                      paste(glosses, collapse = " "),
                      if(nchar(free_translation) > 0){
                        paste0(" '", free_translation, "'")} else {""},
@@ -155,6 +156,7 @@ gloss_example <- function(transliteration,
           paste(transliteration[splits_by_line == i], collapse = " "),
           paste(glosses_by_word[splits_by_line == i], collapse = " "),
           free_translation = if(i == max(splits_by_line)){free_translation} else {""},
+          grammaticality = if(i == min(splits_by_line)){grammaticality} else {NULL},
           annotation = if(!is.null(annotation)){
             paste(annotation[splits_by_line == i], collapse = " ")} else {""},
           comment = if(i == max(splits_by_line)){comment} else {""},

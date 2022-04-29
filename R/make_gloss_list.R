@@ -86,6 +86,9 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
     # keep only those that are present in the document -------------------------
     glosses_dataset <- glosses_dataset[glosses_dataset$gloss %in% gloss_list, ]
 
+    # remove glosses with punctuation -----------------------------------------
+    glosses_dataset <- glosses_dataset[!grepl("[:punct:]", glosses_dataset$gloss),]
+
     # for those glosses that are not present in our and user's database --------
     definitionless <- gloss_list[!(gloss_list %in% glosses_dataset$gloss)]
 
@@ -124,8 +127,6 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
       keep <- which(!(glosses_dataset$gloss %in% remove_glosses))
       glosses_dataset <- glosses_dataset[keep,]
     }
-
-    glosses_dataset <- glosses_dataset[!grepl("[:punct:]", glosses_dataset$gloss),]
 
     # generate non breaking space ----------------------------------------------
     if(knitr::is_latex_output()){
