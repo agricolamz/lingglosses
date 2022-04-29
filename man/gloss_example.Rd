@@ -51,6 +51,7 @@ Creates an interlinear glossed example for linguistics.
 gloss_example("bur-e-**ri** c'in-ne-s:u",
               "fly-NPST-**INF** know-HAB-NEG",
               "I cannot fly. (Zilo Andi, East Caucasian)",
+              grammaticality = "*",
               comment = "(lit. do not know how to)")
 
 gloss_example("bur-e-**ri** c'in-ne-s:u",

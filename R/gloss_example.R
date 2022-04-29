@@ -21,6 +21,7 @@
 #' gloss_example("bur-e-**ri** c'in-ne-s:u",
 #'               "fly-NPST-**INF** know-HAB-NEG",
 #'               "I cannot fly. (Zilo Andi, East Caucasian)",
+#'               grammaticality = "*",
 #'               comment = "(lit. do not know how to)")
 #'
 #' gloss_example("bur-e-**ri** c'in-ne-s:u",
@@ -64,8 +65,8 @@ gloss_example <- function(transliteration,
 
 # fix the apostrophe problem
   if(!drop_transliteration){
-    transliteration <- gsub(pattern = "’", replacement = "'", transliteration)}
-  glosses <- gsub(pattern = "’", replacement = "'", glosses)
+    transliteration <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", transliteration)}
+  glosses <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", glosses)
   if(!is.null(grammaticality)){
     grammaticality <- gsub(pattern = "\\*", replacement = "\uFF0A", grammaticality)
   }
