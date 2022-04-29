@@ -96,7 +96,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
       glosses_dataset <- unique(rbind(
         glosses_dataset,
         data.frame(gloss = definitionless,
-                   definition = "",
+                   definition_en = "",
                    source = "",
                    weight = 1)))
     }

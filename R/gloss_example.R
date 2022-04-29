@@ -100,7 +100,9 @@ gloss_example <- function(transliteration,
 
 # add glosses to the document gloss list -----------------------------------
   single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?]"))
+  starts_with_punctuation <- single_gl[1] == ""
   single_gl <- lingglosses::add_gloss(single_gl)
+  if(starts_with_punctuation){single_gl <- c("", single_gl)}
 
 # get delimiters back ------------------------------------------------------
   delimiters <- unlist(strsplit(glosses,
