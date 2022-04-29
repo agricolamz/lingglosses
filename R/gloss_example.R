@@ -8,6 +8,7 @@
 #' @param glosses character vector of the length one for the glosses line.
 #' @param free_translation character vector of the length one for the free translation line.
 #' @param annotation character vector of the length one for the annotation line (above translation).
+#' @param grammaticality character vector with the grammaticality value.
 #' @param comment character vector of the length one for the comment line (under the free translation line).
 #' @param line_length integer vector of the length one that denotes maximum number of characters per one line.
 #' @param italic_transliteration logical variable that denotes, whether user wants to italicize your example.
@@ -38,6 +39,7 @@ gloss_example <- function(transliteration,
                           free_translation = "",
                           comment = "",
                           annotation = NULL,
+                          grammaticality = NULL,
                           line_length = 70,
                           italic_transliteration = TRUE,
                           drop_transliteration = FALSE,
@@ -58,6 +60,14 @@ gloss_example <- function(transliteration,
   if(length(line_length) != 1 | typeof(line_length) != "double"){
     stop(paste0("line_length",
                 " argument should be a character vector of length 1"))
+  }
+
+# fix the apostrophe problem
+  if(!drop_transliteration){
+    transliteration <- gsub(pattern = "’", replacement = "'", transliteration)}
+  glosses <- gsub(pattern = "’", replacement = "'", glosses)
+  if(!is.null(grammaticality)){
+    grammaticality <- gsub(pattern = "\\*", replacement = "\uFF0A", grammaticality)
   }
 
 # split arguments by spaces ------------------------------------------------
@@ -125,7 +135,6 @@ gloss_example <- function(transliteration,
       sep2 <- ""
     }
 
-
     result <- paste0(inline_transliteration,
                      sep1,
                      paste(glosses, collapse = " "),
@@ -167,6 +176,15 @@ gloss_example <- function(transliteration,
       nrow_matrix <- length_glosses + (length(ann) > 0) + (length(trans) > 0)
 
       result <- matrix(for_matrix, nrow = nrow_matrix, byrow = TRUE)
+
+      if(!is.null(grammaticality)){
+        if(nrow_matrix == 2){
+          result <- cbind(matrix(c(grammaticality, "")), result)
+        } else if(nrow_matrix == 3){
+          result <- cbind(matrix(c("", grammaticality, "")), result)
+        }
+      }
+
       result <- kableExtra::kbl(result, align = "l", centering = FALSE,
                                 escape = FALSE, vline = "")
       result <- kableExtra::kable_minimal(result,

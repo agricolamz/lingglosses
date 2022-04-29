@@ -77,6 +77,7 @@ The main function of the `lingglosses` package is `gloss_example()`. This packag
 * `glosses`;
 * `free_translation`;
 * `comment`;
+* `grammaticality`;
 * `annotation`[^orth];
 * `line_length`.
 
@@ -91,11 +92,12 @@ gloss_example(transliteration = "eze a za a",
 All arguments except the last one are self-explanatory. 
 
 ```{r}
-gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu",
-              glosses = "fly-NPST-**INF** know-HAB-NEG",
+gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu-w",
+              glosses = "fly-NPST-**INF** know-HAB-NEG-M",
               free_translation = "I cannot fly. (Zilo Andi, East Caucasian)",
               comment = "(lit. do not know how to)",
-              annotation = "Бурери цIиннессу.")
+              annotation = "Бурери цIиннессу.",
+              grammaticality = "*")
 ```
 
 In this first example you can see that:
@@ -107,11 +109,12 @@ In this first example you can see that:
 Since the function arguments' names are optional in R, users can omit them as long as they follow the order of the arguments (you can always find the correct order in `?gloss_example`):
 
 ```{r}
-gloss_example("bur-e-**ri** c'in-ne-sːu",
-              "fly-NPST-**INF** know-HAB-NEG",
+gloss_example("bur-e-**ri** c'in-ne-sːu-w",
+              "fly-NPST-**INF** know-HAB-NEG-M",
               "I cannot fly. (Zilo Andi, East Caucasian)",
               "(lit. do not know how to)",
-              "Бурери цIиннессу.")
+              "Бурери цIиннессу.",
+              "*")
 ```
 
 It is possible to number and call your examples using the standard `rmarkdown` tool for generating lists `(@)`:

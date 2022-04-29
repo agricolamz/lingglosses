@@ -10,6 +10,7 @@ gloss_example(
   free_translation = "",
   comment = "",
   annotation = NULL,
+  grammaticality = NULL,
   line_length = 70,
   italic_transliteration = TRUE,
   drop_transliteration = FALSE,
@@ -27,6 +28,8 @@ gloss_example(
 \item{comment}{character vector of the length one for the comment line (under the free translation line).}
 
 \item{annotation}{character vector of the length one for the annotation line (above translation).}
+
+\item{grammaticality}{character vector with the grammaticality value.}
 
 \item{line_length}{integer vector of the length one that denotes maximum number of characters per one line.}
 
