@@ -4,6 +4,7 @@
 - add functions for creating an example database: `convert_to_df()` and `get_example_db()`.
 - deal with apostroph strange behaviour. #12
 - add argument grammaticality to `gloss_example()`. #11
+- rename `definition` to `definition_en` in the `glosses_df` dataset
 
 # lingglosses 0.0.2
 

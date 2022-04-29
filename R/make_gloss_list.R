@@ -42,8 +42,8 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
     stop("Argument 'definition_source' should have an attribute 'data.frame'.")
   }
 
-  if(sum(c("gloss", "definition") %in% names(definition_source)) != 2){
-    stop("'definition_source' should have columns 'gloss' and 'definition'.")
+  if(sum(c("gloss", "definition_en") %in% names(definition_source)) != 2){
+    stop("'definition_source' should have columns 'gloss' and 'definition_en'.")
   }
 
   if(!("weight" %in% names(definition_source))){
@@ -73,12 +73,12 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
 
     # change definition from lingglosses::glosses to user's values -------------
     if(!identical(definition_source, lingglosses::glosses_df)){
-      glosses_dataset$definition <- unlist(
+      glosses_dataset$definition_en <- unlist(
         lapply(seq_along(glosses_dataset$gloss), function(i){
           id <- which(definition_source$gloss %in% glosses_dataset$gloss[i])
           ifelse(length(id) > 0,
-                 definition_source$definition[id],
-                 glosses_dataset$definition[i])
+                 definition_source$definition_en[id],
+                 glosses_dataset$definition_en[i])
         })
       )
     }
@@ -137,7 +137,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
 
     # create an output
     res <- paste(small_caps(glosses_dataset$gloss),
-                 glosses_dataset$definition,
+                 glosses_dataset$definition_en,
                  sep = gloss_sep, collapse = "; ")
     knitr::asis_output(res)
 
