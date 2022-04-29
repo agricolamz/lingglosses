@@ -125,6 +125,8 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
       glosses_dataset <- glosses_dataset[keep,]
     }
 
+    glosses_dataset <- glosses_dataset[!grepl("[:punct:]", glosses_dataset$gloss),]
+
     # generate non breaking space ----------------------------------------------
     if(knitr::is_latex_output()){
       gloss_sep = " --- "
