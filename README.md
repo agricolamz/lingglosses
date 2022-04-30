@@ -2,8 +2,6 @@
 
 # `lingglosses`: Linguistic glosses and semi-automatic list of glosses creation
 
-
-
 [![CRAN version](https://www.r-pkg.org/badges/version/lingglosses)](https://cran.r-project.org/package=lingglosses)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/lingglosses)](https://CRAN.R-project.org/package=lingglosses)
@@ -62,20 +60,21 @@ remotes::install_github("agricolamz/lingglosses")
 
 ```r
 citation("lingglosses")
-#> 
-#> To cite lingglosses in publications use:
-#> 
-#>   Moroz, G. (2021) lingglosses: Linguistic glosses and semi-automatic
-#>   list of glosses creation. (Version 0.0.2). Zenodo
-#>   https://doi.org/10.5281/zenodo.5801712.
-#> 
-#> A BibTeX entry for LaTeX users is
-#> 
-#>   @Manual{,
-#>     title = {lingglosses: Linguistic glosses and semi-automatic list of glosses creation},
-#>     author = {George Moroz},
-#>     year = {2021},
-#>     doi = {10.5281/zenodo.5801712.},
-#>   }
+> 
+> To cite lingglosses in publications use:
+> 
+>   Moroz, G. (2021) lingglosses: Linguistic glosses and semi-automatic
+>   list of glosses creation. (Version 0.0.2). Zenodo
+>   https://doi.org/10.5281/zenodo.5801712
+> 
+> A BibTeX entry for LaTeX users is
+> 
+>   @Manual{,
+>     title = {lingglosses: Linguistic glosses and semi-automatic list of glosses creation},
+>     author = {George Moroz},
+>     year = {2021},
+>     doi = {10.5281/zenodo.5801712},
+>   }
 ```
+
 

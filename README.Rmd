@@ -1,3 +1,9 @@
+---
+output:
+  html_document:
+    keep_md: yes
+---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # `lingglosses`: Linguistic glosses and semi-automatic list of glosses creation
@@ -5,7 +11,7 @@
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
+  comment = ">",
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
@@ -69,3 +75,8 @@ remotes::install_github("agricolamz/lingglosses")
 citation("lingglosses")
 ```
 
+```{r, include=FALSE}
+# add this chunk to end of mycode.rmd
+file.rename(from="README.md",
+            to="README.md")
+```
