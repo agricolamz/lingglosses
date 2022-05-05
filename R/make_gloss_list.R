@@ -61,6 +61,10 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
                                                        header = FALSE,
                                                        encoding = "UTF-8"))))
 
+    # remove glosses with punctuation -----------------------------------------
+    gloss_list <- gsub("\\W", "", gloss_list)
+    gloss_list <- gloss_list[gloss_list != ""]
+
     # refresh glosses ----------------------------------------------------------
     if(getOption("lingglosses.refresh_glosses_list")){
       write.table(x = NULL, file = gloss_file_name, row.names = FALSE,
@@ -85,9 +89,6 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
 
     # keep only those that are present in the document -------------------------
     glosses_dataset <- glosses_dataset[glosses_dataset$gloss %in% gloss_list, ]
-
-    # remove glosses with punctuation -----------------------------------------
-    glosses_dataset <- glosses_dataset[!grepl("[:punct:]", glosses_dataset$gloss),]
 
     # for those glosses that are not present in our and user's database --------
     definitionless <- gloss_list[!(gloss_list %in% glosses_dataset$gloss)]

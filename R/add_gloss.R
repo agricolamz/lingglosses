@@ -21,7 +21,7 @@ add_gloss <- function(glosses){
   glosses <- glosses[glosses != ""]
 
 # remove formatting --------------------------------------------------------
-  glosses2add <- gsub("[_\\*].*[_\\*]", "", glosses[glosses == toupper(glosses)])
+  glosses2add <- gsub("[_\\*]", "", glosses[glosses == toupper(glosses)])
   without_escape <- which(!(grepl("^\\{", glosses2add) &
                                grepl("\\}$", glosses2add)))
   glosses2add <- glosses2add[without_escape]

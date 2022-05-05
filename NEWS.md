@@ -1,3 +1,7 @@
+# lingglosses 0.0.4
+
+- fix glosses with markdown annotation; #13 
+
 # lingglosses 0.0.3
 
 - rename `orthography` to `annotation` in the `gloss_example()` function.
