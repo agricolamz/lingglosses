@@ -63,10 +63,16 @@ gloss_example <- function(transliteration,
                 " argument should be a character vector of length 1"))
   }
 
-# fix the apostrophe problem
+# fix the apostrophe and "> <" problem
   if(!drop_transliteration){
-    transliteration <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", transliteration)}
+    transliteration <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", transliteration)
+    transliteration <- gsub(pattern = "<", replacement = "&lt;", transliteration)
+    transliteration <- gsub(pattern = ">", replacement = "&gt;", transliteration)
+    }
   glosses <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", glosses)
+  glosses <- gsub(pattern = "<", replacement = "&lt;", glosses)
+  glosses <- gsub(pattern = ">", replacement = "&gt;", glosses)
+
   if(!is.null(grammaticality)){
     grammaticality <- gsub(pattern = "\\*", replacement = "\uFF0A", grammaticality)
   }
@@ -99,15 +105,16 @@ gloss_example <- function(transliteration,
   }
 
 # add glosses to the document gloss list -----------------------------------
-  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?]"))
+  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?(&lt;)(&gt;)\\~]"))
   starts_with_punctuation <- single_gl[1] == ""
   single_gl <- lingglosses::add_gloss(single_gl)
   if(starts_with_punctuation){single_gl <- c("", single_gl)}
 
 # get delimiters back ------------------------------------------------------
   delimiters <- unlist(strsplit(glosses,
-"[^-:\\.= \\)\\(!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F]"))
+"[^-:\\.= \\)\\(!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F(&lt;)(&gt;)\\~]"))
   delimiters <- c(delimiters[delimiters != ""], "")
+  if(!starts_with_punctuation){single_gl <- c(single_gl, rep("", sum(delimiters == "&gt;")))}
   glosses <- paste0(single_gl, delimiters, collapse = "")
   glosses <- gsub("<span style=", "<span_style=", glosses)
   glosses <- unlist(strsplit(glosses, " "))

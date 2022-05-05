@@ -66,18 +66,18 @@ function(i) {
   names(glosses_by_word) <- paste0(seq_along(transliteration_by_word),
                                            "w_")
 
-  single_tr <- gsub("[-=]$", "", transliteration_by_word)
-  single_tr <- gsub("^[-=]", "", single_tr)
-  single_tr <- unlist(strsplit(single_tr, "[-=]"))
+  single_tr <- gsub("[-=\\~]$", "", transliteration_by_word)
+  single_tr <- gsub("^[-=\\~]", "", single_tr)
+  single_tr <- unlist(strsplit(single_tr, "[-=\\~]"))
 
-  single_gl <- gsub("[-=]$", "", glosses_by_word)
-  single_gl <- gsub("^[-=]", "", single_gl)
-  single_gl <- unlist(strsplit(single_gl, "[-=]"))
+  single_gl <- gsub("[-=\\~]$", "", glosses_by_word)
+  single_gl <- gsub("^[-=\\~]", "", single_gl)
+  single_gl <- unlist(strsplit(single_gl, "[-=\\~]"))
 
   single_tr <- single_tr[single_tr != ""]
   single_gl <- single_gl[single_gl != ""]
 
-  delimiters <- unlist(strsplit(paste0(glosses_by_word, " "), "[^-= ]"))
+  delimiters <- unlist(strsplit(paste0(glosses_by_word, " "), "[^-= \\~]"))
   delimiters <- delimiters[-c(which(delimiters == ""))]
 
   morpheme_id <- gsub("\\d{1,}w_", "", names(single_tr))

@@ -1,6 +1,7 @@
 # lingglosses 0.0.4
 
 - fix glosses with markdown annotation; #13 
+- add possibility to work with infixes and reduplication; #15
 
 # lingglosses 0.0.3
 
