@@ -51,7 +51,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
   }
 
   if(!("source" %in% names(definition_source))){
-    definition_source$source <- ""
+    definition_source$source <- "from the user"
   }
 
   # get glosses --------------------------------------------------------------
@@ -78,16 +78,14 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
 
     glosses_dataset <- glosses_dataset[!duplicated(glosses_dataset[, 1:2]),]
 
+
     # change definition from lingglosses::glosses to user's values -------------
     if(!identical(definition_source, lingglosses::glosses_df)){
-      glosses_dataset$definition_en <- unlist(
-        lapply(seq_along(glosses_dataset$gloss), function(i){
-          id <- which(definition_source$gloss %in% glosses_dataset$gloss[i])
-          ifelse(length(id) > 0,
-                 definition_source$definition_en[id],
-                 glosses_dataset$definition_en[i])
-        })
-      )
+      from_user <- glosses_dataset[glosses_dataset$source == "from the user",]$gloss
+      glosses_dataset <-
+        rbind(glosses_dataset[glosses_dataset$gloss %in% from_user &
+                                glosses_dataset$source == "from the user",],
+              glosses_dataset[!(glosses_dataset$gloss %in% from_user),])
     }
 
     # keep only those that are present in the document -------------------------
