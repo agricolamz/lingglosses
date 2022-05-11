@@ -72,8 +72,9 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
     }
 
     # create a variable with all glosses that will be modified -----------------
-    glosses_dataset <- unique(lingglosses::glosses_df[
-      lingglosses::glosses_df$gloss %in% gloss_list, ])
+    glosses_dataset <- unique(
+      rbind(lingglosses::glosses_df[lingglosses::glosses_df$gloss %in% gloss_list, ],
+            definition_source[definition_source$gloss %in% gloss_list, ]))
 
     # change definition from lingglosses::glosses to user's values -------------
     if(!identical(definition_source, lingglosses::glosses_df)){

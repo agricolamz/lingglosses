@@ -181,15 +181,6 @@ gloss_example("den=no he.ʃː-qi hartʃ'on-k'o w-uʁi w-uk'o.",
 
 In the example above `{I}` is just the English word *I* that will be escaped and will not appear in the gloss list as *marker of class I*.
 
-Here are also examples of infixes and reduplication:
-
-(@infix) Tagalog    
-```{r}
-gloss_example("b<um>i~bili",
-              "<ACTFOC>IPFV~buy",
-              "is buying")
-```
-
 
 ## Multiline examples
 
