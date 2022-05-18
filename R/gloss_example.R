@@ -68,10 +68,12 @@ gloss_example <- function(transliteration,
     transliteration <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", transliteration)
     transliteration <- gsub(pattern = "<", replacement = "&lt;", transliteration)
     transliteration <- gsub(pattern = ">", replacement = "&gt;", transliteration)
+    transliteration <- gsub(pattern = "\\[", replacement = "\uFF3B", transliteration)
+    transliteration <- gsub(pattern = "\\]", replacement = "\uFF3D", transliteration)
     }
   glosses <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", glosses)
-  glosses <- gsub(pattern = "<", replacement = "&lt;", glosses)
-  glosses <- gsub(pattern = ">", replacement = "&gt;", glosses)
+  glosses <- gsub(pattern = "\\[", replacement = "\uFF3B", glosses)
+  glosses <- gsub(pattern = "\\]", replacement = "\uFF3D", glosses)
 
   if(!is.null(grammaticality)){
     grammaticality <- gsub(pattern = "\\*", replacement = "\uFF0A", grammaticality)
@@ -105,16 +107,18 @@ gloss_example <- function(transliteration,
   }
 
 # add glosses to the document gloss list -----------------------------------
-  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?(&lt;)(&gt;)\\~]"))
+  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?<>\\~]"))
   starts_with_punctuation <- single_gl[1] == ""
+  single_gl <- gsub(pattern = "<", replacement = "&lt;", single_gl)
+  single_gl <- gsub(pattern = ">", replacement = "&gt;", single_gl)
   single_gl <- lingglosses::add_gloss(single_gl)
   if(starts_with_punctuation){single_gl <- c("", single_gl)}
 
 # get delimiters back ------------------------------------------------------
   delimiters <- unlist(strsplit(glosses,
-"[^-:\\.= \\)\\(!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F(&lt;)(&gt;)\\~]"))
+"[^-:\\.= \\)\\(!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F<>\\~]"))
   delimiters <- c(delimiters[delimiters != ""], "")
-  if(!starts_with_punctuation){single_gl <- c(single_gl, rep("", sum(delimiters == "&gt;")))}
+  if(!starts_with_punctuation){single_gl <- c(single_gl, rep("", sum(delimiters == ">")))}
   glosses <- paste0(single_gl, delimiters, collapse = "")
   glosses <- gsub("<span style=", "<span_style=", glosses)
   glosses <- unlist(strsplit(glosses, " "))
@@ -196,7 +200,6 @@ gloss_example <- function(transliteration,
           result <- cbind(matrix(c("", grammaticality, "")), result)
         }
       }
-
       result <- kableExtra::kbl(result, align = "l", centering = FALSE,
                                 escape = FALSE, vline = "")
       result <- kableExtra::kable_minimal(result,
