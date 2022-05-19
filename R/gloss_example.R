@@ -87,6 +87,10 @@ gloss_example <- function(transliteration,
   transliteration <- unlist(strsplit(transliteration, " "))
   glosses_by_word <- unlist(strsplit(glosses, " "))
 
+  if(!is.null(annotation)){
+    annotation <- unlist(strsplit(annotation, " "))
+  }
+
 # prepare vector of splits of the glosses by line --------------------------
   longest <- if(sum(nchar(transliteration)) > sum(nchar(glosses))){
     transliteration
@@ -166,12 +170,13 @@ gloss_example <- function(transliteration,
     if(length(unique(splits_by_line)) > 1){
       multiline_result <- lapply(unique(splits_by_line), function(i){
         gloss_example(
-          paste(transliteration[splits_by_line == i], collapse = " "),
-          paste(glosses_by_word[splits_by_line == i], collapse = " "),
+          transliteration = paste(transliteration[splits_by_line == i],
+                                  collapse = " "),
+          glosses = paste(glosses_by_word[splits_by_line == i], collapse = " "),
           free_translation = if(i == max(splits_by_line)){free_translation} else {""},
           grammaticality = if(i == min(splits_by_line)){grammaticality} else {NULL},
           annotation = if(!is.null(annotation)){
-            paste(annotation[splits_by_line == i], collapse = " ")} else {""},
+            paste(annotation[splits_by_line == i], collapse = " ")} else {NULL},
           comment = if(i == max(splits_by_line)){comment} else {""},
           italic_transliteration = FALSE,
           line_length = line_length,
