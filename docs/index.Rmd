@@ -265,7 +265,7 @@ It is also possible to use pictures in a transliteration line, see an example fr
 gloss_example("![](when.png) ![](mom.png) ![](tired.png)",
               c("br_raise_______ {} {}",
                 "chin_up_______ {} {}",
-                "{WHEN} {MOM} {TIRED}"), 
+                "{WHEN} {MOM} {TIRED}"),
               "When was mom tired?")
 ```
 

@@ -68,12 +68,17 @@ gloss_example <- function(transliteration,
     transliteration <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", transliteration)
     transliteration <- gsub(pattern = "<", replacement = "&lt;", transliteration)
     transliteration <- gsub(pattern = ">", replacement = "&gt;", transliteration)
+    transliteration <- gsub(pattern = "!\\[\\]\\(", replacement = "pictures_inside_turn_me_back_please", transliteration)
     transliteration <- gsub(pattern = "\\[", replacement = "\uFF3B", transliteration)
     transliteration <- gsub(pattern = "\\]", replacement = "\uFF3D", transliteration)
+    transliteration <- gsub(pattern = "pictures_inside_turn_me_back_please", replacement = "!\\[\\]\\(", transliteration)
     }
   glosses <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", glosses)
+  glosses <- gsub(pattern = "!\\[\\]\\(", replacement = "pictures_inside_turn_me_back_please", glosses)
   glosses <- gsub(pattern = "\\[", replacement = "\uFF3B", glosses)
   glosses <- gsub(pattern = "\\]", replacement = "\uFF3D", glosses)
+  glosses <- gsub(pattern = "pictures_inside_turn_me_back_please", replacement = "!\\[\\]\\(", glosses)
+
 
   if(!is.null(grammaticality)){
     grammaticality <- gsub(pattern = "\\*", replacement = "\uFF0A", grammaticality)
@@ -133,7 +138,7 @@ gloss_example <- function(transliteration,
     if(knitr::is_latex_output()){
       transliteration <- paste0("\\textit{", transliteration, "}")
     } else {
-      transliteration <- paste0("*", transliteration, "*")
+      transliteration <- paste0("_", transliteration, "_")
     }
   }
 
@@ -163,7 +168,7 @@ gloss_example <- function(transliteration,
                        paste0(" ", comment)} else {""},
                      sep2,
                      collapse = "")
-  } else{
+  } else {
 
 # long line splitting ------------------------------------------------------
 
@@ -179,7 +184,7 @@ gloss_example <- function(transliteration,
             paste(annotation[splits_by_line == i], collapse = " ")} else {NULL},
           comment = if(i == max(splits_by_line)){comment} else {""},
           italic_transliteration = FALSE,
-          line_length = line_length,
+          line_length = nchar(paste(glosses_by_word[splits_by_line == i], collapse = " "))+1,
           drop_transliteration = drop_transliteration,
           intext = FALSE,
           write_to_db = FALSE)
