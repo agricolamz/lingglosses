@@ -116,7 +116,7 @@ gloss_example <- function(transliteration,
   }
 
 # add glosses to the document gloss list -----------------------------------
-  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?<>\\~]"))
+  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?<>\\~\uFF3D\uFF3B]"))
   starts_with_punctuation <- single_gl[1] == ""
   single_gl <- gsub(pattern = "<", replacement = "&lt;", single_gl)
   single_gl <- gsub(pattern = ">", replacement = "&gt;", single_gl)
@@ -125,7 +125,7 @@ gloss_example <- function(transliteration,
 
 # get delimiters back ------------------------------------------------------
   delimiters <- unlist(strsplit(glosses,
-"[^-:\\.= \\)\\(!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F<>\\~]"))
+"[^-:\\.= \\)\\(!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F<>\\~\uFF3B\uFF3D]"))
   delimiters <- c(delimiters[delimiters != ""], "")
   if(!starts_with_punctuation){single_gl <- c(single_gl, rep("", sum(delimiters == ">")))}
   glosses <- paste0(single_gl, delimiters, collapse = "")
