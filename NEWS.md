@@ -3,7 +3,7 @@
 - fix glosses with markdown annotation; #13 
 - add possibility to work with infixes and reduplication; #15
 - fix glosses from non-standard `definition_source`; #17
-- add trick with square brackets; #18
+- add trick with square brackets; #18, #10
 - fix multiline `gloss_example()`; #16
 
 # lingglosses 0.0.3
