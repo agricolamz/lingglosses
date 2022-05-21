@@ -385,8 +385,6 @@ This table lists all the parameters that could be useful for a database, and has
 * `transliteration` --- language material;
 * `gloss` --- glosses;
 * `delimiter` --- delimiters: space, `-` or `=`
-* `emphasize_start` --- start of the emphasization (the possible values are `transliteration`, `gloss` or `both`);
-* `emphasize_end` --- end of the emphasization (the possible values are `transliteration`, `gloss` or `both`);
 * `transliteration_orig` --- original string with transliteration;
 * `glosses_orig` --- original string with glosses;
 * `free_translation` --- original string with the free translation;
