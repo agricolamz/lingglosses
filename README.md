@@ -37,6 +37,7 @@ You can also be interested in
 * a Python library [`Xigt`](https://github.com/xigt/xigt);
 * [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx);
 * a Python library [`pyigt`](https://github.com/cldf/pyigt).
+* an R package [interlineaR](https://cran.r-project.org/web/packages/interlineaR/index.html)
 
 ## Installation
 
