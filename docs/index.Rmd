@@ -181,6 +181,14 @@ gloss_example("den=no he.ʃː-qi hartʃ'on-k'o w-uʁi w-uk'o.",
 
 In the example above `{I}` is just the English word *I* that will be escaped and will not appear in the gloss list as *marker of class I*.
 
+It make sense to avoid to use single quotes for the quotation, since it can cause some troubles for the package's functions and use escape slash for quotations, like in the following example:
+
+(@) Kunbzang Japhug, [@jacques21: 1143]
+```{r}
+gloss_example("\"a-pi ɲɯ-ɕpaʁ-a\" ti ɲɯ-ŋu",
+              "1SG.POSS-elder.sibling SENS-be.thirsty-1SG say:FACT SENS-be",
+              "She said: \"Sister, I am thirsty.\"")
+```
 
 ## Multiline examples
 

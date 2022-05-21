@@ -5,6 +5,7 @@
 - fix glosses from non-standard `definition_source`; #17
 - add trick with square brackets; #18, #10
 - fix multiline `gloss_example()`; #16
+- extended work with punctuation in `gloss_example()`; #9
 
 # lingglosses 0.0.3
 

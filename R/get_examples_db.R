@@ -18,8 +18,6 @@ get_examples_db <- function(){
                       "transliteration",
                       "gloss",
                       "delimeter",
-                      "emphasize_start",
-                      "emphasize_end",
                       "transliteration_orig",
                       "glosses_orig",
                       "free_translation",

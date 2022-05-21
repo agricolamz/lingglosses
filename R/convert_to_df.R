@@ -39,8 +39,8 @@ convert_to_df <- function(transliteration,
 
   transliteration_by_word <- unlist(lapply(seq_along(transliteration_by_word),
 function(i) {
-  if(!grepl("^!\\[\\]\\(.*?\\)", transliteration_by_word[i])){
-    gsub("[!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F]", " PUNCT ",
+  if(!grepl("^\"!\\[\\]\\(.*?\\)", transliteration_by_word[i])){
+    gsub("[\"!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F]", " PUNCT ",
          transliteration_by_word[i])
     } else {transliteration_by_word[i]}}))
 
@@ -50,15 +50,9 @@ function(i) {
   transliteration_by_word <- unlist(strsplit(transliteration_by_word, " "))
 
 # add PUNCT to glosses -----------------------------------------------------
-  glosses_by_word <- unlist(strsplit(glosses, " "))
-
-  punct <- which(transliteration_by_word == "PUNCT")
-  punct <- punct - seq_along(punct)
-  glosses_by_word[punct] <- paste0(glosses_by_word[punct], " PUNCT")
-
-  dup <- punct[duplicated(punct)]
-  glosses_by_word[dup] <- paste0(glosses_by_word[dup], " PUNCT")
-  glosses_by_word <- unlist(strsplit(glosses_by_word, " "))
+  glosses_by_word <- transliteration_by_word
+  glosses_by_word[which(glosses_by_word != "PUNCT")] <-
+                                                  unlist(strsplit(glosses, " "))
 
 # split translation into gloss chunks --------------------------------------
   names(transliteration_by_word) <- paste0(seq_along(transliteration_by_word),
@@ -83,41 +77,6 @@ function(i) {
   morpheme_id <- gsub("\\d{1,}w_", "", names(single_tr))
   morpheme_id[which(morpheme_id == "")] <- "1"
 
-  emph_gl_st <- grepl("^\\*\\*.*", single_gl)
-  emph_gl_end <- grepl(".*\\*\\*$", single_gl)
-  emph_tr_st <- grepl("^\\*\\*.*", single_tr)
-  emph_tr_end <- grepl(".*\\*\\*$", single_tr)
-
-  emphasize_start <- lapply(seq_along(emph_gl_st), function(i){
-    if(emph_gl_st[i] & emph_tr_st[i]){
-      "both"
-    } else if(emph_gl_st[i]){
-      "glosses"
-    } else if(emph_tr_st[i]){
-      "transliteration"
-    } else {
-      ""
-    }
-  })
-
-  emphasize_end <- lapply(seq_along(emph_gl_end), function(i){
-    if(emph_gl_end[i] & emph_tr_end[i]){
-      "both"
-    } else if(emph_gl_end[i]){
-      "gloss"
-    } else if(emph_tr_end[i]){
-      "transliteration"
-    } else {
-      ""
-    }
-  })
-
-
-  if(drop_transliteration){
-    emphasize_start <- gsub("both", "gloss", emphasize_start)
-    emphasize_end <- gsub("both", "gloss", emphasize_end)
-  }
-
   results <- data.frame(example_id = counter,
                         word_id = gsub("w_.*", "", names(single_tr)),
                         morpheme_id = morpheme_id,
@@ -126,8 +85,6 @@ function(i) {
                           } else {unname(single_tr)},
                         gloss = unname(single_gl),
                         delimiter = delimiters,
-                        emphasize_start = unlist(emphasize_start),
-                        emphasize_end = unlist(emphasize_end),
                         transliteration_orig = if(drop_transliteration){
                           ""
                         } else {transliteration},
@@ -147,10 +104,11 @@ function(i) {
     annotation <- ""
     }
 
-
   results <- merge(results,
                    data.frame(word_id = unique(results$word_id),
-                              annotation = annotation),
+                              annotation = ifelse(is.null(annotation),
+                                                  "",
+                                                  annotation)),
                    by = "word_id")
 
   results <- results[, c("example_id",
@@ -159,8 +117,6 @@ function(i) {
                          "transliteration",
                          "gloss",
                          "delimiter",
-                         "emphasize_start",
-                         "emphasize_end",
                          "transliteration_orig",
                          "glosses_orig",
                          "free_translation",
@@ -178,7 +134,5 @@ function(i) {
                        row.names = TRUE, col.names = FALSE, append = TRUE,
                        fileEncoding = "UTF-8")
   }
-
-
   return(results)
 }
