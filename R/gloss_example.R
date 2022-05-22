@@ -244,7 +244,6 @@ gloss_example <- function(transliteration,
         options("lingglosses.add_sound_script" = TRUE)
         add_to_translation <- paste("'",
                                     create_sound_play(audio_path, audio_label))
-        add_js_script_for_audio()
       } else {
         add_to_translation <- "'"
       }

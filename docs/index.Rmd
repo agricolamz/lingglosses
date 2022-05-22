@@ -219,10 +219,10 @@ gloss_example("a-ɕa",
 
 You can hear the recording if you click on the note icon above. If you do not like the icon, you can change it to any text using an `audio_label` argument.
 
-In order to make everything work you need to put a `add_js_script_for_audio()` command somewhere in the document. It simply adds JavaScript code for audio player to your `rmarkdown` document.
+In order to make everything work you need to put an `add_audio_js_script()` command somewhere in the document. It simply adds JavaScript code for audio player to your `rmarkdown` document.
 
 ```{r}
-add_js_script_for_audio()
+add_audio_js_script()
 ```
 
 ## In-text examples

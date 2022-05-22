@@ -101,6 +101,6 @@ create_sound_play <- function(snd_src, text = "\u266A") {
 #' @importFrom htmltools tags
 #' @export
 
-add_js_script_for_audio <- function(){
+add_audio_js_script <- function(){
   htmltools::tags$script("function lingglosses_sound_play(x) {var audio = new Audio();audio.src = x;audio.play();} function lingglosses_resize(elem, percent) {elem.style.fontSize = percent;}")
 }
