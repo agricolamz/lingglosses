@@ -9,6 +9,8 @@
 #' @param free_translation character vector of the length one for the free translation line.
 #' @param annotation character vector of the length one for the annotation line (above translation).
 #' @param grammaticality character vector with the grammaticality value.
+#' @param audio_path character string with the path to the sound in .wav format.
+#' @param audio_label character string for the label to display.
 #' @param comment character vector of the length one for the comment line (under the free translation line).
 #' @param line_length integer vector of the length one that denotes maximum number of characters per one line.
 #' @param italic_transliteration logical variable that denotes, whether user wants to italicize your example.
@@ -30,6 +32,7 @@
 #'               intext = TRUE)
 #'
 #' @importFrom knitr is_latex_output
+#' @importFrom knitr is_html_output
 #' @importFrom kableExtra kable_minimal
 #' @importFrom kableExtra kbl
 #' @importFrom kableExtra footnote
@@ -41,6 +44,8 @@ gloss_example <- function(transliteration,
                           comment = "",
                           annotation = NULL,
                           grammaticality = NULL,
+                          audio_path = NULL,
+                          audio_label = "\u266A",
                           line_length = 70,
                           italic_transliteration = TRUE,
                           drop_transliteration = FALSE,
@@ -186,6 +191,8 @@ gloss_example <- function(transliteration,
           italic_transliteration = FALSE,
           line_length = nchar(paste(glosses_by_word[splits_by_line == i], collapse = " "))+1,
           drop_transliteration = drop_transliteration,
+          audio_path = if(i == max(splits_by_line)){audio_path} else {NULL},
+          audio_label = audio_label,
           intext = FALSE,
           write_to_db = FALSE)
       })
@@ -224,10 +231,31 @@ gloss_example <- function(transliteration,
       }
 
 # add free translation -----------------------------------------------------
+      if(!is.null(audio_path) & knitr::is_html_output()){
+        if(length(audio_path) > 1){
+          stop("audio_path argument should be of the length 1")
+        }
+        if(length(audio_label) > 1){
+          stop("audio_label argument should be of the length 1")
+        }
+        if(!file.exists(audio_path)){
+          stop(paste("It look like there is no file", audio_path))
+        }
+        options("lingglosses.add_sound_script" = TRUE)
+        add_to_translation <- paste("'",
+                                    create_sound_play(audio_path, audio_label))
+        add_js_script_for_audio()
+      } else {
+        add_to_translation <- "'"
+      }
+
       if(nchar(free_translation) > 0){
         result <- kableExtra::footnote(kable_input = result,
-                                       general = paste0("'", free_translation, "'"),
-                                       general_title = "")
+                                       general = paste0("'",
+                                                        free_translation,
+                                                        add_to_translation),
+                                       general_title = "",
+                                       escape = FALSE)
       }
 
 # remove lines from LaTeX --------------------------------------------------

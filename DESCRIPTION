@@ -18,7 +18,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://CRAN.R-project.org/package=phonfieldwork, https://agricolamz.github.io/lingglosses/
 BugReports: https://github.com/agricolamz/lingglosses/issues
-Imports: kableExtra, knitr, rmarkdown, utils
+Imports: kableExtra, knitr, rmarkdown, utils, htmltools
 RoxygenNote: 7.1.2
 Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3

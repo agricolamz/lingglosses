@@ -204,6 +204,26 @@ gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː
 
 If you are not satisfied with the result of the automatic split you can change the value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
 
+## Add audio
+
+It is possible to add a sound to the example using an `audio_path` argument.
+
+(@) Abaza, West Caucasian (my field recording)
+```{r}
+gloss_example("a-ɕa",
+              "DEF-brother",
+              "This brother",
+              audio_path = "abaza_brother.wav")
+```
+
+You can hear the recording if you click on the note icon above. If you do not like the icon, you can change it to any text using an `audio_label` argument.
+
+In order to make everything work you need to put a `add_js_script_for_audio()` command somewhere in the document. It simply adds JavaScript code for audio player to your `rmarkdown` document.
+
+```{r}
+add_js_script_for_audio()
+```
+
 ## In-text examples
 
 When an example is small, the author may not want to put it in a separate paragraph, but prefer to display it as part of the running text. This is possible to achieve using the standard for `rmarkdown` [inline code](https://rmarkdown.rstudio.com/lesson-4.html). The result of the R code can be inserted into the rmarkdown document using the [backtick symbol](https://en.wikipedia.org/wiki/Grave_accent#Use_in_programming) and the small r, for example <code>&grave;r 2+2&grave;</code> will be rendered as `r 2+2`. Currently `lingglosses` can not automatically detect whether code was provided via code chunk or inline. So if you want to use an in-text glossed example and want the glosses to appear in list, it is possible to write them using the `gloss_example()` with the `intext = TRUE` argument. Here is a Turkish example from (@delancey97): `r gloss_example("Kemal gel-miş", "Kemal come-MIR", intext = TRUE)` that was produced with the following inline code:

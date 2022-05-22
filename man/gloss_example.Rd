@@ -11,6 +11,8 @@ gloss_example(
   comment = "",
   annotation = NULL,
   grammaticality = NULL,
+  audio_path = NULL,
+  audio_label = "♪",
   line_length = 70,
   italic_transliteration = TRUE,
   drop_transliteration = FALSE,
@@ -30,6 +32,10 @@ gloss_example(
 \item{annotation}{character vector of the length one for the annotation line (above translation).}
 
 \item{grammaticality}{character vector with the grammaticality value.}
+
+\item{audio_path}{character string with the path to the sound in .wav format.}
+
+\item{audio_label}{character string for the label to display.}
 
 \item{line_length}{integer vector of the length one that denotes maximum number of characters per one line.}
 

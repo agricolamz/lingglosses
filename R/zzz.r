@@ -2,6 +2,7 @@
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #' @noRd
+#' @importFrom knitr knit_hooks
 
 .onLoad <- function(libname = find.package("lingglosses"),
                     pkgname = "lingglosses") {
@@ -14,6 +15,7 @@
               fileEncoding = "UTF-8")
   options("lingglosses.example_counter" = 0)
   options("lingglosses.refresh_glosses_list" = TRUE)
+  hook_output <- knitr::knit_hooks$get("output")
   invisible()
 }
 
@@ -70,3 +72,35 @@ color_annotate <- function(gloss){
   }
 }
 
+#' Create audio play objects for html viewer
+#'
+#' @author George Moroz <agricolamz@gmail.com>
+#'
+#' @param snd_src string or vector of strings with a image(s) path(s).
+#' @param text string o vector of strings that will be displayed as view link.
+#' @noRd
+#' @return a string or vector of strings
+
+create_sound_play <- function(snd_src, text = "\u266A") {
+  paste0(
+    "<a ",
+    "onmouseover=\"lingglosses_resize(this, '150%')\" ",
+    "onmouseout=\"lingglosses_resize(this, '100%')\" ",
+    "onclick = 'lingglosses_sound_play(\"",
+    snd_src,
+    "\")'> ",
+    text,
+    "<a>"
+  )
+}
+
+#' Adds a JavaScript code for zooming of emoji and playing sound
+#'
+#' @author George Moroz <agricolamz@gmail.com>
+#' @noRd
+#' @importFrom htmltools tags
+#' @export
+
+add_js_script_for_audio <- function(){
+  htmltools::tags$script("function lingglosses_sound_play(x) {var audio = new Audio();audio.src = x;audio.play();} function lingglosses_resize(elem, percent) {elem.style.fontSize = percent;}")
+}

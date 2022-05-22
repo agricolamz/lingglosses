@@ -6,6 +6,7 @@
 - add trick with square brackets; #18, #10
 - fix multiline `gloss_example()`; #16
 - extended work with punctuation in `gloss_example()`; #9
+- add `audio_path` and `audio_label` arguments to `gloss_example()`; #3
 
 # lingglosses 0.0.3
 
