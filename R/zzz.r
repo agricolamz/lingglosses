@@ -97,7 +97,6 @@ create_sound_play <- function(snd_src, text = "\u266A") {
 #' Adds a JavaScript code for zooming of emoji and playing sound
 #'
 #' @author George Moroz <agricolamz@gmail.com>
-#' @noRd
 #' @importFrom htmltools tags
 #' @export
 
