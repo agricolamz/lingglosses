@@ -12,6 +12,7 @@ output:
     toc_depth: 2
     toc_float: yes
     number_sections: true
+    anchor_sections: true
     df_print: paged
 bibliography: bibliography.bib
 ---
