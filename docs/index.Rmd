@@ -205,9 +205,9 @@ gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː
 
 If you are not satisfied with the result of the automatic split you can change the value of the `line_length` argument (the default value is `70`, that means 70 characters of the longest line).
 
-## Add audio
+## Add audio and video
 
-It is possible to add a sound to the example using an `audio_path` argument. It can be both: a path to the file or an URL.
+It is possible to add a soundtrack to the example using an `audio_path` argument. It can be both: a path to the file or an URL.
 
 (@) Abaza, West Caucasian (my field recording)
 ```{r}
@@ -218,6 +218,17 @@ gloss_example("á-ɕa",
 ```
 
 You can hear the recording if you click on the note icon above. If you do not like the icon, you can change it to any text using an `audio_label` argument.
+
+Adding video is also possible:
+
+(@) Ukrainian Sign Language (video from https://www.spreadthesign.com)
+```{r}
+gloss_example("PIECE",
+              "piece",
+              video_path = "USL_piece.mp4")
+```
+
+There are additional arguments `video_width` and `video_hight` for width and hight.
 
 ## In-text examples
 

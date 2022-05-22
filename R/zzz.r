@@ -74,7 +74,7 @@ color_annotate <- function(gloss){
   }
 }
 
-#' Create audio play objects for html viewer
+#' Add audio objects for html viewer
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #'
@@ -86,11 +86,28 @@ color_annotate <- function(gloss){
 #' @importFrom htmltools tags
 #' @return a string or vector of strings
 
-create_sound_play <- function(snd_src, text = "\u266A") {
+add_sound <- function(snd_src, text = "\u266A") {
   htmltools::tagList(htmltools::a(
     onmouseover = "lingglosses_resize(this, '150%')",
     onmouseout = "lingglosses_resize(this, '100%')",
     onclick = paste0("lingglosses_sound_play('", snd_src, "')"),
     text),
     htmltools::tags$script("function lingglosses_sound_play(x) {var audio = new Audio(); audio.src = x; audio.play();} function lingglosses_resize(elem, percent) {elem.style.fontSize = percent;}"))
+}
+
+#' Add video objects for html viewer
+#'
+#' @author George Moroz <agricolamz@gmail.com>
+#'
+#' @param vid_src string or vector of strings with a image(s) path(s).
+#' @noRd
+#' @importFrom htmltools tagList
+#' @importFrom htmltools tags
+#' @return a string or vector of strings
+
+add_video <- function(vid_src, width, height) {
+  htmltools::tagList(htmltools::tags$video(src = vid_src,
+                        controls = TRUE,
+                        width=width,
+                        height=height))
 }

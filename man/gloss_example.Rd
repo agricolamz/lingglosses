@@ -13,6 +13,9 @@ gloss_example(
   grammaticality = NULL,
   audio_path = NULL,
   audio_label = "♪",
+  video_path = NULL,
+  video_width = 320,
+  video_height = 240,
   line_length = 70,
   italic_transliteration = TRUE,
   drop_transliteration = FALSE,
@@ -36,6 +39,12 @@ gloss_example(
 \item{audio_path}{character string with the path to the sound in .wav format.}
 
 \item{audio_label}{character string for the label to display.}
+
+\item{video_path}{character string with the path to the video.}
+
+\item{video_width}{width argument for the video in px.}
+
+\item{video_height}{height argument for the video in px.}
 
 \item{line_length}{integer vector of the length one that denotes maximum number of characters per one line.}
 
