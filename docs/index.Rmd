@@ -207,23 +207,17 @@ If you are not satisfied with the result of the automatic split you can change t
 
 ## Add audio
 
-It is possible to add a sound to the example using an `audio_path` argument.
+It is possible to add a sound to the example using an `audio_path` argument. It can be both: a path to the file or an URL.
 
 (@) Abaza, West Caucasian (my field recording)
 ```{r}
-gloss_example("a-ɕa",
+gloss_example("á-ɕa",
               "DEF-brother",
               "This brother",
               audio_path = "abaza_brother.wav")
 ```
 
 You can hear the recording if you click on the note icon above. If you do not like the icon, you can change it to any text using an `audio_label` argument.
-
-In order to make everything work you need to put an `add_audio_js_script()` command somewhere in the document. It simply adds JavaScript code for audio player to your `rmarkdown` document.
-
-```{r}
-add_audio_js_script()
-```
 
 ## In-text examples
 

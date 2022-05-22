@@ -238,9 +238,9 @@ gloss_example <- function(transliteration,
         if(length(audio_label) > 1){
           stop("audio_label argument should be of the length 1")
         }
-        if(!file.exists(audio_path)){
-          stop(paste("It look like there is no file", audio_path))
-        }
+        # if(!file.exists(audio_path)){
+        #   stop(paste("It look like there is no file", audio_path))
+        # }
         options("lingglosses.add_sound_script" = TRUE)
         add_to_translation <- paste("'",
                                     create_sound_play(audio_path, audio_label))
