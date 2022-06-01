@@ -76,6 +76,7 @@ gloss_example <- function(transliteration,
 
 # fix the apostrophe and "> <" problem
   if(!drop_transliteration){
+    transliteration <- gsub(pattern = "\\s{2,}", replacement = " ", transliteration)
     transliteration <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", transliteration)
     transliteration <- gsub(pattern = "<", replacement = "&lt;", transliteration)
     transliteration <- gsub(pattern = ">", replacement = "&gt;", transliteration)
@@ -83,7 +84,8 @@ gloss_example <- function(transliteration,
     transliteration <- gsub(pattern = "\\[", replacement = "\uFF3B", transliteration)
     transliteration <- gsub(pattern = "\\]", replacement = "\uFF3D", transliteration)
     transliteration <- gsub(pattern = "pictures_inside_turn_me_back_please", replacement = "!\\[\\]\\(", transliteration)
-    }
+  }
+  glosses <- gsub(pattern = "\\s{2,}", replacement = " ", glosses)
   glosses <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", glosses)
   glosses <- gsub(pattern = "!\\[\\]\\(", replacement = "pictures_inside_turn_me_back_please", glosses)
   glosses <- gsub(pattern = "\\[", replacement = "\uFF3B", glosses)
