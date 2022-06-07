@@ -80,14 +80,12 @@ gloss_example <- function(transliteration,
     transliteration <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", transliteration)
     transliteration <- gsub(pattern = "<", replacement = "&lt;", transliteration)
     transliteration <- gsub(pattern = ">", replacement = "&gt;", transliteration)
-   # transliteration <- gsub(pattern = "\\+", replacement = "\uFF0B", transliteration)
     transliteration <- gsub(pattern = "!\\[\\]\\(", replacement = "pictures_inside_turn_me_back_please", transliteration)
     transliteration <- gsub(pattern = "\\[", replacement = "\uFF3B", transliteration)
     transliteration <- gsub(pattern = "\\]", replacement = "\uFF3D", transliteration)
     transliteration <- gsub(pattern = "pictures_inside_turn_me_back_please", replacement = "!\\[\\]\\(", transliteration)
   }
   glosses <- gsub(pattern = "\\s{2,}", replacement = " ", glosses)
-  #glosses <- gsub(pattern = "\\+", replacement = "\uFF0B", glosses)
   glosses <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", glosses)
   glosses <- gsub(pattern = "!\\[\\]\\(", replacement = "pictures_inside_turn_me_back_please", glosses)
   glosses <- gsub(pattern = "\\[", replacement = "\uFF3B", glosses)
@@ -199,7 +197,7 @@ gloss_example <- function(transliteration,
             paste(annotation[splits_by_line == i], collapse = " ")} else {NULL},
           comment = if(i == max(splits_by_line)){comment} else {""},
           italic_transliteration = FALSE,
-          line_length = nchar(paste(glosses_by_word[splits_by_line == i], collapse = " "))+1,
+          line_length = nchar(paste(transliteration[splits_by_line == i], collapse = " "))+10,
           drop_transliteration = drop_transliteration,
           audio_path = if(i == max(splits_by_line)){audio_path} else {NULL},
           audio_label = audio_label,
