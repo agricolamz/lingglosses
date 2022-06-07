@@ -80,12 +80,14 @@ gloss_example <- function(transliteration,
     transliteration <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", transliteration)
     transliteration <- gsub(pattern = "<", replacement = "&lt;", transliteration)
     transliteration <- gsub(pattern = ">", replacement = "&gt;", transliteration)
+   # transliteration <- gsub(pattern = "\\+", replacement = "\uFF0B", transliteration)
     transliteration <- gsub(pattern = "!\\[\\]\\(", replacement = "pictures_inside_turn_me_back_please", transliteration)
     transliteration <- gsub(pattern = "\\[", replacement = "\uFF3B", transliteration)
     transliteration <- gsub(pattern = "\\]", replacement = "\uFF3D", transliteration)
     transliteration <- gsub(pattern = "pictures_inside_turn_me_back_please", replacement = "!\\[\\]\\(", transliteration)
   }
   glosses <- gsub(pattern = "\\s{2,}", replacement = " ", glosses)
+  #glosses <- gsub(pattern = "\\+", replacement = "\uFF0B", glosses)
   glosses <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", glosses)
   glosses <- gsub(pattern = "!\\[\\]\\(", replacement = "pictures_inside_turn_me_back_please", glosses)
   glosses <- gsub(pattern = "\\[", replacement = "\uFF3B", glosses)
@@ -129,7 +131,7 @@ gloss_example <- function(transliteration,
   }
 
 # add glosses to the document gloss list -----------------------------------
-  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?<>\\~\uFF3D\uFF3B]"))
+  single_gl <- unlist(strsplit(glosses_by_word, "[-\\.=:\\)\\(!\\?<>\\~\\+\uFF3D\uFF3B]"))
   starts_with_punctuation <- single_gl[1] == ""
   single_gl <- gsub(pattern = "<", replacement = "&lt;", single_gl)
   single_gl <- gsub(pattern = ">", replacement = "&gt;", single_gl)
@@ -138,7 +140,7 @@ gloss_example <- function(transliteration,
 
 # get delimiters back ------------------------------------------------------
   delimiters <- unlist(strsplit(glosses,
-"[^-:\\.= \\)\\(!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F<>\\~\uFF3B\uFF3D]"))
+"[^-:\\.= \\)\\(!\\?\u201E\u201C\u2019\u201D\u00BB\u00AB\u201F<>\\~\\+\uFF3B\uFF3D]"))
   delimiters <- c(delimiters[delimiters != ""], "")
   if(!starts_with_punctuation){single_gl <- c(single_gl, rep("", sum(delimiters == ">")))}
   glosses <- paste0(single_gl, delimiters, collapse = "")
