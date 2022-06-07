@@ -83,9 +83,11 @@ gloss_example <- function(transliteration,
     transliteration <- gsub(pattern = "!\\[\\]\\(", replacement = "pictures_inside_turn_me_back_please", transliteration)
     transliteration <- gsub(pattern = "\\[", replacement = "\uFF3B", transliteration)
     transliteration <- gsub(pattern = "\\]", replacement = "\uFF3D", transliteration)
+    transliteration <- gsub(pattern = "\t", replacement = " ", transliteration)
     transliteration <- gsub(pattern = "pictures_inside_turn_me_back_please", replacement = "!\\[\\]\\(", transliteration)
   }
   glosses <- gsub(pattern = "\\s{2,}", replacement = " ", glosses)
+  glosses <- gsub(pattern = "\t", replacement = " ", glosses)
   glosses <- gsub(pattern = "[\u2019\u02BC]", replacement = "'", glosses)
   glosses <- gsub(pattern = "!\\[\\]\\(", replacement = "pictures_inside_turn_me_back_please", glosses)
   glosses <- gsub(pattern = "\\[", replacement = "\uFF3B", glosses)

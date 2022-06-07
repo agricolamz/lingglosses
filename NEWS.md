@@ -1,6 +1,7 @@
 # lingglosses 0.0.5
 
 - fix plus sign bug (thx to Nastya Panova);
+- fix tab bug (thx to Tatiana Philippova and Polina Nasledskova);
 - fix multiline `gloss_example()`;
 
 # lingglosses 0.0.4
