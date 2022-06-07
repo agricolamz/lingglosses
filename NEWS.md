@@ -1,3 +1,8 @@
+# lingglosses 0.0.5
+
+- fix plus sign bug (thx to Nastya Panova);
+- fix multiline `gloss_example()`;
+
 # lingglosses 0.0.4
 
 - fix glosses with markdown annotation; #13 
