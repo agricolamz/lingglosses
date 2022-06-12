@@ -191,6 +191,13 @@ gloss_example("\"a-pi ɲɯ-ɕpaʁ-a\" ti ɲɯ-ŋu",
               "She said: \"Sister, I am thirsty.\"")
 ```
 
+After a while I was asked to make it possible to add sole line examples:
+
+```{r}
+gloss_example("Learn to value yourself, which means: to fight for your happiness. (Ayn Rand)",
+              line_length = 100)
+```
+
 ## Multiline examples
 
 Sometimes examples are too long and do not fit onto the page. In that case you need to add the argument `results='asis'` to your chunk. `gloss_example()` will then automatically split your example into multiple rows.

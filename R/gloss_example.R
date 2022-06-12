@@ -39,6 +39,7 @@
 #' @importFrom kableExtra kable_minimal
 #' @importFrom kableExtra kbl
 #' @importFrom kableExtra footnote
+#' @importFrom methods missingArg
 #' @export
 
 gloss_example <- function(transliteration,
@@ -62,11 +63,29 @@ gloss_example <- function(transliteration,
   example_counter <- getOption("lingglosses.example_counter")
   options("lingglosses.example_counter" = as.double(example_counter)+1)
 
+# fix for missing transliteration -----------------------------------------
+  if(methods::missingArg(transliteration)){
+    drop_transliteration = TRUE
+  }
+# fix for missing glosses -----------------------------------------
+  if(methods::missingArg(glosses) & methods::hasArg(transliteration)){
+    drop_transliteration = TRUE
+    if(italic_transliteration){
+      glosses = paste0("_", unlist(strsplit(transliteration, " ")), "_",
+                       collapse = " ")
+    } else {
+      glosses = transliteration
+    }
+
+  }
+
 # fix for multiple glosses line --------------------------------------------
   length_glosses <- length(glosses)
   if(length_glosses > 1){
     glosses <- c(paste0(glosses[-length_glosses], " "), glosses[length_glosses])
   }
+
+
 
 # check arguments ----------------------------------------------------------
   if(length(line_length) != 1 | typeof(line_length) != "double"){
