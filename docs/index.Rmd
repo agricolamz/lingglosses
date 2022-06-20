@@ -316,6 +316,8 @@ The first line corresponds to pictures in markdown format that should be located
 
 After you finished your text, it is possible to call the `make_gloss_list()` function in order to automatically create a list of abbreviations.
 
+
+
 ```{r}
 make_gloss_list()
 ```

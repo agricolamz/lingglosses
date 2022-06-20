@@ -95,6 +95,9 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
     definitionless <- gloss_list[!(gloss_list %in% glosses_dataset$gloss)]
 
     if(length(definitionless) > 0){
+      warning(paste0("There are some glosses that lack definition: ",
+                     paste0(definitionless, collapse = ", ")))
+
       glosses_dataset <- unique(rbind(
         glosses_dataset,
         data.frame(gloss = definitionless,

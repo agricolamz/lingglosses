@@ -40,6 +40,7 @@
 #' @importFrom kableExtra kbl
 #' @importFrom kableExtra footnote
 #' @importFrom methods missingArg
+#' @importFrom methods hasArg
 #' @export
 
 gloss_example <- function(transliteration,
@@ -60,6 +61,7 @@ gloss_example <- function(transliteration,
                           write_to_db = TRUE){
 
 # add 1 to the counter -----------------------------------------------------
+# it is for the function convert_to_df()
   example_counter <- getOption("lingglosses.example_counter")
   options("lingglosses.example_counter" = as.double(example_counter)+1)
 
@@ -84,8 +86,6 @@ gloss_example <- function(transliteration,
   if(length_glosses > 1){
     glosses <- c(paste0(glosses[-length_glosses], " "), glosses[length_glosses])
   }
-
-
 
 # check arguments ----------------------------------------------------------
   if(length(line_length) != 1 | typeof(line_length) != "double"){
