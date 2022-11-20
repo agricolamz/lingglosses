@@ -17,7 +17,7 @@ gloss_example(
   video_width = 320,
   video_height = 240,
   line_length = 70,
-  italic_transliteration = TRUE,
+  italic_transliteration = getOption("lingglosses.italic_transliteration"),
   drop_transliteration = FALSE,
   intext = FALSE,
   write_to_db = TRUE

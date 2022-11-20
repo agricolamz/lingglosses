@@ -7,6 +7,7 @@
 
 .onLoad <- function(libname = find.package("lingglosses"),
                     pkgname = "lingglosses") {
+  options("lingglosses.italic_transliteration" = TRUE)
   tmp_file1 <- tempfile(pattern = get_variable_name(), fileext = ".csv")
   options("lingglosses.glosses_list" = tmp_file1)
   tmp_file2 <- tempfile(pattern = "lingglosses.example.table", fileext = ".csv")

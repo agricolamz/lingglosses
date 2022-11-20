@@ -4,6 +4,7 @@
 - fix plus sign bug (thx to Nastya Panova);
 - fix tab bug (thx to Tatiana Philippova and Polina Nasledskova);
 - fix multiline `gloss_example()`;
+- add `lingglosses.italic_transliteration` option;
 
 # lingglosses 0.0.4
 

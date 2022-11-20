@@ -103,9 +103,11 @@ gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu-w",
 
 In this first example you can see that:
 
-* the transliteration line is italic by default (if you do not want it, just add the argument `italic_transliteration = FALSE`);
+* the transliteration line is italic by default (if you do not want it, just add the argument `italic_transliteration = FALSE`)[^ital-all];
 * you can use standard markdown syntax (e.g. `**a**` for **bold**);
 * the free translation line is automatically framed with quotation marks.
+
+[^ital-all]: Sometimes it is make sense to set this option ones for the whole document using the following code `options("lingglosses.italic_transliteration" = FALSE)`.
 
 Since the function arguments' names are optional in R, users can omit them as long as they follow the order of the arguments (you can always find the correct order in `?gloss_example`):
 
