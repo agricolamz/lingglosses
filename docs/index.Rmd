@@ -358,13 +358,13 @@ It is really important that one should not treat the results of the `make_gloss_
 
 # Other output formats
 
-Right now there is no direct way of knitting `lingglosses` to `.docx` format. You can work around this by copying and pasting from the `.html` version:
+Right now there is no direct way of knitting `lingglosses` to `.docx` format. You can knit by adding an argument `always_allow_html: true` to your yaml file, however the result will be not ideal. You can work around this by copying and pasting from the `.html` version:
 
 ```{r, echo = FALSE}
 knitr::include_graphics("for_word_users.gif")
 ```
 
-`.pdf` output is possible, but there are some known restrictions: 
+Both kniting to `.pdf` and `.docx` outputs are possible, but there are some known restrictions: 
 
 * markdown bold and italic annotations do not work;
 * example numbers appear above the example;
