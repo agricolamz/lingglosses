@@ -20,8 +20,6 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
                             all_possible_variants = FALSE,
                             annotate_problematic = TRUE){
 
-  knitr::opts_current$set(results='asis')
-
 # arg checks ---------------------------------------------------------------
   if(typeof(remove_glosses) != "character"){
     warning("The remove_glosses should be character.")
