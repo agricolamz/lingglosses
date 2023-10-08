@@ -1,3 +1,13 @@
+# lingglosses 0.0.7
+
+- fix by @yihui
+
+
+# lingglosses 0.0.6
+
+- small fix for CRAN
+
+
 # lingglosses 0.0.5
 
 - add possibility to have a sole transliteration line; thx to @sverhees #19

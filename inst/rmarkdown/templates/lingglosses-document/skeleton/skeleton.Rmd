@@ -45,7 +45,7 @@ gloss_example("hede-w w-ulon",
               "He went.")
 ```
 
-In (@andi_example) author used some glosses like `r add_gloss("DEM")`, `r add_gloss("M")` and `r add_gloss("AOR")` defined in [@comrie08]. She also mentioned that tn some dialects the auxiliary `r gloss_example("CL-iʁi", "CL-stop.AOR", intext = TRUE)` can be used as an equivalent of the aorist of `r gloss_example("CL-uk'", "CL-be", intext = TRUE)`. 
+In (@andi_example) author used some glosses like `r add_gloss("DEM")`, `r add_gloss("M")` and `r add_gloss("AOR")` defined in [@comrie08]. She also mentioned that the aorist form of `r gloss_example("CL-uk'", "CL-be", intext = TRUE)` if really important.
 
 ## Some subsection
 
