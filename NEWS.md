@@ -1,3 +1,7 @@
+# lingglosses 0.0.8
+
+- add 2PL gloss
+
 # lingglosses 0.0.7
 
 - fix by @yihui

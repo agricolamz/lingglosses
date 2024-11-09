@@ -205,7 +205,7 @@ gloss_example("Learn to value yourself, which means: to fight for your happiness
 Sometimes examples are too long and do not fit onto the page. In that case you need to add the argument `results='asis'` to your chunk. `gloss_example()` will then automatically split your example into multiple rows.
 
 (@tsa_ex) Mishlesh Tsakhur, East Caucasian [@maisak07: 386]
-```{r, results='asis'}
+```{r}
 gloss_example('za-s jaːluʁ **wo-b** **qa-b-ɨ**; turs-ubɨ qal-es-di ǯiqj-eː jaːluʁ-**o-b** **qa-b-ɨ**', 
                '1SG.OBL-DAT shawl.3 AUX-3 PRF-3-bring.PFV woolen_sock-PL NPL.bring-PL-A.OBL place-IN shawl.3-AUX-3 PRF-3-bring.PFV',
                '(they) **brought** me a shawl; instead of (lit. in place of bringing) woolen socks, (they) **brought** a shawl.',
@@ -317,8 +317,6 @@ The first line corresponds to pictures in markdown format that should be located
 # Create semi-automatic compiled abbreviation list
 
 After you finished your text, it is possible to call the `make_gloss_list()` function in order to automatically create a list of abbreviations.
-
-
 
 ```{r}
 make_gloss_list()

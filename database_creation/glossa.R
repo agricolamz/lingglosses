@@ -118,10 +118,15 @@ for_analysis %>%
 # save file as rds ---------------------------------------------------------
 glosses_df <- read.csv("database_creation/glosses_extracted.csv")
 
-glosses_df %>%
-  count(gloss, weight, sort = TRUE) %>%
-  pivot_wider(names_from = weight, values_from = n) %>%
-  View()
+library(tidyverse)
+glosses_df |>
+  bind_rows(tibble(gloss = "2PL",
+                   definition_en = "second person plural",
+                   source = "lingglosses",
+                   weight = 1)) |>
+  arrange(gloss) ->
+  glosses_df
 
 save(glosses_df, file="data/glosses_df.RData", compress='xz')
+
 
