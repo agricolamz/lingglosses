@@ -36,10 +36,13 @@
 #'
 #' @importFrom knitr is_latex_output
 #' @importFrom knitr is_html_output
+#' @importFrom knitr opts_knit
 #' @importFrom gt gt
 #' @importFrom gt tab_footnote
 #' @importFrom gt tab_options
 #' @importFrom gt fmt_markdown
+#' @importFrom gt md
+#' @importFrom gt as_word
 #' @importFrom gt opt_table_lines
 #' @importFrom methods missingArg
 #' @importFrom methods hasArg
@@ -278,7 +281,7 @@ gloss_example <- function(transliteration,
       if(nchar(free_translation) > 0){
         result <- gt::tab_footnote(data = result,
                                    footnote = paste0("'",
-                                                     free_translation,
+                                                     gt::md(free_translation),
                                                      "'"))
       }
 
@@ -286,7 +289,7 @@ gloss_example <- function(transliteration,
 # add comment --------------------------------------------------------------
       if(nchar(comment) > 0){
         result <- gt::tab_footnote(data = result,
-                                   footnote = comment)
+                                   footnote = gt::md(comment))
       }
 
 # add audio ---------------------------------------------------------------
@@ -317,7 +320,13 @@ gloss_example <- function(transliteration,
 
 # return output ------------------------------------------------------------
   if(length(unique(splits_by_line)) > 1){
-    for(i in multiline_result) {print(i)}
+    if (isTRUE(knitr::opts_knit$get('rmarkdown.pandoc.to') == "docx")) {
+      for(i in multiline_result) {
+        cat("```{=openxml}", gt::as_word(i), "```\n\n", sep = "\n")
+      }
+    } else {
+      for(i in multiline_result) {print(i)}
+    }
   } else{
     return(result)
   }

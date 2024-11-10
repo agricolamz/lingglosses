@@ -1,7 +1,7 @@
 Package: lingglosses
 Type: Package
 Title: Interlinear Glossed Linguistic Examples and Abbreviation Lists Generation
-Version: 0.0.8
+Version: 0.0.9
 Depends: R (>= 3.5.0)
 Authors@R: person("George", "Moroz",
                   role = c("aut", "cre"),
