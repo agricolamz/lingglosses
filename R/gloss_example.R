@@ -322,7 +322,10 @@ gloss_example <- function(transliteration,
   if(length(unique(splits_by_line)) > 1){
     if (isTRUE(knitr::opts_knit$get('rmarkdown.pandoc.to') == "docx")) {
       for(i in multiline_result) {
-        cat("```{=openxml}", gt::as_word(i), "```\n\n", sep = "\n")
+        cat("```{=openxml}",
+            gt::as_word(i, keep_with_next = FALSE),
+            "```\n <br> \n",
+            sep = "\n")
       }
     } else {
       for(i in multiline_result) {print(i)}
