@@ -8,13 +8,13 @@
   "codeRepository": "https://CRAN.R-project.org/package=phonfieldwork",
   "issueTracker": "https://github.com/agricolamz/lingglosses/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.0.9",
+  "version": "0.0.4",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.3.3 (2024-02-29)",
+  "runtimePlatform": "R version 4.2.0 (2022-04-22)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -63,15 +63,15 @@
     },
     "2": {
       "@type": "SoftwareApplication",
-      "identifier": "gt",
-      "name": "gt",
+      "identifier": "kableExtra",
+      "name": "kableExtra",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=gt"
+      "sameAs": "https://CRAN.R-project.org/package=kableExtra"
     },
     "3": {
       "@type": "SoftwareApplication",
@@ -102,26 +102,9 @@
       "identifier": "utils",
       "name": "utils"
     },
-    "6": {
-      "@type": "SoftwareApplication",
-      "identifier": "htmltools",
-      "name": "htmltools",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=htmltools"
-    },
-    "7": {
-      "@type": "SoftwareApplication",
-      "identifier": "methods",
-      "name": "methods"
-    },
     "SystemRequirements": null
   },
-  "fileSize": "59.745KB",
+  "fileSize": "53.058KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

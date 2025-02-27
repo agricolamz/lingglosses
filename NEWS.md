@@ -1,18 +1,12 @@
-# lingglosses 0.0.9
-
-- move from `kableExtra` to `gt` package
-
-# lingglosses 0.0.8
-
-- add 2PL gloss
-
 # lingglosses 0.0.7
 
 - fix by @yihui
 
+
 # lingglosses 0.0.6
 
 - small fix for CRAN
+
 
 # lingglosses 0.0.5
 

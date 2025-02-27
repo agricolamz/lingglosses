@@ -36,14 +36,9 @@
 #'
 #' @importFrom knitr is_latex_output
 #' @importFrom knitr is_html_output
-#' @importFrom knitr opts_knit
-#' @importFrom gt gt
-#' @importFrom gt tab_footnote
-#' @importFrom gt tab_options
-#' @importFrom gt fmt_markdown
-#' @importFrom gt md
-#' @importFrom gt as_word
-#' @importFrom gt opt_table_lines
+#' @importFrom kableExtra kable_minimal
+#' @importFrom kableExtra kbl
+#' @importFrom kableExtra footnote
 #' @importFrom methods missingArg
 #' @importFrom methods hasArg
 #' @export
@@ -256,40 +251,35 @@ gloss_example <- function(transliteration,
         }
       }
 
-      result |>
-        as.data.frame() |>
-        gt::gt() |>
-        gt::tab_options(column_labels.hidden = TRUE,
-                        table.align = "left") |>
-        gt::opt_table_lines(extent = "none") |>
-        gt::fmt_markdown() ->
-        result
+      if (isTRUE(knitr::opts_knit$get('rmarkdown.pandoc.to') != "docx")) {
+
+      result <- kableExtra::kbl(result, align = "l", centering = FALSE,
+                                escape = FALSE, vline = "")
+      result <- kableExtra::kable_minimal(result,
+                                          position = "left",
+                                          full_width = FALSE)
+
 
 # add video ---------------------------------------------------------------
       if(!is.null(video_path) & knitr::is_html_output()){
         if(length(video_path) > 1){
           stop("video_path argument should be of the length 1")
         }
-        result <- gt::tab_footnote(data = result,
-                                   footnote = as.character(
+        result <- kableExtra::footnote(kable_input = result,
+                                       general = as.character(
                                          add_video(video_path,
                                                    video_width,
-                                                   video_height)))
-      }
-
-# add free translation -----------------------------------------------------
-      if(nchar(free_translation) > 0){
-        result <- gt::tab_footnote(data = result,
-                                   footnote = paste0("'",
-                                                     gt::md(free_translation),
-                                                     "'"))
+                                                   video_height)),
+                                       general_title = "",
+                                       escape = FALSE)
       }
 
 
 # add comment --------------------------------------------------------------
       if(nchar(comment) > 0){
-        result <- gt::tab_footnote(data = result,
-                                   footnote = gt::md(comment))
+        result <- kableExtra::footnote(kable_input = result,
+                                       general = comment,
+                                       general_title = "")
       }
 
 # add audio ---------------------------------------------------------------
@@ -307,6 +297,15 @@ gloss_example <- function(transliteration,
       } else {
         add_to_translation <- "'"
       }
+# add free translation -----------------------------------------------------
+      if(nchar(free_translation) > 0){
+        result <- kableExtra::footnote(kable_input = result,
+                                       general = paste0("'",
+                                                        free_translation,
+                                                        add_to_translation),
+                                       general_title = "",
+                                       escape = FALSE)
+      }
 
 # remove lines from LaTeX --------------------------------------------------
       if(knitr::is_latex_output()){
@@ -315,6 +314,28 @@ gloss_example <- function(transliteration,
         result <- gsub("\\\\bottomrule", "", result)
         result <- gsub("\\\\hline", "", result)
       }
+
+    } else {
+      result |>
+        as.data.frame() |>
+        gt::gt() |>
+        gt::tab_options(column_labels.hidden = TRUE,
+                        table.align = "left") |>
+        gt::opt_table_lines(extent = "none") |>
+        gt::fmt_markdown() ->
+        result
+
+      if(nchar(free_translation) > 0){
+        result <- gt::tab_footnote(data = result,
+                                   footnote = paste0("'",
+                                                     gt::md(free_translation),
+                                                     "'"))
+      }
+      if(nchar(comment) > 0){
+        result <- gt::tab_footnote(data = result,
+                                   footnote = gt::md(comment))
+      }
+    }
     }
   }
 
@@ -328,9 +349,9 @@ gloss_example <- function(transliteration,
             sep = "\n")
       }
     } else {
-      for(i in multiline_result) {print(i)}
+      cat(unlist(multiline_result))
     }
-  } else{
+  } else {
     return(result)
   }
 }
