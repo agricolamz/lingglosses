@@ -324,14 +324,12 @@ gloss_example <- function(transliteration,
       }
 
     } else {
-      result |>
-        as.data.frame() |>
-        gt::gt() |>
-        gt::tab_options(column_labels.hidden = TRUE,
-                        table.align = "left") |>
-        gt::opt_table_lines(extent = "none") |>
-        gt::fmt_markdown() ->
-        result
+      result <- gt::gt(as.data.frame(result))
+      result <- gt::tab_options(result,
+                                column_labels.hidden = TRUE,
+                                table.align = "left")
+      result <- gt::opt_table_lines(result, extent = "none")
+      result <- gt::fmt_markdown(result)
 
       if(nchar(free_translation) > 0){
         result <- gt::tab_footnote(data = result,
