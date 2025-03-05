@@ -1,7 +1,7 @@
 Package: lingglosses
 Type: Package
 Title: Interlinear Glossed Linguistic Examples and Abbreviation Lists Generation
-Version: 0.0.7
+Version: 0.0.9
 Depends: R (>= 3.5.0)
 Authors@R: person("George", "Moroz",
                   role = c("aut", "cre"),
@@ -18,7 +18,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://CRAN.R-project.org/package=phonfieldwork, https://agricolamz.github.io/lingglosses/
 BugReports: https://github.com/agricolamz/lingglosses/issues
-Imports: kableExtra, knitr, rmarkdown, utils, htmltools, methods
-RoxygenNote: 7.2.3
+Imports: kableExtra, knitr, gt, rmarkdown, utils, htmltools, methods
+RoxygenNote: 7.3.2.9000
 Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3

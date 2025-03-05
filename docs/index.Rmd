@@ -37,13 +37,13 @@ NOM = nominative, GEN = nominative, DAT = nominative, ACC = accusative, VOC = ac
 
 Besides the obvious errors, this list contains more problems that I would like to point out:
 
-* the lack of alphabetic order;
-* some abbreviations used in the article (`r add_gloss("SBJV")`, `r add_gloss("IMP")`) are absent in the list.
+- the lack of alphabetic order;
+- some abbreviations used in the article (`r add_gloss("SBJV")`, `r add_gloss("IMP")`) are absent in the list.
 
 The main goal of the `lingglosses` R package is to provide an option for creating:
 
-* interlinear glossed linguistic glosses for an `.html` output of `rmarkdown` [@xie18][^latex];
-* a semi-automatically compiled list of glosses.
+- interlinear glossed linguistic glosses for an `.html` output of `rmarkdown` [@xie18][^latex];
+- a semi-automatically compiled list of glosses.
 
 [^latex]: If you want to render a `.pdf` version you can either use latex and multiple linguistic packages developed for it (see e. g. [`gb4e`](https://www.ctan.org/pkg/gb4e), [`langsci`](https://www.ctan.org/pkg/langsci), [`expex`](https://www.ctan.org/pkg/expex), [`philex`](https://www.ctan.org/pkg/philex)), or you can render `.html` first and convert it to `.pdf` afterwards.
 
@@ -74,13 +74,13 @@ You can go through the examples in this tutorial or you can create a lingglosses
 
 The main function of the `lingglosses` package is `gloss_example()`. This package has the following arguments:
 
-* `transliteration`;
-* `glosses`;
-* `free_translation`;
-* `comment`;
-* `grammaticality`;
-* `annotation`[^orth];
-* `line_length`.
+- `transliteration`;
+- `glosses`;
+- `free_translation`;
+- `comment`;
+- `grammaticality`;
+- `annotation`[^orth];
+- `line_length`.
 
 [^orth]: I used `annotation` for representing orthography, but it also possible to use this tier for the annotation of words, like here:
 ```{r, echo=FALSE}
@@ -103,9 +103,9 @@ gloss_example(transliteration = "bur-e-**ri** c'in-ne-sːu-w",
 
 In this first example you can see that:
 
-* the transliteration line is italic by default (if you do not want it, just add the argument `italic_transliteration = FALSE`)[^ital-all];
-* you can use standard markdown syntax (e.g. `**a**` for **bold**);
-* the free translation line is automatically framed with quotation marks.
+- the transliteration line is italic by default (if you do not want it, just add the argument `italic_transliteration = FALSE`)[^ital-all];
+- you can use standard markdown syntax (e.g. `**a**` for **bold**);
+- the free translation line is automatically framed with quotation marks.
 
 [^ital-all]: Sometimes it is make sense to set this option ones for the whole document using the following code `options("lingglosses.italic_transliteration" = FALSE)`.
 
@@ -145,8 +145,8 @@ With the names settled you can reference the example (@my_ex) in the text using 
 
 So this kind of example referencing can be used with `lingglosses` examples like in (@lingglosses1) and (@lingglosses2). The only important details are:
 
-* change your code chunk argument to `echo = FALSE` (or specify it for all code chunks with the following comand in the begining of the document `knitr::opts_chunk$set(echo = FALSE")`);
-* do not put an empty line between the reference line (with `(@...)`) and the code chunk with `lingglosses` code.
+- change your code chunk argument to `echo = FALSE` (or specify it for all code chunks with the following comand in the begining of the document `knitr::opts_chunk$set(echo = FALSE")`);
+- do not put an empty line between the reference line (with `(@...)`) and the code chunk with `lingglosses` code.
 
 (@lingglosses1)
 ```{r, echo = FALSE}
@@ -358,17 +358,11 @@ It is really important that one should not treat the results of the `make_gloss_
 
 # Other output formats
 
-Right now there is no direct way of knitting `lingglosses` to `.docx` format. You can knit by adding an argument `always_allow_html: true` to your yaml file, however the result will be not ideal. You can work around this by copying and pasting from the `.html` version:
-
-```{r, echo = FALSE}
-knitr::include_graphics("for_word_users.gif")
-```
-
 Both kniting to `.pdf` and `.docx` outputs are possible, but there are some known restrictions: 
 
-* markdown bold and italic annotations do not work;
-* example numbers appear above the example;
-* there is no non-breaking space in the list of glosses.
+- markdown bold and italic annotations do not work;
+- example numbers appear above the example;
+- there is no non-breaking space in the list of glosses.
 
 So if you want to avoid these problems, the best solution is to use one of the latex glossing packages listed in the first footnote and the package [`glossaries`](https://www.ctan.org/pkg/glossaries) for automatic compilation of glosses.
 
@@ -386,22 +380,22 @@ Most definitions are too general on purpose: `r add_gloss("ASC")`, for example, 
 
 There have been several alternative to `lingglosses` infrastructure for interlinear glossed examples that might be interesting for the reader: 
 
-* multiple packages for glossing in LaTeX:
-    * [`gb4e`](https://www.ctan.org/pkg/gb4e),
-    * [`langsci`](https://www.ctan.org/pkg/langsci),
-    * [`expex`](https://www.ctan.org/pkg/expex),
-    * [`philex`](https://www.ctan.org/pkg/philex)
-* [ODIN project](https://odin.linguistlist.org/) [@lewis10] (looks like this project is not longer active);
-* [a Java-script library Leipzig.js](https://bdchauvette.net/leipzig.js/);
-* a Python library [`Xigt`](https://github.com/xigt/xigt)  [@goodman15];
-* [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx) [@hieber20];
-* a Python library [`pyigt`](https://github.com/cldf/pyigt)  [@list21b].
+- multiple packages for glossing in LaTeX:
+    - [`gb4e`](https://www.ctan.org/pkg/gb4e),
+    - [`langsci`](https://www.ctan.org/pkg/langsci),
+    - [`expex`](https://www.ctan.org/pkg/expex),
+    - [`philex`](https://www.ctan.org/pkg/philex)
+- [ODIN project](https://odin.linguistlist.org/) [@lewis10] (looks like this project is not longer active);
+- [a Java-script library Leipzig.js](https://bdchauvette.net/leipzig.js/);
+- a Python library [`Xigt`](https://github.com/xigt/xigt)  [@goodman15];
+- [scription format](https://github.com/digitallinguistics/scription) and [scription2dlx Java-script library](https://github.com/digitallinguistics/scription2dlx) [@hieber20];
+- a Python library [`pyigt`](https://github.com/cldf/pyigt)  [@list21b].
 
 Only several of them (`ODIN`, `Xigt`, `scription` and `pyigt`) are attempts towards creating a standard for the databases of interlinear glossed examples. I also wanted to mention paper by [@round20], where authors provided a [script](https://github.com/erichround/LREC_IGT/) for the automated identification and parsing of interlinear glossed text from scanned page images. The motivation for creating cross-linguistic database of interlinear glossed examples is the following:
 
-* Prevent from disappearing of linguistic facts due to the projects fail (for example field notes of the researcher that did not manage to finish his work: article, dictionary, grammar etc.);
-* Fight with the publication bias, which cause some linguistic facts left unpublished since they not support a basic idea of author;
-* Make linguistic work more reproducible and linguistic facts reusable (cf. with human genome database, biodiversity databases or astronomical catalogues).
+- Prevent from disappearing of linguistic facts due to the projects fail (for example field notes of the researcher that did not manage to finish his work: article, dictionary, grammar etc.);
+- Fight with the publication bias, which cause some linguistic facts left unpublished since they not support a basic idea of author;
+- Make linguistic work more reproducible and linguistic facts reusable (cf. with human genome database, biodiversity databases or astronomical catalogues).
 
 The `lingglosses` package make an attempt for going in this direction and provide an ability to extract examples in table format that can be further transformed into other formats. Each interlinear glossed example could be easily represented as a table using the `convert_to_df()` function.
 
@@ -415,17 +409,17 @@ convert_to_df(transliteration = "bur-e-**ri** c'in-ne-sːu",
 
 This table lists all the parameters that could be useful for a database, and has the following columns:
 
-* `id` --- unique identifier through the whole table;
-* `example_id` --- unique identifier of particular examples;
-* `word_id` --- unique identifier of the word in the example (delimited with spaces and other punctuation);
-* `morpheme_id` --- unique identifier of the morpheme within the word (delimited with `-` or `=`);
-* `transliteration` --- language material;
-* `gloss` --- glosses;
-* `delimiter` --- delimiters: space, `-` or `=`
-* `transliteration_orig` --- original string with transliteration;
-* `glosses_orig` --- original string with glosses;
-* `free_translation` --- original string with the free translation;
-* `comment` --- original string with a comment;
+- `id` --- unique identifier through the whole table;
+- `example_id` --- unique identifier of particular examples;
+- `word_id` --- unique identifier of the word in the example (delimited with spaces and other punctuation);
+- `morpheme_id` --- unique identifier of the morpheme within the word (delimited with `-` or `=`);
+- `transliteration` --- language material;
+- `gloss` --- glosses;
+- `delimiter` --- delimiters: space, `-` or `=`
+- `transliteration_orig` --- original string with transliteration;
+- `glosses_orig` --- original string with glosses;
+- `free_translation` --- original string with the free translation;
+- `comment` --- original string with a comment;
 
 When you use the `gloss_example()` function, a table of the structure described above is added to the database, so in the end you can extract it by saving the output of the `get_examples_db()` function to the file:
 

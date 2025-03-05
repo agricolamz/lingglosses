@@ -123,5 +123,12 @@ glosses_df %>%
   pivot_wider(names_from = weight, values_from = n) %>%
   View()
 
+glosses_df |>
+  bind_rows(tibble(gloss = "2PL",
+                   definition_en = "second person plural",
+                   source = "Leipzig Glossing Rules",
+                   weight = 1)) ->
+  glosses_df
+
 save(glosses_df, file="data/glosses_df.RData", compress='xz')
 

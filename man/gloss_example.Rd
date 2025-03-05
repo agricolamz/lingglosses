@@ -74,6 +74,7 @@ gloss_example("bur-e-**ri** c'in-ne-s:u",
               "I cannot fly.",
               intext = TRUE)
 
+
 }
 \author{
 George Moroz <agricolamz@gmail.com>

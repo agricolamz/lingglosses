@@ -1,7 +1,14 @@
+# lingglosses 0.0.9
+
+- add `docx` compatibility
+
+# lingglosses 0.0.8
+
+- add 2PL gloss (thx to @IrinaPolitova)
+
 # lingglosses 0.0.7
 
 - fix by @yihui
-
 
 # lingglosses 0.0.6
 

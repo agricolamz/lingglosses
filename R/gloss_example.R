@@ -34,6 +34,14 @@
 #'               "I cannot fly.",
 #'               intext = TRUE)
 #'
+#'
+#' @importFrom gt gt
+#' @importFrom gt tab_footnote
+#' @importFrom gt tab_options
+#' @importFrom gt fmt_markdown
+#' @importFrom gt md
+#' @importFrom gt as_word
+#' @importFrom gt opt_table_lines
 #' @importFrom knitr is_latex_output
 #' @importFrom knitr is_html_output
 #' @importFrom kableExtra kable_minimal
