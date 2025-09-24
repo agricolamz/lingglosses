@@ -23,7 +23,8 @@ add_gloss <- function(glosses){
 # remove formatting --------------------------------------------------------
   glosses2add <- gsub("[_\\*]", "", glosses[glosses == toupper(glosses)])
   without_escape <- which(!(grepl("^\\{", glosses2add) &
-                               grepl("\\}$", glosses2add)))
+                              grepl("\\}$", glosses2add)|
+                              grepl("[-\\.=:\\)\\(!\\?<>\\~\\+\uFF3D\uFF3B]", glosses2add)))
   glosses2add <- glosses2add[without_escape]
 
 # add glosses to the list --------------------------------------------------
@@ -35,7 +36,9 @@ add_gloss <- function(glosses){
   }
 # add small caps -----------------------------------------------------------
   glosses <- ifelse(glosses == toupper(glosses) &
-                      !(grepl("^\\{", glosses) & grepl("\\}$", glosses)),
+                      !(grepl("^\\{", glosses) &
+                          grepl("\\}$", glosses) |
+                          grepl("[-\\.=:\\)\\(!\\?<>\\~\\+\uFF3D\uFF3B]", glosses)),
                     small_caps(glosses),
                     glosses)
   glosses <- gsub("[\\}\\{]", "", glosses)
