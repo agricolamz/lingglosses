@@ -2,7 +2,7 @@ Package: lingglosses
 Type: Package
 Title: Interlinear Glossed Linguistic Examples and Abbreviation Lists Generation
 Version: 0.0.10
-Depends: R (>= 4.1.0)
+Depends: R (>= 4.2.0)
 Authors@R: person("George", "Moroz",
                   role = c("aut", "cre"),
                   email = "agricolamz@gmail.com",
