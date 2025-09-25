@@ -169,7 +169,8 @@ gloss_example <- function(transliteration,
   single_gl |>
     lapply(function(i){
       lingglosses::add_gloss(i)
-    })
+    }) ->
+    single_gl
 
 # get delimiters back ------------------------------------------------------
 

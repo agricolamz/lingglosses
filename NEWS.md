@@ -1,3 +1,7 @@
+# lingglosses 0.0.11
+
+- quick fix of small capitals disappearance
+
 # lingglosses 0.0.10
 
 - fix delimiter problems; probably also closes #25
