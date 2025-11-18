@@ -45,11 +45,14 @@ get_variable_name <- function(){
 #' @examples
 #' small_caps("NOM")
 #' @importFrom knitr is_latex_output
+#' @importFrom knitr opts_knit
 
 small_caps <- function(gloss){
   if(knitr::is_latex_output()){
     paste(paste0('\\textsc{', tolower(gloss), '}'))
-  } else {
+  } else if(isTRUE(knitr::opts_knit$get('rmarkdown.pandoc.to') == "docx")) {
+    gloss
+  } else{
     paste(paste0('<span style="font-variant:small-caps;">',
                  tolower(gloss),
                  '</span>'))

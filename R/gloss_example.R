@@ -145,7 +145,6 @@ gloss_example <- function(transliteration,
     glosses_by_word
   }
 
-
 # add example to the example list ------------------------------------------
   if(write_to_db){
     glossed_df <- lingglosses::convert_to_df(
@@ -159,10 +158,14 @@ gloss_example <- function(transliteration,
 
 # add glosses to the document gloss list -----------------------------------
   glosses_by_word |>
-    strsplit("(?=[-\\.=:\\)\\(!\\?<>\\~\\+\uFF3D\uFF3B])", perl = TRUE) |>
+    gsub(pattern = "\uFF3B", replacement = "\\[") |>
+    gsub(pattern = "\uFF3D", replacement = "\\]", glosses) |>
+    strsplit("(?=[-\\.=:\\)\\(!\\?<>\\~\\+\\]\\[])", perl = TRUE) |>
     lapply(FUN = function(i){
       gsub(pattern = "<", replacement = "&lt;", x = i) |>
-        gsub(pattern = ">", replacement = "&gt;", x = _)
+        gsub(pattern = ">", replacement = "&gt;", x = _) |>
+        gsub(pattern = "\\[", replacement = "\uFF3B", x = _) |>
+        gsub(pattern = "\\]", replacement = "\uFF3D", x = _)
       }) ->
     single_gl
 

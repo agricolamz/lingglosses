@@ -202,7 +202,7 @@ gloss_example("Learn to value yourself, which means: to fight for your happiness
 
 ## Multiline examples
 
-Sometimes examples are too long and do not fit onto the page. In that case you need to add the argument `results='asis'` to your chunk. `gloss_example()` will then automatically split your example into multiple rows.
+Sometimes examples are too long and do not fit onto the page. In that case you need to add the argument `results='asis'` to your chunk in Rmarkdown document or `#| results: 'asis'` if you worl with Quarto document. `gloss_example()` will then automatically split your example into multiple rows.
 
 (@tsa_ex) Mishlesh Tsakhur, East Caucasian [@maisak07: 386]
 ```{r, results='asis'}
