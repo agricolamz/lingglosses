@@ -1,3 +1,11 @@
+# lingglosses 0.0.13
+
+- fix `gloss_example()` in docx
+
+# lingglosses 0.0.12
+
+- add `gt` for docx
+
 # lingglosses 0.0.11
 
 - quick fix of small capitals disappearance
