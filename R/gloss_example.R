@@ -40,10 +40,10 @@
 #' @importFrom gt tab_options
 #' @importFrom gt fmt_markdown
 #' @importFrom gt md
-#' @importFrom gt as_word
 #' @importFrom gt opt_table_lines
 #' @importFrom knitr is_latex_output
 #' @importFrom knitr is_html_output
+#' @importFrom knitr knit_child
 #' @importFrom kableExtra kable_minimal
 #' @importFrom kableExtra kbl
 #' @importFrom kableExtra footnote
@@ -337,7 +337,7 @@ gloss_example <- function(transliteration,
                                 column_labels.hidden = TRUE,
                                 table.align = "left")
       result <- gt::opt_table_lines(result, extent = "none")
-      result <- gt::fmt_markdown(result)
+      # result <- gt::fmt_markdown(result) # doesn't work with quarto anymore 16.11.2026
 
       if(nchar(free_translation) > 0){
         result <- gt::tab_footnote(data = result,
@@ -356,11 +356,18 @@ gloss_example <- function(transliteration,
 # return output ------------------------------------------------------------
   if(length(unique(splits_by_line)) > 1){
     if (isTRUE(knitr::opts_knit$get('rmarkdown.pandoc.to') == "docx")) {
-      for(i in multiline_result) {
-        cat("```{=openxml}",
-            gt::as_word(i, keep_with_next = FALSE),
-            "```\n <br> \n",
-            sep = "\n")
+      for (j in multiline_result) {
+        myenv <- new.env()
+        cat(sep = "\n", 
+            knitr::knit_child(quiet = TRUE, 
+                              envir = myenv,
+                              text = c(
+        "```{r}",
+        "#| echo: false",
+        "j",
+        "```",
+        "<br>"
+      )))
       }
     } else {
       cat(unlist(multiline_result))
